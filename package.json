@@ -32,7 +32,7 @@
     "server": "node server/index.js | node node_modules/bunyan/bin/bunyan",
     "webapp": "npm run clean && tsc --outDir ./webapp/js && concurrently \"npm run tsc:w\" \"npm run lite\"",
     "lite": "lite-server",
-    "postintall": "node ./node_modules/typings install",
+    "postinstall": "node ./node_modules/typings install",
     "tsc": "tsc --outDir ./webapp/js",
     "tsc:w": "tsc -w --outDir ./webapp/js",
     "typings": "nod ./node_modules/typings",

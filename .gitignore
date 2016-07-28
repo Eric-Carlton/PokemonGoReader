@@ -3,3 +3,6 @@ node_modules
 
 ##ignore compiled js
 webapp/js/*
+
+##ignore typings
+typings
