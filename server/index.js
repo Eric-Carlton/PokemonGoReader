@@ -69,7 +69,7 @@ app.post('/api/player/get', (req, res) => {
 			});
 		});
 	}, err => {
-		log.error({error: err}, "Error occurred logging in");
+		log.error({error: err.message}, "Error occurred logging in");
 
 		const response = {error: "Error occurred logging in"};
 		const status = 500;
