@@ -1,0 +1,5 @@
+##ignore node modules
+node_modules
+
+##ignore compiled js
+webapp/js/*

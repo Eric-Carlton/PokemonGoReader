@@ -1,0 +1,52 @@
+{
+  "name": "ivreader",
+  "version": "0.0.1",
+  "description": "Requests information about pokemon currently in inventor from Niantic and displays in tabular format",
+  "author": "eric.carlton@fmr.com",
+  "license": "MIT",
+  "dependencies": {
+    "@angular/common": "2.0.0-rc.4",
+    "@angular/compiler": "2.0.0-rc.4",
+    "@angular/core": "2.0.0-rc.4",
+    "@angular/forms": "0.2.0",
+    "@angular/http": "2.0.0-rc.4",
+    "@angular/platform-browser": "2.0.0-rc.4",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.4",
+    "@angular/router": "3.0.0-beta.1",
+    "@angular/router-deprecated": "2.0.0-rc.2",
+    "@angular/upgrade": "2.0.0-rc.4",
+    "angular2-in-memory-web-api": "0.0.14",
+    "body-parser": "^1.15.2",
+    "bootstrap": "^3.3.6",
+    "bunyan": "^1.8.1",
+    "core-js": "^2.4.0",
+    "express": "^4.14.0",
+    "pogobuf": "^1.2.0",
+    "reflect-metadata": "^0.1.3",
+    "rxjs": "5.0.0-beta.6",
+    "systemjs": "0.19.27",
+    "zone.js": "^0.6.12"
+  },
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run webapp\"",
+    "server": "node server/index.js | node node_modules/bunyan/bin/bunyan",
+    "webapp": "npm run clean && tsc --outDir ./webapp/js && concurrently \"npm run tsc:w\" \"npm run lite\"",
+    "lite": "lite-server",
+    "postintall": "node ./node_modules/typings install",
+    "tsc": "tsc --outDir ./webapp/js",
+    "tsc:w": "tsc -w --outDir ./webapp/js",
+    "typings": "nod ./node_modules/typings",
+    "clean": "find ./webapp/js -name \"*.js*\" -delete"
+  },
+  "jshintConfig": {
+    "esversion": 6,
+    "node": true
+  },
+  "devDependencies": {
+    "jshint": "^2.9.2",
+    "concurrently": "^2.0.0",
+    "lite-server": "^2.2.0",
+    "typescript": "^1.8.10",
+    "typings": "^1.0.4"
+  }
+}
