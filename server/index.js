@@ -31,11 +31,11 @@ app.post(props.routes.root + props.routes.pokemon, (req, res) => {
 		'POST request to ' + endpoint);
 
 	if(!req.body.hasOwnProperty('username')){
-		sendResponse(400, Error('username is required'), endpoint);
+		sendResponse(res, 400, {error: props.errors.username}, req.body.username, endpoint);
 	} else if (!req.body.hasOwnProperty('password')) { 
-		sendResponse(400, Error('password is required'), endpoint);
+		sendResponse(res, 400, {error: props.errors.password}, req.body.username, endpoint);
 	} else if (!req.body.hasOwnProperty('type')) { 
-		sendResponse(400, Error('type is required'), endpoint);
+		sendResponse(res, 400, {error: props.errors.type}, req.body.username, endpoint);
 	} else {
 		let lat = props.coords.lat;
 		let lng = props.coords.lng;
@@ -66,7 +66,7 @@ app.post(props.routes.root + props.routes.pokemon, (req, res) => {
 			client.init().then(() => {
 				client.getInventory(0).then(inventory => {
 					if (!inventory.success){
-						sendResponse(res, 500, {error: Error(props.errors.inventory)}, req.body.username, endpoint);
+						sendResponse(res, 500, {error: props.errors.inventory}, req.body.username, endpoint);
 					}
 					sendResponse(res, 200, {pokemon: pogobuf.Utils.splitInventory(inventory).pokemon}, req.body.username, endpoint);
 				}, err => {

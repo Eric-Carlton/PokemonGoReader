@@ -24,6 +24,9 @@ module.exports = {
 		lng: -78.8099471
 	}, 
 	errors: {
+		username: 'username is required',
+		password: 'password is required',
+		type: 'type is required',
 		inventory: 'Error occurred getting inventory',
 		login: 'Error occurred logging in'
 	}
