@@ -5,7 +5,8 @@ import { UserLogin } from '../models/user-login.model'
 
 @Component({
 	selector: 'login-form',
-	templateUrl: './webapp/templates/login-form.component.html'
+	templateUrl: './webapp/templates/login-form.component.html',
+	styleUrls: ['./webapp/styles/login-form.component.css']
 })
 
 export class LoginFormComponent {
@@ -17,6 +18,5 @@ export class LoginFormComponent {
 
 	onSubmit() { 
 		this.submitted = true; 
-		console.log(this.model);
 	}
 }

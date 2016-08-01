@@ -1,8 +1,8 @@
 import { bootstrap }    from '@angular/platform-browser-dynamic';
 import { disableDeprecatedForms, provideForms } from '@angular/forms';
-import { LoginComponent } from './components/login.component';
+import { AppComponent } from './components/app.component';
 
-bootstrap(LoginComponent, [
+bootstrap(AppComponent, [
   disableDeprecatedForms(),
   provideForms()
  ])
