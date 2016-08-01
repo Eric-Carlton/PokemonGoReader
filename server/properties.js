@@ -8,6 +8,23 @@ module.exports = {
 		}
 	},
 	server: {
-		port: 8008
+		port: 8008,
+		listeningMsg: 'Listening on port %s...'
+	},
+	cors: {
+		allowOrigin: '*',
+		allowHeaders: 'X-Requested-With'
+	},
+	routes: {
+		root: '/api',
+		pokemon: '/pokemon/get'
+	},
+	coords: {
+		lat: 35.8963192,
+		lng: -78.8099471
+	}, 
+	errors: {
+		inventory: 'Error occurred getting inventory',
+		login: 'Error occurred logging in'
 	}
 }
