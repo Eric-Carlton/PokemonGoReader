@@ -27,7 +27,7 @@ app.use((req, res, next) => {
 app.post(props.routes.root + props.routes.pokemon, (req, res) => {
 	const endpoint = props.routes.root + props.routes.pokemon;
 	log.debug(
-		{body: req.body}, 
+		{username: req.body.username}, 
 		'POST request to ' + endpoint);
 
 	if(!req.body.hasOwnProperty('username')){
