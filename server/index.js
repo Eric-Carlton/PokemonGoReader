@@ -27,7 +27,7 @@ app.use((req, res, next) => {
 app.post(props.routes.root + props.routes.pokemon, (req, res) => {
 	const endpoint = props.routes.root + props.routes.pokemon;
 	log.debug(
-		{body: req.username}, 
+		{body: req.body}, 
 		'POST request to ' + endpoint);
 
 	if(!req.body.hasOwnProperty('username')){
@@ -66,23 +66,23 @@ app.post(props.routes.root + props.routes.pokemon, (req, res) => {
 			client.init().then(() => {
 				client.getInventory(0).then(inventory => {
 					if (!inventory.success){
-						sendResponse(res, 500, {error: Error(props.errors.inventory)}, endpoint);
+						sendResponse(res, 500, {error: Error(props.errors.inventory)}, req.body.username, endpoint);
 					}
-					sendResponse(res, 200, {pokemon: pogobuf.Utils.splitInventory(inventory).pokemon}, endpoint);
+					sendResponse(res, 200, {pokemon: pogobuf.Utils.splitInventory(inventory).pokemon}, req.body.username, endpoint);
 				}, err => {
 					log.error({err: err.message});
-					sendResponse(res, 500, {error: props.errors.inventory}, endpoint)
+					sendResponse(res, 500, {error: props.errors.inventory}, req.body.username, endpoint)
 				});
 			});
 		}, err => {
 			log.error({err: err.message});
-			sendResponse(res, 500, {error: props.errors.login}, endpoint);
+			sendResponse(res, 500, {error: props.errors.login}, req.body.username, endpoint);
 		});
 	}
 });
 
-function sendResponse(res, status, response, endpoint) {
-	log.debug({response: response, status: status}, 'Sending response from ' + endpoint);
+function sendResponse(res, status, response, username, endpoint) {
+	log.debug({status: status, username: username}, 'Sending response from ' + endpoint);
 	res.status(status).send(response);
 }
 
