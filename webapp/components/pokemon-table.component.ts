@@ -22,9 +22,4 @@ export class PokemonTableComponent {
 			this.pokemonLoaded = this.pokemonService.pokemon.length > 0 ? true : false;
 		});
 	}
-
-	onClick(event){
-		console.log(this.pokemonService);
-		this.pokemon = this.pokemonService.pokemon;
-	}
 }
