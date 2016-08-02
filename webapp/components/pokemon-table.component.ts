@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 
 import { PokemonService } from '../services/pokemon.service'
 import { Pokemon } from '../models/pokemon.model'
@@ -9,17 +9,23 @@ import { Pokemon } from '../models/pokemon.model'
 	styleUrls: ['./webapp/styles/pokemon-table.component.css']
 })
 
-export class PokemonTableComponent {
+export class PokemonTableComponent implements OnDestroy {
 	pokemonLoaded: boolean = false;
 	pokemon: Pokemon[] = [];
+
+	private _subscription: any = null;
 
 	constructor(private pokemonService: PokemonService) { 
 		this.pokemon = pokemonService.pokemon;
 		this.pokemonLoaded = this.pokemonService.pokemon.length > 0 ? true : false;
 
-		pokemonService.pokemonChange.subscribe(() => { 
+		this._subscription = pokemonService.pokemonChange.subscribe(() => { 
 			this.pokemon = pokemonService.pokemon;
 			this.pokemonLoaded = this.pokemonService.pokemon.length > 0 ? true : false;
 		});
+	}
+
+	ngOnDestroy() {
+		this._subscription.unsubscribe();
 	}
 }

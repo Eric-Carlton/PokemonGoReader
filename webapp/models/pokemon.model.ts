@@ -1,11 +1,11 @@
 export class Pokemon {
 	constructor(
-		public name : string,
-		public pokedexNum: number,
-		public attackIv : number,
-		public defenseIv : number,
-		public staminaIv : number,
-		public ivPercentage: number,
+		public pokedex_num : number,
+		public name: string,
+		public attack_iv : number,
+		public defense_iv : number,
+		public stamina_iv : number,
+		public iv_percentage: string,
 		public cp: number
 	){ }
 }

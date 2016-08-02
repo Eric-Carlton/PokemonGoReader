@@ -4,12 +4,15 @@ import { disableDeprecatedForms, provideForms } from '@angular/forms';
 
 
 import { AppComponent } from './components/app.component';
+
 import { PokemonService } from './services/pokemon.service'
+import { PropertiesService } from './services/properties.service'
 
 bootstrap(AppComponent, [
   disableDeprecatedForms(),
   provideForms(),
   HTTP_PROVIDERS, 
-  PokemonService
+  PokemonService,
+  PropertiesService
  ])
  .catch((err: any) => console.error(err));
