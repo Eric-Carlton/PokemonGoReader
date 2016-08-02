@@ -1,0 +1,18 @@
+<table [hidden]="!pokemonLoaded">
+	<tr>
+		<th>Name</th>
+		<th>CP</th>
+		<th >Attack IV</th>
+		<th>Defense IV</th>
+		<th>Stamina IV</th>
+		<th>IV Percentage</th>
+	</tr>
+	<tr *ngFor="let mon of pokemon">
+		<td>{{mon.name}}</td>
+		<td>{{mon.cp}}</td>
+		<td>{{mon.attackIv}}</td>
+		<td>{{mon.defenseIv}}</td>
+		<td>{{mon.staminaIv}}</td>
+		<td>{{mon.ivPercentage}}
+	</tr>
+</table>

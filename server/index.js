@@ -24,18 +24,18 @@ app.use((req, res, next) => {
 	next();
 });
 
-app.post(props.routes.root + props.routes.pokemon, (req, res) => {
+app.post(props.routes.root + props.routes.pokemon, (req, res, next) => {
 	const endpoint = props.routes.root + props.routes.pokemon;
 	log.debug(
 		{username: req.body.username}, 
 		'POST request to ' + endpoint);
 
 	if(!req.body.hasOwnProperty('username')){
-		sendResponse(res, 400, {error: props.errors.username}, req.body.username, endpoint);
+		sendResponse(res, next, 400, {error: props.errors.username}, req.body.username, endpoint);
 	} else if (!req.body.hasOwnProperty('password')) { 
-		sendResponse(res, 400, {error: props.errors.password}, req.body.username, endpoint);
+		sendResponse(res, next, 400, {error: props.errors.password}, req.body.username, endpoint);
 	} else if (!req.body.hasOwnProperty('type')) { 
-		sendResponse(res, 400, {error: props.errors.type}, req.body.username, endpoint);
+		sendResponse(res, next, 400, {error: props.errors.type}, req.body.username, endpoint);
 	} else {
 		let lat = props.coords.lat;
 		let lng = props.coords.lng;
@@ -66,24 +66,25 @@ app.post(props.routes.root + props.routes.pokemon, (req, res) => {
 			client.init().then(() => {
 				client.getInventory(0).then(inventory => {
 					if (!inventory.success){
-						sendResponse(res, 500, {error: props.errors.inventory}, req.body.username, endpoint);
+						sendResponse(res, next, 500, {error: props.errors.inventory}, req.body.username, endpoint);
 					}
-					sendResponse(res, 200, {pokemon: pogobuf.Utils.splitInventory(inventory).pokemon}, req.body.username, endpoint);
+					sendResponse(res, next, 200, {pokemon: pogobuf.Utils.splitInventory(inventory).pokemon}, req.body.username, endpoint);
 				}, err => {
 					log.error({err: err.message});
-					sendResponse(res, 500, {error: props.errors.inventory}, req.body.username, endpoint)
+					sendResponse(res, next, 500, {error: props.errors.inventory}, req.body.username, endpoint)
 				});
 			});
 		}, err => {
 			log.error({err: err.message});
-			sendResponse(res, 500, {error: props.errors.login}, req.body.username, endpoint);
+			sendResponse(res, next, 500, {error: props.errors.login}, req.body.username, endpoint);
 		});
 	}
 });
 
-function sendResponse(res, status, response, username, endpoint) {
+function sendResponse(res, next, status, response, username, endpoint) {
 	log.debug({status: status, username: username}, 'Sending response from ' + endpoint);
 	res.status(status).send(response);
+	next();
 }
 
 const server = app.listen(props.server.port, () => {

@@ -13,7 +13,7 @@ module.exports = {
 	},
 	cors: {
 		allowOrigin: '*',
-		allowHeaders: 'X-Requested-With'
+		allowHeaders: 'Origin, X-Requested-With, Content-Type, Accept'
 	},
 	routes: {
 		root: '/api',

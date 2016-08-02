@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 import { UserLogin } from '../models/user-login.model'
+import { PokemonService } from '../services/pokemon.service'
 
 @Component({
 	selector: 'login-form',
@@ -10,13 +11,21 @@ import { UserLogin } from '../models/user-login.model'
 })
 
 export class LoginFormComponent {
-	types = ['Google', 'PTC'];
+	types: string[] = ['Google', 'PTC'];
 
-	model = new UserLogin("", "", this.types[0]);
+	constructor(private pokemonService: PokemonService) { }
 
-	submitted = false;
+	model: UserLogin = new UserLogin("", "", this.types[0]);
+
+	loading: boolean = false;
+	submitted: boolean = false;
 
 	onSubmit() { 
-		this.submitted = true; 
+		this.loading = true;
+
+		this.pokemonService.retrievePokemon(this.model).then( () => {
+			this.loading = false;
+			this.submitted = true;
+		});
 	}
 }
