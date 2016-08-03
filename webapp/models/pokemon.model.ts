@@ -5,7 +5,8 @@ export class Pokemon {
 		public attack_iv : number,
 		public defense_iv : number,
 		public stamina_iv : number,
-		public iv_percentage: string,
-		public cp: number
+		public iv_percentage: number,
+		public cp: number,
+		public favorite: boolean
 	){ }
 }

@@ -1,18 +1,26 @@
-<table [hidden]="!pokemonLoaded">
-	<tr>
-		<th>Name</th>
-		<th>CP</th>
-		<th >Attack IV</th>
-		<th>Defense IV</th>
-		<th>Stamina IV</th>
-		<th>IV Percentage</th>
-	</tr>
-	<tr *ngFor="let mon of pokemon">
-		<td>{{mon.name}}</td>
-		<td>{{mon.cp}}</td>
-		<td>{{mon.attack_iv}}</td>
-		<td>{{mon.defense_iv}}</td>
-		<td>{{mon.stamina_iv}}</td>
-		<td>{{mon.iv_percentage}}%</td>
-	</tr>
-</table>
+<section id="pokemon-table-component" [hidden]="!pokemonLoaded">
+	<h1>{{title}}</h1>
+	<section>{{content}}</section>
+	<table>
+		<tr>
+			<th (click)="sortPokemonAsc('name', 'cp')">Name</th>
+			<th (click)="sortPokemonAsc('pokedex_num', 'cp')">Pokedex Number</th>
+			<th (click)="sortPokemonDesc('cp', 'pokedex_num')">CP</th>
+			<th (click)="sortPokemonDesc('attack_iv', 'pokedex_num')">Attack IV</th>
+			<th (click)="sortPokemonDesc('defense_iv', 'pokedex_num')">Defense IV</th>
+			<th (click)="sortPokemonDesc('stamina_iv', 'pokedex_num')">Stamina IV</th>
+			<th (click)="sortPokemonDesc('iv_percentage', 'pokedex_num')">IV Percentage</th>
+			<th (click)="sortPokemonDesc('favorite', 'pokedex_num')">Favorite</th>
+		</tr>
+		<tr *ngFor="let mon of pokemon">
+			<td>{{mon.name}}</td>
+			<td>{{mon.pokedex_num}}</td>
+			<td>{{mon.cp}}</td>
+			<td>{{mon.attack_iv}}</td>
+			<td>{{mon.defense_iv}}</td>
+			<td>{{mon.stamina_iv}}</td>
+			<td>{{mon.iv_percentage}}%</td>
+			<td><span [hidden]="!mon.favorite">✓</span></td>
+		</tr>
+	</table>
+</section>

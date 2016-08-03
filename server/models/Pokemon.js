@@ -1,7 +1,7 @@
 "use strict";
 
 class Pokemon {
-	constructor(pokedex_num, name, attack_iv, defense_iv, stamina_iv, iv_percentage, cp){ 
+	constructor(pokedex_num, name, attack_iv, defense_iv, stamina_iv, iv_percentage, cp, favorite){ 
 		this.pokedex_num = pokedex_num;
 		this.name = name;
 		this.attack_iv = attack_iv;
@@ -9,6 +9,7 @@ class Pokemon {
 		this.stamina_iv = stamina_iv;
 		this.iv_percentage = iv_percentage;
 		this.cp = cp;
+		this.favorite = favorite;
 	}
 }
 

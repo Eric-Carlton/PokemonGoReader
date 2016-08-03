@@ -1,0 +1,30 @@
+#pokemon-table-component h1{
+	text-align: center;
+}
+
+table {
+	margin-top: 1.5em;
+	width: 100%;
+}
+
+table, th, td {
+	border: 1px solid black;
+}
+
+th, td {
+	padding: .5em;
+}
+
+th {
+	text-align: left;
+}
+
+table tr:nth-child(even) {
+    background-color: #eee;
+}
+table tr:nth-child(odd) {
+    background-color: #fff;
+}
+table th {
+    background-color: white;
+}
