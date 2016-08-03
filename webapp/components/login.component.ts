@@ -14,9 +14,9 @@ declare let gapi: any;
 })
 
 export class LoginComponent { 
-	private title : string = properties.loginComponentTitle;
-	private content : string = properties.logicComponentContent;
+	private title : string = this.properties.loginComponentTitle;
+	private content : string = this.properties.logicComponentContent;
 	@ViewChild(LoginFormComponent) loginForm: LoginFormComponent;
 
-	constructor(private properties: PropertiesService) { 
+	constructor(private properties: PropertiesService) { }
 }

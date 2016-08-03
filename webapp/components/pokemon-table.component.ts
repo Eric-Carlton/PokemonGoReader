@@ -12,8 +12,8 @@ import { Pokemon } from '../models/pokemon.model'
 })
 
 export class PokemonTableComponent implements OnDestroy {
-	private title: string = properties.pokemonTableComponentTitle;
-	private content: string = properties.pokemonTableComponentContent;
+	private title: string = this.properties.pokemonTableComponentTitle;
+	private content: string = this.properties.pokemonTableComponentContent;
 
 	pokemonLoaded: boolean = false;
 	pokemon: Pokemon[] = [];

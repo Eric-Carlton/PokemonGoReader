@@ -21,6 +21,7 @@
     "bunyan": "^1.8.1",
     "core-js": "^2.4.0",
     "express": "^4.14.0",
+    "http-server": "^0.9.0",
     "pogobuf": "^1.2.0",
     "reflect-metadata": "^0.1.3",
     "rxjs": "5.0.0-beta.6",
@@ -30,7 +31,8 @@
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run webapp\"",
     "server": "node server/index.js | node node_modules/bunyan/bin/bunyan",
-    "webapp": "npm run clean && tsc --outDir ./webapp/js && concurrently \"npm run tsc:w\" \"npm run lite\"",
+    "webapp": "npm run clean && tsc --outDir ./webapp/js && node ./node_modules/http-server/bin/http-server",
+    "webapp-dev": "npm run clean && tsc --outDir ./webapp/js && concurrently \"npm run tsc:w\" \"npm run lite\"",
     "lite": "lite-server",
     "postinstall": "node ./node_modules/typings install",
     "tsc": "tsc --outDir ./webapp/js",
