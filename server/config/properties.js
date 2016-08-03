@@ -32,6 +32,11 @@ module.exports = {
 		inventory: 'Error occurred getting inventory',
 		login: 'Error occurred logging in'
 	}, 
+	pokemonSortOrder: [
+		{property: 'pokedex_num', asc: true},
+		{property: 'iv_percentage', asc: false},
+		{property: 'cp', asc: false}
+	],
 	pokemonNamesByDexNum : {
 		'0':'MissingNo',
 		'1':'Bulbasaur',

@@ -103,10 +103,10 @@ module.exports = {
 							}
 
 							formattedPokemon = formattedPokemon.sort((a, b) => {
-								if(a.pokedex_num < b.pokedex_num) return -1;
-								if(a.pokedex_num > b.pokedex_num) return 1;
-								if(a.cp < b.cp) return -1;
-								if(a.cp > b.cp) return 1;
+								for(let i = 0; i < props.pokemonSortOrder.length; i++){
+									if(a[props.pokemonSortOrder[i].property] < b[props.pokemonSortOrder[i].property]) return props.pokemonSortOrder[i].asc ? -1 : 1;
+									if(a[props.pokemonSortOrder[i].property] > b[props.pokemonSortOrder[i].property]) return props.pokemonSortOrder[i].asc ? 1 : -1;	
+								}
 								return 0;
 							});
 
