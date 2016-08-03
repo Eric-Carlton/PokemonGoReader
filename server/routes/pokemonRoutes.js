@@ -63,13 +63,26 @@ module.exports = {
 								expressUtils.sendResponse(res, next, 500, {error: props.errors.inventory}, req.body.username, endpoint);
 							}
 
-							let rawPokemon = pogobuf.Utils.splitInventory(inventory).pokemon;
+							let splitInventory = pogobuf.Utils.splitInventory(inventory)
+
+							let rawCandies = splitInventory.candies;
+
+							let rawPokemon = splitInventory.pokemon;
 							let formattedPokemon = [];
 
 							for(let i = 0; i < rawPokemon.length; i++){
 								let pokemon = rawPokemon[i];
 
 								if(pokemon.hasOwnProperty('is_egg') && !pokemon.is_egg){
+									let candy = 0;
+									for(let j = 0; j < rawCandies.length; j++){
+										let rawCandy = rawCandies[j];
+
+										if(rawCandy.family_id.toString() === props.pokemonFamilyIdByPokedexNum[pokemon.pokemon_id]){
+											candy = rawCandy.candy;
+										}
+									}
+
 									let name = props.pokemonNamesByDexNum[pokemon.pokemon_id.toString()];
 									if(pokemon.hasOwnProperty('nickname') && pokemon.nickname.length > 0){
 										name = pokemon.nickname;
@@ -83,7 +96,8 @@ module.exports = {
 										pokemon.individual_stamina,
 										parseFloat(((pokemon.individual_attack + pokemon.individual_defense + pokemon.individual_stamina) / 45 * 100).toFixed(2)),
 										pokemon.cp,
-										pokemon.favorite === 1 ? true : false
+										pokemon.favorite === 1 ? true : false,
+										candy
 									));
 								}
 							}
