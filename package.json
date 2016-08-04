@@ -33,7 +33,7 @@
     "zone.js": "^0.6.12"
   },
   "scripts": {
-    "start": "concurrently \"npm run server\" \"npm run webapp\"",
+    "start": "npm run tsc && concurrently \"npm run server\" \"npm run webapp\"",
     "server": "node server/index.js | node node_modules/bunyan/bin/bunyan",
     "webapp": "npm run clean && tsc --outDir ./webapp/js && node ./node_modules/http-server/bin/http-server",
     "webapp-dev": "npm run clean && tsc --outDir ./webapp/js && concurrently \"npm run tsc:w\" \"npm run lite\"",
@@ -41,7 +41,7 @@
     "postinstall": "node ./node_modules/typings install",
     "tsc": "tsc --outDir ./webapp/js",
     "tsc:w": "tsc -w --outDir ./webapp/js",
-    "typings": "nod ./node_modules/typings",
+    "typings": "node ./node_modules/typings",
     "clean": "find ./webapp/js -name \"*.js*\" -delete"
   },
   "jshintConfig": {
