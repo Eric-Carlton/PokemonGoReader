@@ -1,28 +1,8 @@
-<section id="pokemon-table-component" [hidden]="!pokemonLoaded">
-	<h1>{{title}}</h1>
-	<section>{{content}}</section>
-	<table>
-		<tr>
-			<th (click)="sortPokemon(nameSortOrder)">Name</th>
-			<th (click)="sortPokemon(numSortOrder)">Pokedex Number</th>
-			<th (click)="sortPokemon(candySortOrder)">Candy</th>
-			<th (click)="sortPokemon(cpSortOrder)">CP</th>
-			<th (click)="sortPokemon(attackSortOrder)">Attack IV</th>
-			<th (click)="sortPokemon(defenseSortOrder)">Defense IV</th>
-			<th (click)="sortPokemon(staminaSortOrder)">Stamina IV</th>
-			<th (click)="sortPokemon(percentageSortOrder)">IV Percentage</th>
-			<th (click)="sortPokemon(favoriteSortOrder)">Favorite</th>
-		</tr>
-		<tr *ngFor="let mon of pokemon">
-			<td>{{mon.name}}</td>
-			<td>{{mon.pokedex_num}}</td>
-			<td>{{mon.candy}}</td>
-			<td>{{mon.cp}}</td>
-			<td>{{mon.attack_iv}}</td>
-			<td>{{mon.defense_iv}}</td>
-			<td>{{mon.stamina_iv}}</td>
-			<td>{{mon.iv_percentage}}%</td>
-			<td><span [hidden]="!mon.favorite">✓</span></td>
-		</tr>
-	</table>
-</section>
+<table>
+	<tr>
+		<th *ngFor="let stat of _pokemonTableStats" (click)="_sortPokemon(stat.property)">{{stat.heading}}</th>
+	</tr>
+	<tr *ngFor="let mon of _pokemon">
+		<td *ngFor="let stat of _pokemonTableStats"><span *ngIf="_typeof(mon[stat.property]) === 'boolean' && mon[stat.property]">✓</span><span *ngIf="_typeof(mon[stat.property]) !== 'boolean'">{{mon[stat.property]}}</span></td>
+	</tr>
+</table>

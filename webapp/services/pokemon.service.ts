@@ -10,21 +10,25 @@ import { PropertiesService } from '../services/properties.service';
 
 @Injectable()
 export class PokemonService {
-	pokemon : Pokemon[] = [];
-	@Output() pokemonChange: EventEmitter<any> = new EventEmitter();
-
+	private _pokemon : Pokemon[] = [];
 	private _pokemonUrl: string = this.properties.apiHost + this.properties.getPokemonRoute;
+
+	pokemonChange: EventEmitter<any> = new EventEmitter();
 
 	constructor(private http: Http, private properties: PropertiesService) { }
 
-	retrievePokemon (login: UserLogin) {
+	public get pokemon(): Pokemon[]{
+		return this._pokemon
+	}
+
+	public retrievePokemon (login: UserLogin) {
 		let headers = new Headers({
 			'Content-Type': 'application/json'});
 		return this.http
 		.post(this._pokemonUrl, JSON.stringify(login), {headers: headers})
 		.toPromise()
 		.then(res => {
-			this.pokemon = res.json().pokemon as Pokemon[];
+			this._pokemon = res.json().pokemon as Pokemon[];
 
 			this.pokemonChange.emit({message: 'Pokemon updated'});
 		})

@@ -11,21 +11,23 @@ import { PokemonService } from '../services/pokemon.service'
 })
 
 export class LoginFormComponent {
-	types: string[] = ['Google', 'PTC'];
+	private _types: string[] = ['Google', 'PTC'];
+	private _model: UserLogin = new UserLogin("", "", this._types[0]);
+	private _loading: boolean = false;
+	private _submitted: boolean = false;
 
-	constructor(private pokemonService: PokemonService) { }
+	constructor(private _pokemonService: PokemonService) { }
 
-	model: UserLogin = new UserLogin("", "", this.types[0]);
+	public get submitted(): boolean{
+		return this._submitted;
+	}
 
-	loading: boolean = false;
-	submitted: boolean = false;
+	private _onSubmit() { 
+		this._loading = true;
 
-	onSubmit() { 
-		this.loading = true;
-
-		this.pokemonService.retrievePokemon(this.model).then( () => {
-			this.loading = false;
-			this.submitted = true;
+		this._pokemonService.retrievePokemon(this._model).then( () => {
+			this._loading = false;
+			this._submitted = true;
 		});
 	}
 }

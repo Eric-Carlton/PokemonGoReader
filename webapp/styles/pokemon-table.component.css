@@ -1,7 +1,3 @@
-#pokemon-table-component h1{
-	text-align: center;
-}
-
 table {
 	margin-top: 1.5em;
 	width: 100%;
@@ -17,6 +13,7 @@ th, td {
 
 th {
 	text-align: left;
+	cursor: pointer;
 }
 
 table tr:nth-child(even) {
