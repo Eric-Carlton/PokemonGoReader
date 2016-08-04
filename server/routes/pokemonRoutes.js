@@ -35,11 +35,11 @@ module.exports = {
 				let lng = props.coords.lng;
 
 				if(req.body.hasOwnProperty('coords')){
-					if (req.body.coords.hasOwnProperty('lat')) {
-						lat = req.body.coords.lat;
+					if (req.body.coords.hasOwnProperty('lat') && req.body.coords.lat) {
+						lat = Number(req.body.coords.lat);
 					}
-					if (req.body.coords.hasOwnProperty('lng')) {
-						lng = req.body.coords.lng;
+					if (req.body.coords.hasOwnProperty('lng') && req.body.coords.lng) {
+						lng = Number(req.body.coords.lng);
 					}
 				}
 

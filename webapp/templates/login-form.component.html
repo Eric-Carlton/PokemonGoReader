@@ -1,4 +1,4 @@
-<form (ngSubmit)="_onSubmit()">
+<form (ngSubmit)="_onSubmit()" #loginForm="ngForm">
 	<div class="form-group">
 		<label for="type">Login Type: </label>
 		<select class="form-control" name="type" [(ngModel)]="_model.type" required>
@@ -16,6 +16,16 @@
 		<input type="password" class="form-control" name="password" [(ngModel)]="_model.password" required>
 	</div>
 
-	<button type="submit">Submit</button>
+	<div class="form-group">
+		<label for="latitude">Latitude: </label>
+		<input type="text" class="form-control" name="latitude" [(ngModel)]="_model.coords.lat">
+	</div>
+
+	<div class="form-group">
+		<label for="longitude">Longitude: </label>
+		<input type="text" class="form-control" name="longitude" [(ngModel)]="_model.coords.lng">
+	</div>
+
+	<button type="submit" [disabled]="!loginForm.form.valid">Submit</button>
 	<div class="loading" [hidden]="!_loading">Loading...</div>
 </form>

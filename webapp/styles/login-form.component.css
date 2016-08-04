@@ -1,8 +1,17 @@
 form{
-	margin-top: 1.5em;
+	margin: 1.5em auto;
 	text-align: center;
 }
 
 form div.form-group {
+	margin-top: .5em;
+}
+
+form div.form-group label {
+	display: inline-block;
+	width: 5.5em;
+}
+
+form button {
 	margin-top: .5em;
 }
