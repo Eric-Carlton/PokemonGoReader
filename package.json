@@ -1,8 +1,12 @@
 {
   "name": "ivreader",
   "version": "0.0.1",
-  "description": "Requests information about pokemon currently in inventor from Niantic and displays in tabular format",
-  "author": "eric.carlton@fmr.com",
+  "description": "Requests information about Pokemon currently in inventory from Niantic and displays stats for each Pokemon in a table.",
+  "author": "eric121492@gmail.com",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Eric-Carlton/PokemonGoReader.git"
+  },
   "license": "MIT",
   "dependencies": {
     "@angular/common": "2.0.0-rc.4",
