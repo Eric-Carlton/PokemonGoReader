@@ -1,4 +1,4 @@
-Pokemon Retriever
+Pokemon Go Reader
 =================
 Requests information about Pokemon currently in inventory from Niantic and displays stats for each Pokemon in a table.
 
