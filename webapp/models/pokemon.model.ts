@@ -8,6 +8,7 @@ export class Pokemon {
 		public iv_percentage: number,
 		public cp: number,
 		public favorite: boolean,
-		public candy: number
+		public candy: number,
+		public family_name: string
 	){ }
 }

@@ -97,7 +97,8 @@ module.exports = {
 										parseFloat(((pokemon.individual_attack + pokemon.individual_defense + pokemon.individual_stamina) / 45 * 100).toFixed(2)),
 										pokemon.cp,
 										pokemon.favorite === 1 ? true : false,
-										candy
+										candy,
+										props.pokemonNamesByDexNum[props.pokemonFamilyIdByPokedexNum[pokemon.pokemon_id]]
 									));
 								}
 							}
