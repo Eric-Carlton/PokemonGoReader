@@ -2,7 +2,7 @@ import { SortType } from '../models/sort-type.model'
 import { PokemonTableStat } from '../models/pokemon-table-stat.model'
 
 export class PropertiesService {
-	public apiHost: string = 'http://192.168.0.12:8008';
+	public apiHost: string = '//' + window.location.hostname + ':8008';
 	public getPokemonRoute: string = '/api/pokemon/get';
 
 	public loginComponentTitle: string = 'Pokemon Go! Pokemon Retriever';
