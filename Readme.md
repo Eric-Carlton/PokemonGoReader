@@ -40,6 +40,4 @@ Building/Running
 
 Notes
 -----
-* You will want to change the apiHost property in webapp/services/properties.service.ts to the local IP of the machine that's running the Node server. If you don't do this, the front end requests will fail.
-
 * If you use a Google account and have two factor authentication enabled, you will need to [generate an app password](https://security.google.com/settings/security/apppasswords) and use that to log in. 
