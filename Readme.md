@@ -18,7 +18,7 @@ Building/Running
   
   `npm start`
 
-  This will start the Node server on the port specified in server/config/properties.js by the server.port property. It will also transpile the webapp and start a http-server instance on port 8080.
+  This will start the Node server on the port specified in server/config/properties.js by the server.port property. It will also transpile the webapp and start a http-server instance on [http://localhost:8080](http://localhost:8080).
 
 * To run only the Node server, open a terminal in the project root and run:
 
@@ -30,13 +30,13 @@ Building/Running
 
   `npm run webapp`
 
-  This will transpile the webapp and start a http-server instance on port 8080.
+  This will transpile the webapp and start a http-server instance on [http://localhost:8080](http://localhost:8080).
 
 * To run only the webapp in development mode, open a terminal in the project root and run:
 
   `npm run webapp-dev`
 
-  This will transpile the webapp, watch for front end changes and re-transpile when they are detected, and start a lite-server instance on port 3000.
+  This will transpile the webapp, watch for front end changes and re-transpile when they are detected, and start a lite-server instance on [http://localhost:3000](http://localhost:3000).
 
 Notes
 -----
