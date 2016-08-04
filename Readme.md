@@ -40,4 +40,6 @@ Building/Running
 
 Notes
 -----
-* You will likely want to change the default coordinates specifed in server/config/properties.js by the coords property. Set them somewhere that you would normally log in so that Niantic is less likely to flag / ban your account.
+* You will want to change the default coordinates specifed in server/config/properties.js by the coords property. Set them somewhere that you would normally log in so that Niantic is less likely to flag / ban your account.
+
+* You will want to change the apiHost property in webapp/services/properties.service.ts to the local IP of the machine that's running the Node server. If you don't do this, the front end requests will fail.
