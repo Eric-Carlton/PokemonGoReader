@@ -20,10 +20,6 @@ module.exports = {
 	routes: {
 		root: '/api',
 		pokemon: '/pokemon/get'
-	},
-	coords: {
-		lat: 35.8963192,
-		lng: -78.8099471
 	}, 
 	errors: {
 		username: 'username is required',

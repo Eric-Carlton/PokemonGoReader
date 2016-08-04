@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 import { UserLogin } from '../models/user-login.model'
-import { Coordinates } from '../models/coordinates.model'
 import { PokemonService } from '../services/pokemon.service'
 
 @Component({
@@ -13,7 +12,7 @@ import { PokemonService } from '../services/pokemon.service'
 
 export class LoginFormComponent {
 	private _types: string[] = ['Google', 'PTC'];
-	private _model: UserLogin = new UserLogin("", "", this._types[0], new Coordinates(null, null));
+	private _model: UserLogin = new UserLogin("", "", this._types[0]);
 	private _loading: boolean = false;
 	private _submitted: boolean = false;
 

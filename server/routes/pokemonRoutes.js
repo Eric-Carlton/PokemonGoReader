@@ -31,18 +31,6 @@ module.exports = {
 			} else if (!req.body.hasOwnProperty('type')) { 
 				expressUtils.sendResponse(res, next, 400, {error: props.errors.type}, req.body.username, endpoint);
 			} else {
-				let lat = props.coords.lat;
-				let lng = props.coords.lng;
-
-				if(req.body.hasOwnProperty('coords')){
-					if (req.body.coords.hasOwnProperty('lat') && req.body.coords.lat) {
-						lat = Number(req.body.coords.lat);
-					}
-					if (req.body.coords.hasOwnProperty('lng') && req.body.coords.lng) {
-						lng = Number(req.body.coords.lng);
-					}
-				}
-
 				const client = new pogobuf.Client();
 
 				let login = null;
@@ -55,7 +43,6 @@ module.exports = {
 
 				login.login(req.body.username, req.body.password).then(token => {
 					client.setAuthInfo(req.body.type.toLowerCase(), token);
-					client.setPosition(lat, lng);
 
 					client.init().then(() => {
 						client.getInventory(0).then(inventory => {
