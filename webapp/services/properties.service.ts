@@ -12,7 +12,9 @@ export class PropertiesService {
 	public pokemonStatsComponentTitle: string = 'Pokemon Stats';
 	public pokemonStatsComponentContent: string = 'Click a heading in the table to sort by that attribute. Default sort is Pokedex number, secondarily sorting by IV percentage where Pokedex number is the same, and finally sorting by CP where Pokedex number and IV percentage are the same.';
 
-	public pokemonTableStats = [
+	public showTransferColumn: boolean = true;
+
+	public pokemonTableStats: PokemonTableStat[] = [
 		new PokemonTableStat('name', 'Name'),
 		new PokemonTableStat('species', 'Species'),
 		new PokemonTableStat('pokedex_number', 'Pokedex Number'),

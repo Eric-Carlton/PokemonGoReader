@@ -16,6 +16,7 @@ import { PokemonTableStat } from '../models/pokemon-table-stat.model'
 export class PokemonTableComponent {
 	private _pokemon: Pokemon[] = [];
 	private _pokemonTableStats: PokemonTableStat[] = this._properties.pokemonTableStats;
+	private _showTransferColumn: boolean = this._properties.showTransferColumn;
 	private _currentSortOrderName: string = '';
 
 	constructor(private _properties: PropertiesService, private _pokemonService: PokemonService) { 
