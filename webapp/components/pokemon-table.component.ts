@@ -17,6 +17,9 @@ export class PokemonTableComponent {
 	private _pokemon: Pokemon[] = [];
 	private _pokemonTableStats: PokemonTableStat[] = this._properties.pokemonTableStats;
 	private _showTransferColumn: boolean = this._properties.showTransferColumn;
+	//right now we're only allowing 1 transfer at a time, like God intended,
+	//this may need to be updated later to allow for batch transfers
+	private _transferringPokemonAtIndex: number = null;
 	private _currentSortOrderName: string = '';
 
 	constructor(private _properties: PropertiesService, private _pokemonService: PokemonService) { 
@@ -33,6 +36,14 @@ export class PokemonTableComponent {
 
 	private _typeof(property: any): string{
 		return typeof property;
+	}
+
+	private _getTransferButtonText(index: number): string{
+		if(this._transferringPokemonAtIndex && this._transferringPokemonAtIndex === index){
+			return 'Transferring...';
+		}
+
+		return 'Transfer';
 	}
 
 	private _sortPokemon(sortOrderName: string, reverseSortOrder: boolean) {
@@ -56,8 +67,11 @@ export class PokemonTableComponent {
 		}
 	}
 
-	private _transferPokemon(pokemon: Pokemon){
+	private _transferPokemon(pokemon: Pokemon, index: number){
+		this._transferringPokemonAtIndex = index;
+
 		this._pokemonService.transferPokemon(pokemon).then(() => {
+			this._transferringPokemonAtIndex = null;
 			this._pokemonService.retrievePokemon();
 		});
 	}

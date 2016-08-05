@@ -3,8 +3,8 @@
 		<th *ngFor="let stat of _pokemonTableStats" (click)="_sortPokemon(stat.property, true)">{{stat.heading}}</th>
 		<th *ngIf="_showTransferColumn">Transfer</th>
 	</tr>
-	<tr *ngFor="let mon of _pokemon">
+	<tr *ngFor="let mon of _pokemon; let i = index">
 		<td *ngFor="let stat of _pokemonTableStats"><span *ngIf="_typeof(mon[stat.property]) === 'boolean' && mon[stat.property]">✓</span><span *ngIf="_typeof(mon[stat.property]) !== 'boolean'">{{mon[stat.property]}}</span></td>
-		<td *ngIf="_showTransferColumn"><button type="button" [disabled]="mon.favorite" (click)="_transferPokemon(mon)">Transfer</button></td>
+		<td *ngIf="_showTransferColumn"><button type="button" [disabled]="mon.favorite || _transferringPokemonAtIndex !== null" (click)="_transferPokemon(mon, i)">{{_getTransferButtonText(i)}}</button></td>
 	</tr>
 </table>
