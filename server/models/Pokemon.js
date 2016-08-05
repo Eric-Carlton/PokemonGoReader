@@ -8,6 +8,7 @@ class Pokemon {
 		attack_iv, 
 		defense_iv, 
 		stamina_iv, 
+		max_hp,
 		iv_percentage, 
 		cp, 
 		favorite, 
@@ -22,6 +23,7 @@ class Pokemon {
 		this.attack_iv = attack_iv;
 		this.defense_iv = defense_iv;
 		this.stamina_iv = stamina_iv;
+		this.max_hp = max_hp;
 		this.iv_percentage = iv_percentage;
 		this.cp = cp;
 		this.favorite = favorite;

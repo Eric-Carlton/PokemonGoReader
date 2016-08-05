@@ -46,4 +46,4 @@ Screenshots
 -----------
 ![Login Screen](http://i.imgur.com/tCTIO5a.png "Login Screen")
 
-![Pokemon Stats Table](http://i.imgur.com/VGuqIxv.png "Pokemon Stats Table") 
+![Pokemon Stats Table](http://i.imgur.com/YyHxywk.png "Pokemon Stats Table") 
