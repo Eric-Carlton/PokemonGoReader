@@ -85,23 +85,70 @@ module.exports = {
 										pokemon.cp,
 										pokemon.favorite === 1 ? true : false,
 										candy,
-										props.pokemonNamesByDexNum[props.pokemonFamilyIdByPokedexNum[pokemon.pokemon_id]]
+										props.pokemonNamesByDexNum[props.pokemonFamilyIdByPokedexNum[pokemon.pokemon_id]],
+										pokemon.id
 									));
 								}
 							}
-
-							formattedPokemon = formattedPokemon.sort((a, b) => {
-								for(let i = 0; i < props.pokemonSortOrder.length; i++){
-									if(a[props.pokemonSortOrder[i].property] < b[props.pokemonSortOrder[i].property]) return props.pokemonSortOrder[i].asc ? -1 : 1;
-									if(a[props.pokemonSortOrder[i].property] > b[props.pokemonSortOrder[i].property]) return props.pokemonSortOrder[i].asc ? 1 : -1;	
-								}
-								return 0;
-							});
 
 							expressUtils.sendResponse(res, next, 200, {pokemon: formattedPokemon}, req.body.username, endpoint);
 						}, err => {
 							log.error({err: err.message});
 							expressUtils.sendResponse(res, next, 500, {error: props.errors.inventory}, req.body.username, endpoint)
+						});
+					});
+				}, err => {
+					log.error({err: err.message});
+					expressUtils.sendResponse(res, next, 500, {error: props.errors.login}, req.body.username, endpoint);
+				});
+			}
+		});
+
+		app.post(props.routes.root + props.routes.transfer, (req, res, next) => {
+			const endpoint = props.routes.root + props.routes.transfer;
+			log.debug(
+				{username: req.body.username}, 
+				'POST request to ' + endpoint);
+
+			if(!req.body.hasOwnProperty('username')){
+				expressUtils.sendResponse(res, next, 400, {error: props.errors.username}, req.body.username, endpoint);
+			} else if (!req.body.hasOwnProperty('password')) { 
+				expressUtils.sendResponse(res, next, 400, {error: props.errors.password}, req.body.username, endpoint);
+			} else if (!req.body.hasOwnProperty('type')) { 
+				expressUtils.sendResponse(res, next, 400, {error: props.errors.type}, req.body.username, endpoint);
+			} else if (!req.body.hasOwnProperty('pokemon_id')) {
+				expressUtils.sendResponse(res, next, 400, {error: props.errors.pokemon_id}, req.body.username, endpoint);
+			} else if (!req.body.pokemon_id.hasOwnProperty('high')){
+				expressUtils.sendResponse(res, next, 400, {error: props.errors.invalid_pokemon_id}, req.body.username, endpoint);
+			} else if (!req.body.pokemon_id.hasOwnProperty('low')){
+				expressUtils.sendResponse(res, next, 400, {error: props.errors.invalid_pokemon_id}, req.body.username, endpoint);
+			} else if (!req.body.pokemon_id.hasOwnProperty('unsigned')){
+				expressUtils.sendResponse(res, next, 400, {error: props.errors.invalid_pokemon_id}, req.body.username, endpoint);
+			} 
+			else {
+				req.body.pokemon_id.high = Number(req.body.pokemon_id.high);
+				req.body.pokemon_id.low = Number(req.body.pokemon_id.low);
+				req.body.pokemon_id.unsigned = req.body.pokemon_id === "true" ? true : false;
+
+				const client = new pogobuf.Client();
+
+				let login = null;
+
+				if(req.body.type.toLowerCase() === 'google'){
+					login = new pogobuf.GoogleLogin();
+				} else {
+					login = new pogobuf.PTCLogin();
+				}
+
+				login.login(req.body.username, req.body.password).then(token => {
+					client.setAuthInfo(req.body.type.toLowerCase(), token);
+
+					client.init().then(() => {
+						client.releasePokemon(req.body.pokemon_id).then(releaseResponse => {
+							expressUtils.sendResponse(res, next, 200, {success: releaseResponse.result === 1 ? true : false}, req.body.username, endpoint);
+						}, err => {
+							log.error({err: err.message});
+							expressUtils.sendResponse(res, next, 500, {error: props.errors.transfer}, req.body.username, endpoint);
 						});
 					});
 				}, err => {

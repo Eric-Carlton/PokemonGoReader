@@ -9,6 +9,7 @@ export class Pokemon {
 		public cp: number,
 		public favorite: boolean,
 		public candy: number,
-		public family_name: string
+		public family_name: string,
+		public id: any
 	){ }
 }

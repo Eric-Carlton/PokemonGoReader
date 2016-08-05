@@ -11,7 +11,8 @@ class Pokemon {
 		cp, 
 		favorite, 
 		candy, 
-		family_name
+		family_name,
+		id
 	)
 	{ 
 		this.pokedex_number = pokedex_number;
@@ -24,6 +25,7 @@ class Pokemon {
 		this.favorite = favorite;
 		this.candy = candy;
 		this.family_name = family_name;
+		this.id = id;
 	}
 }
 

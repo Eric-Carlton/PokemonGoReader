@@ -25,7 +25,9 @@ export class LoginFormComponent {
 	private _onSubmit() { 
 		this._loading = true;
 
-		this._pokemonService.retrievePokemon(this._model).then( () => {
+		this._pokemonService.userLogin = this._model;
+
+		this._pokemonService.retrievePokemon().then( () => {
 			this._loading = false;
 			this._submitted = true;
 		});

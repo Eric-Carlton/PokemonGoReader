@@ -4,6 +4,7 @@ import { PokemonTableStat } from '../models/pokemon-table-stat.model'
 export class PropertiesService {
 	public apiHost: string = '//' + window.location.hostname + ':8008';
 	public getPokemonRoute: string = '/api/pokemon/get';
+	public transferPokemonRoute: string = '/api/pokemon/transfer';
 
 	public loginComponentTitle: string = 'Pokemon Go! Pokemon Retriever';
 	public loginComponentContent: string = 'Why use an IV calculator when you can easily retrieve your Pokemon\'s exact data from Niantic? This easy-to-use tool allows you to do just that!';

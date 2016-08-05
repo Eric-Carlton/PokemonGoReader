@@ -1,8 +1,10 @@
 <table>
 	<tr>
-		<th *ngFor="let stat of _pokemonTableStats" (click)="_sortPokemon(stat.property)">{{stat.heading}}</th>
+		<th *ngFor="let stat of _pokemonTableStats" (click)="_sortPokemon(stat.property, true)">{{stat.heading}}</th>
+		<th>Transfer</th>
 	</tr>
 	<tr *ngFor="let mon of _pokemon">
 		<td *ngFor="let stat of _pokemonTableStats"><span *ngIf="_typeof(mon[stat.property]) === 'boolean' && mon[stat.property]">✓</span><span *ngIf="_typeof(mon[stat.property]) !== 'boolean'">{{mon[stat.property]}}</span></td>
+		<td><button type="button" [disabled]="mon.favorite" (click)="_transferPokemon(mon)">Transfer</button></td>
 	</tr>
 </table>

@@ -1,5 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 
+import { PokemonService } from '../services/pokemon.service'
 import { PropertiesService } from '../services/properties.service'
 
 import { Pokemon } from '../models/pokemon.model'
@@ -17,24 +18,28 @@ export class PokemonTableComponent {
 	private _pokemonTableStats: PokemonTableStat[] = this._properties.pokemonTableStats;
 	private _currentSortOrderName: string = '';
 
-	constructor(private _properties: PropertiesService) { 
+	constructor(private _properties: PropertiesService, private _pokemonService: PokemonService) { 
 	}
 
 	public set pokemon(pokemon: Pokemon[]){
 		this._pokemon = pokemon;
-		this._sortPokemon(this._properties.defaultPokemonTableSortOrder);
+		if(this._currentSortOrderName === ''){
+			this._sortPokemon(this._properties.defaultPokemonTableSortOrder, false);
+		} else {
+			this._sortPokemon(this._currentSortOrderName, false);
+		}
 	}
 
 	private _typeof(property: any): string{
 		return typeof property;
 	}
 
-	private _sortPokemon(sortOrderName: string) {
+	private _sortPokemon(sortOrderName: string, reverseSortOrder: boolean) {
 		if(this._properties.pokemonTableSortOrders.hasOwnProperty(sortOrderName)){
 			let sortOrder = this._properties.pokemonTableSortOrders[sortOrderName];
 
 			//double clicking a heading should reverse the primary sort
-			if(this._currentSortOrderName === sortOrderName){
+			if(this._currentSortOrderName === sortOrderName && reverseSortOrder){
 				sortOrder[0].asc = !sortOrder[0].asc;
 			}
 
@@ -48,5 +53,11 @@ export class PokemonTableComponent {
 				return 0;
 			});
 		}
+	}
+
+	private _transferPokemon(pokemon: Pokemon){
+		this._pokemonService.transferPokemon(pokemon).then(() => {
+			this._pokemonService.retrievePokemon();
+		});
 	}
 }

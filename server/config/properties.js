@@ -19,20 +19,19 @@ module.exports = {
 	},
 	routes: {
 		root: '/api',
-		pokemon: '/pokemon/get'
+		pokemon: '/pokemon/get',
+		transfer: '/pokemon/transfer'
 	}, 
 	errors: {
 		username: 'username is required',
 		password: 'password is required',
 		type: 'type is required',
+		pokemon_id: 'pokemon_id is required',
+		invalid_pokemon_id: 'pokemon_id is not valid',
 		inventory: 'Error occurred getting inventory',
-		login: 'Error occurred logging in'
+		login: 'Error occurred logging in',
+		transfer: 'Error occurred transferring pokemon'
 	}, 
-	pokemonSortOrder: [
-		{property: 'pokedex_num', asc: true},
-		{property: 'iv_percentage', asc: false},
-		{property: 'cp', asc: false}
-	],
 	pokemonNamesByDexNum : {
 		'0':'MissingNo',
 		'1':'Bulbasaur',
