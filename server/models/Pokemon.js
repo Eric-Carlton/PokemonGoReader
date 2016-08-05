@@ -4,6 +4,7 @@ class Pokemon {
 	constructor(
 		pokedex_number, 
 		name, 
+		species,
 		attack_iv, 
 		defense_iv, 
 		stamina_iv, 
@@ -17,6 +18,7 @@ class Pokemon {
 	{ 
 		this.pokedex_number = pokedex_number;
 		this.name = name;
+		this.species = species;
 		this.attack_iv = attack_iv;
 		this.defense_iv = defense_iv;
 		this.stamina_iv = stamina_iv;

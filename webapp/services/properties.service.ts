@@ -14,6 +14,7 @@ export class PropertiesService {
 
 	public pokemonTableStats = [
 		new PokemonTableStat('name', 'Name'),
+		new PokemonTableStat('species', 'Species'),
 		new PokemonTableStat('pokedex_number', 'Pokedex Number'),
 		new PokemonTableStat('candy', 'Candy'),
 		new PokemonTableStat('cp', 'CP'),
@@ -28,6 +29,12 @@ export class PropertiesService {
 	public pokemonTableSortOrders: any = {
 		name: [
 		new SortType('name', true),
+		new SortType('iv_percentage', false),
+		new SortType('cp', false)
+		],
+
+		species: [
+		new SortType('species', true),
 		new SortType('iv_percentage', false),
 		new SortType('cp', false)
 		],

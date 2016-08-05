@@ -78,6 +78,7 @@ module.exports = {
 									formattedPokemon.push(new Pokemon(
 										pokemon.pokemon_id,
 										name, 
+										props.pokemonNamesByDexNum[pokemon.pokemon_id.toString()],
 										pokemon.individual_attack,
 										pokemon.individual_defense,
 										pokemon.individual_stamina,
