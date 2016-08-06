@@ -20,18 +20,20 @@ module.exports = {
 	routes: {
 		root: '/api',
 		pokemon: '/pokemon/get',
-		transfer: '/pokemon/transfer'
-	}, 
+		transfer: '/pokemon/transfer',
+		rename: '/pokemon/rename'
+	},
 	errors: {
 		username: 'username is required',
 		password: 'password is required',
 		type: 'type is required',
 		pokemon_id: 'pokemon_id is required',
+		nickname: 'nickname is required',
 		invalid_pokemon_id: 'pokemon_id is not valid',
 		inventory: 'Error occurred getting inventory',
 		login: 'Error occurred logging in',
 		transfer: 'Error occurred transferring pokemon'
-	}, 
+	},
 	pokemonNamesByDexNum : {
 		'0':'MissingNo',
 		'1':'Bulbasaur',

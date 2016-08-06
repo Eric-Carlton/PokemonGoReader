@@ -5,6 +5,7 @@ export class PropertiesService {
 	public apiHost: string = '//' + window.location.hostname + ':8008';
 	public getPokemonRoute: string = '/api/pokemon/get';
 	public transferPokemonRoute: string = '/api/pokemon/transfer';
+	public renamePokemonRoute: string = '/api/pokemon/rename';
 
 	public loginComponentTitle: string = 'Pokemon Go! Pokemon Retriever';
 	public loginComponentContent: string = 'Why use an IV calculator when you can easily retrieve your Pokemon\'s exact data from Niantic? This easy-to-use tool allows you to do just that!';
@@ -27,7 +28,7 @@ export class PropertiesService {
 		new PokemonTableStat('iv_percentage', 'IV Percentage'),
 		new PokemonTableStat('favorite', 'Favorite')
 	];
-	
+
 	public defaultPokemonTableSortOrder: string = 'pokedex_number';
 	public pokemonTableSortOrders: any = {
 		name: [

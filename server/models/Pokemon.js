@@ -2,27 +2,34 @@
 
 class Pokemon {
 	constructor(
-		pokedex_number, 
-		name, 
+		pokedex_number,
+		name,
 		species,
-		attack_iv, 
-		defense_iv, 
-		stamina_iv, 
+		attack_iv,
+		defense_iv,
+		stamina_iv,
+		current_hp,
 		max_hp,
-		iv_percentage, 
-		cp, 
-		favorite, 
-		candy, 
+		iv_percentage,
+		cp,
+		favorite,
+		candy,
 		family_name,
-		id
+		id,
+		move_1,
+		move_2,
+		pokeball,
+		battles_attacked,
+		battles_defended
 	)
-	{ 
+	{
 		this.pokedex_number = pokedex_number;
 		this.name = name;
 		this.species = species;
 		this.attack_iv = attack_iv;
 		this.defense_iv = defense_iv;
 		this.stamina_iv = stamina_iv;
+		this.current_hp = current_hp;
 		this.max_hp = max_hp;
 		this.iv_percentage = iv_percentage;
 		this.cp = cp;
@@ -30,6 +37,11 @@ class Pokemon {
 		this.candy = candy;
 		this.family_name = family_name;
 		this.id = id;
+		this.move_1 = move_1;
+		this.move_2 = move_2;
+		this.pokeball = pokeball;
+		this.battles_attacked = battles_attacked;
+		this.battles_defended = battles_defended;
 	}
 }
 
