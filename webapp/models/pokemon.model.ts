@@ -16,9 +16,6 @@ export class Pokemon {
 		public id: any,
 		public move_1: number,
 		public move_2: number,
-		public pokeball: number,
-		public battles_attacked: number,
-		public battles_defended: number,
 		public attacks: any,
 		public type_1: string,
 		public type_2: string

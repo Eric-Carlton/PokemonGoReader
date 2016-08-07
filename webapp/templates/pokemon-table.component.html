@@ -62,6 +62,11 @@
 				<td><img src="webapp/img/heart-icon.png"></td>
 				<td>{{ mon.stamina_iv }}</td>
 			</tr>
+			<tr>
+				<!--TODO: Find suitable graphic -->
+				<td>HP</td>
+				<td>{{mon.current_hp}} / {{mon.max_hp}}</td>
+			</tr>
 		</table>
 		<div class="actions">
 			<button type="button" [disabled]="mon.favorite || _transferringPokemonAtIndex !== null" (click)="_transferPokemon(mon, i)">{{_getTransferButtonText(i)}}</button>

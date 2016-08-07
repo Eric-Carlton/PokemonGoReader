@@ -67,22 +67,6 @@ export class PokemonTableComponent {
 		return typeof property;
 	}
 
-	private _getTransferButtonText(index: number): string{
-		if(this._transferringPokemonAtIndex && this._transferringPokemonAtIndex === index){
-			return 'Transferring...';
-		}
-
-		return 'Transfer';
-	}
-
-	private _getRenameButtonText(index: number): string{
-		if(this._renamingPokemonAtIndex && this._renamingPokemonAtIndex === index){
-			return 'Renaming...';
-		}
-
-		return 'Rename';
-	}
-
 	private _sortPokemon(sortOrderName: string, reverseSortOrder: boolean) {
 		if(this._properties.pokemonTableSortOrders.hasOwnProperty(sortOrderName)){
 			let sortOrder = this._properties.pokemonTableSortOrders[sortOrderName];
@@ -104,6 +88,14 @@ export class PokemonTableComponent {
 		}
 	}
 
+	private _getTransferButtonText(index: number): string{
+		if(this._transferringPokemonAtIndex && this._transferringPokemonAtIndex === index){
+			return 'Transferring...';
+		}
+
+		return 'Transfer';
+	}
+
 	private _transferPokemon(pokemon: Pokemon, index: number){
 		this._transferringPokemonAtIndex = index;
 
@@ -111,6 +103,14 @@ export class PokemonTableComponent {
 			this._transferringPokemonAtIndex = null;
 			this._pokemonService.retrievePokemon();
 		});
+	}
+
+	private _getRenameButtonText(index: number): string{
+		if(this._renamingPokemonAtIndex && this._renamingPokemonAtIndex === index){
+			return 'Renaming...';
+		}
+
+		return 'Rename';
 	}
 
 	private _renamePokemon(pokemon: Pokemon, index: number){

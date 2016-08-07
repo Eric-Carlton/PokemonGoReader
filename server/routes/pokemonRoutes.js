@@ -66,7 +66,7 @@ module.exports = {
 									for(let j = 0; j < rawCandies.length; j++){
 										let rawCandy = rawCandies[j];
 
-										if(rawCandy.family_id.toString() === props.pokemonFamilyIdByPokedexNum[pokemon.pokemon_id]){
+										if(rawCandy.family_id.toString() === props.pokemonFamilyIdByPokedexNum[pokemon.pokemon_id.toString()]){
 											candy = rawCandy.candy;
 										}
 									}
@@ -87,15 +87,12 @@ module.exports = {
 										pokemon.stamina_max,
 										parseFloat(((pokemon.individual_attack + pokemon.individual_defense + pokemon.individual_stamina) / 45 * 100).toFixed(2)),
 										pokemon.cp,
-										pokemon.favorite === 1 ? true : false,
+										pokemon.favorite === 1,
 										candy,
 										props.pokemonNamesByDexNum[props.pokemonFamilyIdByPokedexNum[pokemon.pokemon_id]],
 										pokemon.id,
 										pokemon.move_1,
-										pokemon.move_2,
-										pokemon.pokeball,
-										pokemon.battles_attacked,
-										pokemon.battles_defended
+										pokemon.move_2
 									));
 								}
 							}
@@ -137,7 +134,7 @@ module.exports = {
 			else {
 				req.body.pokemon_id.high = Number(req.body.pokemon_id.high);
 				req.body.pokemon_id.low = Number(req.body.pokemon_id.low);
-				req.body.pokemon_id.unsigned = req.body.pokemon_id === "true" ? true : false;
+				req.body.pokemon_id.unsigned = req.body.pokemon_id === "true";
 
 				const client = new pogobuf.Client();
 
@@ -154,7 +151,7 @@ module.exports = {
 
 					client.init().then(() => {
 						client.releasePokemon(req.body.pokemon_id).then(releaseResponse => {
-							expressUtils.sendResponse(res, next, 200, {success: releaseResponse.result === 1 ? true : false}, req.body.username, endpoint);
+							expressUtils.sendResponse(res, next, 200, {success: releaseResponse.result === 1}, req.body.username, endpoint);
 						}, err => {
 							log.error({err: err.message});
 							expressUtils.sendResponse(res, next, 500, {error: props.errors.transfer}, req.body.username, endpoint);
@@ -193,7 +190,7 @@ module.exports = {
 			else {
 				req.body.pokemon_id.high = Number(req.body.pokemon_id.high);
 				req.body.pokemon_id.low = Number(req.body.pokemon_id.low);
-				req.body.pokemon_id.unsigned = req.body.pokemon_id === "true" ? true : false;
+				req.body.pokemon_id.unsigned = req.body.pokemon_id === "true";
 
 				const client = new pogobuf.Client();
 
@@ -210,7 +207,7 @@ module.exports = {
 
 					client.init().then(() => {
 						client.nicknamePokemon(req.body.pokemon_id, req.body.nickname).then(nicknameResponse => {
-							expressUtils.sendResponse(res, next, 200, {success: nicknameResponse.result === 1 ? true : false}, req.body.username, endpoint);
+							expressUtils.sendResponse(res, next, 200, {success: nicknameResponse.result === 1}, req.body.username, endpoint);
 						}, err => {
 							log.error({err: err.message});
 							expressUtils.sendResponse(res, next, 500, {error: props.errors.transfer}, req.body.username, endpoint);

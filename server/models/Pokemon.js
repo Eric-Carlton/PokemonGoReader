@@ -17,10 +17,7 @@ class Pokemon {
 		family_name,
 		id,
 		move_1,
-		move_2,
-		pokeball,
-		battles_attacked,
-		battles_defended
+		move_2
 	)
 	{
 		this.pokedex_number = pokedex_number;
@@ -39,9 +36,6 @@ class Pokemon {
 		this.id = id;
 		this.move_1 = move_1;
 		this.move_2 = move_2;
-		this.pokeball = pokeball;
-		this.battles_attacked = battles_attacked;
-		this.battles_defended = battles_defended;
 	}
 }
 
