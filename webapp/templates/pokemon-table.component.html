@@ -70,7 +70,7 @@
 			</tr>
 		</table>
 		<div class="actions">
-			<button type="button" [disabled]="mon.favorite || _transferringPokemonAtIndex !== null" (click)="_transferPokemon(mon, i)">{{_getTransferButtonText(i)}}</button>
+			<button *ngIf="_showTransferButton" type="button" [disabled]="mon.favorite || _transferringPokemonAtIndex !== null" (click)="_transferPokemon(mon, i)">{{_getTransferButtonText(i)}}</button>
 			<button type="button" [disabled]="_renamingPokemonAtIndex !== null" (click)="_renamePokemon(mon, i)">{{_getRenameButtonText(i)}}</button>
 		</div>
 		<!-- http://serebii.net/pokedex-bw/type/psychic.gif -->

@@ -17,7 +17,7 @@ import { PokemonTableStat } from '../models/pokemon-table-stat.model'
 export class PokemonTableComponent {
 	private _pokemon: Pokemon[] = [];
 	private _pokemonTableStats: PokemonTableStat[] = this._properties.pokemonTableStats;
-	private _showTransferColumn: boolean = this._properties.showTransferColumn;
+	private _showTransferButton: boolean = this._properties.showTransferButton;
 	//right now we're only allowing 1 transfer at a time, like God intended,
 	//this may need to be updated later to allow for batch transfers
 	private _transferringPokemonAtIndex: number = null;
