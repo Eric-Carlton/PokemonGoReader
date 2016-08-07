@@ -1,4 +1,5 @@
 <div class="sortby-wrapper">
+	<span>Sort Options: </span>
 	<div class="sortby-item" *ngFor="let stat of _pokemonTableStats" (click)="_sortPokemon(stat.property, true)">
 		{{stat.heading}}
 	</div>

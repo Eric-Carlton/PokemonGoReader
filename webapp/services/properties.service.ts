@@ -11,7 +11,7 @@ export class PropertiesService {
 	public loginComponentContent: string = 'Why use an IV calculator when you can easily retrieve your Pokemon\'s exact data from Niantic? This easy-to-use tool allows you to do just that!';
 
 	public pokemonStatsComponentTitle: string = 'Pokemon Stats';
-	public pokemonStatsComponentContent: string = 'Click a heading in the table to sort by that attribute. Default sort is Pokedex number, secondarily sorting by IV percentage where Pokedex number is the same, and finally sorting by CP where Pokedex number and IV percentage are the same.';
+	public pokemonStatsComponentContent: string = 'Click a sort order to sort by that property. Default sort is Pokedex number, secondarily sorting by IV percentage where Pokedex number is the same, and finally sorting by CP where Pokedex number and IV percentage are the same.';
 
 	public showTransferColumn: boolean = true;
 
