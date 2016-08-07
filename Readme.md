@@ -42,10 +42,10 @@ Notes
 -----
 * If you use a Google account and have two factor authentication enabled, you will need to [generate an app password](https://security.google.com/settings/security/apppasswords) and use that to log in.
 
-* If you prefer not to have a transfer column in the table at all, you can change the showTransferColumn property in webapp/services/properties.service.ts. You can also add / remove columns for any stats on the Pokemon model here.
+* If you prefer not to have a transfer button in the table at all, you can change the showTransferButton property in webapp/services/properties.service.ts. You can also add / remove columns for any stats on the Pokemon model here.
 
 Screenshots
 -----------
 ![Login Screen](http://i.imgur.com/tCTIO5a.png "Login Screen")
 
-![Pokemon Stats Table](http://i.imgur.com/YyHxywk.png "Pokemon Stats Table") 
+![Pokemon Stats Table](http://i.imgur.com/eRLGmxJ.png "Pokemon Stats Table") 
