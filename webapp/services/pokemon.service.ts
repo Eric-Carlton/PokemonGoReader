@@ -13,6 +13,7 @@ export class PokemonService {
 	private _pokemon : Pokemon[] = [];
 	private _pokemonUrl: string = this._properties.apiHost + this._properties.getPokemonRoute;
 	private _transferUrl: string = this._properties.apiHost + this._properties.transferPokemonRoute;
+	private _renameUrl: string = this._properties.apiHost + this._properties.renamePokemonRoute;
 	private _pokemonChange: EventEmitter<any> = new EventEmitter();
 	private _userLogin: UserLogin = null;
 
@@ -57,6 +58,26 @@ export class PokemonService {
 
 		return this._http
 		.post(this._transferUrl, JSON.stringify(request), {headers: headers})
+		.toPromise()
+		.then(res => {
+		})
+		.catch(this.handleError);
+	}
+
+	public renamePokemon(pokemon: Pokemon, nickname: string){
+		let headers = new Headers({
+			'Content-Type': 'application/json'});
+
+		let request = {
+			username: this._userLogin.username,
+			password: this._userLogin.password,
+			type: this._userLogin.type,
+			pokemon_id: pokemon.id,
+			nickname: nickname
+		};
+
+		return this._http
+		.post(this._renameUrl, JSON.stringify(request), {headers: headers})
 		.toPromise()
 		.then(res => {
 		})
