@@ -4,6 +4,7 @@ import { PokemonService } from '../services/pokemon.service'
 import { PropertiesService } from '../services/properties.service'
 
 import { Pokemon } from '../models/pokemon.model'
+import { Move } from '../models/move.model'
 import { SortType } from '../models/sort-type.model'
 import { PokemonTableStat } from '../models/pokemon-table-stat.model'
 
@@ -32,22 +33,22 @@ export class PokemonTableComponent {
 		this._pokemon = this._pokemon.map(function (pokemon) {
 			pokemon.attacks = {
 			  fast: window['pokemon'][pokemon.pokedex_number].QuickMoves.map(function (moveNumber) {
-					var move = window['moves'][moveNumber];
-					return {
-					  type: move.Type.toLowerCase(),
-						selected: pokemon.move_1 === moveNumber,
-						DPS: move.DPS,
-						Name: move.Name
-					};
+					let move = window['moves'][moveNumber];
+					return new Move(
+						move.Type.toLowerCase(),
+						pokemon.move_1 === moveNumber,
+						move.DPS,
+						move.Name
+					);
 				}),
 				charged: window['pokemon'][pokemon.pokedex_number].CinematicMoves.map(function (moveNumber) {
-					var move = window['moves'][moveNumber];
-					return {
-						type: move.Type.toLowerCase(),
-						selected: pokemon.move_2 === moveNumber,
-						DPS: move.DPS,
-						Name: move.Name
-					};
+					let move = window['moves'][moveNumber];
+					return new Move(
+						move.Type.toLowerCase(),
+						pokemon.move_2 === moveNumber,
+						move.DPS,
+						move.Name
+					);
 				})
 			};
 			pokemon.type_1 = window['pokemon'][pokemon.pokedex_number].Type1.toLowerCase();
@@ -115,7 +116,7 @@ export class PokemonTableComponent {
 	private _renamePokemon(pokemon: Pokemon, index: number){
 		this._renamingPokemonAtIndex = index;
 
-		var nickname = window['prompt']('Enter new nickname');
+		let nickname = window['prompt']('Enter new nickname');
 
 		this._pokemonService.renamePokemon(pokemon, nickname).then(() => {
 			this._renamingPokemonAtIndex = null;

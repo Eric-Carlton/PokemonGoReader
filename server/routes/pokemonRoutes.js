@@ -209,8 +209,8 @@ module.exports = {
 					client.setAuthInfo(req.body.type.toLowerCase(), token);
 
 					client.init().then(() => {
-						client.nicknamePokemon(req.body.pokemon_id, req.body.nickname).then(releaseResponse => {
-							expressUtils.sendResponse(res, next, 200, {success: releaseResponse.result === 1 ? true : false}, req.body.username, endpoint);
+						client.nicknamePokemon(req.body.pokemon_id, req.body.nickname).then(nicknameResponse => {
+							expressUtils.sendResponse(res, next, 200, {success: nicknameResponse.result === 1 ? true : false}, req.body.username, endpoint);
 						}, err => {
 							log.error({err: err.message});
 							expressUtils.sendResponse(res, next, 500, {error: props.errors.transfer}, req.body.username, endpoint);

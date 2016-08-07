@@ -5,7 +5,7 @@
 </div>
 
 <div class="pokemon-list-wrapper">
-  <div class="pokemon-list-item" *ngFor="let mon of _pokemon">
+  <div class="pokemon-list-item" *ngFor="let mon of _pokemon; let i = index">
 		<div class="title">
 			CP {{ mon.cp }}
 			<img *ngIf="mon.favorite" class="favorite" src="webapp/img/star-icon.png">
@@ -26,7 +26,7 @@
 						<img *ngIf="!atk.selected" src="webapp/img/checkbox-empty-icon.png" class="selected-icon">
 					</td>
 					<td><img src="http://serebii.net/pokedex-bw/type/{{ atk.type }}.gif"></td>
-					<td>{{ atk.Name }}</td>
+					<td>{{ atk.name }}</td>
 					<td>{{ atk.DPS }} DPS</td>
 				</tr>
 				<tr class="separator"></tr>
@@ -36,7 +36,7 @@
 						<img *ngIf="!atk.selected" src="webapp/img/checkbox-empty-icon.png" class="selected-icon">
 					</td>
 					<td><img src="http://serebii.net/pokedex-bw/type/{{ atk.type }}.gif"></td>
-					<td>{{ atk.Name }}</td>
+					<td>{{ atk.name }}</td>
 					<td>{{ atk.DPS }} DPS</td>
 				</tr>
 			</table>
