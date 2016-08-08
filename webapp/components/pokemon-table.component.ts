@@ -114,13 +114,19 @@ export class PokemonTableComponent {
 	}
 
 	private _renamePokemon(pokemon: Pokemon, index: number){
-		this._renamingPokemonAtIndex = index;
+		let nickname = window['prompt']('Enter new nickname: ');
 
-		let nickname = window['prompt']('Enter new nickname');
+		if(nickname){
+			if(nickname.length > 12){
+				alert('Nicknames can be no longer than 12 characters. Sorry!');
+			} else {
+				this._renamingPokemonAtIndex = index;
 
-		this._pokemonService.renamePokemon(pokemon, nickname).then(() => {
-			this._renamingPokemonAtIndex = null;
-			this._pokemonService.retrievePokemon();
-		});
+				this._pokemonService.renamePokemon(pokemon, nickname).then(() => {
+					this._renamingPokemonAtIndex = null;
+					this._pokemonService.retrievePokemon();
+				});
+			}
+		}
 	}
 }
