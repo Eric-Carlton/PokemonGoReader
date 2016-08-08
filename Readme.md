@@ -48,6 +48,14 @@ FAQs
 
   If you use a Google account and have two factor authentication enabled, you will need to [generate an app password](https://security.google.com/settings/security/apppasswords) and use that to log in.
 
+* **I liked the original table layout instead of this fancified card layout. Can we bring that back?**
+  
+    Yes you can! If you want to see your Pokemon stats in a table, go to webapp/services/properties.service.ts and change the useTabularFormat format property to true. Restart the webapp portion ( or the whole thing if you're running with `npm start` ) and bingo-bango, you have the table again!
+
+* **I don't want to transfer Pokemon from this tool. In fact, I don't even want to *accidentally* transfer from this tool. Can I get rid of the transfer button?**
+
+  There's a config option for that as well! Go to webapp/services/properties.service.ts and change the showTransferButton format property to false. Restart the webapp portion ( or the whole thing if you're running with `npm start` ) and say goodbye to that transfer button!
+
 * **I want to allow other computers on my local network to access the tool from computer. Is that possible?**
   
   It sure is! You do, however, need to make some configuration changes. 
@@ -68,10 +76,6 @@ FAQs
 * **I'm facing an issue that hasn't been addressed here, or I'd like to add a feature request**
 
   [Open up an issue](https://github.com/Eric-Carlton/PokemonGoReader/issues). I try to respond to errors within 24 hrs - no guarantees - and I'll generall prioritize feature requests weekly. If an issue is marked 'free to take', that means I don't plan on getting to it any time soon, but anyone is welcome to fork my repo and submit a pull request!
-
-Notes
------
-* If you prefer not to have a transfer button in the table at all, you can change the showTransferButton property in webapp/services/properties.service.ts.
 
 Screenshots
 -----------

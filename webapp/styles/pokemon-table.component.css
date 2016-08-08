@@ -1,3 +1,24 @@
+table {
+	margin: 1.5em auto;
+}
+
+th, td {
+	padding: .5em;
+}
+
+table tr:nth-child(even) {
+	background-color: #e7e7e7;
+
+}
+table tr:nth-child(odd) {
+	background-color: #d7d7d7;
+}
+table th {
+	background-color: #c7c7c7;
+	text-align: left;
+	cursor: pointer;
+}
+
 .sortby-wrapper {
 	text-align: center;
 	margin-top: 1.5em;
@@ -34,8 +55,8 @@
 }
 .pokemon-list-item .iv {
 	position: absolute;
-  top: .5em;
-  left: .5em;
+	top: .5em;
+	left: .5em;
 	font-size: .9em;
 }
 .pokemon-list-item .iv img {
