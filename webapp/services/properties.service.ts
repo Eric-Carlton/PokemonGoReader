@@ -14,7 +14,7 @@ export class PropertiesService {
 	public pokemonStatsComponentTitle: string = 'Pokemon Stats';
 	public pokemonStatsComponentContent: string = 'Click a sort order to sort by that property. Default sort is Pokedex number, secondarily sorting by IV percentage where Pokedex number is the same, and finally sorting by CP where Pokedex number and IV percentage are the same.';
 
-	public useTabularFormat: boolean = true;
+	public useTabularFormat: boolean = false;
 
 	public showTransferButton: boolean = true;
 
