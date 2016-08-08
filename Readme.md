@@ -70,7 +70,7 @@ FAQs
 
   1. You're going to need to forward ports 8080 and 8008 in your router's settings. If you don't know how to do this, you can likely Google '&lt;your_router_model&gt; port forwarding' and figure it out.
   2. Next, you'll need to open up your firewall on ports 8080 and 8008, if you haven't done this already. 
-  3. Change the apiHost property in webapp/services/properties.service.ts to `'//<your_public_ip>:8008`. Your public IP can be obtained from an IP checker [like this one](https://whatismyipaddress.com).
+  3. Change the apiHost property in webapp/services/properties.service.ts to `'//<your_public_ip>:8008'`. Your public IP can be obtained from an IP checker [like this one](https://whatismyipaddress.com).
   4. You should now be able to access the tool from outside your local network by navigating to <your_public_ip>:8080. Your public IP is likely IPv6, which requires some [fancy address bar formatting](http://www.cyberciti.biz/faq/how-can-ipv6-address-used-with-webbrowser/) to get your browser to navigate to it. 
 
 * **I'm facing an issue that hasn't been addressed here, or I'd like to add a feature request**
