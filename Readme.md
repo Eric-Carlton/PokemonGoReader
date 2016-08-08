@@ -56,7 +56,7 @@ FAQs
 
   There's a config option for that as well! Go to webapp/services/properties.service.ts and change the showTransferButton format property to false. Restart the webapp portion ( or the whole thing if you're running with `npm start` ) and say goodbye to that transfer button!
 
-* **I want to allow other computers on my local network to access the tool from computer. Is that possible?**
+* **I want to allow other computers on my local network to access the tool from my computer. Is that possible?**
   
   It sure is! You do, however, need to make some configuration changes. 
 
