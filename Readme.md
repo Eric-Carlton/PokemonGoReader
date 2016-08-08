@@ -79,6 +79,10 @@ FAQs
   3. Change the apiHost property in webapp/services/properties.service.ts to `'//<your_public_ip>:8008'`. Your public IP can be obtained from an IP checker [like this one](https://whatismyipaddress.com).
   4. You should now be able to access the tool from outside your local network by navigating to <your_public_ip>:8080. Your public IP is likely IPv6, which requires some [fancy address bar formatting](http://www.cyberciti.biz/faq/how-can-ipv6-address-used-with-webbrowser/) to get your browser to navigate to it. 
 
+* **I'm trying to host this project on Amazon/Heroku/Azure, but I keep getting 403's on login**
+
+  Niantic has banned [a lot of major VPS providers](https://www.reddit.com/r/pokemongodev/comments/4vhygk/_/?st=irmo101z&sh=8816b817), so you'll have to search around to find one that isn't banned yet.
+
 * **I'm facing an issue that hasn't been addressed here, or I'd like to add a feature request**
 
   [Open up an issue](https://github.com/Eric-Carlton/PokemonGoReader/issues). I try to respond to errors within 24 hrs - no guarantees - and I'll generally prioritize feature requests weekly. If an issue is marked 'free to take', that means I don't plan on getting to it any time soon, but anyone is welcome to fork my repo and submit a pull request!
