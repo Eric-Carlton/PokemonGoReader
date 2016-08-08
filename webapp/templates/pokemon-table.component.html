@@ -1,4 +1,4 @@
-<table *ngIf="_useTabularFormat">
+<table id="stats-as-table" *ngIf="_useTabularFormat">
 	<tr>
 		<th *ngFor="let stat of _pokemonTableStats" (click)="_sortPokemon(stat.property, true)">{{stat.heading}}</th>
 		<th *ngIf="_showTransferButton">Transfer</th>

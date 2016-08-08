@@ -1,19 +1,19 @@
-table {
+table#stats-as-table {
 	margin: 1.5em auto;
 }
 
-th, td {
+table#stats-as-table th, table#stats-as-table td {
 	padding: .5em;
 }
 
-table tr:nth-child(even) {
+table#stats-as-table tr:nth-child(even) {
 	background-color: #e7e7e7;
 
 }
-table tr:nth-child(odd) {
+table#stats-as-table tr:nth-child(odd) {
 	background-color: #d7d7d7;
 }
-table th {
+table#stats-as-table th {
 	background-color: #c7c7c7;
 	text-align: left;
 	cursor: pointer;
