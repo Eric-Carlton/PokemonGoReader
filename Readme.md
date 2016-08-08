@@ -41,7 +41,8 @@ Building/Running
 Acknowlegements
 ---------------
 
-This project wouldn't be possible without [https://github.com/cyraxx](cyraxx) and the other developers over at [https://github.com/cyraxx/pogobuf](PogoBuf). They're doing all the heavy lifting. A huge thanks to everyone who's working on that project!
+ by 
+This project wouldn't be possible without [cyraxx](https://github.com/cyraxx) and the other developers over at [PogoBuf](https://github.com/cyraxx/pogobuf). They're doing all the heavy lifting. A huge thanks to everyone who's working on that project!
 
 FAQs
 -----
