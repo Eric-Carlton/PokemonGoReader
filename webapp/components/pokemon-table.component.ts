@@ -56,6 +56,8 @@ export class PokemonTableComponent {
 			return pokemon;
 		});
 
+		this._transferringPokemonAtIndex = null;
+		this._renamingPokemonAtIndex = null;
 		if(this._currentSortOrderName === ''){
 			this._sortPokemon(this._properties.defaultPokemonTableSortOrder, false);
 		} else {
@@ -97,12 +99,21 @@ export class PokemonTableComponent {
 	}
 
 	private _transferPokemon(pokemon: Pokemon, index: number){
-		this._transferringPokemonAtIndex = index;
+		let transfer = confirm('Are you sure that you want to transfer ' + 
+			pokemon.name + '?' + 
+			'\nCP: ' + pokemon.cp + 
+			'\nIV Percentage: ' + pokemon.iv_percentage + '%');
 
-		this._pokemonService.transferPokemon(pokemon).then(() => {
-			this._transferringPokemonAtIndex = null;
-			this._pokemonService.retrievePokemon();
-		});
+		if(transfer){
+			this._transferringPokemonAtIndex = index;
+
+			this._pokemonService.transferPokemon(pokemon).then(() => {
+				this._pokemonService.retrievePokemon();
+			}, () => {
+				this._transferringPokemonAtIndex = null;
+				alert('Transfer failed');
+			});
+		}
 	}
 
 	private _getRenameButtonText(index: number): string{
@@ -114,7 +125,7 @@ export class PokemonTableComponent {
 	}
 
 	private _renamePokemon(pokemon: Pokemon, index: number){
-		let nickname = window['prompt']('Enter new nickname: ');
+		let nickname = prompt('Enter new nickname: ');
 
 		if(nickname){
 			if(nickname.length > 12){
@@ -123,8 +134,10 @@ export class PokemonTableComponent {
 				this._renamingPokemonAtIndex = index;
 
 				this._pokemonService.renamePokemon(pokemon, nickname).then(() => {
-					this._renamingPokemonAtIndex = null;
 					this._pokemonService.retrievePokemon();
+				}, () => {
+					this._renamingPokemonAtIndex = null;
+					alert('Renaming failed');
 				});
 			}
 		}
