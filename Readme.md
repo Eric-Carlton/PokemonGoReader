@@ -38,6 +38,11 @@ Building/Running
 
   This will transpile the webapp, watch for front end changes and re-transpile when they are detected, and start a lite-server instance on [http://localhost:3000](http://localhost:3000).
 
+Acknowlegements
+---------------
+
+This project wouldn't be possible without [https://github.com/cyraxx](cyraxx) and the other developers over at [https://github.com/cyraxx/pogobuf](PogoBuf). They're doing all the heavy lifting. A huge thanks to everyone who's working on that project!
+
 FAQs
 -----
 * **Help! I'm seeing errors after an `npm start` on my Linux system! I've followed all of the setup instructions and it just isn't working!**
