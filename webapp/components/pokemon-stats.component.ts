@@ -21,8 +21,8 @@ export class PokemonStatsComponent implements OnDestroy {
 	@ViewChild(PokemonTableComponent) pokemonTable: PokemonTableComponent;
 
 	constructor(private _properties: PropertiesService, private _pokemonService: PokemonService){
-		this._subscription = this._pokemonService.pokemonChange.subscribe((event: any) => { 
-			this._pokemonLoaded = this._pokemonService.pokemon.length > 0 ? true : false;
+		this._subscription = this._pokemonService.pokemonChange.subscribe(() => { 
+			this._pokemonLoaded = this._pokemonService.pokemon.length > 0;
 			this.pokemonTable.pokemon = this._pokemonService.pokemon;
 		});
 	}

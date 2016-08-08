@@ -31,7 +31,7 @@ export class PokemonTableComponent {
 		this._pokemon = pokemons;
 
 		this._pokemon = this._pokemon.map(function (pokemon) {
-			pokemon.attacks = {
+			pokemon.moves = {
 			  fast: window['pokemon'][pokemon.pokedex_number].QuickMoves.map(function (moveNumber) {
 					let move = window['moves'][moveNumber];
 					return new Move(
@@ -51,8 +51,8 @@ export class PokemonTableComponent {
 					);
 				})
 			};
-			pokemon.type_1 = window['pokemon'][pokemon.pokedex_number].Type1.toLowerCase();
-			pokemon.type_2 = window['pokemon'][pokemon.pokedex_number].Type2.toLowerCase();
+			pokemon.move_type_1 = window['pokemon'][pokemon.pokedex_number].Type1.toLowerCase();
+			pokemon.move_type_2 = window['pokemon'][pokemon.pokedex_number].Type2.toLowerCase();
 			return pokemon;
 		});
 
@@ -108,7 +108,9 @@ export class PokemonTableComponent {
 			this._transferringPokemonAtIndex = index;
 
 			this._pokemonService.transferPokemon(pokemon).then(() => {
-				this._pokemonService.retrievePokemon();
+				this._pokemonService.retrievePokemon().then(() => {}, () => {
+					alert('Pokemon retrieval failed');
+				});
 			}, () => {
 				this._transferringPokemonAtIndex = null;
 				alert('Transfer failed');
@@ -134,7 +136,9 @@ export class PokemonTableComponent {
 				this._renamingPokemonAtIndex = index;
 
 				this._pokemonService.renamePokemon(pokemon, nickname).then(() => {
-					this._pokemonService.retrievePokemon();
+					this._pokemonService.retrievePokemon().then(() => {}, () => {
+						alert('Pokemon retrieval failed');
+					});
 				}, () => {
 					this._renamingPokemonAtIndex = null;
 					alert('Renaming failed');

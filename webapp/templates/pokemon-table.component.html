@@ -16,12 +16,12 @@
 			{{ mon.name }}
 		</div>
 		<div class="type">
-			<img src="http://serebii.net/pokedex-bw/type/{{ mon.type_1 }}.gif">
-			<img *ngIf="mon.type_2 !== 'None'" src="http://serebii.net/pokedex-bw/type/{{ mon.type_2 }}.gif">
+			<img src="http://serebii.net/pokedex-bw/type/{{ mon.move_type_1 }}.gif">
+			<img *ngIf="mon.move_type_2 !== 'None'" src="http://serebii.net/pokedex-bw/type/{{ mon.move_type_2 }}.gif">
 		</div>
 		<div class="moves">
 			<table>
-				<tr *ngFor="let atk of mon.attacks.fast">
+				<tr *ngFor="let atk of mon.moves.fast">
 					<td>
 						<img *ngIf="atk.selected" src="webapp/img/checkbox-filled-icon.png" class="selected-icon">
 						<img *ngIf="!atk.selected" src="webapp/img/checkbox-empty-icon.png" class="selected-icon">
@@ -31,7 +31,7 @@
 					<td>{{ atk.DPS }} DPS</td>
 				</tr>
 				<tr class="separator"></tr>
-				<tr *ngFor="let atk of mon.attacks.charged">
+				<tr *ngFor="let atk of mon.moves.charged">
 					<td>
 						<img *ngIf="atk.selected" src="webapp/img/checkbox-filled-icon.png" class="selected-icon">
 						<img *ngIf="!atk.selected" src="webapp/img/checkbox-empty-icon.png" class="selected-icon">
