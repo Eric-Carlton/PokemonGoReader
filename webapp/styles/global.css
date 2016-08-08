@@ -9,3 +9,8 @@ body {
 	color: #555;
 	background-color: #f7f7f7;
 }
+
+.error {
+	color: red;
+	font-weight: bold;
+}
