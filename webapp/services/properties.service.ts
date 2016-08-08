@@ -17,6 +17,7 @@ export class PropertiesService {
 	public useTabularFormat: boolean = false;
 
 	public showTransferButton: boolean = true;
+	public showRenameButton: boolean = true;
 
 	public pokemonTableStats: PokemonTableStat[] = [
 		new PokemonTableStat('name', 'Name'),

@@ -2,10 +2,12 @@
 	<tr>
 		<th *ngFor="let stat of _pokemonTableStats" (click)="_sortPokemon(stat.property, true)">{{stat.heading}}</th>
 		<th *ngIf="_showTransferButton">Transfer</th>
+		<th *ngIf="_showRenameButton">Rename</th>
 	</tr>
 	<tr *ngFor="let mon of _pokemon; let i = index">
 		<td *ngFor="let stat of _pokemonTableStats"><span *ngIf="_typeof(mon[stat.property]) === 'boolean' && mon[stat.property]">✓</span><span *ngIf="_typeof(mon[stat.property]) !== 'boolean'">{{mon[stat.property]}}</span></td>
 		<td *ngIf="_showTransferButton"><button type="button" [disabled]="mon.favorite || _transferringPokemonAtIndex !== null" (click)="_transferPokemon(mon, i)">{{_getTransferButtonText(i)}}</button></td>
+		<td *ngIf="_showRenameButton"><button type="button" [disabled]="_renamingPokemonAtIndex !== null || _transferringPokemonAtIndex !== null" (click)="_renamePokemon(mon, i)">{{_getRenameButtonText(i)}}</button></td>
 	</tr>
 </table>
 
@@ -83,7 +85,7 @@
 			</table>
 			<div class="actions">
 				<button *ngIf="_showTransferButton" type="button" [disabled]="mon.favorite || _transferringPokemonAtIndex !== null || _renamingPokemonAtIndex !== null" (click)="_transferPokemon(mon, i)">{{_getTransferButtonText(i)}}</button>
-				<button type="button" [disabled]="_renamingPokemonAtIndex !== null || _transferringPokemonAtIndex !== null" (click)="_renamePokemon(mon, i)">{{_getRenameButtonText(i)}}</button>
+				<button *ngIf="_showRenameButton" type="button" [disabled]="_renamingPokemonAtIndex !== null || _transferringPokemonAtIndex !== null" (click)="_renamePokemon(mon, i)">{{_getRenameButtonText(i)}}</button>
 			</div>
 			<!-- http://serebii.net/pokedex-bw/type/psychic.gif -->
 			<!-- http://serebii.net/pokemongo/4energy.png -->

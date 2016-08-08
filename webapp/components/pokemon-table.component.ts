@@ -19,6 +19,7 @@ export class PokemonTableComponent {
 	private _useTabularFormat: boolean = this._properties.useTabularFormat;
 	private _pokemonTableStats: PokemonTableStat[] = this._properties.pokemonTableStats;
 	private _showTransferButton: boolean = this._properties.showTransferButton;
+	private _showRenameButton: boolean = this._properties.showRenameButton;
 	//right now we're only allowing 1 transfer at a time, like God intended,
 	//this may need to be updated later to allow for batch transfers
 	private _transferringPokemonAtIndex: number = null;

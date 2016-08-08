@@ -55,11 +55,11 @@ FAQs
 
 * **I liked the original table layout instead of this fancified card layout. Can we bring that back?**
   
-    Yes you can! If you want to see your Pokemon stats in a table, go to webapp/services/properties.service.ts and change the useTabularFormat format property to true. Restart the webapp portion ( or the whole thing if you're running with `npm start` ) and bingo-bango, you have the table again!
+    Yes you can! If you want to see your Pokemon stats in a table, go to webapp/services/properties.service.ts and change the useTabularFormat property to true. Restart the webapp portion ( or the whole thing if you're running with `npm start` ) and bingo-bango, you have the table again!
 
-* **I don't want to transfer Pokemon from this tool. In fact, I don't even want to *accidentally* transfer from this tool. Can I get rid of the transfer button?**
+* **I don't want to transfer or rename Pokemon from this tool. In fact, I don't even want to *accidentally* transfer or rename from this tool. Can I get rid of those buttons?**
 
-  There's a config option for that as well! Go to webapp/services/properties.service.ts and change the showTransferButton format property to false. Restart the webapp portion ( or the whole thing if you're running with `npm start` ) and say goodbye to that transfer button!
+  There's a config option for that as well! Go to webapp/services/properties.service.ts and change the showTransferButton and/or the showRenameButton property to false. Restart the webapp portion ( or the whole thing if you're running with `npm start` ) and say goodbye to that rename and/or transfer button!
 
 * **I want to allow other computers on my local network to access the tool from my computer. Is that possible?**
   
