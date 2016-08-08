@@ -42,7 +42,7 @@ FAQs
 -----
 * **Help! I'm seeing errors after an `npm start` on my Linux system! I've followed all of the setup instructions and it just isn't working!**
 
-  The postinstall script doesn't seem to run automatically on some Linux systems. Try running `npm run postinstall` after `npm install`. See issue #1 for a full description.
+  The postinstall script doesn't seem to run automatically on some Linux systems. Try running `npm run postinstall` after `npm install`. See [issue #1](https://github.com/Eric-Carlton/PokemonGoReader/issues/1) for a full description.
 
 * **I can't seem to log in with my Google account, even though I know I'm using the correct email and password. What gives?**
 
