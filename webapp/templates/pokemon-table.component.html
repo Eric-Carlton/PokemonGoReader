@@ -70,8 +70,8 @@
 			</tr>
 		</table>
 		<div class="actions">
-			<button *ngIf="_showTransferButton" type="button" [disabled]="mon.favorite || _transferringPokemonAtIndex !== null" (click)="_transferPokemon(mon, i)">{{_getTransferButtonText(i)}}</button>
-			<button type="button" [disabled]="_renamingPokemonAtIndex !== null" (click)="_renamePokemon(mon, i)">{{_getRenameButtonText(i)}}</button>
+			<button *ngIf="_showTransferButton" type="button" [disabled]="mon.favorite || _transferringPokemonAtIndex !== null || _renamingPokemonAtIndex !== null" (click)="_transferPokemon(mon, i)">{{_getTransferButtonText(i)}}</button>
+			<button type="button" [disabled]="_renamingPokemonAtIndex !== null || _transferringPokemonAtIndex !== null" (click)="_renamePokemon(mon, i)">{{_getRenameButtonText(i)}}</button>
 		</div>
 		<!-- http://serebii.net/pokedex-bw/type/psychic.gif -->
 		<!-- http://serebii.net/pokemongo/4energy.png -->
