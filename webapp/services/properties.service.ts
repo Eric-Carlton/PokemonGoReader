@@ -29,7 +29,7 @@ export class PropertiesService {
 		new PokemonTableStat('attack_iv', 'Attack IV'),
 		new PokemonTableStat('defense_iv', 'Defense IV'),
 		new PokemonTableStat('stamina_iv', 'Stamina IV'),
-		new PokemonTableStat('iv_percentage', 'IV Percentage'),
+		new PokemonTableStat('iv_percentage', 'IV Percent'),
 		new PokemonTableStat('favorite', 'Favorite')
 	];
 

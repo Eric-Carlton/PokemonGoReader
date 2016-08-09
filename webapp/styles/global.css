@@ -2,12 +2,16 @@
 
 body {
 	margin: 0 auto;
-	max-width: 65em;
+	max-width: 70em;
 	line-height: 1.5;
 	padding: 4em 1em;
 	font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 	color: #555;
 	background-color: #f7f7f7;
+}
+
+p {
+	text-align: center;
 }
 
 .error {

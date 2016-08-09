@@ -2,8 +2,22 @@ table#stats-as-table {
 	margin: 1.5em auto;
 }
 
+table#stats-as-table thead tr{
+	position: relative;
+	display: block;
+}
+
+table#stats-as-table tbody{
+	display: block;
+	overflow: auto;
+	height: 400px;
+}
+
+
 table#stats-as-table th, table#stats-as-table td {
 	padding: .5em;
+	max-width: 4.5em;
+	min-width: 4.5em;
 }
 
 table#stats-as-table tr:nth-child(even) {

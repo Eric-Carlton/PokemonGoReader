@@ -1,14 +1,25 @@
 <table id="stats-as-table" *ngIf="_useTabularFormat">
-	<tr>
-		<th *ngFor="let stat of _pokemonTableStats" (click)="_sortPokemon(stat.property, true)">{{stat.heading}}</th>
-		<th *ngIf="_showTransferButton">Transfer</th>
-		<th *ngIf="_showRenameButton">Rename</th>
-	</tr>
-	<tr *ngFor="let mon of _pokemon; let i = index">
-		<td *ngFor="let stat of _pokemonTableStats"><span *ngIf="_typeof(mon[stat.property]) === 'boolean' && mon[stat.property]">✓</span><span *ngIf="_typeof(mon[stat.property]) !== 'boolean'">{{mon[stat.property]}}</span></td>
-		<td *ngIf="_showTransferButton"><button type="button" [disabled]="mon.favorite || _transferringPokemonAtIndex !== null" (click)="_transferPokemon(mon, i)">{{_getTransferButtonText(i)}}</button></td>
-		<td *ngIf="_showRenameButton"><button type="button" [disabled]="_renamingPokemonAtIndex !== null || _transferringPokemonAtIndex !== null" (click)="_renamePokemon(mon, i)">{{_getRenameButtonText(i)}}</button></td>
-	</tr>
+	<thead>
+		<tr>
+			<th *ngFor="let stat of _pokemonTableStats" (click)="_sortPokemon(stat.property, true)">{{stat.heading}}</th>
+			<th *ngIf="_showTransferButton">Transfer</th>
+			<th *ngIf="_showRenameButton">Rename</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let mon of _pokemon; let i = index">
+			<td *ngFor="let stat of _pokemonTableStats">
+				<span *ngIf="_typeof(mon[stat.property]) === 'boolean' && mon[stat.property]">✓</span>
+				<span *ngIf="_typeof(mon[stat.property]) !== 'boolean'">{{mon[stat.property]}}</span>
+			</td>
+			<td *ngIf="_showTransferButton">
+				<button type="button" [disabled]="mon.favorite || _transferringPokemonAtIndex !== null" (click)="_transferPokemon(mon, i)">{{_getTransferButtonText(i)}}</button>
+			</td>
+			<td *ngIf="_showRenameButton">
+				<button type="button" [disabled]="_renamingPokemonAtIndex !== null || _transferringPokemonAtIndex !== null" (click)="_renamePokemon(mon, i)">{{_getRenameButtonText(i)}}</button>
+			</td>
+		</tr>
+	</tbody>
 </table>
 
 <div *ngIf="!_useTabularFormat">
