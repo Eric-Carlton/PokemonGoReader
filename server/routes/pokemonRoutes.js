@@ -2,6 +2,7 @@
 
 const bunyan = require('bunyan');
 const pogobuf = require('pogobuf');
+const Long = require('long');
 
 const props = require('../config/properties.js');
 const expressUtils = require('../utils/expressUtils.js');
@@ -62,8 +63,12 @@ module.exports = {
 
 							for(let i = 0; i < rawPokemon.length; i++){
 								let pokemon = rawPokemon[i];
-
 								let id = pokemon.pokemon_id.toString();
+								let caught_time = new Long(
+									pokemon.creation_time_ms.low, 
+									pokemon.creation_time_ms.high, 
+									pokemon.creation_time_ms.unsigned
+								);
 
 								if(pokemon.hasOwnProperty('is_egg') && !pokemon.is_egg){
 									let candy = 0;
@@ -113,7 +118,8 @@ module.exports = {
 										props.pokemonNamesByDexNum[props.pokemonFamilyIdByPokedexNum[pokemon.pokemon_id]],
 										pokemon.id,
 										pokemon.move_1,
-										pokemon.move_2
+										pokemon.move_2,
+										caught_time.toString()
 									));
 								}
 							}

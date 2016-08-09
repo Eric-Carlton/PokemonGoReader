@@ -31,7 +31,8 @@ export class PropertiesService {
 		new PokemonTableStat('defense_iv', 'Defense IV'),
 		new PokemonTableStat('stamina_iv', 'Stamina IV'),
 		new PokemonTableStat('iv_percentage', 'IV Percent'),
-		new PokemonTableStat('favorite', 'Favorite')
+		new PokemonTableStat('favorite', 'Favorite'),
+		new PokemonTableStat('caught_time', 'Caught Time')
 	];
 
 	public defaultPokemonTableSortOrder: string = 'pokedex_number';
@@ -108,6 +109,10 @@ export class PropertiesService {
 		new SortType('favorite', false),
 		new SortType('iv_percentage', false),
 		new SortType('pokedex_number', true)
+		],
+
+		caught_time: [
+		new SortType('caught_time', false)
 		]
 	};
 }

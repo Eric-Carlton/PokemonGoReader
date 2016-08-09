@@ -18,6 +18,7 @@ export class Pokemon {
 		public move_2: number,
 		public moves: any,
 		public move_type_1: string,
-		public move_type_2: string
+		public move_type_2: string,
+		public caught_time: string
 	){ }
 }
