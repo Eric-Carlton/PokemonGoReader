@@ -9,8 +9,8 @@ table#stats-as-table thead tr{
 
 table#stats-as-table tbody{
 	display: block;
-	overflow: auto;
-	height: 400px;
+	overflow-y: scroll;
+	height: 600px;
 }
 
 
