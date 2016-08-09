@@ -67,10 +67,16 @@
 					</tr>
 				</table>
 			</div>
-			<div class="candies">
-				<img src="webapp/img/candy-icon.png">
-				{{ mon.candy }}
-			</div>
+			<table class="candies">
+				<tr>
+					<td><img src="webapp/img/candy-icon.png"></td>
+					<td>{{ mon.candy }}</td>
+				</tr>
+				<tr *ngFor="let descendant of mon.evolve">
+					<td><img class="image" src="https://silphassets.a.cdnify.io/img/pokemon/icons/16x16/{{descendant.id}}.png"/></td>
+					<td>{{ descendant.canEvolve }}</td>
+				</tr>
+			</table>
 			<table class="iv">
 				<tr>
 					<td><img src="webapp/img/strength-icon.png"></td>

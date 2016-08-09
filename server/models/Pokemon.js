@@ -14,6 +14,8 @@ class Pokemon {
 		cp,
 		favorite,
 		candy,
+		evolve_sort,
+		evolve,
 		family_name,
 		id,
 		move_1,
@@ -32,6 +34,8 @@ class Pokemon {
 		this.cp = cp;
 		this.favorite = favorite;
 		this.candy = candy;
+		this.evolve_sort = evolve_sort;
+		this.evolve = evolve;
 		this.family_name = family_name;
 		this.id = id;
 		this.move_1 = move_1;

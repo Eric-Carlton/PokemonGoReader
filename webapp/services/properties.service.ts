@@ -24,6 +24,7 @@ export class PropertiesService {
 		new PokemonTableStat('species', 'Species'),
 		new PokemonTableStat('pokedex_number', 'Pokedex Number'),
 		new PokemonTableStat('candy', 'Candy'),
+		new PokemonTableStat('evolve', 'Evolutions'),
 		new PokemonTableStat('cp', 'CP'),
 		new PokemonTableStat('max_hp', 'Max HP'),
 		new PokemonTableStat('attack_iv', 'Attack IV'),
@@ -64,6 +65,12 @@ export class PropertiesService {
 		new SortType('cp', false),
 		new SortType('iv_percentage', false),
 		new SortType('pokedex_number', true)
+		],
+
+		evolve: [
+		new SortType('evolve_sort', false),
+		new SortType('pokedex_number', true),
+		new SortType('iv_percentage', false)
 		],
 
 		max_hp: [
