@@ -58,22 +58,41 @@ module.exports = {
 
 							let formattedPokemon = [];
 
+							let evolveMap = {};
+
 							for(let i = 0; i < rawPokemon.length; i++){
 								let pokemon = rawPokemon[i];
+
+								let id = pokemon.pokemon_id.toString();
 
 								if(pokemon.hasOwnProperty('is_egg') && !pokemon.is_egg){
 									let candy = 0;
 									for(let j = 0; j < rawCandies.length; j++){
 										let rawCandy = rawCandies[j];
 
-										if(rawCandy.family_id.toString() === props.pokemonFamilyIdByPokedexNum[pokemon.pokemon_id.toString()]){
+										if(rawCandy.family_id.toString() === props.pokemonFamilyIdByPokedexNum[id]){
 											candy = rawCandy.candy;
 										}
 									}
 
-									let name = props.pokemonNamesByDexNum[pokemon.pokemon_id.toString()];
+									let name = props.pokemonNamesByDexNum[id];
 									if(pokemon.hasOwnProperty('nickname') && pokemon.nickname.length > 0){
 										name = pokemon.nickname;
+									}
+
+									let evolve = {'sort': 0, 'descendants': []};
+									if (id in evolveMap){
+										evolve = evolveMap[id]
+									} else {
+										props.pokemonEvolutionByDexNum[id].forEach(function(descendant){
+											let canEvolve = Math.trunc(candy / descendant.cost);
+											if (canEvolve > 0){
+												evolve.sort = Math.max(evolve.sort, canEvolve);
+												evolve.descendants.push({'id': descendant.id, 'canEvolve': canEvolve});
+											}
+										});
+
+										evolveMap[id] = evolve;
 									}
 
 									formattedPokemon.push(new Pokemon(
@@ -89,6 +108,8 @@ module.exports = {
 										pokemon.cp,
 										pokemon.favorite === 1,
 										candy,
+										evolve.sort,
+										evolve.descendants,
 										props.pokemonNamesByDexNum[props.pokemonFamilyIdByPokedexNum[pokemon.pokemon_id]],
 										pokemon.id,
 										pokemon.move_1,
