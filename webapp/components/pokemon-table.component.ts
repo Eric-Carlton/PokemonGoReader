@@ -34,20 +34,20 @@ export class PokemonTableComponent {
 
 		this._pokemon = this._pokemon.map(function (pokemon) {
 			pokemon.moves = {
-			  fast: window['pokemon'][pokemon.pokedex_number].QuickMoves.map(function (moveNumber) {
-					let move = window['moves'][moveNumber];
+			  fast: window['pokemon'][pokemon.pokedex_number].QuickMoves.map(function (moveNumber: string) {
+					let move = window['moves'][moveNumber.toString()];
 					return new Move(
 						move.Type.toLowerCase(),
-						pokemon.move_1 === moveNumber,
+						pokemon.move_1.toString() === moveNumber.toString(),
 						move.DPS,
 						move.Name
 					);
 				}),
-				charged: window['pokemon'][pokemon.pokedex_number].CinematicMoves.map(function (moveNumber) {
-					let move = window['moves'][moveNumber];
+				charged: window['pokemon'][pokemon.pokedex_number].CinematicMoves.map(function (moveNumber: string) {
+					let move = window['moves'][moveNumber.toString()];
 					return new Move(
 						move.Type.toLowerCase(),
-						pokemon.move_2 === moveNumber,
+						pokemon.move_2.toString() === moveNumber.toString(),
 						move.DPS,
 						move.Name
 					);
