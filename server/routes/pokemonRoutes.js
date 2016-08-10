@@ -90,7 +90,7 @@ module.exports = {
 										evolve = evolveMap[id]
 									} else {
 										props.pokemonEvolutionByDexNum[id].forEach(function(descendant){
-											let canEvolve = Math.trunc(candy / descendant.cost);
+											let canEvolve = Math.trunc((candy - 1) / (descendant.cost - 1));
 											if (canEvolve > 0){
 												evolve.sort = Math.max(evolve.sort, canEvolve);
 												evolve.descendants.push({'id': descendant.id, 'canEvolve': canEvolve});
