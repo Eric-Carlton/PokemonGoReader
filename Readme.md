@@ -68,7 +68,7 @@ FAQs
 
 * **There's a lot of information in the table layout, some of which I don't even care about. Is it possible to remove some of the noise?**
   
-  Sure! There's configuration available for this. Go to webapp/services/properties.service.ts and look for the pokemonTableStats property. Just remove anything from that array that you don't want to see in your table. Once #28 is implemented, you'll be able to change this and some other config options mentioned in this FAQ from the UI.
+  Sure! There's configuration available for this. Go to webapp/services/properties.service.ts and look for the pokemonTableStats property. Just remove anything from that array that you don't want to see in your table. Once [issue #28](https://github.com/Eric-Carlton/PokemonGoReader/issues/28) is implemented, you'll be able to change this and some other config options mentioned in this FAQ from the UI.
 
 * **I want to allow other computers on my local network to access the tool from my computer. Is that possible?**
   
