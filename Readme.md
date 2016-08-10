@@ -44,6 +44,25 @@ Acknowlegements
 
 * Using [justinleewells](https://github.com/justinleewells) [level-to-cp](https://github.com/justinleewells/pogo-optimizer/blob/master/data/game/level-to-cpm.json) map to calculate Pokemon level. Head over there and give his [pogo-optimizer](https://github.com/justinleewells/pogo-optimizer) project a look. It looks pretty neat!
 
+Warning
+-------
+
+Pulling data from Niantic by anything other than the Pokemon Go app violates the Pokemon Go Terms of Use:
+
+>5. USER RIGHTS AND RESTRICTIONS. These Terms grant permission to you, in your individual capacity, to use the content of Service made available to you for personal, noncommercial home use only. In no instance may you:
+>
+> ... 
+>
+> (ii) Modify, or create derivative works based on, the content;
+>
+>(iii) Use, or facilitate the use of, any unauthorized third-party software (e.g. bots, mods, hacks, and scripts) to modify or automate operation within the Service whether for yourself or for a third party.
+>
+>...
+>
+>(vi) Decompose, disassemble, or reverse engineer any part of any Service, or otherwise use a Service for any purpose other than those provided for by us and in conjunction with the operations of the Service;
+
+I haven't heard of any instances of account bans for reasons other than botting or mapping, but keep in mind there is a risk when using this tool or others like it. 
+
 Known Issues 
 ------------
 * IE doesn't like the CSS used in the table. Solution: don't use IE.
