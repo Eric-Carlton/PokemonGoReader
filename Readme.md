@@ -5,8 +5,11 @@ Requests information about Pokemon currently in inventory from Niantic and displ
 IV Explanation
 --------------
 ![IV Explanation Panel 1](http://i.imgur.com/eM1JBYM.png "IV Explanation Panel 1")
+
 ![IV Explanation Panel 2](http://i.imgur.com/K0bgtif.png "IV Explanation Panel 2")
+
 ![IV Explanation Panel 3](http://i.imgur.com/pd1hC2C.png "IV Explanation Panel 3")
+
 ![IV Explanation Panel 4](http://i.imgur.com/7Ca1qE9.png "IV Explanation Panel 4")
 
 Dependencies
