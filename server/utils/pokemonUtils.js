@@ -12,9 +12,14 @@ const log = bunyan.createLogger({
 
 module.exports = {
 	getLevel: (pokemon) => {
+		let cp = pokemon.cp_multiplier;
+		if(pokemon.hasOwnProperty('additional_cp_multiplier')){
+			cp += pokemon.additional_cp_multiplier 
+		}
+
 		for(level in props.pokemonCpMulipliersByLevel){
 			if(props.pokemonCpMulipliersByLevel.hasOwnProperty(level) &&
-				Math.abs(pokemon.cp_multiplier - props.pokemonCpMulipliersByLevel[level]) < 0.0001){
+				Math.abs(cp - props.pokemonCpMulipliersByLevel[level]) < 0.0001){
 				return parseFloat(level);
 			}
 		}
