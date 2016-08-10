@@ -1,3 +1,5 @@
+"use strict";
+
 const bunyan = require('bunyan');
 
 const props = require('../config/properties.js');
