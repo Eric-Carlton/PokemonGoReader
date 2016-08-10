@@ -35,6 +35,9 @@
 				CP {{ mon.cp }}
 				<img *ngIf="mon.favorite" class="favorite" src="webapp/img/star-icon.png">
 			</div>
+			<div>
+				Level {{ mon.level }}
+			</div>
 			<img class="image" src="https://silphassets.a.cdnify.io/img/pokemon/icons/96x96/{{mon.pokedex_number}}.png" title="{{mon.species}}"/>
 			<div class="name">
 				{{ mon.name }}

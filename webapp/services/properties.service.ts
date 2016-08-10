@@ -15,12 +15,13 @@ export class PropertiesService {
 	public pokemonStatsComponentTitle: string = 'Pokemon Stats';
 	public pokemonStatsComponentContent: string = 'Click a sort order to sort by that property. Default sort is Pokedex number, secondarily sorting by IV percentage where Pokedex number is the same, and finally sorting by CP where Pokedex number and IV percentage are the same.';
 
-	public useTabularFormat: boolean = false;
+	public useTabularFormat: boolean = true;
 
 	public showTransferButton: boolean = true;
 	public showRenameButton: boolean = true;
 
 	public pokemonTableStats: PokemonTableStat[] = [
+		new PokemonTableStat('level', 'Level'),
 		new PokemonTableStat('name', 'Name'),
 		new PokemonTableStat('species', 'Species'),
 		new PokemonTableStat('pokedex_number', 'Pokedex Number'),
@@ -37,6 +38,14 @@ export class PropertiesService {
 
 	public defaultPokemonTableSortOrder: string = 'pokedex_number';
 	public pokemonTableSortOrders: any = {
+		level: new SortOrder(
+			'Level', [
+			new SortType('level', false),
+			new SortType('pokedex_number', true),
+			new SortType('iv_percentage', false),
+			new SortType('cp', false)]
+		),
+
 		name: new SortOrder(
 			'Name', [
 			new SortType('name', true),

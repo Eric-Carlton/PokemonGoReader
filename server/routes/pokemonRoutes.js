@@ -6,6 +6,7 @@ const Long = require('long');
 
 const props = require('../config/properties.js');
 const expressUtils = require('../utils/expressUtils.js');
+const pokemonUtils = require('../utils/pokemonUtils.js');
 
 const Pokemon = require('../models/Pokemon.js');
 
@@ -53,8 +54,6 @@ module.exports = {
 
 							let splitInventory = pogobuf.Utils.splitInventory(inventory);
 
-							let rawCandies = splitInventory.candies;
-
 							let rawPokemon = splitInventory.pokemon;
 
 							let formattedPokemon = [];
@@ -63,7 +62,7 @@ module.exports = {
 
 							for(let i = 0; i < rawPokemon.length; i++){
 								let pokemon = rawPokemon[i];
-								let id = pokemon.pokemon_id.toString();
+
 								let caught_time = new Long(
 									pokemon.creation_time_ms.low, 
 									pokemon.creation_time_ms.high, 
@@ -71,25 +70,14 @@ module.exports = {
 								);
 
 								if(pokemon.hasOwnProperty('is_egg') && !pokemon.is_egg){
-									let candy = 0;
-									for(let j = 0; j < rawCandies.length; j++){
-										let rawCandy = rawCandies[j];
-
-										if(rawCandy.family_id.toString() === props.pokemonFamilyIdByPokedexNum[id]){
-											candy = rawCandy.candy;
-										}
-									}
-
-									let name = props.pokemonNamesByDexNum[id];
-									if(pokemon.hasOwnProperty('nickname') && pokemon.nickname.length > 0){
-										name = pokemon.nickname;
-									}
+									let id = pokemon.pokemon_id.toString();
+									let candy = pokemonUtils.getCandy(pokemon, splitInventory.candies);
 
 									let evolve = {'sort': 0, 'descendants': []};
 									if (id in evolveMap){
 										evolve = evolveMap[id]
 									} else {
-										props.pokemonEvolutionByDexNum[id].forEach(function(descendant){
+										props.pokemonEvolutionByDexNum[id].forEach(descendant => {
 											let canEvolve = Math.trunc(candy / descendant.cost);
 											if (canEvolve > 0){
 												evolve.sort = Math.max(evolve.sort, canEvolve);
@@ -102,7 +90,7 @@ module.exports = {
 
 									formattedPokemon.push(new Pokemon(
 										pokemon.pokemon_id,
-										name,
+										pokemonUtils.getName(pokemon),
 										props.pokemonNamesByDexNum[pokemon.pokemon_id.toString()],
 										pokemon.individual_attack,
 										pokemon.individual_defense,
@@ -119,7 +107,8 @@ module.exports = {
 										pokemon.id,
 										pokemon.move_1,
 										pokemon.move_2,
-										caught_time.toString()
+										caught_time.toString(),
+										pokemonUtils.getLevel(pokemon)
 									));
 								}
 							}
