@@ -1,6 +1,9 @@
 <div id="pokemon-stats-component" [hidden]="!_pokemonLoaded">
 	<section>
-		<h1>{{_title}}</h1>
+		<section class="title">
+			<h1 id="title-heading">{{_title}}</h1>
+			<img id="refresh-img" src="webapp/img/refresh-icon.png" (click)="_refreshPokemon()">
+		</section>
 		<p>{{_content}}</p>
 	</section>
 	<pokemon-table></pokemon-table>

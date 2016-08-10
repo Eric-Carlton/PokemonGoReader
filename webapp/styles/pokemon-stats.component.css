@@ -1,3 +1,11 @@
 #pokemon-stats-component h1{
 	text-align: center;
 }
+
+#pokemon-stats-component .title{
+	text-align: center
+}
+
+#title-heading, #refresh-img{
+	display: inline-block;
+}
