@@ -44,6 +44,10 @@ Acknowlegements
 
 * Using [justinleewells](https://github.com/justinleewells) [level-to-cp](https://github.com/justinleewells/pogo-optimizer/blob/master/data/game/level-to-cpm.json) map to calculate Pokemon level. Head over there and give his [pogo-optimizer](https://github.com/justinleewells/pogo-optimizer) project a look. It looks pretty neat!
 
+Known Issues 
+------------
+* IE doesn't like the CSS used in the table. Solution: don't use IE.
+
 FAQs
 -----
 * **Help! I'm seeing errors after an `npm start` on my Linux system! I've followed all of the setup instructions and it just isn't working!**
