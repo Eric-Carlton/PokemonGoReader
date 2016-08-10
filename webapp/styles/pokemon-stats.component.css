@@ -9,3 +9,7 @@
 #title-heading, #refresh-img{
 	display: inline-block;
 }
+
+#refresh-img{
+	cursor: pointer;
+}
