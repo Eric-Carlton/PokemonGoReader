@@ -49,7 +49,7 @@ Warning
 
 Pulling data from Niantic by anything other than the Pokemon Go app violates the Pokemon Go Terms of Use:
 
->5. USER RIGHTS AND RESTRICTIONS. These Terms grant permission to you, in your individual capacity, to use the content of Service made available to you for personal, noncommercial home use only. In no instance may you:
+>USER RIGHTS AND RESTRICTIONS. These Terms grant permission to you, in your individual capacity, to use the content of Service made available to you for personal, noncommercial home use only. In no instance may you:
 >
 > ... 
 >
