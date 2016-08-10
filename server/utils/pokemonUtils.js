@@ -19,7 +19,7 @@ module.exports = {
 			cp += pokemon.additional_cp_multiplier 
 		}
 
-		for(level in props.pokemonCpMulipliersByLevel){
+		for(let level in props.pokemonCpMulipliersByLevel){
 			if(props.pokemonCpMulipliersByLevel.hasOwnProperty(level) &&
 				Math.abs(cp - props.pokemonCpMulipliersByLevel[level]) < 0.0001){
 				return parseFloat(level);
