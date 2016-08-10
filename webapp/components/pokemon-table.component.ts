@@ -119,7 +119,7 @@ export class PokemonTableComponent {
 	}
 
 	private _getTransferButtonText(index: number): string{
-		if(this._transferringPokemonAtIndex && this._transferringPokemonAtIndex === index){
+		if(this._transferringPokemonAtIndex === index){
 			return 'Transferring...';
 		}
 
@@ -147,7 +147,7 @@ export class PokemonTableComponent {
 	}
 
 	private _getRenameButtonText(index: number): string{
-		if(this._renamingPokemonAtIndex && this._renamingPokemonAtIndex === index){
+		if(this._renamingPokemonAtIndex === index){
 			return 'Renaming...';
 		}
 
