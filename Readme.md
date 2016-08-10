@@ -118,6 +118,6 @@ Screenshots
 -----------
 ![Login Screen](http://i.imgur.com/tCTIO5a.png "Login Screen")
 
-![Pokemon Stats Cards](http://i.imgur.com/eRLGmxJ.png "Pokemon Stats Cards") 
+![Pokemon Stats Cards](http://i.imgur.com/MqTUnFt.png "Pokemon Stats Cards") 
 
-![Pokemon Stats Table](http://i.imgur.com/YyHxywk.png "Pokemon Stats Table") 
+![Pokemon Stats Table](http://i.imgur.com/NY7UQlQ.png "Pokemon Stats Table") 
