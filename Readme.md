@@ -42,7 +42,7 @@ Acknowlegements
 ---------------
 * This project wouldn't be possible without [cyraxx](https://github.com/cyraxx) and the other developers over at [PogoBuf](https://github.com/cyraxx/pogobuf). They're doing all the heavy lifting. A huge thanks to everyone who's working on that project!
 
-* Using [justinleewells](https://github.com/justinleewells) [level-to-cp](https://github.com/justinleewells/pogo-optimizer/blob/master/data/game/level-to-cpm.json) map to calculate Pokemon level. Head over there and give his [pogo-optimizer](https://github.com/justinleewells/pogo-optimizer) project a look. It looks pretty neat!
+* Using [justinleewells](https://github.com/justinleewells) [level-to-cp](https://github.com/justinleewells/pogo-optimizer/blob/master/data/game/level-to-cpm.json) map to calculate Pokemon level.
 
 Warning
 -------
