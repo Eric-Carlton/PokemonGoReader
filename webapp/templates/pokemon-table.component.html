@@ -9,8 +9,7 @@
 	<tbody>
 		<tr *ngFor="let mon of _pokemon; let i = index">
 			<td *ngFor="let stat of _pokemonTableStats">
-				<span *ngIf="_typeof(mon[stat.property]) === 'boolean' && mon[stat.property]">✓</span>
-				<span *ngIf="_typeof(mon[stat.property]) !== 'boolean'">{{mon[stat.property]}}</span>
+				<span>{{_getTableOutput(mon, stat.property)}}</span>
 			</td>
 			<td *ngIf="_showTransferButton">
 				<button type="button" [disabled]="mon.favorite || _transferringPokemonAtIndex !== null" (click)="_transferPokemon(mon, i)">{{_getTransferButtonText(i)}}</button>
@@ -25,8 +24,8 @@
 <div *ngIf="!_useTabularFormat">
 	<div class="sortby-wrapper">
 		<span>Sort Orders: </span>
-		<div class="sortby-item" *ngFor="let stat of _pokemonTableStats" (click)="_sortPokemon(stat.property, true)">
-			{{stat.heading}}
+		<div class="sortby-item" *ngFor="let key of _getSortOrders()" (click)="_sortPokemon(key, true)">
+			{{_pokemonTableSortOrders[key].name}}
 		</div>
 	</div>
 

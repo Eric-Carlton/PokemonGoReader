@@ -1,4 +1,5 @@
 import { SortType } from '../models/sort-type.model'
+import { SortOrder } from '../models/sort-order.model'
 import { PokemonTableStat } from '../models/pokemon-table-stat.model'
 
 export class PropertiesService {
@@ -24,7 +25,6 @@ export class PropertiesService {
 		new PokemonTableStat('species', 'Species'),
 		new PokemonTableStat('pokedex_number', 'Pokedex Number'),
 		new PokemonTableStat('candy', 'Candy'),
-		new PokemonTableStat('evolve', 'Evolutions'),
 		new PokemonTableStat('cp', 'CP'),
 		new PokemonTableStat('max_hp', 'Max HP'),
 		new PokemonTableStat('attack_iv', 'Attack IV'),
@@ -37,82 +37,92 @@ export class PropertiesService {
 
 	public defaultPokemonTableSortOrder: string = 'pokedex_number';
 	public pokemonTableSortOrders: any = {
-		name: [
-		new SortType('name', true),
-		new SortType('iv_percentage', false),
-		new SortType('cp', false)
-		],
+		name: new SortOrder(
+			'Name', [
+			new SortType('name', true),
+			new SortType('iv_percentage', false),
+			new SortType('cp', false)]
+		),
 
-		species: [
-		new SortType('species', true),
-		new SortType('iv_percentage', false),
-		new SortType('cp', false)
-		],
+		species: new SortOrder(
+			'Species', [
+			new SortType('species', true),
+			new SortType('iv_percentage', false),
+			new SortType('cp', false)]
+		),
 
-		pokedex_number: [
-		new SortType('pokedex_number', true),
-		new SortType('iv_percentage', false),
-		new SortType('cp', false)
-		],
+		pokedex_number: new SortOrder(
+			'Pokedex Number', [
+			new SortType('pokedex_number', true),
+			new SortType('iv_percentage', false),
+			new SortType('cp', false)]
+		),
 
-		candy: [
-		new SortType('candy', false),
-		new SortType('pokedex_number', true),
-		new SortType('cp', false),
-		new SortType('iv_percentage', false)
-		],
+		candy: new SortOrder(
+			'Candy', [
+			new SortType('candy', false),
+			new SortType('pokedex_number', true),
+			new SortType('cp', false),
+			new SortType('iv_percentage', false)]
+		),
 
-		cp: [
-		new SortType('cp', false),
-		new SortType('iv_percentage', false),
-		new SortType('pokedex_number', true)
-		],
+		cp: new SortOrder(
+			'CP', [
+			new SortType('cp', false),
+			new SortType('iv_percentage', false),
+			new SortType('pokedex_number', true)]
+		),
 
-		evolve: [
-		new SortType('evolve_sort', false),
-		new SortType('pokedex_number', true),
-		new SortType('iv_percentage', false)
-		],
+		evolve: new SortOrder(
+			'Evolutions', [
+			new SortType('evolve_sort', false),
+			new SortType('pokedex_number', true),
+			new SortType('iv_percentage', false)]
+		),
 
-		max_hp: [
-		new SortType('max_hp', false),
-		new SortType('iv_percentage', false),
-		new SortType('pokedex_number', true)
-		],
+		max_hp: new SortOrder(
+			'Max HP', [
+			new SortType('max_hp', false),
+			new SortType('iv_percentage', false),
+			new SortType('pokedex_number', true)]
+		),
 
-		attack_iv: [
-		new SortType('attack_iv', false),
-		new SortType('iv_percentage', false),
-		new SortType('pokedex_number', true)
-		],
+		attack_iv: new SortOrder(
+			'Attack IV', [
+			new SortType('attack_iv', false),
+			new SortType('iv_percentage', false),
+			new SortType('pokedex_number', true)]
+		),
 
-		defense_iv: [
-		new SortType('defense_iv', false),
-		new SortType('iv_percentage', false),
-		new SortType('stamina_iv', false),
-		new SortType('pokedex_number', true)
-		],
+		defense_iv: new SortOrder(
+			'Defense IV', [
+			new SortType('defense_iv', false),
+			new SortType('iv_percentage', false),
+			new SortType('stamina_iv', false),
+			new SortType('pokedex_number', true)]
+		),
 
-		stamina_iv: [
-		new SortType('stamina_iv', false),
-		new SortType('iv_percentage', false),
-		new SortType('defense_iv', false),
-		new SortType('pokedex_number', true)
-		],
+		stamina_iv: new SortOrder(
+			'Stamina IV', [
+			new SortType('stamina_iv', false),
+			new SortType('iv_percentage', false),
+			new SortType('defense_iv', false),
+			new SortType('pokedex_number', true)]
+		),
 
-		iv_percentage: [
-		new SortType('iv_percentage', false),
-		new SortType('cp', false)
-		],
+		iv_percentage: new SortOrder(
+			'IV Percent', [
+			new SortType('iv_percentage', false),
+			new SortType('cp', false)]
+		),
 
-		favorite: [
-		new SortType('favorite', false),
-		new SortType('iv_percentage', false),
-		new SortType('pokedex_number', true)
-		],
+		favorite: new SortOrder(
+			'Favorite', [
+			new SortType('favorite', false),
+			new SortType('iv_percentage', false),
+			new SortType('pokedex_number', true)]
+		),
 
-		caught_time: [
-		new SortType('caught_time', false)
-		]
+		caught_time: new SortOrder('Caught Time', [new SortType('caught_time', false)])
 	};
 }
