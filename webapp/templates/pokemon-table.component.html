@@ -1,9 +1,11 @@
-<table id="stats-as-table" *ngIf="_useTabularFormat">
+<settings></settings>
+
+<table id="stats-as-table" [hidden]="!settings.useTabularFormat">
 	<thead>
 		<tr>
 			<th *ngFor="let stat of _pokemonTableStats" (click)="_sortPokemon(stat.property, true)">{{stat.heading}}</th>
-			<th *ngIf="_showTransferButton">Transfer</th>
-			<th *ngIf="_showRenameButton">Rename</th>
+			<th [hidden]="!settings.showTransferButton">Transfer</th>
+			<th [hidden]="!settings.showRenameButton">Rename</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -11,17 +13,17 @@
 			<td *ngFor="let stat of _pokemonTableStats">
 				<span>{{_getTableOutput(mon, stat.property)}}</span>
 			</td>
-			<td *ngIf="_showTransferButton">
+			<td [hidden]="!settings.showTransferButton">
 				<button type="button" [disabled]="mon.favorite || _transferringPokemonAtIndex !== null" (click)="_transferPokemon(mon, i)">{{_getTransferButtonText(i)}}</button>
 			</td>
-			<td *ngIf="_showRenameButton">
+			<td [hidden]="!settings.showRenameButton">
 				<button type="button" [disabled]="_renamingPokemonAtIndex !== null || _transferringPokemonAtIndex !== null" (click)="_renamePokemon(mon, i)">{{_getRenameButtonText(i)}}</button>
 			</td>
 		</tr>
 	</tbody>
 </table>
 
-<div *ngIf="!_useTabularFormat">
+<div [hidden]="settings.useTabularFormat">
 	<div class="sortby-wrapper">
 		<span>Sort Orders: </span>
 		<div class="sortby-item" *ngFor="let key of _getSortOrders()" (click)="_sortPokemon(key, true)">
@@ -103,8 +105,8 @@
 				</tr>
 			</table>
 			<div class="actions">
-				<button *ngIf="_showTransferButton" type="button" [disabled]="mon.favorite || _transferringPokemonAtIndex !== null || _renamingPokemonAtIndex !== null" (click)="_transferPokemon(mon, i)">{{_getTransferButtonText(i)}}</button>
-				<button *ngIf="_showRenameButton" type="button" [disabled]="_renamingPokemonAtIndex !== null || _transferringPokemonAtIndex !== null" (click)="_renamePokemon(mon, i)">{{_getRenameButtonText(i)}}</button>
+				<button [hidden]="!settings.showTransferButton" type="button" [disabled]="mon.favorite || _transferringPokemonAtIndex !== null || _renamingPokemonAtIndex !== null" (click)="_transferPokemon(mon, i)">{{_getTransferButtonText(i)}}</button>
+				<button [hidden]="!settings.showRenameButton" type="button" [disabled]="_renamingPokemonAtIndex !== null || _transferringPokemonAtIndex !== null" (click)="_renamePokemon(mon, i)">{{_getRenameButtonText(i)}}</button>
 			</div>
 			<!-- http://serebii.net/pokedex-bw/type/psychic.gif -->
 			<!-- http://serebii.net/pokemongo/4energy.png -->

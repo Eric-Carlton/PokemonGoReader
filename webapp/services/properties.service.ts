@@ -1,7 +1,10 @@
+import { Injectable } from '@angular/core';
+
 import { SortType } from '../models/sort-type.model'
 import { SortOrder } from '../models/sort-order.model'
 import { PokemonTableStat } from '../models/pokemon-table-stat.model'
 
+@Injectable()
 export class PropertiesService {
 	public apiHost: string = '//' + window.location.hostname + ':8008';
 	public getPokemonRoute: string = '/api/pokemon/get';
@@ -15,7 +18,7 @@ export class PropertiesService {
 	public pokemonStatsComponentTitle: string = 'Pokemon Stats';
 	public pokemonStatsComponentContent: string = 'Click a sort order to sort by that property. Default sort is Pokedex number, secondarily sorting by IV percentage where Pokedex number is the same, and finally sorting by CP where Pokedex number and IV percentage are the same.';
 
-	public useTabularFormat: boolean = false;
+	public useTabularFormat: boolean =  false;
 
 	public showTransferButton: boolean = true;
 	public showRenameButton: boolean = true;

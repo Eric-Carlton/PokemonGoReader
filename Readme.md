@@ -87,17 +87,9 @@ FAQs
 
   If you use a Google account and have two factor authentication enabled, you will need to [generate an app password](https://security.google.com/settings/security/apppasswords) and use that to log in.
 
-* **I liked the original table layout instead of this fancified card layout. Can we bring that back?**
-  
-    Yes you can! If you want to see your Pokemon stats in a table, go to webapp/services/properties.service.ts and change the useTabularFormat property to true. Restart the webapp portion ( or the whole thing if you're running with `npm start` ) and bingo-bango, you have the table again! 
-
-* **I don't want to transfer or rename Pokemon from this tool. In fact, I don't even want to *accidentally* transfer or rename from this tool. Can I get rid of those buttons?**
-
-  There's a config option for that as well! Go to webapp/services/properties.service.ts and change the showTransferButton and/or the showRenameButton property to false. Restart the webapp portion ( or the whole thing if you're running with `npm start` ) and say goodbye to that rename and/or transfer button!
-
 * **There's a lot of information in the table layout, some of which I don't even care about. Is it possible to remove some of the noise?**
   
-  Sure! There's configuration available for this. Go to webapp/services/properties.service.ts and look for the pokemonTableStats property. Just remove anything from that array that you don't want to see in your table. Once [issue #28](https://github.com/Eric-Carlton/PokemonGoReader/issues/28) is implemented, you'll be able to change this and some other config options mentioned in this FAQ from the UI.
+  Sure! There's configuration available for this. Go to webapp/services/properties.service.ts and look for the pokemonTableStats property. Just remove anything from that array that you don't want to see in your table. Once [issue #64](https://github.com/Eric-Carlton/PokemonGoReader/issues/64) is implemented, you'll be able to change this from the UI.
 
 * **I want to allow other computers on my local network to access the tool from my computer. Is that possible?**
   

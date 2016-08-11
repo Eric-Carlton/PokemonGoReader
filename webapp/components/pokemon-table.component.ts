@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { ViewChild, Component } from '@angular/core';
 
 import { PokemonService } from '../services/pokemon.service'
 import { PropertiesService } from '../services/properties.service'
@@ -10,19 +10,21 @@ import { SortOrder } from '../models/sort-order.model'
 import { SortType } from '../models/sort-type.model'
 import { PokemonTableStat } from '../models/pokemon-table-stat.model'
 
+import { SettingsComponent } from './settings.component'
+
 @Component({
 	selector: 'pokemon-table',
 	templateUrl: './webapp/templates/pokemon-table.component.html',
-	styleUrls: ['./webapp/styles/pokemon-table.component.css']
+	styleUrls: ['./webapp/styles/pokemon-table.component.css'],
+	directives: [SettingsComponent]
 })
 
 export class PokemonTableComponent {
+	@ViewChild(SettingsComponent) settings: SettingsComponent;
+
 	private _pokemon: Pokemon[] = [];
-	private _useTabularFormat: boolean = this._properties.useTabularFormat;
 	private _pokemonTableStats: PokemonTableStat[] = this._properties.pokemonTableStats;
 	private _pokemonTableSortOrders: any = this._properties.pokemonTableSortOrders;
-	private _showTransferButton: boolean = this._properties.showTransferButton;
-	private _showRenameButton: boolean = this._properties.showRenameButton;
 	//right now we're only allowing 1 transfer at a time, like God intended,
 	//this may need to be updated later to allow for batch transfers
 	private _transferringPokemonAtIndex: number = null;

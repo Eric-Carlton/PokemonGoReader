@@ -1,3 +1,7 @@
+settings {
+	text-align: center;
+}
+
 table#stats-as-table {
 	margin: 1.5em auto;
 }
