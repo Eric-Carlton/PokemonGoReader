@@ -6,5 +6,10 @@
 		</section>
 		<p>{{_content}}</p>
 	</section>
-	<pokemon-table></pokemon-table>
+	<form action="">
+		<input type="radio" [checked]="_displayByMonster" (click)="setDisplayType($event.target.checked)" name="displayType">Display by Monster<br>
+		<input type="radio" [checked]="!_displayByMonster" (click)="setDisplayType(!$event.target.checked)" name="displayType">Display by Species
+	</form>
+	<pokemon-table [hidden]="!_displayByMonster"></pokemon-table>
+	<pokemon-species [hidden]="_displayByMonster"></pokemon-species>
 </div>

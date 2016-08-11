@@ -1,0 +1,22 @@
+<div class="pokemon-list-wrapper">
+  <div class="pokemon-list-item" *ngFor="let species of _species; let i = index">
+    <img class="icon" src="https://silphassets.a.cdnify.io/img/pokemon/icons/96x96/{{species.pokedex_number}}.png" title="{{species.species}}"/>
+    <div class="name">
+      {{ species.species }}
+    </div>
+    <table class="candies">
+      <tr>
+        <td>Count: </td>
+        <td>{{ species.count }}</td>
+      </tr>
+      <tr>
+        <td><img src="webapp/img/candy-icon.png"></td>
+        <td>{{ species.candy }}</td>
+      </tr>
+      <tr *ngFor="let descendant of species.evolve">
+        <td><img class="image" src="https://silphassets.a.cdnify.io/img/pokemon/icons/16x16/{{descendant.id}}.png"/></td>
+        <td>{{ descendant.canEvolve }}</td>
+      </tr>
+    </table>
+  </div>
+</div>

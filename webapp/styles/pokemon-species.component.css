@@ -1,0 +1,40 @@
+.sortby-wrapper {
+	text-align: center;
+	margin-top: 1.5em;
+}
+.sortby-item {
+	cursor: pointer;
+	display: inline-block;
+	padding: .25em .5em;
+	border: 1px solid black;
+	margin: 3px;
+	font-size: .99em;
+}
+.pokemon-list-wrapper {
+	text-align: center;
+}
+.pokemon-list-item {
+	position: relative;
+	border: 1px solid #f0f0f0;
+	background: white;
+	box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+	margin: 3px;
+	display: inline-block;
+	width: 200px;
+	height: 150;
+	padding: .5em;
+	overflow: hidden;
+}
+.pokemon-list-item .icon {
+	position: relative;
+	right: 3em;
+}
+.pokemon-list-item .candies {
+	position: absolute;
+	top: .5em;
+	right: .5em;
+	font-size: .9em;
+}
+.pokemon-list-item .candies img {
+	display: block;
+}
