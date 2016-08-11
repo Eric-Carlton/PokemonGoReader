@@ -4,6 +4,7 @@ import 'rxjs/add/operator/toPromise';
 
 import { UserLogin } from '../models/user-login.model'
 import { Pokemon } from '../models/pokemon.model';
+import { Species } from '../models/species.model';
 
 import { PropertiesService } from '../services/properties.service';
 
@@ -11,6 +12,7 @@ import { PropertiesService } from '../services/properties.service';
 @Injectable()
 export class PokemonService {
 	private _pokemon : Pokemon[] = [];
+	private _species: Species[] = [];
 	private _pokemonUrl: string = this._properties.apiHost + this._properties.getPokemonRoute;
 	private _transferUrl: string = this._properties.apiHost + this._properties.transferPokemonRoute;
 	private _renameUrl: string = this._properties.apiHost + this._properties.renamePokemonRoute;
@@ -21,6 +23,10 @@ export class PokemonService {
 
 	public get pokemon(): Pokemon[]{
 		return this._pokemon
+	}
+
+	public get species(): Species[]{
+		return this._species
 	}
 
 	public get pokemonChange(): EventEmitter<any>{
@@ -38,7 +44,9 @@ export class PokemonService {
 		.post(this._pokemonUrl, JSON.stringify(this._userLogin), {headers: headers})
 		.toPromise()
 		.then(res => {
-			this._pokemon = res.json().pokemon as Pokemon[];
+			let resBody = res.json();
+			this._pokemon = resBody.pokemon as Pokemon[];
+			this._species = resBody.species as Species[];
 
 			this._pokemonChange.emit({message: 'Pokemon updated'});
 		})

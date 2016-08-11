@@ -71,20 +71,6 @@
 			</div>
 			<table class="candies">
 				<tr>
-					<td><img src="webapp/img/candy-icon.png"></td>
-					<td>{{ mon.candy }}</td>
-				</tr>
-				<tr *ngFor="let descendant of mon.evolve">
-					<td><img class="image" src="https://silphassets.a.cdnify.io/img/pokemon/icons/16x16/{{descendant.id}}.png"/></td>
-					<td>{{ descendant.canEvolve }}</td>
-				</tr>
-			</table>
-			<table class="iv">
-				<tr>
-					<td><img src="webapp/img/strength-icon.png"></td>
-					<td>{{ mon.iv_percentage }}%</td>
-				</tr>
-				<tr>
 					<td><img src="webapp/img/sword-icon.png"></td>
 					<td>{{ mon.attack_iv }}</td>
 				</tr>
@@ -96,8 +82,13 @@
 					<td><img src="webapp/img/heart-icon.png"></td>
 					<td>{{ mon.stamina_iv }}</td>
 				</tr>
+			</table>
+			<table class="iv">
 				<tr>
-					<!--TODO: Find suitable graphic -->
+					<td>IV</td>
+					<td>{{ mon.iv_percentage | number:'.0-0' }}%</td>
+				</tr>
+				<tr>
 					<td>HP</td>
 					<td>{{mon.current_hp}} / {{mon.max_hp}}</td>
 				</tr>
