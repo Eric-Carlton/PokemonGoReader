@@ -9,6 +9,7 @@ const expressUtils = require('../utils/expressUtils.js');
 const pokemonUtils = require('../utils/pokemonUtils.js');
 
 const Pokemon = require('../models/Pokemon.js');
+const Species = require('../models/Species.js');
 
 const log = bunyan.createLogger({
 	name: props.log.names.pokemonRoutes,
@@ -58,34 +59,43 @@ module.exports = {
 
 							let formattedPokemon = [];
 
-							let evolveMap = {};
+							let speciesMap = {};
 
 							for(let i = 0; i < rawPokemon.length; i++){
 								let pokemon = rawPokemon[i];
 
 								let caught_time = new Long(
-									pokemon.creation_time_ms.low, 
-									pokemon.creation_time_ms.high, 
+									pokemon.creation_time_ms.low,
+									pokemon.creation_time_ms.high,
 									pokemon.creation_time_ms.unsigned
 								);
 
 								if(pokemon.hasOwnProperty('is_egg') && !pokemon.is_egg){
 									let id = pokemon.pokemon_id.toString();
-									let candy = pokemonUtils.getCandy(pokemon, splitInventory.candies);
 
-									let evolve = {'sort': 0, 'descendants': []};
-									if (id in evolveMap){
-										evolve = evolveMap[id]
+									let species = {
+										'pokedex_number': id,
+										'species': props.pokemonNamesByDexNum[pokemon.pokemon_id.toString()],
+										'count': 1,
+										'candy': 0,
+										'evolve_sort': 0,
+										'evolve': []
+									};
+
+									if (id in speciesMap){
+										speciesMap[id].count += 1;
 									} else {
+										let candy = pokemonUtils.getCandy(pokemon, splitInventory.candies);
 										props.pokemonEvolutionByDexNum[id].forEach(function(descendant){
 											let canEvolve = Math.trunc((candy - 1) / (descendant.cost - 1));
 											if (canEvolve > 0){
-												evolve.sort = Math.max(evolve.sort, canEvolve);
-												evolve.descendants.push({'id': descendant.id, 'canEvolve': canEvolve});
+												species.evolve_sort = Math.max(species.evolve_sort, canEvolve);
+												species.evolve.push({'id': descendant.id, 'canEvolve': canEvolve});
 											}
 										});
 
-										evolveMap[id] = evolve;
+										species.candy = candy;
+										speciesMap[id] = species;
 									}
 
 									formattedPokemon.push(new Pokemon(
@@ -100,9 +110,6 @@ module.exports = {
 										parseFloat(((pokemon.individual_attack + pokemon.individual_defense + pokemon.individual_stamina) / 45 * 100).toFixed(2)),
 										pokemon.cp,
 										pokemon.favorite === 1,
-										candy,
-										evolve.sort,
-										evolve.descendants,
 										props.pokemonNamesByDexNum[props.pokemonFamilyIdByPokedexNum[pokemon.pokemon_id]],
 										pokemon.id,
 										pokemon.move_1,
@@ -113,7 +120,19 @@ module.exports = {
 								}
 							}
 
-							expressUtils.sendResponse(res, next, 200, {pokemon: formattedPokemon}, req.body.username, endpoint);
+							let formattedSpecies = [];
+							Object.keys(speciesMap).forEach(function(speciesId) {
+								formattedSpecies.push(new Species(
+									speciesMap[speciesId].pokedex_number,
+									speciesMap[speciesId].species,
+									speciesMap[speciesId].count,
+									speciesMap[speciesId].candy,
+									speciesMap[speciesId].evolve_sort,
+									speciesMap[speciesId].evolve
+								));
+							});
+
+							expressUtils.sendResponse(res, next, 200, {pokemon: formattedPokemon, species: formattedSpecies}, req.body.username, endpoint);
 						}, err => {
 							log.error({err: err.message});
 							expressUtils.sendResponse(res, next, 500, {error: props.errors.inventory}, req.body.username, endpoint)

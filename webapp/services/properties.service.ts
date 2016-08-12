@@ -28,7 +28,6 @@ export class PropertiesService {
 		new PokemonTableStat('name', 'Name'),
 		new PokemonTableStat('species', 'Species'),
 		new PokemonTableStat('pokedex_number', 'Pokedex Number'),
-		new PokemonTableStat('candy', 'Candy'),
 		new PokemonTableStat('cp', 'CP'),
 		new PokemonTableStat('max_hp', 'Max HP'),
 		new PokemonTableStat('attack_iv', 'Attack IV'),
