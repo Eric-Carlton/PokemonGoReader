@@ -2,6 +2,10 @@
 	text-align: center;
 }
 
+form {
+	text-align: center;
+}
+
 #pokemon-stats-component .title{
 	text-align: center
 }
