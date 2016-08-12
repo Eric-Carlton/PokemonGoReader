@@ -69,26 +69,11 @@ export class PropertiesService {
 			new SortType('cp', false)]
 		),
 
-		candy: new SortOrder(
-			'Candy', [
-			new SortType('candy', false),
-			new SortType('pokedex_number', true),
-			new SortType('cp', false),
-			new SortType('iv_percentage', false)]
-		),
-
 		cp: new SortOrder(
 			'CP', [
 			new SortType('cp', false),
 			new SortType('iv_percentage', false),
 			new SortType('pokedex_number', true)]
-		),
-
-		evolve: new SortOrder(
-			'Evolutions', [
-			new SortType('evolve_sort', false),
-			new SortType('pokedex_number', true),
-			new SortType('iv_percentage', false)]
 		),
 
 		max_hp: new SortOrder(
