@@ -64,59 +64,61 @@ module.exports = {
 							for(let i = 0; i < rawPokemon.length; i++){
 								let pokemon = rawPokemon[i];
 
-								let caught_time = new Long(
-									pokemon.creation_time_ms.low,
-									pokemon.creation_time_ms.high,
-									pokemon.creation_time_ms.unsigned
-								);
+								if(Object.keys(pokemon).length > 0){
+									let caught_time = new Long(
+										pokemon.creation_time_ms.low,
+										pokemon.creation_time_ms.high,
+										pokemon.creation_time_ms.unsigned
+									);
 
-								if(pokemon.hasOwnProperty('is_egg') && !pokemon.is_egg){
-									let id = pokemon.pokemon_id.toString();
+									if(pokemon.hasOwnProperty('is_egg') && !pokemon.is_egg){
+										let id = pokemon.pokemon_id.toString();
 
-									let species = {
-										'pokedex_number': id,
-										'species': props.pokemonNamesByDexNum[pokemon.pokemon_id.toString()],
-										'count': 1,
-										'candy': 0,
-										'evolve_sort': 0,
-										'evolve': []
-									};
+										let species = {
+											'pokedex_number': id,
+											'species': props.pokemonNamesByDexNum[pokemon.pokemon_id.toString()],
+											'count': 1,
+											'candy': 0,
+											'evolve_sort': 0,
+											'evolve': []
+										};
 
-									if (id in speciesMap){
-										speciesMap[id].count += 1;
-									} else {
-										let candy = pokemonUtils.getCandy(pokemon, splitInventory.candies);
-										props.pokemonEvolutionByDexNum[id].forEach(function(descendant){
-											let canEvolve = Math.trunc((candy - 1) / (descendant.cost - 1));
-											if (canEvolve > 0){
-												species.evolve_sort = Math.max(species.evolve_sort, canEvolve);
-												species.evolve.push({'id': descendant.id, 'canEvolve': canEvolve});
-											}
-										});
+										if (id in speciesMap){
+											speciesMap[id].count += 1;
+										} else {
+											let candy = pokemonUtils.getCandy(pokemon, splitInventory.candies);
+											props.pokemonEvolutionByDexNum[id].forEach(function(descendant){
+												let canEvolve = Math.trunc((candy - 1) / (descendant.cost - 1));
+												if (canEvolve > 0){
+													species.evolve_sort = Math.max(species.evolve_sort, canEvolve);
+													species.evolve.push({'id': descendant.id, 'canEvolve': canEvolve});
+												}
+											});
 
-										species.candy = candy;
-										speciesMap[id] = species;
+											species.candy = candy;
+											speciesMap[id] = species;
+										}
+
+										formattedPokemon.push(new Pokemon(
+											pokemon.pokemon_id,
+											pokemonUtils.getName(pokemon),
+											props.pokemonNamesByDexNum[pokemon.pokemon_id.toString()],
+											pokemon.individual_attack,
+											pokemon.individual_defense,
+											pokemon.individual_stamina,
+											pokemon.stamina,
+											pokemon.stamina_max,
+											parseFloat(((pokemon.individual_attack + pokemon.individual_defense + pokemon.individual_stamina) / 45 * 100).toFixed(2)),
+											pokemon.cp,
+											pokemon.favorite === 1,
+											props.pokemonNamesByDexNum[props.pokemonFamilyIdByPokedexNum[pokemon.pokemon_id]],
+											pokemon.id,
+											pokemon.move_1,
+											pokemon.move_2,
+											caught_time.toString(),
+											pokemonUtils.getLevel(pokemon)
+										));
 									}
-
-									formattedPokemon.push(new Pokemon(
-										pokemon.pokemon_id,
-										pokemonUtils.getName(pokemon),
-										props.pokemonNamesByDexNum[pokemon.pokemon_id.toString()],
-										pokemon.individual_attack,
-										pokemon.individual_defense,
-										pokemon.individual_stamina,
-										pokemon.stamina,
-										pokemon.stamina_max,
-										parseFloat(((pokemon.individual_attack + pokemon.individual_defense + pokemon.individual_stamina) / 45 * 100).toFixed(2)),
-										pokemon.cp,
-										pokemon.favorite === 1,
-										props.pokemonNamesByDexNum[props.pokemonFamilyIdByPokedexNum[pokemon.pokemon_id]],
-										pokemon.id,
-										pokemon.move_1,
-										pokemon.move_2,
-										caught_time.toString(),
-										pokemonUtils.getLevel(pokemon)
-									));
 								}
 							}
 
