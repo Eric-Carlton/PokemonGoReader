@@ -12,7 +12,7 @@ import { PropertiesService } from '../services/properties.service';
 })
 
 export class LoginFormComponent {
-	private _types: string[] = ['PTC', 'Google'];
+	private _types: string[] = ['Google', 'PTC'];
 	private _model: UserLogin = new UserLogin("", "", this._types[0]);
 	private _loading: boolean = false;
 	private _submitted: boolean = false;

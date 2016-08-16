@@ -33,6 +33,10 @@ export class PokemonService {
 		return this._pokemonChange;
 	}
 
+	public get userLogin(): UserLogin {
+		return this._userLogin;
+	}
+
 	public set userLogin(userLogin: UserLogin){
 		this._userLogin = userLogin;
 	}
