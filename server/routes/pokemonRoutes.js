@@ -56,7 +56,6 @@ module.exports = {
 							let splitInventory = pogobuf.Utils.splitInventory(inventory);
 
 							let rawPokemon = splitInventory.pokemon;
-							log.trace({pokemon: rawPokemon}, 'Pokemon');
 
 							let formattedPokemon = [];
 
