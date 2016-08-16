@@ -6,7 +6,7 @@ import { PokemonTableStat } from '../models/pokemon-table-stat.model'
 
 @Injectable()
 export class PropertiesService {
-	public apiHost: string = '//192.168.0.12:8008';
+	public apiHost: string = '//' + window.location.hostname + ':8008';
 	public getPokemonRoute: string = '/api/pokemon/get';
 	public transferPokemonRoute: string = '/api/pokemon/transfer';
 	public renamePokemonRoute: string = '/api/pokemon/rename';
