@@ -141,23 +141,13 @@ module.exports = {
 				expressUtils.sendResponse(res, next, 400, {error: props.errors.password}, req.body.username, endpoint);
 			} else if (!req.body.hasOwnProperty('type')) {
 				expressUtils.sendResponse(res, next, 400, {error: props.errors.type}, req.body.username, endpoint);
-			} else if (!req.body.hasOwnProperty('pokemon_id')) {
+			} else if (!req.body.hasOwnProperty('id')) {
 				expressUtils.sendResponse(res, next, 400, {error: props.errors.pokemon_id}, req.body.username, endpoint);
-			} else if (!req.body.pokemon_id.hasOwnProperty('high')){
-				expressUtils.sendResponse(res, next, 400, {error: props.errors.invalid_pokemon_id}, req.body.username, endpoint);
-			} else if (!req.body.pokemon_id.hasOwnProperty('low')){
-				expressUtils.sendResponse(res, next, 400, {error: props.errors.invalid_pokemon_id}, req.body.username, endpoint);
-			} else if (!req.body.pokemon_id.hasOwnProperty('unsigned')){
-				expressUtils.sendResponse(res, next, 400, {error: props.errors.invalid_pokemon_id}, req.body.username, endpoint);
-			}
+			} 
 			else {
-				req.body.pokemon_id.high = Number(req.body.pokemon_id.high);
-				req.body.pokemon_id.low = Number(req.body.pokemon_id.low);
-				req.body.pokemon_id.unsigned = req.body.pokemon_id === "true";
-
 				let credential = new Credential(req.body.type, req.body.token, req.body.username, req.body.password);
 				pokemonUtils.getClient(credential).then(client => {
-					client.releasePokemon(req.body.pokemon_id).then(releaseResponse => {
+					client.releasePokemon(req.body.id).then(releaseResponse => {
 							expressUtils.sendResponse(res, next, 200, {success: releaseResponse.result === 1, token: client.authToken}, req.body.username, endpoint);
 						}, err => {
 							log.error({err: err.message});
@@ -184,25 +174,13 @@ module.exports = {
 				expressUtils.sendResponse(res, next, 400, {error: props.errors.password}, req.body.username, endpoint);
 			} else if (!req.body.hasOwnProperty('type')) {
 				expressUtils.sendResponse(res, next, 400, {error: props.errors.type}, req.body.username, endpoint);
-			} else if (!req.body.hasOwnProperty('pokemon_id')) {
+			} else if (!req.body.hasOwnProperty('id')) {
 				expressUtils.sendResponse(res, next, 400, {error: props.errors.pokemon_id}, req.body.username, endpoint);
-			} else if (!req.body.pokemon_id.hasOwnProperty('high')){
-				expressUtils.sendResponse(res, next, 400, {error: props.errors.invalid_pokemon_id}, req.body.username, endpoint);
-			} else if (!req.body.pokemon_id.hasOwnProperty('low')){
-				expressUtils.sendResponse(res, next, 400, {error: props.errors.invalid_pokemon_id}, req.body.username, endpoint);
-			} else if (!req.body.pokemon_id.hasOwnProperty('unsigned')){
-				expressUtils.sendResponse(res, next, 400, {error: props.errors.invalid_pokemon_id}, req.body.username, endpoint);
-			} else if (!req.body.hasOwnProperty('nickname')) {
-				expressUtils.sendResponse(res, next, 400, {error: props.errors.nickname}, req.body.username, endpoint);
 			}
 			else {
-				req.body.pokemon_id.high = Number(req.body.pokemon_id.high);
-				req.body.pokemon_id.low = Number(req.body.pokemon_id.low);
-				req.body.pokemon_id.unsigned = req.body.pokemon_id === "true";
-
 				let credential = new Credential(req.body.type, req.body.token, req.body.username, req.body.password);
 				pokemonUtils.getClient(credential).then(client => {
-					client.nicknamePokemon(req.body.pokemon_id, req.body.nickname).then(nicknameResponse => {
+					client.nicknamePokemon(req.body.id, req.body.nickname).then(nicknameResponse => {
 							expressUtils.sendResponse(res, next, 200, {success: nicknameResponse.result === 1, token: client.authToken}, req.body.username, endpoint);
 						}, err => {
 							log.error({err: err.message});

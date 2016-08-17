@@ -67,7 +67,7 @@ export class PokemonService {
 			password: this._userLogin.password,
 			type: this._userLogin.type,
 			token: this._userLogin.token,
-			pokemon_id: pokemon.id
+			id: pokemon.id
 		};
 
 		return this._http
@@ -88,7 +88,7 @@ export class PokemonService {
 			password: this._userLogin.password,
 			token: this._userLogin.token,
 			type: this._userLogin.type,
-			pokemon_id: pokemon.id,
+			id: pokemon.id,
 			nickname: nickname
 		};
 

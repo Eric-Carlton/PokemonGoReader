@@ -13,7 +13,7 @@ export class Pokemon {
 		public favorite: boolean,
 		public candy: number,
 		public family_name: string,
-		public id: any,
+		public id: number,
 		public move_1: number,
 		public move_2: number,
 		public moves: any,
