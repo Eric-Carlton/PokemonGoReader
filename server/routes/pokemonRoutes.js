@@ -53,13 +53,7 @@ module.exports = {
 						for(let i = 0; i < rawPokemon.length; i++){
 							let pokemon = rawPokemon[i];
 
-							let caught_time = new Long(
-								pokemon.creation_time_ms.low,
-								pokemon.creation_time_ms.high,
-								pokemon.creation_time_ms.unsigned
-							);
-
-							if(pokemon.hasOwnProperty('is_egg') && !pokemon.is_egg){
+							if(Object.keys(pokemon).length > 0 && pokemon.hasOwnProperty('is_egg') && !pokemon.is_egg){
 								let id = pokemon.pokemon_id.toString();
 
 								let species = {
@@ -103,7 +97,7 @@ module.exports = {
 									pokemon.id,
 									pokemon.move_1,
 									pokemon.move_2,
-									caught_time.toString(),
+									pokemon.creation_time_ms,
 									pokemonUtils.getLevel(pokemon)
 								));
 							}
