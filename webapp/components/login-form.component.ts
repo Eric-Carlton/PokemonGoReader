@@ -14,7 +14,7 @@ import { UtilsService } from '../services/utils.service'
 })
 
 export class LoginFormComponent {
-	private _model: UserLogin = new UserLogin("", "", this._properties.loginTypes[0]);
+	private _model: UserLogin = new UserLogin("", "", /* token */ null, this._properties.loginTypes[0]);
 	private _loading: boolean = false;
 	private _submitted: boolean = false;
 	private _loginErrorMessage = null;

@@ -25,6 +25,7 @@ module.exports = {
 		rename: '/pokemon/rename'
 	},
 	errors: {
+		token: 'token is required',
 		username: 'username is required',
 		password: 'password is required',
 		type: 'type is required',
