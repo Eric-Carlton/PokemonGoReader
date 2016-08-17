@@ -8,6 +8,7 @@ const props = require('../config/properties.js');
 const expressUtils = require('../utils/expressUtils.js');
 const pokemonUtils = require('../utils/pokemonUtils.js');
 
+const Credential = require('../models/Credential.js');
 const Pokemon = require('../models/Pokemon.js');
 const Species = require('../models/Species.js');
 
@@ -34,107 +35,100 @@ module.exports = {
 			} else if (!req.body.hasOwnProperty('type')) {
 				expressUtils.sendResponse(res, next, 400, {error: props.errors.type}, req.body.username, endpoint);
 			} else {
-				const client = new pogobuf.Client();
+				let credential = new Credential(req.body.type, /* token */ null, req.body.username, req.body.password);
+				pokemonUtils.getClient(credential).then(client => {
+					client.getInventory(0).then(inventory => {
+						if (!inventory.success){
+							expressUtils.sendResponse(res, next, 500, {error: props.errors.inventory}, req.body.username, endpoint);
+						}
 
-				let login = null;
+						let splitInventory = pogobuf.Utils.splitInventory(inventory);
 
-				if(req.body.type.toLowerCase() === 'google'){
-					login = new pogobuf.GoogleLogin();
-				} else {
-					login = new pogobuf.PTCLogin();
-				}
+						let rawPokemon = splitInventory.pokemon;
 
-				login.login(req.body.username, req.body.password).then(token => {
-					client.setAuthInfo(req.body.type.toLowerCase(), token);
+						let formattedPokemon = [];
 
-					client.init().then(() => {
-						client.getInventory(0).then(inventory => {
-							if (!inventory.success){
-								expressUtils.sendResponse(res, next, 500, {error: props.errors.inventory}, req.body.username, endpoint);
-							}
+						let speciesMap = {};
 
-							let splitInventory = pogobuf.Utils.splitInventory(inventory);
+						for(let i = 0; i < rawPokemon.length; i++){
+							let pokemon = rawPokemon[i];
 
-							let rawPokemon = splitInventory.pokemon;
+							let caught_time = new Long(
+								pokemon.creation_time_ms.low,
+								pokemon.creation_time_ms.high,
+								pokemon.creation_time_ms.unsigned
+							);
 
-							let formattedPokemon = [];
+							if(pokemon.hasOwnProperty('is_egg') && !pokemon.is_egg){
+								let id = pokemon.pokemon_id.toString();
 
-							let speciesMap = {};
+								let species = {
+									'pokedex_number': id,
+									'species': props.pokemonNamesByDexNum[pokemon.pokemon_id.toString()],
+									'count': 1,
+									'candy': 0,
+									'evolve_sort': 0,
+									'evolve': []
+								};
 
-							for(let i = 0; i < rawPokemon.length; i++){
-								let pokemon = rawPokemon[i];
+								if (id in speciesMap){
+									speciesMap[id].count += 1;
+								} else {
+									let candy = pokemonUtils.getCandy(pokemon, splitInventory.candies);
+									props.pokemonEvolutionByDexNum[id].forEach(function(descendant){
+										let canEvolve = Math.trunc((candy - 1) / (descendant.cost - 1));
+										if (canEvolve > 0){
+											species.evolve_sort = Math.max(species.evolve_sort, canEvolve);
+											species.evolve.push({'id': descendant.id, 'canEvolve': canEvolve});
+										}
+									});
 
-								if(Object.keys(pokemon).length > 0 && pokemon.hasOwnProperty('is_egg') && !pokemon.is_egg){
-									let id = pokemon.pokemon_id.toString();
-
-									let species = {
-										'pokedex_number': id,
-										'species': props.pokemonNamesByDexNum[pokemon.pokemon_id.toString()],
-										'count': 1,
-										'candy': 0,
-										'evolve_sort': 0,
-										'evolve': []
-									};
-
-									if (id in speciesMap){
-										speciesMap[id].count += 1;
-									} else {
-										let candy = pokemonUtils.getCandy(pokemon, splitInventory.candies);
-										props.pokemonEvolutionByDexNum[id].forEach(function(descendant){
-											let canEvolve = Math.trunc((candy - 1) / (descendant.cost - 1));
-											if (canEvolve > 0){
-												species.evolve_sort = Math.max(species.evolve_sort, canEvolve);
-												species.evolve.push({'id': descendant.id, 'canEvolve': canEvolve});
-											}
-										});
-
-										species.candy = candy;
-										speciesMap[id] = species;
-									}
-
-									formattedPokemon.push(new Pokemon(
-										pokemon.pokemon_id,
-										pokemonUtils.getName(pokemon),
-										props.pokemonNamesByDexNum[pokemon.pokemon_id.toString()],
-										pokemon.individual_attack,
-										pokemon.individual_defense,
-										pokemon.individual_stamina,
-										pokemon.stamina,
-										pokemon.stamina_max,
-										parseFloat(((pokemon.individual_attack + pokemon.individual_defense + pokemon.individual_stamina) / 45 * 100).toFixed(2)),
-										pokemon.cp,
-										pokemon.favorite === 1,
-										props.pokemonNamesByDexNum[props.pokemonFamilyIdByPokedexNum[pokemon.pokemon_id]],
-										pokemon.id,
-										pokemon.move_1,
-										pokemon.move_2,
-										pokemon.creation_time_ms,
-										pokemonUtils.getLevel(pokemon)
-									));
+									species.candy = candy;
+									speciesMap[id] = species;
 								}
-							}
 
-							let formattedSpecies = [];
-							Object.keys(speciesMap).forEach(function(speciesId) {
-								formattedSpecies.push(new Species(
-									speciesMap[speciesId].pokedex_number,
-									speciesMap[speciesId].species,
-									speciesMap[speciesId].count,
-									speciesMap[speciesId].candy,
-									speciesMap[speciesId].evolve_sort,
-									speciesMap[speciesId].evolve
+								formattedPokemon.push(new Pokemon(
+									pokemon.pokemon_id,
+									pokemonUtils.getName(pokemon),
+									props.pokemonNamesByDexNum[pokemon.pokemon_id.toString()],
+									pokemon.individual_attack,
+									pokemon.individual_defense,
+									pokemon.individual_stamina,
+									pokemon.stamina,
+									pokemon.stamina_max,
+									parseFloat(((pokemon.individual_attack + pokemon.individual_defense + pokemon.individual_stamina) / 45 * 100).toFixed(2)),
+									pokemon.cp,
+									pokemon.favorite === 1,
+									props.pokemonNamesByDexNum[props.pokemonFamilyIdByPokedexNum[pokemon.pokemon_id]],
+									pokemon.id,
+									pokemon.move_1,
+									pokemon.move_2,
+									caught_time.toString(),
+									pokemonUtils.getLevel(pokemon)
 								));
-							});
+							}
+						}
 
-							expressUtils.sendResponse(res, next, 200, {pokemon: formattedPokemon, species: formattedSpecies}, req.body.username, endpoint);
-						}, err => {
-							log.error({err: err.message});
-							expressUtils.sendResponse(res, next, 500, {error: props.errors.inventory}, req.body.username, endpoint)
+						let formattedSpecies = [];
+						Object.keys(speciesMap).forEach(function(speciesId) {
+							formattedSpecies.push(new Species(
+								speciesMap[speciesId].pokedex_number,
+								speciesMap[speciesId].species,
+								speciesMap[speciesId].count,
+								speciesMap[speciesId].candy,
+								speciesMap[speciesId].evolve_sort,
+								speciesMap[speciesId].evolve
+							));
 						});
+
+						expressUtils.sendResponse(res, next, 200, {pokemon: formattedPokemon, species: formattedSpecies, token: client.authToken}, req.body.username, endpoint);
+					}, err => {
+						log.error({err: err.message});
+						expressUtils.sendResponse(res, next, 500, {error: props.errors.inventory}, req.body.username, endpoint)
 					});
 				}, err => {
 					log.error({err: err.message});
-					expressUtils.sendResponse(res, next, 500, {error: props.errors.login}, req.body.username, endpoint);
+					expressUtils.sendResponse(res, next, 500, {error: props.errors.inventory}, req.body.username, endpoint);
 				});
 			}
 		});
@@ -145,8 +139,10 @@ module.exports = {
 				{username: req.body.username},
 				'POST request to ' + endpoint);
 
-			if(!req.body.hasOwnProperty('username')){
-				expressUtils.sendResponse(res, next, 400, {error: props.errors.username}, req.body.username, endpoint);
+			if(!req.body.hasOwnProperty('token')){
+				expressUtils.sendResponse(res, next, 400, {error: props.errors.token}, req.body.username, endpoint);
+			} else if (!req.body.hasOwnProperty('username')) {
+				expressUtils.sendResponse(res, next, 400, {error: props.errors.password}, req.body.username, endpoint);
 			} else if (!req.body.hasOwnProperty('password')) {
 				expressUtils.sendResponse(res, next, 400, {error: props.errors.password}, req.body.username, endpoint);
 			} else if (!req.body.hasOwnProperty('type')) {
@@ -165,30 +161,17 @@ module.exports = {
 				req.body.pokemon_id.low = Number(req.body.pokemon_id.low);
 				req.body.pokemon_id.unsigned = req.body.pokemon_id === "true";
 
-				const client = new pogobuf.Client();
-
-				let login = null;
-
-				if(req.body.type.toLowerCase() === 'google'){
-					login = new pogobuf.GoogleLogin();
-				} else {
-					login = new pogobuf.PTCLogin();
-				}
-
-				login.login(req.body.username, req.body.password).then(token => {
-					client.setAuthInfo(req.body.type.toLowerCase(), token);
-
-					client.init().then(() => {
-						client.releasePokemon(req.body.pokemon_id).then(releaseResponse => {
-							expressUtils.sendResponse(res, next, 200, {success: releaseResponse.result === 1}, req.body.username, endpoint);
+				let credential = new Credential(req.body.type, req.body.token, req.body.username, req.body.password);
+				pokemonUtils.getClient(credential).then(client => {
+					client.releasePokemon(req.body.pokemon_id).then(releaseResponse => {
+							expressUtils.sendResponse(res, next, 200, {success: releaseResponse.result === 1, token: client.authToken}, req.body.username, endpoint);
 						}, err => {
 							log.error({err: err.message});
 							expressUtils.sendResponse(res, next, 500, {error: props.errors.transfer}, req.body.username, endpoint);
 						});
-					});
-				}, err => {
-					log.error({err: err.message});
-					expressUtils.sendResponse(res, next, 500, {error: props.errors.login}, req.body.username, endpoint);
+					}, err => {
+					  log.error({err: err.message});
+					  expressUtils.sendResponse(res, next, 500, {error: props.errors.login}, req.body.username, endpoint);
 				});
 			}
 		});
@@ -199,8 +182,10 @@ module.exports = {
 				{username: req.body.username},
 				'POST request to ' + endpoint);
 
-			if(!req.body.hasOwnProperty('username')){
-				expressUtils.sendResponse(res, next, 400, {error: props.errors.username}, req.body.username, endpoint);
+			if(!req.body.hasOwnProperty('token')){
+				expressUtils.sendResponse(res, next, 400, {error: props.errors.token}, req.body.username, endpoint);
+			} else if (!req.body.hasOwnProperty('username')) {
+				expressUtils.sendResponse(res, next, 400, {error: props.errors.password}, req.body.username, endpoint);
 			} else if (!req.body.hasOwnProperty('password')) {
 				expressUtils.sendResponse(res, next, 400, {error: props.errors.password}, req.body.username, endpoint);
 			} else if (!req.body.hasOwnProperty('type')) {
@@ -221,30 +206,17 @@ module.exports = {
 				req.body.pokemon_id.low = Number(req.body.pokemon_id.low);
 				req.body.pokemon_id.unsigned = req.body.pokemon_id === "true";
 
-				const client = new pogobuf.Client();
-
-				let login = null;
-
-				if(req.body.type.toLowerCase() === 'google'){
-					login = new pogobuf.GoogleLogin();
-				} else {
-					login = new pogobuf.PTCLogin();
-				}
-
-				login.login(req.body.username, req.body.password).then(token => {
-					client.setAuthInfo(req.body.type.toLowerCase(), token);
-
-					client.init().then(() => {
-						client.nicknamePokemon(req.body.pokemon_id, req.body.nickname).then(nicknameResponse => {
-							expressUtils.sendResponse(res, next, 200, {success: nicknameResponse.result === 1}, req.body.username, endpoint);
+				let credential = new Credential(req.body.type, req.body.token, req.body.username, req.body.password);
+				pokemonUtils.getClient(credential).then(client => {
+					client.nicknamePokemon(req.body.pokemon_id, req.body.nickname).then(nicknameResponse => {
+							expressUtils.sendResponse(res, next, 200, {success: nicknameResponse.result === 1, token: client.authToken}, req.body.username, endpoint);
 						}, err => {
 							log.error({err: err.message});
 							expressUtils.sendResponse(res, next, 500, {error: props.errors.transfer}, req.body.username, endpoint);
 						});
-					});
-				}, err => {
-					log.error({err: err.message});
-					expressUtils.sendResponse(res, next, 500, {error: props.errors.login}, req.body.username, endpoint);
+					}, err => {
+					  log.error({err: err.message});
+					  expressUtils.sendResponse(res, next, 500, {error: props.errors.login}, req.body.username, endpoint);
 				});
 			}
 		});

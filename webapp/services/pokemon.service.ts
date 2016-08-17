@@ -51,6 +51,7 @@ export class PokemonService {
 			let resBody = res.json();
 			this._pokemon = resBody.pokemon as Pokemon[];
 			this._species = resBody.species as Species[];
+			this._userLogin.token = resBody.token;
 
 			this._pokemonChange.emit({message: 'Pokemon updated'});
 		})
@@ -65,6 +66,7 @@ export class PokemonService {
 			username: this._userLogin.username,
 			password: this._userLogin.password,
 			type: this._userLogin.type,
+			token: this._userLogin.token,
 			pokemon_id: pokemon.id
 		};
 
@@ -72,6 +74,7 @@ export class PokemonService {
 		.post(this._transferUrl, JSON.stringify(request), {headers: headers})
 		.toPromise()
 		.then(res => {
+			this._userLogin.token = res.json().token;
 		})
 		.catch(this.handleError);
 	}
@@ -83,6 +86,7 @@ export class PokemonService {
 		let request = {
 			username: this._userLogin.username,
 			password: this._userLogin.password,
+			token: this._userLogin.token,
 			type: this._userLogin.type,
 			pokemon_id: pokemon.id,
 			nickname: nickname
@@ -92,6 +96,7 @@ export class PokemonService {
 		.post(this._renameUrl, JSON.stringify(request), {headers: headers})
 		.toPromise()
 		.then(res => {
+			this._userLogin.token = res.json().token;
 		})
 		.catch(this.handleError);
 	}
