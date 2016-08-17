@@ -2,7 +2,6 @@
 
 const bunyan = require('bunyan');
 const pogobuf = require('pogobuf');
-const Long = require('long');
 
 const props = require('../config/properties.js');
 const expressUtils = require('../utils/expressUtils.js');
