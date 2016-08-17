@@ -1,8 +1,8 @@
 <form (ngSubmit)="_onSubmit()" #loginForm="ngForm">
 	<div class="form-group">
 		<label for="type">Login Type: </label>
-		<select class="form-control" name="type" [(ngModel)]="_model.type" required>
-			<option *ngFor="let type of _types" [value]="type">{{type}}</option>
+		<select class="form-control" name="type" [(ngModel)]="_model.type" (change)="_changedLoginType($event.target.value)" required>
+			<option *ngFor="let type of _properties.loginTypes" [value]="type">{{type}}</option>
 		</select>
 	</div>
 

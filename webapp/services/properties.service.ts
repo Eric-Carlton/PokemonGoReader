@@ -4,8 +4,12 @@ import { SortType } from '../models/sort-type.model'
 import { SortOrder } from '../models/sort-order.model'
 import { PokemonTableStat } from '../models/pokemon-table-stat.model'
 
+import { UtilsService } from './utils.service'
+
 @Injectable()
 export class PropertiesService {
+	constructor(private _utils: UtilsService){}
+
 	public apiHost: string = '//' + window.location.hostname + ':8008';
 	public getPokemonRoute: string = '/api/pokemon/get';
 	public transferPokemonRoute: string = '/api/pokemon/transfer';
@@ -14,13 +18,13 @@ export class PropertiesService {
 	public loginComponentTitle: string = 'Pokemon Go! Pokemon Retriever';
 	public loginComponentContent: string = 'Why use an IV calculator when you can easily retrieve your Pokemon\'s exact data from Niantic? This easy-to-use tool allows you to do just that!';
 	public loginErrorMessage: string = 'Unable to login';
+	public loginTypes: string[] = this._utils.doesLocalStorageHaveItem('loginTypes') ? this._utils.getLocalStorageObj('loginTypes') : ['PTC', 'Google'];
 
 	public pokemonStatsComponentTitle: string = 'Pokemon Stats';
 	public pokemonStatsComponentContent: string = 'Click a sort order to sort by that property. Default sort is Pokedex number, secondarily sorting by IV percentage where Pokedex number is the same, and finally sorting by CP where Pokedex number and IV percentage are the same.';
 
 	public useTabularFormat: boolean =  false;
-
-	public showTransferButton: boolean = true;
+	public showTransferButton: boolean = true;loginTypes
 	public showRenameButton: boolean = true;
 
 	public pokemonTableStats: PokemonTableStat[] = [
