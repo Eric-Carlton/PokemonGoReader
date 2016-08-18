@@ -71,7 +71,7 @@ FAQs
 -----
 * **I've recently pulled and the new version doesn't work!**
 
-  I may have added a dependency or updated a minimum version for an old dependency. Try running `npm install`. If that doesn't fix your problem, please [Open up an issue](https://github.com/Eric-Carlton/PokemonGoReader/issues).
+  I may have added a dependency or updated a minimum version for an old dependency. Try running `npm install`. If that doesn't fix your problem, please [open an issue](https://github.com/Eric-Carlton/PokemonGoReader/issues).
 
 * **Help! I'm seeing errors after an `npm start` on my Linux system! I've followed all of the setup instructions and it just isn't working!**
 
@@ -104,7 +104,7 @@ FAQs
 
 * **I'm facing an issue that hasn't been addressed here, or I'd like to add a feature request**
 
-  [Open up an issue](https://github.com/Eric-Carlton/PokemonGoReader/issues). I try to respond to errors within 24 hrs - no guarantees - and I'll generally prioritize feature requests weekly. If an issue is marked 'free to take', that means I don't plan on getting to it any time soon, but anyone is welcome to fork my repo and submit a pull request!
+  [Open an issue](https://github.com/Eric-Carlton/PokemonGoReader/issues). I try to respond to errors within 24 hrs - no guarantees - and I'll generally prioritize feature requests weekly. If an issue is marked 'free to take', that means I don't plan on getting to it any time soon, but anyone is welcome to fork my repo and submit a pull request!
 
 Screenshots
 -----------
