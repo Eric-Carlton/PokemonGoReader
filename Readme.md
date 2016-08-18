@@ -69,6 +69,10 @@ Known Issues
 
 FAQs
 -----
+* **I've recent pulled and the new version doesn't work!**
+
+  I may have added a dependency or updated a minimum version for an old dependency. Try running `npm install`. If that doesn't fix your problem, please [Open up an issue](https://github.com/Eric-Carlton/PokemonGoReader/issues).
+
 * **Help! I'm seeing errors after an `npm start` on my Linux system! I've followed all of the setup instructions and it just isn't working!**
 
   The postinstall script doesn't seem to run automatically on some Linux systems. Try running `npm run postinstall` after `npm install`. See [issue #1](https://github.com/Eric-Carlton/PokemonGoReader/issues/1) for a full description.
