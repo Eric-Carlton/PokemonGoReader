@@ -1,6 +1,6 @@
 <settings></settings>
 
-<table class="table table-striped table-hover table-bordered" [hidden]="!settings.useTabularFormat">
+<table id="stats-as-table" class="table table-striped table-hover table-bordered" [hidden]="!settings.useTabularFormat">
 	<thead>
 		<tr>
 			<th *ngFor="let stat of settings.pokemonTableStats" (click)="_sortPokemon(stat.property, true)">{{stat.heading}}</th>
