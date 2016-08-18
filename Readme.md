@@ -104,13 +104,13 @@ FAQs
 
 Screenshots
 -----------
-![Login Screen](http://i.imgur.com/tCTIO5a.png "Login Screen")
+![Login Screen](http://i.imgur.com/HiCfZJ7.png "Login Screen")
 
-![Pokemon Stats Cards](http://i.imgur.com/2EE32L5.png "Pokemon Stats Cards") 
+![Pokemon Stats Cards](http://i.imgur.com/2NRSB3I.png "Pokemon Stats Cards") 
 
-![Pokemon Stats Table](http://i.imgur.com/HNOCPs4.png "Pokemon Stats Table") 
+![Pokemon Stats Table](http://i.imgur.com/2XgMi9H.png "Pokemon Stats Table") 
 
-![Species Cards](http://i.imgur.com/tnnpZBW.png "Species Cards")
+![Species Cards](http://i.imgur.com/3Kjh3Uk.png "Species Cards")
 
 IV Explanation
 --------------
