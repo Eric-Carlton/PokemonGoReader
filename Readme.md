@@ -69,7 +69,7 @@ Known Issues
 
 FAQs
 -----
-* **I've recent pulled and the new version doesn't work!**
+* **I've recently pulled and the new version doesn't work!**
 
   I may have added a dependency or updated a minimum version for an old dependency. Try running `npm install`. If that doesn't fix your problem, please [Open up an issue](https://github.com/Eric-Carlton/PokemonGoReader/issues).
 
