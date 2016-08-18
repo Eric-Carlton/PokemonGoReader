@@ -6,13 +6,16 @@
 		</section>
 		<p>{{_content}}</p>
 	</section>
-	<section>
-		<label for="display-type">Display Type: </label>
-			<select name="display-type" [(ngModel)]="_displayByMonster">
-				<option [value]="true">Monster</option>
-				<option [value]="false">Species</option>
-		</select>
-	</section>
-	<pokemon-table [hidden]="_displayByMonster !== 'true'"></pokemon-table>
-	<pokemon-species [hidden]="_displayByMonster === 'true'"></pokemon-species>
+	<div id="display-by" class="dropdown">
+		<button class="btn btn-default dropdown-toggle" type="button" id="display-by-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			Display By
+			<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu" aria-labelledby="display-by-dropdown">
+			<li (click)="_setDisplayByMonster(true)">Monster</li>
+			<li (click)="_setDisplayByMonster(false)">Species</li>
+		</ul>
+	</div>
+	<pokemon-table [hidden]="!_displayByMonster"></pokemon-table>
+	<pokemon-species [hidden]="_displayByMonser"></pokemon-species>
 </div>

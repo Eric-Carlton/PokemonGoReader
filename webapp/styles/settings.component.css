@@ -1,11 +1,3 @@
-.dropdown-menu li label, .dropdown-menu li input {
-	cursor: pointer;
-}
-
-.dropdown-menu li:hover {
-	background-color:#f7f7f7;
-}
-
 #settings, #table-settings{
 	margin-bottom: 1.5em;
 }

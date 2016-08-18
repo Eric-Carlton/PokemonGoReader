@@ -7,7 +7,7 @@ body {
 	line-height: 1.5;
 	font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 	color: #555;
-	background-color: #fcfcfc;
+	background-color: #f7f7f7;
 }
 
 h1 {
@@ -21,4 +21,16 @@ p {
 .error {
 	color: red;
 	font-weight: bold;
+}
+
+.dropdown-menu {
+	text-align: center;
+}
+
+.dropdown-menu li {
+	cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+	background-color:#dedede;
 }

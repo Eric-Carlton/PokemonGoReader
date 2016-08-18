@@ -29,14 +29,7 @@ table#stats-as-table {
  table#stats-as-table th {
  	cursor: pointer;
  }
-.dropdown-menu li {
-	cursor: pointer;
-}
-
-.dropdown-menu li:hover {
-	background-color:#f7f7f7;
-}
-
+ 
 #sort-orders{
 	margin-bottom: 1.5em;
 	width:10em;

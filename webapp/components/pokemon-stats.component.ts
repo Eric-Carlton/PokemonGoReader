@@ -19,7 +19,7 @@ export class PokemonStatsComponent implements OnDestroy {
 	private _subscription: any = null;
 	private _pokemonLoaded: boolean = false;
 	private _refreshingPokemon: boolean = false;
-	private _displayByMonster: string = 'true';
+	private _displayByMonster: boolean = true;
 
 	@ViewChild(PokemonTableComponent) pokemonTable: PokemonTableComponent;
 	@ViewChild(PokemonSpeciesComponent) pokemonSpecies: PokemonSpeciesComponent;
@@ -42,6 +42,10 @@ export class PokemonStatsComponent implements OnDestroy {
 				alert('An error occurred while refreshing Pokemon');
 			});
 		}
+	}
+
+	private _setDisplayByMonster(displayByMonster: boolean){
+		this._displayByMonster = displayByMonster;
 	}
 
 	ngOnDestroy() {
