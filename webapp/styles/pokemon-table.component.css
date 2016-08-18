@@ -1,5 +1,22 @@
 settings {
-	text-align: center;
+	width: 100%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.dropdown-menu li {
+	cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+	background-color:#f7f7f7;
+}
+
+#sort-orders{
+	margin-bottom: 1.5em;
+	width:10em;
+	float:right;
 }
 
 table#stats-as-table {
@@ -20,8 +37,8 @@ table#stats-as-table tbody{
 
 table#stats-as-table th, table#stats-as-table td {
 	padding: .5em;
-	max-width: 4.5em;
-	min-width: 4.5em;
+	max-width: 5.5em;
+	min-width: 5.5em;
 }
 
 table#stats-as-table tr:nth-child(even) {
@@ -37,22 +54,11 @@ table#stats-as-table th {
 	cursor: pointer;
 }
 
-.sortby-wrapper {
+.pokemon-list-wrapper {
+	clear: both;
 	text-align: center;
-	margin-top: 1.5em;
-}
-.sortby-item {
-	cursor: pointer;
-	display: inline-block;
-	padding: .25em .5em;
-	border: 1px solid black;
-	margin: 3px;
-	font-size: .99em;
 }
 
-.pokemon-list-wrapper {
-	text-align: center;
-}
 .pokemon-list-item {
 	position: relative;
 	border: 1px solid #f0f0f0;

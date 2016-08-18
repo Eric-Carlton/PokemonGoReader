@@ -1,7 +1,21 @@
-label {
-	margin: 0 2em;
+.dropdown-menu li label, .dropdown-menu li input {
+	cursor: pointer;
 }
 
-#table-settings {
-	margin-top: 1.5em;
+.dropdown-menu li:hover {
+	background-color:#f7f7f7;
+}
+
+#settings, #table-settings{
+	margin-bottom: 1.5em;
+}
+
+#settings{
+	width: 10em;
+	float:left;
+}
+
+#table-settings{
+	width:10em;
+	float:right;
 }

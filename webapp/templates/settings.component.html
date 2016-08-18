@@ -1,22 +1,20 @@
-<section id="settings">
-	Settings:
-	<label>
-		<input type="checkbox" [(ngModel)]="useTabularFormat" />
-		Table format
-	</label>
-	<label>
-		<input type="checkbox" [(ngModel)]="showTransferButton" />
-		Transfer Button
-	</label>
-	<label>
-		<input type="checkbox" [(ngModel)]="showRenameButton" />
-		Rename Button
-	</label>
+<section id="settings" class="dropdown">
+	<button class="btn btn-default dropdown-toggle" type="button" id="settings-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+		Settings
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu" aria-labelledby="settings-dropdown">
+		<li><label><input type="checkbox" [(ngModel)]="useTabularFormat" />Table format</label></li>
+		<li><label><input type="checkbox" [(ngModel)]="showTransferButton" />Transfer Button</label></li>
+		<li><label><input type="checkbox" [(ngModel)]="showRenameButton" />Rename Button</label></li>
+	</ul>
 </section>
-<section id="table-settings" *ngIf="useTabularFormat">
-	Table Stats:
-	<label *ngFor="let stat of _properties.pokemonTableStats">
-		<input type="checkbox" [checked]="_isStatSelected(stat.heading)" (change)="_statChanged(stat.heading)">
-		{{stat.heading}}
-	</label>
+<section id="table-settings" class="dropdown" *ngIf="useTabularFormat">
+	<button class="btn btn-default dropdown-toggle" type="button" id="table-stats-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+		Table Stats
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu" aria-labelledby="table-stats-dropdown">
+		<li *ngFor="let stat of _properties.pokemonTableStats"><label><input type="checkbox" [checked]="_isStatSelected(stat.heading)" (change)="_statChanged(stat.heading)">{{stat.heading}}</label></li>
+	</ul>
 </section>

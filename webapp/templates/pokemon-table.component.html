@@ -24,11 +24,16 @@
 </table>
 
 <div [hidden]="settings.useTabularFormat">
-	<div class="sortby-wrapper">
-		<span>Sort Orders: </span>
-		<div class="sortby-item" *ngFor="let key of _getSortOrders()" (click)="_sortPokemon(key, true)">
-			{{_properties.pokemonTableSortOrders[key].name}}
-		</div>
+	<div id="sort-orders" class="dropdown">
+		<button class="btn btn-default dropdown-toggle" type="button" id="table-stats-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			Sort Orders
+			<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu" aria-labelledby="table-stats-dropdown">
+			<li *ngFor="let key of _getSortOrders()" (click)="_sortPokemon(key, true)">
+				{{_properties.pokemonTableSortOrders[key].name}}
+			</li>
+		</ul>
 	</div>
 
 	<div class="pokemon-list-wrapper">

@@ -1,6 +1,8 @@
 @import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
 
 body {
+	margin: 0 auto;
+	max-width: 90em;
 	padding: 4em 1em;
 	line-height: 1.5;
 	font-family: "Roboto", "Helvetica", "Arial", sans-serif;
@@ -8,9 +10,8 @@ body {
 	background-color: #f7f7f7;
 }
 
-section {
-	margin: 0 auto;
-	max-width: 70em;
+h1 {
+	font-size: 18px;
 }
 
 p {
