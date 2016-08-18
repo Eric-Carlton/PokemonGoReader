@@ -53,13 +53,13 @@ export class SettingsComponent {
 
 	private _createUserSettings(){
 		let settings = this._utils.getLocalStorageObj('settings');
-		settings[this._pokemonService.userLogin.username] = {};
+		settings[this._pokemonService.userLogin.username.toLowerCase()] = {};
 		this._utils.setLocalStorageObj('settings', settings);
 	}
 
 	private _saveUserSetting(setting: string, value: any){
 		let settings = this._utils.getLocalStorageObj('settings');
-		settings[this._pokemonService.userLogin.username][setting] = value;
+		settings[this._pokemonService.userLogin.username.toLowerCase()][setting] = value;
 		this._utils.setLocalStorageObj('settings', settings);
 	}
 
@@ -68,8 +68,8 @@ export class SettingsComponent {
 			let settings = this._utils.getLocalStorageObj('settings');
 
 			if(this._pokemonService.userLogin !== null){
-				if(settings.hasOwnProperty(this._pokemonService.userLogin.username)){
-					let userSettings = settings[this._pokemonService.userLogin.username];
+				if(settings.hasOwnProperty(this._pokemonService.userLogin.username.toLowerCase())){
+					let userSettings = settings[this._pokemonService.userLogin.username.toLowerCase()];
 
 					if(userSettings.hasOwnProperty(setting)){
 						return userSettings[setting];
