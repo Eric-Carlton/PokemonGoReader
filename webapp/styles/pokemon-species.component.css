@@ -38,3 +38,7 @@
 .pokemon-list-item .candies img {
 	display: block;
 }
+
+#sort-orders{
+	margin-bottom: 1.5em;
+}

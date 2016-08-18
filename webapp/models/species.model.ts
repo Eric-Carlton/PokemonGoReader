@@ -5,6 +5,8 @@ export class Species {
 		public count: number,
 		public candy: number,
 		public evolve_sort: number,
-		public evolve: any
+		public evolve: any,
+		public transfer: number,
+		public need: number
 	){ }
 }

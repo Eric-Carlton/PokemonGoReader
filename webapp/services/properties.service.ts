@@ -125,4 +125,41 @@ export class PropertiesService {
 
 		caught_time: new SortOrder('Caught Time', [new SortType('caught_time', false)])
 	};
+
+	public defaultSpeciesSortOrder: string = 'pokedex_number';
+	public speciesSortOrders: any = {
+		pokedex_number: new SortOrder('Pokedex Number', [new SortType('pokedex_number', true)]),
+
+		species: new SortOrder('Species', [new SortType('species', true)]),
+
+		count: new SortOrder(
+			'Count', [
+			new SortType('count', false),
+			new SortType('pokedex_number', true)]
+		),
+
+		candy: new SortOrder(
+			'Candy', [
+			new SortType('candy', false),
+			new SortType('pokedex_number', true)]
+		),
+
+		evolutions: new SortOrder(
+			'Evolutions', [
+			new SortType('evolve_sort', false),
+			new SortType('pokedex_number', true)]
+		),
+
+		transfer: new SortOrder(
+			'Transfer', [
+			new SortType('transfer', false),
+			new SortType('pokedex_number', true)]
+		),
+
+		need: new SortOrder(
+			'Need', [
+			new SortType('need', true),
+			new SortType('pokedex_number', true)]
+		)
+	};
 }
