@@ -7,7 +7,9 @@ class Species {
 		count,
 		candy,
 		evolve_sort,
-		evolve
+		evolve,
+		transfer,
+		need
 	)
 	{
 		this.pokedex_number = pokedex_number;
@@ -16,6 +18,8 @@ class Species {
 		this.candy = candy;
 		this.evolve_sort = evolve_sort;
 		this.evolve = evolve;
+		this.transfer = transfer;
+		this.need = need;
 	}
 }
 

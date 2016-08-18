@@ -1,14 +1,23 @@
+<div id="sort-orders" class="dropdown">
+	<button class="btn btn-default dropdown-toggle" type="button" id="table-stats-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+		Sort Orders
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu" aria-labelledby="table-stats-dropdown">
+		<li *ngFor="let key of _getSortOrders()" (click)="_sortSpecies(key, true)">
+			{{_properties.speciesSortOrders[key].name}}
+		</li>
+	</ul>
+</div>
+
 <div class="pokemon-list-wrapper">
   <div class="pokemon-list-item" *ngFor="let species of _species; let i = index">
     <img class="icon" src="https://silphassets.a.cdnify.io/img/pokemon/icons/96x96/{{species.pokedex_number}}.png" title="{{species.species}}"/>
     <div class="name">
-      {{ species.species }}
+      {{ species.species }}<br/>
+      Count: {{ species.count }}
     </div>
     <table class="candies">
-      <tr>
-        <td>Count: </td>
-        <td>{{ species.count }}</td>
-      </tr>
       <tr>
         <td><img src="webapp/img/candy-icon.png"></td>
         <td>{{ species.candy }}</td>
@@ -16,6 +25,14 @@
       <tr *ngFor="let descendant of species.evolve">
         <td><img class="image" src="https://silphassets.a.cdnify.io/img/pokemon/icons/16x16/{{descendant.id}}.png"/></td>
         <td>{{ descendant.canEvolve }}</td>
+      </tr>
+      <tr [hidden]="species.transfer < 1">
+        <td><img src="https://cdn2.iconfinder.com/data/icons/data-transfer/24/data-transfer-3-16.png"></td>
+        <td>{{ species.transfer }}</td>
+      </tr>
+      <tr [hidden]="species.need === _needSentinel">
+        <td><img src="https://cdn3.iconfinder.com/data/icons/big-icon-s-collection-pack/500/plus-sign-16.png"></td>
+        <td>{{ species.need }}</td>
       </tr>
     </table>
   </div>

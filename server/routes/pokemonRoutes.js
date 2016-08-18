@@ -56,27 +56,20 @@ module.exports = {
 								let id = pokemon.pokemon_id.toString();
 
 								let species = {
-									'pokedex_number': id,
-									'species': props.pokemonNamesByDexNum[pokemon.pokemon_id.toString()],
+									'pokedex_number': pokemon.pokemon_id,
+									'species': props.pokemonNamesByDexNum[id],
 									'count': 1,
 									'candy': 0,
 									'evolve_sort': 0,
-									'evolve': []
+									'evolve': [],
+									'transfer': 0,
+									'need': Number.MAX_SAFE_INTEGER
 								};
 
 								if (id in speciesMap){
 									speciesMap[id].count += 1;
 								} else {
-									let candy = pokemonUtils.getCandy(pokemon, splitInventory.candies);
-									props.pokemonEvolutionByDexNum[id].forEach(function(descendant){
-										let canEvolve = Math.trunc((candy - 1) / (descendant.cost - 1));
-										if (canEvolve > 0){
-											species.evolve_sort = Math.max(species.evolve_sort, canEvolve);
-											species.evolve.push({'id': descendant.id, 'canEvolve': canEvolve});
-										}
-									});
-
-									species.candy = candy;
+									species.candy = pokemonUtils.getCandy(pokemon, splitInventory.candies);
 									speciesMap[id] = species;
 								}
 
@@ -104,13 +97,35 @@ module.exports = {
 
 						let formattedSpecies = [];
 						Object.keys(speciesMap).forEach(function(speciesId) {
+							let species = speciesMap[speciesId];
+
+							let maxDesc = 0;
+							props.pokemonEvolutionByDexNum[speciesId].forEach(function(descendant){
+								let canEvolve = Math.trunc((species.candy - 1) / (descendant.cost - 1));
+								if (canEvolve > 0){
+									species.evolve_sort = Math.max(species.evolve_sort, canEvolve);
+									species.evolve.push({'id': descendant.id, 'canEvolve': canEvolve});
+								} else {
+									if (maxDesc < descendant.cost){
+										maxDesc = descendant.cost;
+										species.need = Math.ceil((descendant.cost - species.candy) / 4);
+									}
+								}
+							});
+
+							if (species.evolve_sort > 0 && species.count > species.evolve_sort) {
+								species.transfer = species.count - species.evolve_sort;
+							}
+
 							formattedSpecies.push(new Species(
-								speciesMap[speciesId].pokedex_number,
-								speciesMap[speciesId].species,
-								speciesMap[speciesId].count,
-								speciesMap[speciesId].candy,
-								speciesMap[speciesId].evolve_sort,
-								speciesMap[speciesId].evolve
+								species.pokedex_number,
+								species.species,
+								species.count,
+								species.candy,
+								species.evolve_sort,
+								species.evolve,
+								species.transfer,
+								species.need
 							));
 						});
 
