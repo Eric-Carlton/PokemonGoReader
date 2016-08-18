@@ -19,41 +19,6 @@ settings {
 	float:right;
 }
 
-table#stats-as-table {
-	margin: 1.5em auto;
-}
-
-table#stats-as-table thead tr{
-	position: relative;
-	display: block;
-}
-
-table#stats-as-table tbody{
-	display: block;
-	overflow-y: scroll;
-	height: 600px;
-}
-
-
-table#stats-as-table th, table#stats-as-table td {
-	padding: .5em;
-	max-width: 5.5em;
-	min-width: 5.5em;
-}
-
-table#stats-as-table tr:nth-child(even) {
-	background-color: #e7e7e7;
-
-}
-table#stats-as-table tr:nth-child(odd) {
-	background-color: #d7d7d7;
-}
-table#stats-as-table th {
-	background-color: #c7c7c7;
-	text-align: left;
-	cursor: pointer;
-}
-
 .pokemon-list-wrapper {
 	clear: both;
 	text-align: center;
