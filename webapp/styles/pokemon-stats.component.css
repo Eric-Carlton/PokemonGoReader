@@ -2,12 +2,9 @@
 	text-align: center;
 }
 
-form {
+#pokemon-stats-component section {
+	margin: 1.5em auto;
 	text-align: center;
-}
-
-#pokemon-stats-component .title{
-	text-align: center
 }
 
 #title-heading, #refresh-img{

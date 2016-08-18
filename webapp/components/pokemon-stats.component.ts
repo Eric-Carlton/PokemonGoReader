@@ -19,7 +19,7 @@ export class PokemonStatsComponent implements OnDestroy {
 	private _subscription: any = null;
 	private _pokemonLoaded: boolean = false;
 	private _refreshingPokemon: boolean = false;
-	private _displayByMonster: boolean = true;
+	private _displayByMonster: string = 'true';
 
 	@ViewChild(PokemonTableComponent) pokemonTable: PokemonTableComponent;
 	@ViewChild(PokemonSpeciesComponent) pokemonSpecies: PokemonSpeciesComponent;
@@ -46,9 +46,5 @@ export class PokemonStatsComponent implements OnDestroy {
 
 	ngOnDestroy() {
 		this._subscription.unsubscribe();
-	}
-
-	setDisplayType(value: boolean) {
-	  this._displayByMonster = value;
 	}
 }
