@@ -17,7 +17,7 @@ export class SettingsComponent {
 		private _properties: PropertiesService,
 		private _utils: UtilsService,
 		private _pokemonService: PokemonService
-	){ }
+		){ }
 
 	public get useTabularFormat(): boolean {
 		return this._getUserSetting('useTabularFormat');
@@ -110,30 +110,29 @@ export class SettingsComponent {
 				}
 			}
 		} else {
-			let allStats = this._properties.pokemonTableStats.slice();
+			let allStats = this._properties.pokemonTableStats;
+			let newUserStats = [];
 
 			//this is gross, but I couldn't think of a better way to
 			//retain order of headings
 			for(let aidx = 0; aidx < allStats.length; aidx++){
 				let stat = allStats[aidx];
 
-				if(stat.heading !== heading){
-					let statFound = false;
-					
-					for(let uidx = 0; uidx < userStats.length; uidx++){
-						if(userStats[uidx].heading === stat.heading){
-							statFound = true;
-							break;
-						}
-					}
+				let statFound = false;
 
-					if(!statFound){
-						allStats.splice(aidx, 1);
+				for(let uidx = 0; uidx < userStats.length; uidx++){
+					if(userStats[uidx].heading === stat.heading){
+						statFound = true;
+						break;
 					}
+				}
+
+				if(statFound || stat.heading === heading){
+					newUserStats.push(stat)
 				}
 			}
 
-			userStats = allStats;
+			userStats = newUserStats;
 		}
 
 		this._saveUserSetting('pokemonTableStats', userStats);
