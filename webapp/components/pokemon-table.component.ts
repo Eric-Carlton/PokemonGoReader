@@ -23,8 +23,6 @@ export class PokemonTableComponent {
 	@ViewChild(SettingsComponent) settings: SettingsComponent;
 
 	private _pokemon: Pokemon[] = [];
-	private _pokemonTableStats: PokemonTableStat[] = this._properties.pokemonTableStats;
-	private _pokemonTableSortOrders: any = this._properties.pokemonTableSortOrders;
 	//right now we're only allowing 1 transfer at a time, like God intended,
 	//this may need to be updated later to allow for batch transfers
 	private _transferringPokemonAtIndex: number = null;
@@ -94,12 +92,12 @@ export class PokemonTableComponent {
 	}
 
 	private _getSortOrders(): string[]{
-		return Object.keys(this._pokemonTableSortOrders);
+		return Object.keys(this._properties.pokemonTableSortOrders);
 	}
 
 	private _sortPokemon(sortOrderName: string, reverseSortOrder: boolean) {
-		if(this._pokemonTableSortOrders.hasOwnProperty(sortOrderName)){
-			let sortOrder = this._pokemonTableSortOrders[sortOrderName].sort_types;
+		if(this._properties.pokemonTableSortOrders.hasOwnProperty(sortOrderName)){
+			let sortOrder = this._properties.pokemonTableSortOrders[sortOrderName].sort_types;
 
 			//double clicking a heading should reverse the primary sort
 			if(this._currentSortOrderName === sortOrderName && reverseSortOrder){

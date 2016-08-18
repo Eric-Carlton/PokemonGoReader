@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { PokemonTableStat } from '../models/pokemon-table-stat.model'
+
 import { PropertiesService } from '../services/properties.service'
 import { UtilsService } from '../services/utils.service'
 import { PokemonService } from '../services/pokemon.service'
@@ -27,6 +29,10 @@ export class SettingsComponent {
 
 	public get showRenameButton(): boolean {
 		return this._getUserSetting('showRenameButton');
+	}
+
+	public get pokemonTableStats(): PokemonTableStat[] {
+		return this._getUserSetting('pokemonTableStats');
 	}
 
 	public set useTabularFormat(useTabularFormat: boolean) {
@@ -77,5 +83,59 @@ export class SettingsComponent {
 		}
 
 		return this._properties[setting];
+	}
+
+	private _isStatSelected(heading: string): boolean {
+		let stats = this._getUserSetting('pokemonTableStats');
+		for(let idx = 0; idx < stats.length; idx++){
+			let stat = stats[idx];
+			if(stat.heading === heading) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	private _statChanged(heading: string){
+		let userStats = this._getUserSetting('pokemonTableStats').slice();
+
+		if(this._isStatSelected(heading)){
+			for(let idx = 0; idx < userStats.length; idx++){
+				let userStat = userStats[idx];
+
+				if(userStat.heading === heading){
+					userStats.splice(idx, 1);
+					break;
+				}
+			}
+		} else {
+			let allStats = this._properties.pokemonTableStats.slice();
+
+			//this is gross, but I couldn't think of a better way to
+			//retain order of headings
+			for(let aidx = 0; aidx < allStats.length; aidx++){
+				let stat = allStats[aidx];
+
+				if(stat.heading !== heading){
+					let statFound = false;
+					
+					for(let uidx = 0; uidx < userStats.length; uidx++){
+						if(userStats[uidx].heading === stat.heading){
+							statFound = true;
+							break;
+						}
+					}
+
+					if(!statFound){
+						allStats.splice(aidx, 1);
+					}
+				}
+			}
+
+			userStats = allStats;
+		}
+
+		this._saveUserSetting('pokemonTableStats', userStats);
 	}
 }

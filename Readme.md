@@ -87,10 +87,6 @@ FAQs
 
   If you use a Google account and have two factor authentication enabled, you will need to [generate an app password](https://security.google.com/settings/security/apppasswords) and use that to log in.
 
-* **There's a lot of information in the table layout, some of which I don't even care about. Is it possible to remove some of the noise?**
-  
-  Sure! There's configuration available for this. Go to webapp/services/properties.service.ts and look for the pokemonTableStats property. Just remove anything from that array that you don't want to see in your table. Once [issue #64](https://github.com/Eric-Carlton/PokemonGoReader/issues/64) is implemented, you'll be able to change this from the UI.
-
 * **I want to allow other computers on my local network to access the tool from my computer. Is that possible?**
   
   It sure is! You do, however, need to make some configuration changes. 

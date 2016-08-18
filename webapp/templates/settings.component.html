@@ -1,4 +1,4 @@
-<section>
+<section id="settings">
 	Settings:
 	<label>
 		<input type="checkbox" [(ngModel)]="useTabularFormat" />
@@ -11,5 +11,12 @@
 	<label>
 		<input type="checkbox" [(ngModel)]="showRenameButton" />
 		Rename Button
+	</label>
+</section>
+<section id="table-settings" *ngIf="useTabularFormat">
+	Table Stats:
+	<label *ngFor="let stat of _properties.pokemonTableStats">
+		<input type="checkbox" [checked]="_isStatSelected(stat.heading)" (change)="_statChanged(stat.heading)">
+		{{stat.heading}}
 	</label>
 </section>
