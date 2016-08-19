@@ -8,6 +8,10 @@
 	margin-left:-75px;
 }
 
+.glyphicon-refresh {
+	cursor: pointer
+}
+
 #pokemon-stats-component h1{
 	text-align: center;
 }
@@ -17,12 +21,8 @@
 	text-align: center;
 }
 
-#title-heading, #refresh-img{
+#title-heading{
 	display: inline-block;
-}
-
-#refresh-img{
-	cursor: pointer;
 }
 
 #display-by{
