@@ -34,10 +34,10 @@ table#stats-as-table th {
 	margin: 1.5em auto;
 }
 
-#sort-orders{
-	margin-bottom: 1.5em;
-	width:8em;
-	float:right;
+.dropdown-menu { 
+	width: 150px;
+	left: 50%;
+	margin-left: -108px;
 }
 
 .pokemon-list-wrapper {
@@ -95,4 +95,10 @@ table#stats-as-table th {
 }
 .pokemon-list-item .actions {
 	padding: .5em;
+}
+
+#sort-orders{
+	margin-bottom: 1.5em;
+	width:8em;
+	float:right;
 }

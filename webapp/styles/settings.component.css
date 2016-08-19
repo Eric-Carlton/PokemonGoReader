@@ -1,3 +1,15 @@
+#settings .dropdown-menu {
+	width: 150px;
+    left: 50%;
+    margin-left: -50px;
+}
+
+#table-settings .dropdown-menu{
+	width: 150px;
+	left: 50%;
+	margin-left: -108px;
+}
+
 #settings, #table-settings{
 	margin-bottom: 1.5em;
 }
