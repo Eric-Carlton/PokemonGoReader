@@ -39,14 +39,15 @@
     "start": "concurrently \"npm run server\" \"npm run webapp\"",
     "server": "node server/index.js | node node_modules/bunyan/bin/bunyan",
     "webapp": "npm run clean && tsc && npm run uglify && node ./node_modules/http-server/bin/http-server",
-    "webapp-dev": "npm run clean && tsc && npm run uglify && concurrently \"npm run tsc:w\" \"npm run lite\"",
+    "webapp-dev": "npm run clean && tsc && npm run uglify-dev && concurrently \"npm run tsc:w\" \"npm run lite\"",
     "lite": "lite-server",
     "postinstall": "node ./node_modules/typings install",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "typings": "node ./node_modules/typings",
     "clean": "node ./node_modules/rimraf/bin.js ./webapp/js/*",
-    "uglify": "node ./node_modules/uglify-js/bin/uglifyjs webapp/js/app.js -o webapp/js/app.min.js --in-source-map webapp/js/app.js.map --source-map webapp/js/app.min.js.map --source-map-url app.min.js.map"
+    "uglify": "node ./node_modules/uglify-js/bin/uglifyjs webapp/js/app.js -o webapp/js/app.min.js",
+    "uglify-dev": "node ./node_modules/uglify-js/bin/uglifyjs webapp/js/app.js -o webapp/js/app.min.js --in-source-map webapp/js/app.js.map --source-map webapp/js/app.min.js.map --source-map-url app.min.js.map"
   },
   "jshintConfig": {
     "esversion": 6,
