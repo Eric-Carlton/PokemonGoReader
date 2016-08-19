@@ -46,8 +46,8 @@
     "tsc:w": "tsc -w",
     "typings": "node ./node_modules/typings",
     "clean": "node ./node_modules/rimraf/bin.js ./webapp/js/*",
-    "uglify": "node ./node_modules/uglify-js/bin/uglifyjs webapp/js/app.js -o webapp/js/app.min.js",
-    "uglify-dev": "node ./node_modules/uglify-js/bin/uglifyjs webapp/js/app.js -o webapp/js/app.min.js --in-source-map webapp/js/app.js.map --source-map webapp/js/app.min.js.map --source-map-url app.min.js.map"
+    "uglify": "node ./node_modules/uglify-js/bin/uglifyjs webapp/js/app.js -o webapp/js/app.min.js -m -c",
+    "uglify-dev": "node ./node_modules/uglify-js/bin/uglifyjs webapp/js/app.js -o webapp/js/app.min.js --in-source-map webapp/js/app.js.map --source-map webapp/js/app.min.js.map --source-map-url app.min.js.map -m -c"
   },
   "jshintConfig": {
     "esversion": 6,
