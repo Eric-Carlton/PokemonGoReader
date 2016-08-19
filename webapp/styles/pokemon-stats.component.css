@@ -1,3 +1,13 @@
+.dropdown{
+	text-align:center;
+}
+
+.dropdown-menu{
+	width:150px; 
+	left:50%; 
+	margin-left:-75px;
+}
+
 #pokemon-stats-component h1{
 	text-align: center;
 }
@@ -17,5 +27,4 @@
 
 #display-by{
 	margin-bottom: 1.5em;
-	left: 45%;
 }

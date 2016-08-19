@@ -4,35 +4,39 @@ settings {
 	margin-left: auto;
 	margin-right: auto;
 }
-table#stats-as-table {
- 	margin: 1.5em auto;
- }
- 
- table#stats-as-table thead tr{
- 	position: relative;
- 	display: block;
- }
- 
- table#stats-as-table tbody{
- 	display: block;
- 	overflow-y: scroll;
- 	height: 600px;
- }
- 
- 
- table#stats-as-table th, table#stats-as-table td {
- 	padding: .5em;
- 	max-width: 5.5em;
- 	min-width: 5.5em;
- }
 
- table#stats-as-table th {
- 	cursor: pointer;
- }
- 
+table#stats-as-table thead tr{
+	position: relative;
+	display: block;
+}
+
+table#stats-as-table tbody{
+	display: block;
+	overflow-y: scroll;
+	height: 600px;
+}
+
+
+table#stats-as-table th, table#stats-as-table td {
+	padding: .5em;
+	max-width: 5.75em;
+	min-width: 5.75em;
+	white-space:normal;
+	word-wrap: break-word;
+}
+
+table#stats-as-table th {
+	cursor: pointer;
+}
+
+.table-responsive {
+	width:100%;
+	margin: 1.5em auto;
+}
+
 #sort-orders{
 	margin-bottom: 1.5em;
-	width:10em;
+	width:8em;
 	float:right;
 }
 

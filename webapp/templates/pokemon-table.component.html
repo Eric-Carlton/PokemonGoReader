@@ -1,27 +1,29 @@
 <settings></settings>
 
-<table id="stats-as-table" class="table table-striped table-hover table-bordered" [hidden]="!settings.useTabularFormat">
-	<thead>
-		<tr>
-			<th *ngFor="let stat of settings.pokemonTableStats" (click)="_sortPokemon(stat.property, true)">{{stat.heading}}</th>
-			<th [hidden]="!settings.showTransferButton">Transfer</th>
-			<th [hidden]="!settings.showRenameButton">Rename</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr *ngFor="let mon of _pokemon; let i = index">
-			<td *ngFor="let stat of settings.pokemonTableStats">
-				<span>{{_getTableOutput(mon, stat.property)}}</span>
-			</td>
-			<td [hidden]="!settings.showTransferButton">
-				<button type="button" [disabled]="mon.favorite || _transferringPokemonAtIndex !== null" (click)="_transferPokemon(mon, i)">{{_getTransferButtonText(i)}}</button>
-			</td>
-			<td [hidden]="!settings.showRenameButton">
-				<button type="button" [disabled]="_renamingPokemonAtIndex !== null || _transferringPokemonAtIndex !== null" (click)="_renamePokemon(mon, i)">{{_getRenameButtonText(i)}}</button>
-			</td>
-		</tr>
-	</tbody>
-</table>
+<div class="table-responsive" [hidden]="!settings.useTabularFormat">
+	<table id="stats-as-table" class="table table-striped table-hover table-bordered">
+		<thead>
+			<tr>
+				<th *ngFor="let stat of settings.pokemonTableStats" (click)="_sortPokemon(stat.property, true)">{{stat.heading}}</th>
+				<th [hidden]="!settings.showTransferButton">Transfer</th>
+				<th [hidden]="!settings.showRenameButton">Rename</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let mon of _pokemon; let i = index">
+				<td *ngFor="let stat of settings.pokemonTableStats">
+					<span>{{_getTableOutput(mon, stat.property)}}</span>
+				</td>
+				<td [hidden]="!settings.showTransferButton">
+					<button type="button" [disabled]="mon.favorite || _transferringPokemonAtIndex !== null" (click)="_transferPokemon(mon, i)">{{_getTransferButtonText(i)}}</button>
+				</td>
+				<td [hidden]="!settings.showRenameButton">
+					<button type="button" [disabled]="_renamingPokemonAtIndex !== null || _transferringPokemonAtIndex !== null" (click)="_renamePokemon(mon, i)">{{_getRenameButtonText(i)}}</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 
 <div [hidden]="settings.useTabularFormat">
 	<div id="sort-orders" class="dropdown">

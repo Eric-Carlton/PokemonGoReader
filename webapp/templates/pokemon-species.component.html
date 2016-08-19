@@ -1,9 +1,9 @@
 <div id="sort-orders" class="dropdown">
-	<button class="btn btn-default dropdown-toggle" type="button" id="table-stats-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+	<button class="btn btn-default dropdown-toggle" type="button" id="sort-orders-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 		Sort Orders
 		<span class="caret"></span>
 	</button>
-	<ul class="dropdown-menu" aria-labelledby="table-stats-dropdown">
+	<ul class="dropdown-menu" aria-labelledby="sort-orders-dropdown">
 		<li *ngFor="let key of _getSortOrders()" (click)="_sortSpecies(key, true)">
 			{{_properties.speciesSortOrders[key].name}}
 		</li>
