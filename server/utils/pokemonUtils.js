@@ -14,7 +14,7 @@ const log = bunyan.createLogger({
 })
 
 let getToken = (credential) => {
-	return new Promise(function(resolve, reject){
+	return new Promise((resolve, reject) => {
 		let login = null;
 
 		if(credential.login_type === 'google'){
@@ -26,7 +26,7 @@ let getToken = (credential) => {
 		login.login(credential.username, credential.password).then(token => {
 			resolve(token);
 		}, err => {
-			log.error({err: err.message});
+			log.trace('login.login() failed, rejecting from getToken');
 			reject(err);
 		});
 	});
@@ -34,7 +34,7 @@ let getToken = (credential) => {
 
 module.exports = {
 	getClient: (credential) => {
-		return new Promise(function(resolve, reject) {
+		return new Promise((resolve, reject) => {
 			const client = new pogobuf.Client();
 
 			if (credential.token){
@@ -44,12 +44,15 @@ module.exports = {
 				}, err => {
 					getToken(credential).then(token => {
 						client.setAuthInfo(credential.login_type, token);
-						client.init(() => {
+						client.init().then(() => {
 							resolve(client);
 						}, err => {
-							log.error({err: err.message});
+							log.trace('client.init() failed, rejecting from getClient');
 							reject(err);
-						})
+						});
+					}, err => {
+						log.trace('getToken() failed, rejecting from getClient');
+						reject(err);
 					});
 				});
 			} else {
@@ -58,9 +61,12 @@ module.exports = {
 					client.init().then(() => {
 						resolve(client);
 					}, err => {
-						log.error({err: err.message});
+						log.trace('client.init() failed, rejecting from getClient');
 						reject(err);
 					});
+				}, err => {
+					log.trace('getToken() failed, rejecting from getClient');
+					reject(err);
 				});
 		  }
 		});

@@ -135,7 +135,7 @@ module.exports = {
 						expressUtils.sendResponse(res, next, 500, {error: props.errors.inventory}, req.body.username, endpoint)
 					});
 				}, err => {
-					log.error({err: err.message});
+					log.error({err: err.message}, 'pokemonUtils.getClient() failed');
 					expressUtils.sendResponse(res, next, 500, {error: props.errors.inventory}, req.body.username, endpoint);
 				});
 			}
@@ -164,11 +164,11 @@ module.exports = {
 					client.releasePokemon(req.body.id).then(releaseResponse => {
 							expressUtils.sendResponse(res, next, 200, {success: releaseResponse.result === 1, token: client.authToken}, req.body.username, endpoint);
 						}, err => {
-							log.error({err: err.message});
+							log.error({err: err.message}, 'client.releasePokemon() failed');
 							expressUtils.sendResponse(res, next, 500, {error: props.errors.transfer}, req.body.username, endpoint);
 						});
 					}, err => {
-					  log.error({err: err.message});
+					  log.error({err: err.message}, 'pokemonUtils.getClient() failed');
 					  expressUtils.sendResponse(res, next, 500, {error: props.errors.login}, req.body.username, endpoint);
 				});
 			}
@@ -197,11 +197,11 @@ module.exports = {
 					client.nicknamePokemon(req.body.id, req.body.nickname).then(nicknameResponse => {
 							expressUtils.sendResponse(res, next, 200, {success: nicknameResponse.result === 1, token: client.authToken}, req.body.username, endpoint);
 						}, err => {
-							log.error({err: err.message});
+							log.error({err: err.message}, 'client.nicknamePokemon() failed');
 							expressUtils.sendResponse(res, next, 500, {error: props.errors.transfer}, req.body.username, endpoint);
 						});
 					}, err => {
-					  log.error({err: err.message});
+					  log.error({err: err.message}, 'pokemonUtils.getClient() failed');
 					  expressUtils.sendResponse(res, next, 500, {error: props.errors.login}, req.body.username, endpoint);
 				});
 			}
