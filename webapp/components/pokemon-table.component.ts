@@ -39,28 +39,50 @@ export class PokemonTableComponent {
 		this._pokemon = pokemons;
 
 		this._pokemon = this._pokemon.map(function (pokemon) {
+			pokemon.move_type_1 = window['pokemon'][pokemon.pokedex_number].Type1.toLowerCase();
+			pokemon.move_type_2 = window['pokemon'][pokemon.pokedex_number].Type2.toLowerCase();
+
 			pokemon.moves = {
 				fast: window['pokemon'][pokemon.pokedex_number].QuickMoves.map(function (moveNumber: string) {
 					let move = window['moves'][moveNumber.toString()];
+					
+					let givesStab = false;
+					let dps = move.DPS;
+
+					if(move.Type.toLowerCase() === pokemon.move_type_1 || move.Type.toLowerCase() === pokemon.move_type_2){
+						givesStab = true;
+						dps = Number((dps * 1.25).toFixed(2));
+					}
+
 					return new Move(
 						move.Type.toLowerCase(),
 						pokemon.move_1.toString() === moveNumber.toString(),
-						move.DPS,
-						move.Name
+						dps,
+						move.Name,
+						givesStab
 						);
 				}),
 				charged: window['pokemon'][pokemon.pokedex_number].CinematicMoves.map(function (moveNumber: string) {
 					let move = window['moves'][moveNumber.toString()];
+
+					let givesStab = false;
+					let dps = move.DPS;
+
+					if(move.Type.toLowerCase() === pokemon.move_type_1 || move.Type.toLowerCase() === pokemon.move_type_2){
+						givesStab = true;
+						dps = Number((dps * 1.25).toFixed(2));
+					}
+
+
 					return new Move(
 						move.Type.toLowerCase(),
 						pokemon.move_2.toString() === moveNumber.toString(),
-						move.DPS,
-						move.Name
+						dps,
+						move.Name,
+						givesStab
 						);
 				})
 			};
-			pokemon.move_type_1 = window['pokemon'][pokemon.pokedex_number].Type1.toLowerCase();
-			pokemon.move_type_2 = window['pokemon'][pokemon.pokedex_number].Type2.toLowerCase();
 			return pokemon;
 		});
 

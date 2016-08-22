@@ -63,8 +63,8 @@
 							<img *ngIf="!atk.selected" src="webapp/img/checkbox-empty-icon.png" class="selected-icon">
 						</td>
 						<td><img src="http://serebii.net/pokedex-bw/type/{{ atk.type }}.gif"></td>
-						<td>{{ atk.name }}</td>
-						<td>{{ atk.DPS }} DPS</td>
+						<td [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.name }}</td>
+						<td [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.DPS }} DPS</td>
 					</tr>
 					<tr class="separator"></tr>
 					<tr *ngFor="let atk of mon.moves.charged">
@@ -73,8 +73,8 @@
 							<img *ngIf="!atk.selected" src="webapp/img/checkbox-empty-icon.png" class="selected-icon">
 						</td>
 						<td><img src="http://serebii.net/pokedex-bw/type/{{ atk.type }}.gif"></td>
-						<td>{{ atk.name }}</td>
-						<td>{{ atk.DPS }} DPS</td>
+						<td [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.name }}</td>
+						<td [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.DPS }} DPS</td>
 					</tr>
 				</table>
 			</div>
