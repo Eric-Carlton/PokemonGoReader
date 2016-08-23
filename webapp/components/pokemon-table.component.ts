@@ -83,6 +83,19 @@ export class PokemonTableComponent {
 						);
 				})
 			};
+
+			pokemon.moves.fast = pokemon.moves.fast.sort((a,b) => {
+				if ( a.DPS < b.DPS ) return 1;
+				if ( a.DPS > b.DPS) return -1;
+				return 0;
+			});
+
+			pokemon.moves.charged = pokemon.moves.charged.sort((a,b) => {
+				if ( a.DPS < b.DPS ) return 1;
+				if ( a.DPS > b.DPS) return -1;
+				return 0;
+			});
+
 			return pokemon;
 		});
 
