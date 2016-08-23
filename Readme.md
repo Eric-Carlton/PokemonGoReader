@@ -110,9 +110,9 @@ Screenshots
 -----------
 ![Login Screen](http://i.imgur.com/O85jdWt.png "Login Screen")
 
-![Pokemon Stats Cards](http://i.imgur.com/ed1ving.png "Pokemon Stats Cards") 
+![Pokemon Stats Cards](http://i.imgur.com/10lA61Y.png "Pokemon Stats Cards") 
 
-![Pokemon Stats Table](http://i.imgur.com/qDwYuJ4.png "Pokemon Stats Table") 
+![Pokemon Stats Table](http://i.imgur.com/N6Kae5R.png "Pokemon Stats Table") 
 
 ![Species Cards](http://i.imgur.com/xqxXcxh.png "Species Cards")
 
