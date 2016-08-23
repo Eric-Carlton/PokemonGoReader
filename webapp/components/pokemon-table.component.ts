@@ -23,11 +23,10 @@ export class PokemonTableComponent {
 	@ViewChild(SettingsComponent) settings: SettingsComponent;
 
 	private _pokemon: Pokemon[] = [];
-	//right now we're only allowing 1 transfer at a time, like God intended,
-	//this may need to be updated later to allow for batch transfers
-	private _transferringPokemonAtIndex: number = null;
-	private _renamingPokemonAtIndex: number = null;
+	private _operatingOnPokemonAtIndex: number = null;
+	private _operationName: string = null;
 	private _currentSortOrderName: string = '';
+	private _retrieving = false;
 
 	constructor(
 		private _properties: PropertiesService, 
@@ -98,13 +97,15 @@ export class PokemonTableComponent {
 			return pokemon;
 		});
 
-		this._transferringPokemonAtIndex = null;
-		this._renamingPokemonAtIndex = null;
 		if(this._currentSortOrderName === ''){
 			this._sortPokemon(this._properties.defaultPokemonTableSortOrder, false);
 		} else {
 			this._sortPokemon(this._currentSortOrderName, false);
 		}
+
+		this._operatingOnPokemonAtIndex = null;
+		this._operationName = null;
+		this._retrieving = false;
 	}
 
 	private _getTableOutput(pokemon: Pokemon, property: string): string{
@@ -258,7 +259,7 @@ export class PokemonTableComponent {
 	}
 
 	private _getTransferButtonText(index: number): string{
-		if(this._transferringPokemonAtIndex === index){
+		if(this._operatingOnPokemonAtIndex === index && this._operationName.toLowerCase() === 'transfer'){
 			return 'Transferring...';
 		}
 
@@ -272,21 +273,18 @@ export class PokemonTableComponent {
 			'\nIV Percentage: ' + pokemon.iv_percentage + '%');
 
 		if(transfer){
-			this._transferringPokemonAtIndex = index;
+			this._operatingOnPokemonAtIndex = index;
+			this._operationName = 'Transfer'
 
 			this._pokemonService.transferPokemon(pokemon).then(() => {
-				this._pokemonService.retrievePokemon().then(() => {}, () => {
-					alert('Pokemon retrieval failed');
-				});
-			}, () => {
-				this._transferringPokemonAtIndex = null;
-				alert('Transfer failed');
-			});
+				this._retrieving = true;
+				this._pokemonService.retrievePokemon().then(() => {}, this._handleError);
+			}, this._handleError);
 		}
 	}
 
 	private _getRenameButtonText(index: number): string{
-		if(this._renamingPokemonAtIndex === index){
+		if(this._operatingOnPokemonAtIndex === index && this._operationName.toLowerCase() === 'rename'){
 			return 'Renaming...';
 		}
 
@@ -300,17 +298,42 @@ export class PokemonTableComponent {
 			if(nickname.length > 12){
 				alert('Nicknames can be no longer than 12 characters. Sorry!');
 			} else {
-				this._renamingPokemonAtIndex = index;
+				this._operatingOnPokemonAtIndex = index;
+				this._operationName = 'Rename'
 
 				this._pokemonService.renamePokemon(pokemon, nickname).then(() => {
-					this._pokemonService.retrievePokemon().then(() => {}, () => {
-						alert('Pokemon retrieval failed');
-					});
-				}, () => {
-					this._renamingPokemonAtIndex = null;
-					alert('Renaming failed');
-				});
+					this._retrieving = true;
+					this._pokemonService.retrievePokemon().then(() => {}, this._handleError);
+				}, this._handleError);
 			}
 		}
+	}
+
+	private _getFavoriteButtonText(index: number, isFavorite: boolean){
+		if(this._operatingOnPokemonAtIndex === index && this._operationName.toLowerCase() === 'favorite'){
+			return isFavorite ? 'Unfavoriting...' : 'Favoriting...';
+		}
+
+		return isFavorite ? 'Unfavorite' : 'Favorite';
+	}
+
+	private _toggleFavoritePokemon(pokemon: Pokemon, index: number) {
+		this._operatingOnPokemonAtIndex = index;
+		this._operationName = 'Favorite'
+
+		this._pokemonService.toggleFavoritePokemon(pokemon).then(() => {
+			this._retrieving = true;
+			this._pokemonService.retrievePokemon().then(() => {}, this._handleError);
+		}, this._handleError);
+	}
+
+	private _handleError = () => {
+		if(this._retrieving){
+			alert('Retrieval failed. Try clicking the reload icon next to the "Pokemon Stats" heading to get updated Pokemon.');
+		} else {
+			alert(this._operationName + ' operation failed.');
+		}
+		this._operatingOnPokemonAtIndex = null;
+		this._operationName = null;
 	}
 }

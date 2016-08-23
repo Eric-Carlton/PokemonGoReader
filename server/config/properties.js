@@ -22,7 +22,8 @@ module.exports = {
 		root: '/api',
 		pokemon: '/pokemon/get',
 		transfer: '/pokemon/transfer',
-		rename: '/pokemon/rename'
+		rename: '/pokemon/rename',
+		favorite: '/pokemon/favorite'
 	},
 	errors: {
 		token: 'token is required',
@@ -34,7 +35,9 @@ module.exports = {
 		invalid_pokemon_id: 'pokemon_id is not valid',
 		inventory: 'Error occurred getting inventory',
 		login: 'Error occurred logging in',
-		transfer: 'Error occurred transferring pokemon'
+		transfer: 'Error occurred transferring pokemon',
+		req_favorite: 'favorite is required',
+		favorite: 'Error occurred setting favorite'
 	},
 	pokemonNamesByDexNum : {
 		'0':'MissingNo',

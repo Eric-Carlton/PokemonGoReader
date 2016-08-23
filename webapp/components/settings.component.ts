@@ -31,6 +31,10 @@ export class SettingsComponent {
 		return this._getUserSetting('showRenameButton');
 	}
 
+	public get showFavoriteButton(): boolean {
+		return this._getUserSetting('showFavoriteButton');
+	}
+
 	public get pokemonTableStats(): PokemonTableStat[] {
 		return this._getUserSetting('pokemonTableStats');
 	}
@@ -43,21 +47,25 @@ export class SettingsComponent {
 		this._saveUserSetting('showTransferButton', showTransferButton);
 	}
 
-	public set showRenameButton(showRenamButton: boolean){
+	public set showRenameButton(showRenamButton: boolean) {
 		this._saveUserSetting('showRenameButton', showRenamButton);
+	}
+
+	public set showFavoriteButton(showFavoriteButton: boolean) {
+		this._saveUserSetting('showFavoriteButton', showFavoriteButton);
 	}
 
 	private _createSettings(){
 		this._utils.setLocalStorageObj('settings', {});
 	}
 
-	private _createUserSettings(){
+	private _createUserSettings() {
 		let settings = this._utils.getLocalStorageObj('settings');
 		settings[this._pokemonService.userLogin.username.toLowerCase()] = {};
 		this._utils.setLocalStorageObj('settings', settings);
 	}
 
-	private _saveUserSetting(setting: string, value: any){
+	private _saveUserSetting(setting: string, value: any) {
 		let settings = this._utils.getLocalStorageObj('settings');
 		settings[this._pokemonService.userLogin.username.toLowerCase()][setting] = value;
 		this._utils.setLocalStorageObj('settings', settings);
@@ -97,7 +105,7 @@ export class SettingsComponent {
 		return false;
 	}
 
-	private _statChanged(heading: string){
+	private _statChanged(heading: string) {
 		let userStats = this._getUserSetting('pokemonTableStats').slice();
 
 		if(this._isStatSelected(heading)){

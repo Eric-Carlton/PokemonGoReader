@@ -7,6 +7,7 @@
 				<th *ngFor="let stat of settings.pokemonTableStats" (click)="_sortPokemon(stat.property, true)">{{stat.heading}}</th>
 				<th [hidden]="!settings.showTransferButton">Transfer</th>
 				<th [hidden]="!settings.showRenameButton">Rename</th>
+				<th [hidden]="!settings.showFavoriteButton">Favorite</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -15,10 +16,13 @@
 					<span>{{_getTableOutput(mon, stat.property)}}</span>
 				</td>
 				<td [hidden]="!settings.showTransferButton">
-					<button type="button" [disabled]="mon.favorite || _transferringPokemonAtIndex !== null" (click)="_transferPokemon(mon, i)">{{_getTransferButtonText(i)}}</button>
+					<button type="button" [disabled]="mon.favorite || _operatingOnPokemonAtIndex !== null" (click)="_transferPokemon(mon, i)">{{_getTransferButtonText(i)}}</button>
 				</td>
 				<td [hidden]="!settings.showRenameButton">
-					<button type="button" [disabled]="_renamingPokemonAtIndex !== null || _transferringPokemonAtIndex !== null" (click)="_renamePokemon(mon, i)">{{_getRenameButtonText(i)}}</button>
+					<button type="button" [disabled]="_operatingOnPokemonAtIndex !== null" (click)="_renamePokemon(mon, i)">{{_getRenameButtonText(i)}}</button>
+				</td>
+				<td [hidden]="!settings.showFavoriteButton">
+					<button type="button" [disabled]="_operatingOnPokemonAtIndex !== null" (click)="_toggleFavoritePokemon(mon, i)">{{_getFavoriteButtonText(i, mon.favorite)}}</button>
 				</td>
 			</tr>
 		</tbody>
@@ -103,8 +107,9 @@
 				</tr>
 			</table>
 			<div class="actions">
-				<button [hidden]="!settings.showTransferButton" type="button" [disabled]="mon.favorite || _transferringPokemonAtIndex !== null || _renamingPokemonAtIndex !== null" (click)="_transferPokemon(mon, i)">{{_getTransferButtonText(i)}}</button>
-				<button [hidden]="!settings.showRenameButton" type="button" [disabled]="_renamingPokemonAtIndex !== null || _transferringPokemonAtIndex !== null" (click)="_renamePokemon(mon, i)">{{_getRenameButtonText(i)}}</button>
+				<button [hidden]="!settings.showTransferButton" type="button" [disabled]="mon.favorite || _operatingOnPokemonAtIndex !== null" (click)="_transferPokemon(mon, i)">{{_getTransferButtonText(i)}}</button>
+				<button [hidden]="!settings.showRenameButton" type="button" [disabled]="_operatingOnPokemonAtIndex !== null" (click)="_renamePokemon(mon, i)">{{_getRenameButtonText(i)}}</button>
+				<button [hidden]="!settings.showFavoriteButton" type="button" [disabled]="_operatingOnPokemonAtIndex !== null" (click)="_toggleFavoritePokemon(mon, i)">{{_getFavoriteButtonText(i, mon.favorite)}}</button>
 			</div>
 			<!-- http://serebii.net/pokedex-bw/type/psychic.gif -->
 			<!-- http://serebii.net/pokemongo/4energy.png -->

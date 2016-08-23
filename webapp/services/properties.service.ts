@@ -14,6 +14,7 @@ export class PropertiesService {
 	public getPokemonRoute: string = '/api/pokemon/get';
 	public transferPokemonRoute: string = '/api/pokemon/transfer';
 	public renamePokemonRoute: string = '/api/pokemon/rename';
+	public favoritePokemonRoute: string = '/api/pokemon/favorite';
 
 	public loginComponentTitle: string = 'Pokemon Go! Pokemon Retriever';
 	public loginComponentContent: string = 'Why use an IV calculator when you can easily retrieve your Pokemon\'s exact data from Niantic? This easy-to-use tool allows you to do just that!';
@@ -26,6 +27,7 @@ export class PropertiesService {
 	public useTabularFormat: boolean =  false;
 	public showTransferButton: boolean = true;
 	public showRenameButton: boolean = true;
+	public showFavoriteButton: boolean = true;
 
 	public pokemonTableStats: PokemonTableStat[] = [
 		new PokemonTableStat('level', 'Level'),

@@ -206,5 +206,40 @@ module.exports = {
 				});
 			}
 		});
+
+		app.post(props.routes.root + props.routes.favorite, (req, res,next) => {
+			const endpoint = props.routes.root + props.routes.favorite;
+			log.debug(
+				{username: req.body.username},
+				'POST request to ' + endpoint);
+
+			if(!req.body.hasOwnProperty('token')){
+				expressUtils.sendResponse(res, next, 400, {error: props.errors.token}, req.body.username, endpoint);
+			} else if (!req.body.hasOwnProperty('username')) {
+				expressUtils.sendResponse(res, next, 400, {error: props.errors.password}, req.body.username, endpoint);
+			} else if (!req.body.hasOwnProperty('password')) {
+				expressUtils.sendResponse(res, next, 400, {error: props.errors.password}, req.body.username, endpoint);
+			} else if (!req.body.hasOwnProperty('type')) {
+				expressUtils.sendResponse(res, next, 400, {error: props.errors.type}, req.body.username, endpoint);
+			} else if (!req.body.hasOwnProperty('id')) {
+				expressUtils.sendResponse(res, next, 400, {error: props.errors.pokemon_id}, req.body.username, endpoint);
+			} else if (!req.body.hasOwnProperty('favorite')){
+				expressUtils.sendResponse(res, next, 400, {error: props.errors.req_favorite}, req.body.username, endpoint);
+			}
+			else {
+				let credential = new Credential(req.body.type, req.body.token, req.body.username, req.body.password);
+				pokemonUtils.getClient(credential).then(client => {
+					client.setFavoritePokemon(req.body.id, req.body.favorite).then(favoriteResponse => {
+							expressUtils.sendResponse(res, next, 200, {success: favoriteResponse.result === 1, token: client.authToken}, req.body.username, endpoint);
+						}, err => {
+							log.error({err: err.message}, 'client.setFavoritePokemon() failed');
+							expressUtils.sendResponse(res, next, 500, {error: props.errors.favorite}, req.body.username, endpoint);
+						});
+					}, err => {
+					  log.error({err: err.message}, 'pokemonUtils.getClient() failed');
+					  expressUtils.sendResponse(res, next, 500, {error: props.errors.login}, req.body.username, endpoint);
+				});
+			}
+		});
 	}
 }

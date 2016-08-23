@@ -13,9 +13,6 @@ import { PropertiesService } from '../services/properties.service';
 export class PokemonService {
 	private _pokemon : Pokemon[] = [];
 	private _species: Species[] = [];
-	private _pokemonUrl: string = this._properties.apiHost + this._properties.getPokemonRoute;
-	private _transferUrl: string = this._properties.apiHost + this._properties.transferPokemonRoute;
-	private _renameUrl: string = this._properties.apiHost + this._properties.renamePokemonRoute;
 	private _pokemonChange: EventEmitter<any> = new EventEmitter();
 	private _userLogin: UserLogin = null;
 
@@ -45,7 +42,11 @@ export class PokemonService {
 		let headers = new Headers({
 			'Content-Type': 'application/json'});
 		return this._http
-		.post(this._pokemonUrl, JSON.stringify(this._userLogin), {headers: headers})
+		.post(
+			this._properties.apiHost + this._properties.getPokemonRoute, 
+			JSON.stringify(this._userLogin), 
+			{headers: headers}
+		)
 		.toPromise()
 		.then(res => {
 			let resBody = res.json();
@@ -71,7 +72,11 @@ export class PokemonService {
 		};
 
 		return this._http
-		.post(this._transferUrl, JSON.stringify(request), {headers: headers})
+		.post(
+			this._properties.apiHost + this._properties.transferPokemonRoute,
+			JSON.stringify(request),
+			{headers: headers}
+		)
 		.toPromise()
 		.then(res => {
 			this._userLogin.token = res.json().token;
@@ -93,7 +98,37 @@ export class PokemonService {
 		};
 
 		return this._http
-		.post(this._renameUrl, JSON.stringify(request), {headers: headers})
+		.post(
+			this._properties.apiHost + this._properties.renamePokemonRoute,
+			JSON.stringify(request),
+			{headers: headers}
+		)
+		.toPromise()
+		.then(res => {
+			this._userLogin.token = res.json().token;
+		})
+		.catch(this.handleError);
+	}
+
+	public toggleFavoritePokemon(pokemon: Pokemon) {
+		let headers = new Headers({
+			'Content-Type': 'application/json'});
+
+		let request = {
+			username: this._userLogin.username,
+			password: this._userLogin.password,
+			type: this._userLogin.type,
+			token: this._userLogin.token,
+			id: pokemon.id,
+			favorite: !pokemon.favorite
+		};
+
+		return this._http
+		.post(
+			this._properties.apiHost + this._properties.favoritePokemonRoute,
+			JSON.stringify(request),
+			{headers: headers}
+		)
 		.toPromise()
 		.then(res => {
 			this._userLogin.token = res.json().token;
