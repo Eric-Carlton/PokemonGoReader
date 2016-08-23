@@ -118,6 +118,26 @@ export class PokemonTableComponent {
 			this._utils.pad(date.getMinutes(), 2) + ':' + 
 			this._utils.pad(date.getSeconds(), 2);
 
+		} else if(property === 'moves.fast.selected'){
+			let moves: Move[] = pokemon.moves.fast;
+
+			for(let i: number = 0; i < moves.length; i++){
+				let move: Move = moves[i];
+
+				if(move.selected){
+					return move.name + '\n' + move.DPS + ' DPS';
+				}
+			}
+		} else if(property === 'moves.charged.selected'){
+			let moves: Move[] = pokemon.moves.charged;
+
+			for(let i: number = 0; i < moves.length; i++){
+				let move: Move = moves[i];
+
+				if(move.selected){
+					return move.name + '\n' + move.DPS + ' DPS';
+				}
+			}
 		} else if(typeof pokemon[property] === 'boolean'){
 			return pokemon[property] ? '✓' : '';
 		} else {

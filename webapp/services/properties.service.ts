@@ -38,6 +38,8 @@ export class PropertiesService {
 		new PokemonTableStat('defense_iv', 'Defense IV'),
 		new PokemonTableStat('stamina_iv', 'Stamina IV'),
 		new PokemonTableStat('iv_percentage', 'IV Percent'),
+		new PokemonTableStat('moves.fast.selected', 'Quick Move'),
+		new PokemonTableStat('moves.charged.selected', 'Charge Move'),
 		new PokemonTableStat('favorite', 'Favorite'),
 		new PokemonTableStat('caught_time', 'Caught Time')
 	];
