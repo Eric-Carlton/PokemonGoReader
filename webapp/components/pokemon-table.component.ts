@@ -118,7 +118,7 @@ export class PokemonTableComponent {
 			this._utils.pad(date.getMinutes(), 2) + ':' + 
 			this._utils.pad(date.getSeconds(), 2);
 
-		} else if(property === 'moves.fast.selected'){
+		} else if(property === 'fast_dps'){
 			let moves: Move[] = pokemon.moves.fast;
 
 			for(let i: number = 0; i < moves.length; i++){
@@ -128,7 +128,7 @@ export class PokemonTableComponent {
 					return move.name + '\n' + move.DPS + ' DPS';
 				}
 			}
-		} else if(property === 'moves.charged.selected'){
+		} else if(property === 'charged_dps'){
 			let moves: Move[] = pokemon.moves.charged;
 
 			for(let i: number = 0; i < moves.length; i++){
