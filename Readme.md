@@ -65,7 +65,7 @@ I haven't heard of any instances of account bans for reasons other than botting 
 
 Known Issues 
 ------------
-* IE doesn't like the CSS used in the table. Solution: don't use IE.
+* IE and Safari don't seem to like some of the CSS being used. I develop with Chrome, so I reccommend that you use Chrome to run this app. I can guarantee that anything on master works in Chrome.
 
 FAQs
 -----
