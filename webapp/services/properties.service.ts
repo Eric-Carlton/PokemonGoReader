@@ -123,7 +123,31 @@ export class PropertiesService {
 			new SortType('pokedex_number', true)]
 		),
 
-		caught_time: new SortOrder('Caught Time', [new SortType('caught_time', false)])
+		caught_time: new SortOrder('Caught Time', [new SortType('caught_time', false)]),
+
+		fast_dps: new SortOrder(
+			'Quick Move DPS', [
+			new SortType('moves.fast.DPS', false),
+			new SortType('cp', false),
+			new SortType('iv_percentage', false),
+			new SortType('pokedex_number', true)]
+		),
+
+		charged_dps: new SortOrder(
+			'Charge Move DPS', [
+			new SortType('moves.charged.DPS', false),
+			new SortType('cp', false),
+			new SortType('iv_percentage', false),
+			new SortType('pokedex_number', true)]
+		),
+
+		total_dps: new SortOrder(
+			'Total DPS', [
+			new SortType('DPS', false),
+			new SortType('cp', false),
+			new SortType('iv_percentage', false),
+			new SortType('pokedex_number', true)]
+		)
 	};
 
 	public defaultSpeciesSortOrder: string = 'pokedex_number';

@@ -44,10 +44,10 @@ export class PokemonTableComponent {
 
 			pokemon.moves = {
 				fast: window['pokemon'][pokemon.pokedex_number].QuickMoves.map(function (moveNumber: string) {
-					let move = window['moves'][moveNumber.toString()];
+					let move: any = window['moves'][moveNumber.toString()];
 					
-					let givesStab = false;
-					let dps = move.DPS;
+					let givesStab: boolean = false;
+					let dps: number = move.DPS;
 
 					if(move.Type.toLowerCase() === pokemon.move_type_1 || move.Type.toLowerCase() === pokemon.move_type_2){
 						givesStab = true;
@@ -60,19 +60,18 @@ export class PokemonTableComponent {
 						dps,
 						move.Name,
 						givesStab
-						);
+					);
 				}),
 				charged: window['pokemon'][pokemon.pokedex_number].CinematicMoves.map(function (moveNumber: string) {
-					let move = window['moves'][moveNumber.toString()];
+					let move: any = window['moves'][moveNumber.toString()];
 
-					let givesStab = false;
-					let dps = move.DPS;
+					let givesStab: boolean = false;
+					let dps: number = move.DPS;
 
 					if(move.Type.toLowerCase() === pokemon.move_type_1 || move.Type.toLowerCase() === pokemon.move_type_2){
 						givesStab = true;
 						dps = Number((dps * 1.25).toFixed(2));
 					}
-
 
 					return new Move(
 						move.Type.toLowerCase(),
@@ -80,7 +79,7 @@ export class PokemonTableComponent {
 						dps,
 						move.Name,
 						givesStab
-						);
+					);
 				})
 			};
 
@@ -145,8 +144,93 @@ export class PokemonTableComponent {
 				for(let i: number = 0; i < sortOrder.length; i++){
 					let sortType: SortType = sortOrder[i];
 
-					if(a[sortType.property] < b[sortType.property]) return sortType.asc ? -1 : 1;
-					if(a[sortType.property] > b[sortType.property]) return sortType.asc ? 1 : -1;
+					//TODO: figure out a cleaner way of DPS sorting
+					if(sortType.property === 'moves.fast.DPS'){
+						let moveA: Move = null;
+						let moveB: Move = null;
+
+						for(let moveIdx: number = 0; moveIdx < a.moves.fast.length; moveIdx++){
+							let move: Move = a.moves.fast[moveIdx];
+							if(move.selected){
+								moveA = move;
+								break;
+							}
+						}
+
+						for(let moveIdx: number = 0; moveIdx < b.moves.fast.length; moveIdx++){
+							let move: Move = b.moves.fast[moveIdx];
+							if(move.selected){
+								moveB = move;
+								break;
+							}
+						}
+
+						if(moveA && moveB && moveA.DPS < moveB.DPS) return sortType.asc ? -1 : 1;
+						if(moveA && moveB && moveA.DPS > moveB.DPS) return sortType.asc ? 1 : -1;
+					} else if(sortType.property === 'moves.charged.DPS'){
+						let moveA: Move = null;
+						let moveB: Move = null;
+
+						for(let moveIdx: number = 0; moveIdx < a.moves.charged.length; moveIdx++){
+							let move: Move = a.moves.charged[moveIdx];
+							if(move.selected){
+								moveA = move;
+								break;
+							}
+						}
+
+						for(let moveIdx: number = 0; moveIdx < b.moves.charged.length; moveIdx++){
+							let move: Move = b.moves.charged[moveIdx];
+							if(move.selected){
+								moveB = move;
+								break;
+							}
+						}
+
+						if(moveA && moveB && moveA.DPS < moveB.DPS) return sortType.asc ? -1 : 1;
+						if(moveA && moveB && moveA.DPS > moveB.DPS) return sortType.asc ? 1 : -1;
+					} else if(sortType.property === 'DPS') {
+						let dpsA: number = 0;
+						let dpsB: number = 0;
+
+						for(let moveIdx: number = 0; moveIdx < a.moves.fast.length; moveIdx++){
+							let move: Move = a.moves.fast[moveIdx];
+							if(move.selected){
+								dpsA += move.DPS;
+								break;
+							}
+						}
+
+						for(let moveIdx: number = 0; moveIdx < b.moves.fast.length; moveIdx++){
+							let move: Move = b.moves.fast[moveIdx];
+							if(move.selected){
+								dpsB += move.DPS;
+								break;
+							}
+						}
+
+						for(let moveIdx: number = 0; moveIdx < a.moves.charged.length; moveIdx++){
+							let move: Move = a.moves.charged[moveIdx];
+							if(move.selected){
+								dpsA += move.DPS;
+								break;
+							}
+						}
+
+						for(let moveIdx: number = 0; moveIdx < b.moves.charged.length; moveIdx++){
+							let move: Move = b.moves.charged[moveIdx];
+							if(move.selected){
+								dpsB += move.DPS;
+								break;
+							}
+						}
+
+						if(dpsA < dpsB) return sortType.asc ? -1 : 1;
+						if(dpsA > dpsB) return sortType.asc ? 1 : -1;
+					} else {
+						if(a[sortType.property] < b[sortType.property]) return sortType.asc ? -1 : 1;
+						if(a[sortType.property] > b[sortType.property]) return sortType.asc ? 1 : -1;
+					}
 				}
 				return 0;
 			});
