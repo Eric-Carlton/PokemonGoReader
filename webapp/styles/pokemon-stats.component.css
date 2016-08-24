@@ -23,8 +23,13 @@
 
 #title-heading{
 	display: inline-block;
+	margin: auto 1em;
 }
 
 #display-by{
 	margin-bottom: 1.5em;
+}
+
+#csvDownloadLink { 
+	color: #555;
 }

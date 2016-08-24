@@ -3,6 +3,7 @@ import { ViewChild, Component } from '@angular/core';
 import { PokemonService } from '../services/pokemon.service'
 import { PropertiesService } from '../services/properties.service'
 import { UtilsService } from '../services/utils.service'
+import { ExportService } from '../services/export.service'
 
 import { Pokemon } from '../models/pokemon.model'
 import { Move } from '../models/move.model'
@@ -31,15 +32,16 @@ export class PokemonTableComponent {
 	constructor(
 		private _properties: PropertiesService, 
 		private _pokemonService: PokemonService,
-		private _utils: UtilsService
-		) {}
+		private _utils: UtilsService,
+		private _exportService: ExportService
+	) {}
 
 	public set pokemon(pokemons: Pokemon[]){
 		this._pokemon = pokemons;
 
 		this._pokemon = this._pokemon.map(function (pokemon) {
-			pokemon.move_type_1 = window['pokemon'][pokemon.pokedex_number].Type1.toLowerCase();
-			pokemon.move_type_2 = window['pokemon'][pokemon.pokedex_number].Type2.toLowerCase();
+			pokemon.type_1 = window['pokemon'][pokemon.pokedex_number].Type1.toLowerCase();
+			pokemon.type_2 = window['pokemon'][pokemon.pokedex_number].Type2.toLowerCase();
 
 			pokemon.moves = {
 				fast: window['pokemon'][pokemon.pokedex_number].QuickMoves.map(function (moveNumber: string) {
@@ -48,7 +50,7 @@ export class PokemonTableComponent {
 					let givesStab: boolean = false;
 					let dps: number = move.DPS;
 
-					if(move.Type.toLowerCase() === pokemon.move_type_1 || move.Type.toLowerCase() === pokemon.move_type_2){
+					if(move.Type.toLowerCase() === pokemon.type_1 || move.Type.toLowerCase() === pokemon.type_2){
 						givesStab = true;
 						dps = Number((dps * 1.25).toFixed(2));
 					}
@@ -67,7 +69,7 @@ export class PokemonTableComponent {
 					let givesStab: boolean = false;
 					let dps: number = move.DPS;
 
-					if(move.Type.toLowerCase() === pokemon.move_type_1 || move.Type.toLowerCase() === pokemon.move_type_2){
+					if(move.Type.toLowerCase() === pokemon.type_1 || move.Type.toLowerCase() === pokemon.type_2){
 						givesStab = true;
 						dps = Number((dps * 1.25).toFixed(2));
 					}
@@ -106,6 +108,13 @@ export class PokemonTableComponent {
 		this._operatingOnPokemonAtIndex = null;
 		this._operationName = null;
 		this._retrieving = false;
+	}
+
+	public export() {
+		let link = <HTMLAnchorElement>document.getElementById('csvDownloadLink');
+		let now = new Date();
+		link.setAttribute('download', 'pokemon.' + now.getTime() + '.csv');
+		link.href = 'data:text/plain;charset=utf-8,' + this._exportService.exportPokemon(this._pokemon);
 	}
 
 	private _getTableOutput(pokemon: Pokemon, property: string): string{

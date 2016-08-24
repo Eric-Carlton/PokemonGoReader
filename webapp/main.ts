@@ -8,6 +8,7 @@ import { AppComponent } from './components/app.component';
 import { PokemonService } from './services/pokemon.service'
 import { PropertiesService } from './services/properties.service'
 import { UtilsService } from './services/utils.service'
+import { ExportService } from './services/export.service'
 
 bootstrap(AppComponent, [
   disableDeprecatedForms(),
@@ -15,6 +16,7 @@ bootstrap(AppComponent, [
   HTTP_PROVIDERS, 
   PokemonService,
   PropertiesService,
-  UtilsService
+  UtilsService,
+  ExportService
  ])
  .catch((err: any) => console.error(err));
