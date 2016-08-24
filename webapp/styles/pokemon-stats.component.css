@@ -32,4 +32,5 @@
 
 #csvDownloadLink { 
 	color: #555;
+	cursor: pointer;
 }
