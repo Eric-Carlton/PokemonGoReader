@@ -63,7 +63,7 @@ module.exports = {
 									'evolve_sort': 0,
 									'evolve': [],
 									'transfer': 0,
-									'need': Number.MAX_SAFE_INTEGER
+									'need': 0
 								};
 
 								if (id in speciesMap){

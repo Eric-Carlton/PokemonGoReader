@@ -2,6 +2,16 @@ Pokemon Go Reader
 =================
 Requests information about Pokemon currently in inventory from Niantic and displays stats for each Pokemon in a table.
 
+Screenshots
+-----------
+![Login Screen](http://i.imgur.com/O85jdWt.png "Login Screen")
+
+![Pokemon Stats Cards](http://i.imgur.com/qbnBb4W.png "Pokemon Stats Cards") 
+
+![Pokemon Stats Table](http://i.imgur.com/4G1ZUfI.png "Pokemon Stats Table") 
+
+![Species Cards](http://i.imgur.com/YDTtQlB.png "Species Cards")
+
 Dependencies
 ------------
 1. Install [NodeJS](https://nodejs.org/) - Node version used in development is 6.3.1
@@ -105,16 +115,6 @@ FAQs
 * **I'm facing an issue that hasn't been addressed here, or I'd like to add a feature request**
 
   [Open an issue](https://github.com/Eric-Carlton/PokemonGoReader/issues). I try to respond to errors within 24 hrs - no guarantees - and I'll generally prioritize feature requests weekly. If an issue is marked 'free to take', that means I don't plan on getting to it any time soon, but anyone is welcome to fork my repo and submit a pull request!
-
-Screenshots
------------
-![Login Screen](http://i.imgur.com/O85jdWt.png "Login Screen")
-
-![Pokemon Stats Cards](http://i.imgur.com/qbnBb4W.png "Pokemon Stats Cards") 
-
-![Pokemon Stats Table](http://i.imgur.com/5BWDLWE.png "Pokemon Stats Table") 
-
-![Species Cards](http://i.imgur.com/YDTtQlB.png "Species Cards")
 
 IV Explanation
 --------------

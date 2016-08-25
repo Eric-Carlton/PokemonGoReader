@@ -33,6 +33,10 @@ export class PropertiesService {
 		new PokemonTableStat('level', 'Level'),
 		new PokemonTableStat('name', 'Name'),
 		new PokemonTableStat('species', 'Species'),
+		new PokemonTableStat('species_count', 'Count'),
+		new PokemonTableStat('species_candy', 'Candy'),
+		new PokemonTableStat('species_need', 'Need'),
+		new PokemonTableStat('species_transfer', 'Transfer'),
 		new PokemonTableStat('pokedex_number', 'Pokedex Number'),
 		new PokemonTableStat('cp', 'CP'),
 		new PokemonTableStat('max_hp', 'Max HP'),
@@ -150,6 +154,30 @@ export class PropertiesService {
 			new SortType('DPS', false),
 			new SortType('cp', false),
 			new SortType('iv_percentage', false),
+			new SortType('pokedex_number', true)]
+		),
+
+		species_count: new SortOrder(
+			'Count', [
+			new SortType('species_count', false),
+			new SortType('pokedex_number', true)]
+		),
+
+		species_candy: new SortOrder(
+			'Candy', [
+			new SortType('species_candy', false),
+			new SortType('pokedex_number', true)]
+		),
+
+		species_need: new SortOrder(
+			'Need', [
+			new SortType('species_need', false),
+			new SortType('pokedex_number', true)]
+		),
+
+		species_transfer: new SortOrder(
+			'Count', [
+			new SortType('species_count', false),
 			new SortType('pokedex_number', true)]
 		)
 	};

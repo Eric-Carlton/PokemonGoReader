@@ -6,6 +6,7 @@ import { UtilsService } from '../services/utils.service'
 import { ExportService } from '../services/export.service'
 
 import { Pokemon } from '../models/pokemon.model'
+import { Species } from '../models/species.model'
 import { Move } from '../models/move.model'
 import { SortOrder } from '../models/sort-order.model'
 import { SortType } from '../models/sort-type.model'
@@ -138,6 +139,8 @@ export class PokemonTableComponent {
 					return move.name + '\n' + move.DPS + ' DPS';
 				}
 			}
+
+			return '';
 		} else if(property === 'charged_dps'){
 			let moves: Move[] = pokemon.moves.charged;
 
@@ -148,15 +151,40 @@ export class PokemonTableComponent {
 					return move.name + '\n' + move.DPS + ' DPS';
 				}
 			}
+
+			return '';
+		} else if(property.includes('species_')){
+			let propertySplit: string[] = property.split('_');
+			let speciesProperty: string = propertySplit.length > 0 ? propertySplit[1] : '';
+			let species: Species[] = this._pokemonService.species;
+
+			for(let i: number = 0; i < species.length; i++){
+				let curSpecies = species[i];
+
+				if(curSpecies.pokedex_number === pokemon.pokedex_number){
+					return curSpecies[speciesProperty] === undefined ? '' : curSpecies[speciesProperty];
+				}
+			}
+
+			return '';
 		} else if(typeof pokemon[property] === 'boolean'){
 			return pokemon[property] ? '✓' : '';
 		} else {
 			return pokemon[property]
 		}
+
 	}
 
 	private _getSortOrders(): string[]{
-		return Object.keys(this._properties.pokemonTableSortOrders);
+		let allSortOrders: string[] = Object.keys(this._properties.pokemonTableSortOrders);
+		let pokemonSortOrders: string[] = [];
+
+		for(let i: number = 0; i < allSortOrders.length; i++){
+			let sortOrder: string = allSortOrders[i];
+			if(!sortOrder.includes('species_')) pokemonSortOrders.push(sortOrder);
+		}
+
+		return pokemonSortOrders;
 	}
 
 	private _sortPokemon(sortOrderName: string, reverseSortOrder: boolean) {
@@ -257,6 +285,25 @@ export class PokemonTableComponent {
 
 						if(dpsA < dpsB) return sortType.asc ? -1 : 1;
 						if(dpsA > dpsB) return sortType.asc ? 1 : -1;
+					} else if(sortType.property.includes('species_')){
+						let propertySplit: string[] = sortType.property.split('_');
+						let speciesProperty: string = propertySplit.length > 0 ? propertySplit[1] : '';
+						let species: Species[] = this._pokemonService.species;
+
+						let speciesA: Species = null;
+						let speciesB: Species = null;
+
+						for(let speciesIdx: number = 0; speciesIdx < species.length; speciesIdx++){
+							let curSpecies = species[speciesIdx];
+
+							if(a.pokedex_number === curSpecies.pokedex_number) speciesA = curSpecies;
+							if(b.pokedex_number === curSpecies.pokedex_number) speciesB = curSpecies;
+
+							if(speciesA !== null && speciesB !== null) break;
+						}
+
+						if(speciesA[speciesProperty] < speciesB[speciesProperty]) return sortType.asc ? -1 : 1;
+						if(speciesA[speciesProperty] > speciesB[speciesProperty]) return sortType.asc ? 1 : -1;
 					} else {
 						if(a[sortType.property] < b[sortType.property]) return sortType.asc ? -1 : 1;
 						if(a[sortType.property] > b[sortType.property]) return sortType.asc ? 1 : -1;

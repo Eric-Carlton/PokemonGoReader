@@ -30,7 +30,7 @@
         <td><img src="https://cdn2.iconfinder.com/data/icons/data-transfer/24/data-transfer-3-16.png"></td>
         <td>{{ species.transfer }}</td>
       </tr>
-      <tr [hidden]="species.need === _needSentinel">
+      <tr [hidden]="species.need === 0">
         <td><img src="https://cdn3.iconfinder.com/data/icons/big-icon-s-collection-pack/500/plus-sign-16.png"></td>
         <td>{{ species.need }}</td>
       </tr>

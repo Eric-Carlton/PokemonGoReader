@@ -15,7 +15,6 @@ import { Species } from '../models/species.model'
 export class PokemonSpeciesComponent {
   private _species: Species[] = [];
   private _currentSortOrderName: string = '';
-  private _needSentinel = Number.MAX_SAFE_INTEGER;
 
   constructor(private _properties: PropertiesService, private _pokemonService: PokemonService) {
   }
