@@ -132,8 +132,7 @@ export class PokemonTableComponent {
 		} else if(property.includes('_dps')){
 			let moveSplit: string[] = property.split('_');
 			let moveType: string = moveSplit.length >= 1 ? moveSplit[0] : '';
-			console.log('type: ' + moveType);
-
+			
 			if(moveType.toLowerCase() === 'total'){
 				let dps = 0;
 
@@ -155,7 +154,6 @@ export class PokemonTableComponent {
 					}
 				}
 
-				console.log('DPS: ' + dps);
 				return dps.toString();
 			} else {
 				let moves: Move[] = pokemon.moves[moveType];
