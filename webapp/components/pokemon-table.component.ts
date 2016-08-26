@@ -129,33 +129,50 @@ export class PokemonTableComponent {
 			this._utils.pad(date.getMinutes(), 2) + ':' + 
 			this._utils.pad(date.getSeconds(), 2);
 
-		} else if(property === 'fast_dps'){
-			let moves: Move[] = pokemon.moves.fast;
+		} else if(property.includes('_dps')){
+			let moveSplit: string[] = property.split('_');
+			let moveType: string = moveSplit.length >= 1 ? moveSplit[0] : '';
 
-			for(let i: number = 0; i < moves.length; i++){
-				let move: Move = moves[i];
+			if(moveType.toLowerCase() === 'total'){
+				let dps = 0;
 
-				if(move.selected){
-					return move.name + '\n' + move.DPS + ' DPS';
+				for(let i: number = 0; i < pokemon.moves.quick; i++){
+					let move: Move = pokemon.moves[i];
+
+					if(move.selected){
+						dps += move.DPS;
+						break;
+					}
 				}
-			}
 
-			return '';
-		} else if(property === 'charged_dps'){
-			let moves: Move[] = pokemon.moves.charged;
+				for(let i: number = 0; i < pokemon.moves.charged; i++){
+					let move: Move = pokemon.moves[i];
 
-			for(let i: number = 0; i < moves.length; i++){
-				let move: Move = moves[i];
-
-				if(move.selected){
-					return move.name + '\n' + move.DPS + ' DPS';
+					if(move.selected){
+						dps += move.DPS;
+						break;
+					}
 				}
-			}
 
-			return '';
+				return dps.toString();
+			} else {
+				let moves: Move[] = pokemon.moves[moveType];
+				
+				for(let i: number = 0; i < moves.length; i++){
+					let move: Move = moves[i];
+
+					if(move.selected){
+						return 'DPS: ' + move.DPS + '\n' +
+						'Type: ' + move.type + '\n' +
+						'STAB?: ' + move.givesStab;
+					}
+				}
+
+				return '';
+			}
 		} else if(property.includes('species_')){
 			let propertySplit: string[] = property.split('_');
-			let speciesProperty: string = propertySplit.length > 0 ? propertySplit[1] : '';
+			let speciesProperty: string = propertySplit.length >= 2 ? propertySplit[1] : '';
 			let species: Species[] = this._pokemonService.species;
 
 			for(let i: number = 0; i < species.length; i++){

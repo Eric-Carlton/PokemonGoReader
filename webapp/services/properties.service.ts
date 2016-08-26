@@ -46,6 +46,7 @@ export class PropertiesService {
 		new PokemonTableStat('iv_percentage', 'IV Percent'),
 		new PokemonTableStat('fast_dps', 'Quick Move'),
 		new PokemonTableStat('charged_dps', 'Charge Move'),
+		new PokemonTableStat('total_dps', 'DPS'),
 		new PokemonTableStat('favorite', 'Favorite'),
 		new PokemonTableStat('caught_time', 'Caught Time')
 	];
