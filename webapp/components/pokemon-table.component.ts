@@ -132,12 +132,13 @@ export class PokemonTableComponent {
 		} else if(property.includes('_dps')){
 			let moveSplit: string[] = property.split('_');
 			let moveType: string = moveSplit.length >= 1 ? moveSplit[0] : '';
+			console.log('type: ' + moveType);
 
 			if(moveType.toLowerCase() === 'total'){
 				let dps = 0;
 
-				for(let i: number = 0; i < pokemon.moves.quick; i++){
-					let move: Move = pokemon.moves[i];
+				for(let i: number = 0; i < pokemon.moves.fast.length; i++){
+					let move: Move = pokemon.moves.fast[i];
 
 					if(move.selected){
 						dps += move.DPS;
@@ -145,8 +146,8 @@ export class PokemonTableComponent {
 					}
 				}
 
-				for(let i: number = 0; i < pokemon.moves.charged; i++){
-					let move: Move = pokemon.moves[i];
+				for(let i: number = 0; i < pokemon.moves.charged.length; i++){
+					let move: Move = pokemon.moves.charged[i];
 
 					if(move.selected){
 						dps += move.DPS;
@@ -154,6 +155,7 @@ export class PokemonTableComponent {
 					}
 				}
 
+				console.log('DPS: ' + dps);
 				return dps.toString();
 			} else {
 				let moves: Move[] = pokemon.moves[moveType];
