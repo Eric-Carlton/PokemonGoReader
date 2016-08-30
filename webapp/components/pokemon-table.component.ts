@@ -115,7 +115,11 @@ export class PokemonTableComponent {
 		let link = <HTMLAnchorElement>document.getElementById('csvDownloadLink');
 		let now = new Date();
 		link.setAttribute('download', 'pokemon.' + now.getTime() + '.csv');
-		link.href = 'data:text/plain;charset=utf-8,' + this._exportService.exportPokemon(this._pokemon);
+		link.href = 'data:text/plain;charset=utf-8,' + this._exportService.exportPokemon(
+			this._pokemon,
+			this._pokemonService.species,
+			this.settings.pokemonTableStats
+		);
 	}
 
 	private _getTableOutput(pokemon: Pokemon, property: string): string{
@@ -162,7 +166,8 @@ export class PokemonTableComponent {
 					let move: Move = moves[i];
 
 					if(move.selected){
-						return 'DPS: ' + move.DPS + '\n' +
+						return 'Name: ' + move.name + '\n' + 
+						'DPS: ' + move.DPS + '\n' +
 						'Type: ' + move.type + '\n' +
 						'STAB?: ' + move.givesStab;
 					}
