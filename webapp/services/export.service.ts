@@ -108,7 +108,6 @@ export class ExportService {
       });
     });
 
-    console.log(output);
     return encodeURIComponent(output);
   }
 }
