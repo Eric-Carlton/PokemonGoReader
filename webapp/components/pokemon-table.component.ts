@@ -38,8 +38,6 @@ export class PokemonTableComponent {
 		let now = new Date();
 		link.setAttribute('download', 'pokemon.' + now.getTime() + '.csv');
 		link.href = 'data:text/plain;charset=utf-8,' + this._exportService.exportPokemon(
-			this._pokemonService.pokemon,
-			this._pokemonService.species,
 			this.settings.pokemonTableStats
 		);
 	}

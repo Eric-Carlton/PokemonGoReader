@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { UtilsService } from '../services/utils.service'
+import { PokemonService } from '../services/pokemon.service'
 
 import { Pokemon } from '../models/pokemon.model';
 import { Move } from '../models/move.model';
@@ -10,7 +11,8 @@ import { PokemonTableStat } from '../models/pokemon-table-stat.model'
 @Injectable()
 export class ExportService {
   constructor(
-    private _utils: UtilsService
+    private _utils: UtilsService,
+    private _pokemonService: PokemonService
   ) {}
 
   private _processMoves(moves: Move[]) {
@@ -23,7 +25,7 @@ export class ExportService {
     }
   }
 
-  public exportPokemon(pokemon: Pokemon[], species: Species[], stats: PokemonTableStat[]) {
+  public exportPokemon(stats: PokemonTableStat[]) {
     let output: string = '';
 
     //get the headers for the CSV
@@ -50,9 +52,9 @@ export class ExportService {
     });
 
     // get each Pokemon's values for the CSV
-    pokemon.forEach((mon) => {
+    this._pokemonService.pokemon.forEach((mon) => {
       let matchingSpecies: Species = null;
-      species.forEach((curSpecies) => {
+      this._pokemonService.species.forEach((curSpecies) => {
         if(curSpecies.pokedex_number === mon.pokedex_number){
           matchingSpecies = curSpecies;
           return;

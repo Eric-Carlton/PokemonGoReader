@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ViewChild, Component } from '@angular/core';
 
 import { PropertiesService } from '../services/properties.service'
 import { PokemonService } from '../services/pokemon.service'
@@ -15,6 +15,8 @@ import { PokemonSpeciesComponent } from './pokemon-species.component'
 })
 
 export class PokemonStatsComponent {
+	@ViewChild(PokemonTableComponent) pokemonTable: PokemonTableComponent;
+	
 	private _title: string = this._properties.pokemonStatsComponentTitle;
 	private _content: string = this._properties.pokemonStatsComponentContent;
 	private _refreshingPokemon: boolean = false;
