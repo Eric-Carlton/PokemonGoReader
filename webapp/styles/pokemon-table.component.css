@@ -19,10 +19,23 @@ table#stats-as-table tbody{
 
 table#stats-as-table th, table#stats-as-table td {
 	padding: .5em;
-	max-width: 5.75em;
-	min-width: 5.75em;
-	white-space:normal;
+	max-width: 14em;
+	min-width: 14em;
+}
+
+table#stats-as-table td pre{
+	display: block;
+	padding: 0;
+	margin: 0;
+	font-size: inherit;
+	font-family: inherit;
+	line-height: inherit;
+	color: inherit;
+	word-break: break-all;
 	word-wrap: break-word;
+	background-color: inherit;
+	border: none;
+	border-radius: 0px;
 }
 
 table#stats-as-table th {

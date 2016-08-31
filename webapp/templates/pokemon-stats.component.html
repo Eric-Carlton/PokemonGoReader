@@ -1,4 +1,4 @@
-<div id="pokemon-stats-component" [hidden]="!_pokemonLoaded">
+<div id="pokemon-stats-component" [hidden]="_pokemonService.pokemon.length <= 0">
 	<section>
 		<section class="title">
 			<a (click)="pokemonTable.export()" id="csvDownloadLink"><span class="glyphicon glyphicon-download-alt"></span></a>

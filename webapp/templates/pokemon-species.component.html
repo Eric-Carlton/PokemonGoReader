@@ -4,14 +4,14 @@
 		<span class="caret"></span>
 	</button>
 	<ul class="dropdown-menu" aria-labelledby="sort-orders-dropdown">
-		<li *ngFor="let key of _getSortOrders()" (click)="_sortSpecies(key, true)">
+		<li *ngFor="let key of _sortService.speciesSortOrders" (click)="_sortService.sortSpecies(key, true)">
 			{{_properties.speciesSortOrders[key].name}}
 		</li>
 	</ul>
 </div>
 
 <div class="pokemon-list-wrapper">
-  <div class="pokemon-list-item" *ngFor="let species of _species; let i = index">
+  <div class="pokemon-list-item" *ngFor="let species of _pokemonService.species; let i = index">
     <img class="icon" src="https://silphassets.a.cdnify.io/img/pokemon/icons/96x96/{{species.pokedex_number}}.png" title="{{species.species}}"/>
     <div class="name">
       {{ species.species }}<br/>

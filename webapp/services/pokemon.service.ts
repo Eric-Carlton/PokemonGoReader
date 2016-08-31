@@ -1,22 +1,25 @@
-import { Injectable, EventEmitter } from '@angular/core';
-import { Headers, Http } from '@angular/http';
-import 'rxjs/add/operator/toPromise';
+import { Injectable } from '@angular/core'
+import { Headers, Http } from '@angular/http'
+import 'rxjs/add/operator/toPromise'
 
 import { UserLogin } from '../models/user-login.model'
-import { Pokemon } from '../models/pokemon.model';
-import { Species } from '../models/species.model';
+import { Pokemon } from '../models/pokemon.model'
+import { Species } from '../models/species.model'
+import { Move } from '../models/move.model'
 
-import { PropertiesService } from '../services/properties.service';
+import { PropertiesService } from './properties.service'
 
 
 @Injectable()
 export class PokemonService {
 	private _pokemon : Pokemon[] = [];
 	private _species: Species[] = [];
-	private _pokemonChange: EventEmitter<any> = new EventEmitter();
 	private _userLogin: UserLogin = null;
 
-	constructor(private _http: Http, private _properties: PropertiesService) { }
+	constructor(
+		private _http: Http,
+		private _properties: PropertiesService
+	) {}
 
 	public get pokemon(): Pokemon[]{
 		return this._pokemon
@@ -24,10 +27,6 @@ export class PokemonService {
 
 	public get species(): Species[]{
 		return this._species
-	}
-
-	public get pokemonChange(): EventEmitter<any>{
-		return this._pokemonChange;
 	}
 
 	public get userLogin(): UserLogin {
@@ -51,10 +50,68 @@ export class PokemonService {
 		.then(res => {
 			let resBody = res.json();
 			this._pokemon = resBody.pokemon as Pokemon[];
+			this._pokemon = this._pokemon.map(function (pokemon) {
+				pokemon.type_1 = window['pokemon'][pokemon.pokedex_number].Type1.toLowerCase();
+				pokemon.type_2 = window['pokemon'][pokemon.pokedex_number].Type2.toLowerCase();
+
+				pokemon.moves = {
+					fast: window['pokemon'][pokemon.pokedex_number].QuickMoves.map(function (moveNumber: string) {
+						let move: any = window['moves'][moveNumber.toString()];
+						
+						let givesStab: boolean = false;
+						let dps: number = move.DPS;
+
+						if(move.Type.toLowerCase() === pokemon.type_1 || move.Type.toLowerCase() === pokemon.type_2){
+							givesStab = true;
+							dps = Number((dps * 1.25).toFixed(2));
+						}
+
+						return new Move(
+							move.Type.toLowerCase(),
+							pokemon.move_1.toString() === moveNumber.toString(),
+							dps,
+							move.Name,
+							givesStab
+						);
+					}),
+					charged: window['pokemon'][pokemon.pokedex_number].CinematicMoves.map(function (moveNumber: string) {
+						let move: any = window['moves'][moveNumber.toString()];
+
+						let givesStab: boolean = false;
+						let dps: number = move.DPS;
+
+						if(move.Type.toLowerCase() === pokemon.type_1 || move.Type.toLowerCase() === pokemon.type_2){
+							givesStab = true;
+							dps = Number((dps * 1.25).toFixed(2));
+						}
+
+						return new Move(
+							move.Type.toLowerCase(),
+							pokemon.move_2.toString() === moveNumber.toString(),
+							dps,
+							move.Name,
+							givesStab
+						);
+					})
+				};
+
+				pokemon.moves.fast = pokemon.moves.fast.sort((a,b) => {
+					if ( a.DPS < b.DPS ) return 1;
+					if ( a.DPS > b.DPS) return -1;
+					return 0;
+				});
+
+				pokemon.moves.charged = pokemon.moves.charged.sort((a,b) => {
+					if ( a.DPS < b.DPS ) return 1;
+					if ( a.DPS > b.DPS) return -1;
+					return 0;
+				});
+
+				return pokemon;
+			});
+
 			this._species = resBody.species as Species[];
 			this._userLogin.token = resBody.token;
-
-			this._pokemonChange.emit({message: 'Pokemon updated'});
 		})
 		.catch(this.handleError);
 	}

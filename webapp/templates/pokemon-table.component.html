@@ -4,16 +4,16 @@
 	<table id="stats-as-table" class="table table-striped table-hover table-bordered">
 		<thead>
 			<tr>
-				<th *ngFor="let stat of settings.pokemonTableStats" (click)="_sortPokemon(stat.property, true)">{{stat.heading}}</th>
+				<th *ngFor="let stat of settings.pokemonTableStats" (click)="_sortService.sortPokemon(stat.property, true)">{{stat.heading}}</th>
 				<th [hidden]="!settings.showTransferButton">Transfer</th>
 				<th [hidden]="!settings.showRenameButton">Rename</th>
 				<th [hidden]="!settings.showFavoriteButton">Favorite</th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr *ngFor="let mon of _pokemon; let i = index">
+			<tr *ngFor="let mon of _pokemonService.pokemon; let i = index">
 				<td *ngFor="let stat of settings.pokemonTableStats">
-					<span>{{_getTableOutput(mon, stat.property)}}</span>
+					<pre>{{_getTableOutput(mon, stat.property)}}</pre>
 				</td>
 				<td [hidden]="!settings.showTransferButton">
 					<button type="button" [disabled]="mon.favorite || _operatingOnPokemonAtIndex !== null" (click)="_transferPokemon(mon, i)">{{_getTransferButtonText(i)}}</button>
@@ -36,14 +36,14 @@
 			<span class="caret"></span>
 		</button>
 		<ul class="dropdown-menu" aria-labelledby="table-stats-dropdown">
-			<li *ngFor="let key of _getSortOrders()" (click)="_sortPokemon(key, true)">
+			<li *ngFor="let key of _sortService.pokemonSortOrders" (click)="_sortService.sortPokemon(key, true)">
 				{{_properties.pokemonTableSortOrders[key].name}}
 			</li>
 		</ul>
 	</div>
 
 	<div class="pokemon-list-wrapper">
-		<div class="pokemon-list-item" *ngFor="let mon of _pokemon; let i = index">
+		<div class="pokemon-list-item" *ngFor="let mon of _pokemonService.pokemon; let i = index">
 			<div class="title">
 				CP {{ mon.cp }}
 				<img *ngIf="mon.favorite" class="favorite" src="webapp/img/star-icon.png">

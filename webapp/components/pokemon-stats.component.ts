@@ -1,7 +1,8 @@
-import { ViewChild, Component, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { PropertiesService } from '../services/properties.service'
 import { PokemonService } from '../services/pokemon.service'
+import { SortService } from '../services/sort.service'
 
 import { PokemonTableComponent } from './pokemon-table.component'
 import { PokemonSpeciesComponent } from './pokemon-species.component'
@@ -13,29 +14,35 @@ import { PokemonSpeciesComponent } from './pokemon-species.component'
 	directives: [PokemonTableComponent, PokemonSpeciesComponent]
 })
 
-export class PokemonStatsComponent implements OnDestroy {
+export class PokemonStatsComponent {
 	private _title: string = this._properties.pokemonStatsComponentTitle;
 	private _content: string = this._properties.pokemonStatsComponentContent;
-	private _subscription: any = null;
-	private _pokemonLoaded: boolean = false;
 	private _refreshingPokemon: boolean = false;
 	private _displayByMonster: boolean = true;
 
-	@ViewChild(PokemonTableComponent) pokemonTable: PokemonTableComponent;
-	@ViewChild(PokemonSpeciesComponent) pokemonSpecies: PokemonSpeciesComponent;
-
-	constructor(private _properties: PropertiesService, private _pokemonService: PokemonService){
-		this._subscription = this._pokemonService.pokemonChange.subscribe(() => {
-			this._pokemonLoaded = this._pokemonService.pokemon.length > 0;
-			this.pokemonTable.pokemon = this._pokemonService.pokemon;
-			this.pokemonSpecies.species = this._pokemonService.species;
-		});
-	}
+	constructor(
+		private _properties: PropertiesService, 
+		private _pokemonService: PokemonService,
+		private _sortService: SortService
+	){}
 
 	private _refreshPokemon(){
 		if(!this._refreshingPokemon){
 			this._refreshingPokemon = true;
 			this._pokemonService.retrievePokemon().then( () => {
+				if(this._sortService.pokemonSortOrder === ''){
+					this._sortService.sortPokemon(this._properties.defaultPokemonTableSortOrder, false);
+					
+				} else {
+					this._sortService.sortPokemon(this._sortService.pokemonSortOrder, false);
+				}
+
+				if(this._sortService.speciesSortOrder === ''){
+					this._sortService.sortSpecies(this._properties.defaultSpeciesSortOrder, false);
+				} else {
+					this._sortService.sortSpecies(this._sortService.speciesSortOrder, false);
+				}
+
 				this._refreshingPokemon = false;
 			}, err => {
 				this._refreshingPokemon = false;
@@ -46,9 +53,5 @@ export class PokemonStatsComponent implements OnDestroy {
 
 	private _setDisplayByMonster(displayByMonster: boolean){
 		this._displayByMonster = displayByMonster;
-	}
-
-	ngOnDestroy() {
-		this._subscription.unsubscribe();
 	}
 }

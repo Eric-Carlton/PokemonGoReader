@@ -6,6 +6,7 @@ import { UserLogin } from '../models/user-login.model'
 import { PokemonService } from '../services/pokemon.service'
 import { PropertiesService } from '../services/properties.service';
 import { UtilsService } from '../services/utils.service'
+import { SortService } from '../services/sort.service'
 
 @Component({
 	selector: 'login-form',
@@ -19,9 +20,12 @@ export class LoginFormComponent {
 	private _submitted: boolean = false;
 	private _loginErrorMessage = null;
 
-	constructor(private _pokemonService: PokemonService,
+	constructor(
+		private _pokemonService: PokemonService,
 		private _properties: PropertiesService,
-		private _utils: UtilsService) {}
+		private _utils: UtilsService,
+		private _sortService: SortService
+	){}
 
 	public get submitted(): boolean{
 		return this._submitted;
@@ -41,6 +45,8 @@ export class LoginFormComponent {
 		this._pokemonService.userLogin = this._model;
 
 		this._pokemonService.retrievePokemon().then( () => {
+			this._sortService.sortPokemon(this._properties.defaultPokemonTableSortOrder, false);
+			this._sortService.sortSpecies(this._properties.defaultSpeciesSortOrder, false);
 			this._loading = false;
 			this._submitted = true;
 		}, err => {
