@@ -137,7 +137,7 @@ export class PokemonTableComponent {
 
 			this._pokemonService.transferPokemon(pokemon).then(() => {
 				this._retrieving = true;
-				this._pokemonService.retrievePokemon().then(() => this._retrievalComplete, this._handleError);
+				this._pokemonService.retrievePokemon().then(this._retrievalComplete, this._handleError);
 			}, this._handleError);
 		}
 	}
@@ -162,7 +162,7 @@ export class PokemonTableComponent {
 
 				this._pokemonService.renamePokemon(pokemon, nickname).then(() => {
 					this._retrieving = true;
-					this._pokemonService.retrievePokemon().then(() => this._retrievalComplete, this._handleError);
+					this._pokemonService.retrievePokemon().then(this._retrievalComplete, this._handleError);
 				}, this._handleError);
 			}
 		}
@@ -182,7 +182,7 @@ export class PokemonTableComponent {
 
 		this._pokemonService.toggleFavoritePokemon(pokemon).then(() => {
 			this._retrieving = true;
-			this._pokemonService.retrievePokemon().then(() => this._retrievalComplete, this._handleError);
+			this._pokemonService.retrievePokemon().then(this._retrievalComplete, this._handleError);
 		}, this._handleError);
 	}
 
