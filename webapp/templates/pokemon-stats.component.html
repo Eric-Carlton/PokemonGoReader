@@ -1,7 +1,7 @@
 <div id="pokemon-stats-component" [hidden]="_pokemonService.pokemon.length <= 0">
 	<section>
 		<section class="title">
-			<a (click)="pokemonTable.export()" id="csvDownloadLink"><span class="glyphicon glyphicon-download-alt"></span></a>
+			<a (click)="_export()" id="csvDownloadLink"><span class="glyphicon glyphicon-download-alt"></span></a>
 			<h1 id="title-heading">{{_title}}</h1>
 			<span class="glyphicon glyphicon-refresh" (click)="_refreshPokemon()" aria-hidden="true"></span>
 		</section>

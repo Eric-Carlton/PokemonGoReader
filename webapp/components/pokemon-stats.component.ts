@@ -3,6 +3,7 @@ import { ViewChild, Component } from '@angular/core';
 import { PropertiesService } from '../services/properties.service'
 import { PokemonService } from '../services/pokemon.service'
 import { SortService } from '../services/sort.service'
+import { ExportService } from '../services/export.service'
 
 import { PokemonTableComponent } from './pokemon-table.component'
 import { PokemonSpeciesComponent } from './pokemon-species.component'
@@ -25,8 +26,18 @@ export class PokemonStatsComponent {
 	constructor(
 		private _properties: PropertiesService, 
 		private _pokemonService: PokemonService,
+		private _exportService: ExportService,
 		private _sortService: SortService
 	){}
+
+	private _export() {
+		let link = <HTMLAnchorElement>document.getElementById('csvDownloadLink');
+		let now = new Date();
+		link.setAttribute('download', 'pokemon.' + now.getTime() + '.csv');
+		link.href = 'data:text/plain;charset=utf-8,' + this._exportService.exportPokemon(
+			this.pokemonTable.settings.pokemonTableStats
+		);
+	}
 
 	private _refreshPokemon(){
 		if(!this._refreshingPokemon){
