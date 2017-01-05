@@ -3,8 +3,8 @@
 }
 
 .dropdown-menu{
-	width:150px; 
-	left:50%; 
+	width:150px;
+	left:50%;
 	margin-left:-75px;
 }
 
@@ -33,7 +33,7 @@
 	box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
 	margin: 3px;
 	display: inline-block;
-	width: 200px;
+	width: 180px;
 	height: 150;
 	padding: .5em;
 	overflow: hidden;
@@ -41,7 +41,7 @@
 
 .pokemon-list-item .icon {
 	position: relative;
-	right: 3em;
+	right: 2em;
 }
 
 .pokemon-list-item .candies {

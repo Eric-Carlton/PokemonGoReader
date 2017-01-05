@@ -51,7 +51,7 @@
 			<div>
 				Level {{ mon.level }}
 			</div>
-			<img class="image" src="https://silphroad-s3-xika4hn.netdna-ssl.com/img/pokemon/icons/96x96/{{mon.pokedex_number}}.png" title="{{mon.species}}"/>
+			<img class="image" src="http://www.serebii.net/pokemongo/pokemon/{{ mon.pokedex_number | prependZeros }}.png" title="{{mon.species}}" height="100"/>
 			<div class="name">
 				{{ mon.name }}
 			</div>

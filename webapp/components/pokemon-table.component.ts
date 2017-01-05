@@ -11,11 +11,14 @@ import { Move } from '../models/move.model'
 
 import { SettingsComponent } from './settings.component'
 
+import { PrependZerosPipe } from '../pipes/prepend-zeros.pipe'
+
 @Component({
 	selector: 'pokemon-table',
 	templateUrl: './webapp/templates/pokemon-table.component.html',
 	styleUrls: ['./webapp/styles/pokemon-table.component.css'],
-	directives: [SettingsComponent]
+	directives: [SettingsComponent],
+	pipes: [PrependZerosPipe]
 })
 
 export class PokemonTableComponent {
@@ -25,7 +28,7 @@ export class PokemonTableComponent {
 	private _retrieving = false;
 
 	constructor(
-		private _properties: PropertiesService, 
+		private _properties: PropertiesService,
 		private _pokemonService: PokemonService,
 		private _utils: UtilsService,
 		private _sortService: SortService
@@ -35,17 +38,17 @@ export class PokemonTableComponent {
 		if(property === 'caught_time'){
 			let date = new Date(Number(pokemon.caught_time));
 
-			return date.getMonth()+1 + '/' + 
-			date.getDate() + '/' +  
+			return date.getMonth()+1 + '/' +
+			date.getDate() + '/' +
 			date.getFullYear() + ' ' +
-			this._utils.pad(date.getHours(), 2) + ':' + 
-			this._utils.pad(date.getMinutes(), 2) + ':' + 
+			this._utils.pad(date.getHours(), 2) + ':' +
+			this._utils.pad(date.getMinutes(), 2) + ':' +
 			this._utils.pad(date.getSeconds(), 2);
 
 		} else if(property.includes('_dps')){
 			let moveSplit: string[] = property.split('_');
 			let moveType: string = moveSplit.length >= 1 ? moveSplit[0] : '';
-			
+
 			if(moveType.toLowerCase() === 'total'){
 				let dps = 0;
 
@@ -70,12 +73,12 @@ export class PokemonTableComponent {
 				return dps.toFixed(2);
 			} else {
 				let moves: Move[] = pokemon.moves[moveType];
-				
+
 				for(let i: number = 0; i < moves.length; i++){
 					let move: Move = moves[i];
 
 					if(move.selected){
-						return 'Name: ' + move.name + '\n' + 
+						return 'Name: ' + move.name + '\n' +
 						'DPS: ' + move.DPS + '\n' +
 						'Type: ' + move.type + '\n' +
 						'STAB?: ' + move.givesStab;
@@ -115,9 +118,9 @@ export class PokemonTableComponent {
 	}
 
 	private _transferPokemon(pokemon: Pokemon, index: number){
-		let transfer = confirm('Are you sure that you want to transfer ' + 
-			pokemon.name + '?' + 
-			'\nCP: ' + pokemon.cp + 
+		let transfer = confirm('Are you sure that you want to transfer ' +
+			pokemon.name + '?' +
+			'\nCP: ' + pokemon.cp +
 			'\nIV Percentage: ' + pokemon.iv_percentage + '%');
 
 		if(transfer){
@@ -191,7 +194,7 @@ export class PokemonTableComponent {
 		} else {
 			this._sortService.sortPokemon(this._sortService.pokemonSortOrder, false);
 		}
-		
+
 		this._operatingOnPokemonAtIndex = null;
 		this._operationName = null;
 		this._retrieving = false;
