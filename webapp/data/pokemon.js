@@ -425,7 +425,7 @@ pokemon = [{}, {
     "Type1": "Normal",
     "Type2": "Fairy",
     "QuickMoves": [222, 238],
-    "CinematicMoves": [84, 131, 88],
+    "CinematicMoves": [84, 131, 86],
     "CandyToEvolve": 50,
 }, {
     "Id": 40,
@@ -545,7 +545,7 @@ pokemon = [{}, {
     "BaseDefense": 86,
     "Type1": "Ground",
     "Type2": "None",
-    "QuickMoves": [216, 220],
+    "QuickMoves": [220, 233],
     "CinematicMoves": [26, 96, 63],
     "CandyToEvolve": 50,
 }, {
@@ -556,7 +556,7 @@ pokemon = [{}, {
     "BaseDefense": 140,
     "Type1": "Ground",
     "Type2": "None",
-    "QuickMoves": [203, 216],
+    "QuickMoves": [203, 233],
     "CinematicMoves": [31, 96, 32],
     "CandyToEvolve": 0,
 }, {
@@ -820,7 +820,7 @@ pokemon = [{}, {
     "BaseDefense": 156,
     "Type1": "Rock",
     "Type2": "Ground",
-    "QuickMoves": [227, 216],
+    "QuickMoves": [227, 233],
     "CinematicMoves": [26, 32, 64],
     "CandyToEvolve": 100,
 }, {
@@ -831,7 +831,7 @@ pokemon = [{}, {
     "BaseDefense": 198,
     "Type1": "Rock",
     "Type2": "Ground",
-    "QuickMoves": [227, 216],
+    "QuickMoves": [227, 233],
     "CinematicMoves": [32, 62, 31],
     "CandyToEvolve": 0,
 }, {
@@ -941,7 +941,7 @@ pokemon = [{}, {
     "BaseDefense": 138,
     "Type1": "Water",
     "Type2": "None",
-    "QuickMoves": [217, 230],
+    "QuickMoves": [217, 212],
     "CinematicMoves": [57, 111, 58],
     "CandyToEvolve": 50,
 }, {
@@ -963,7 +963,7 @@ pokemon = [{}, {
     "BaseDefense": 110,
     "Type1": "Poison",
     "Type2": "None",
-    "QuickMoves": [225, 233],
+    "QuickMoves": [233, 224],
     "CinematicMoves": [18, 96, 90],
     "CandyToEvolve": 50,
 }, {
@@ -974,7 +974,7 @@ pokemon = [{}, {
     "BaseDefense": 188,
     "Type1": "Poison",
     "Type2": "None",
-    "QuickMoves": [225, 224],
+    "QuickMoves": [224, 212],
     "CinematicMoves": [16, 92, 91],
     "CandyToEvolve": 0,
 }, {
@@ -1030,7 +1030,7 @@ pokemon = [{}, {
     "Type1": "Ghost",
     "Type2": "Poison",
     "QuickMoves": [203, 213],
-    "CinematicMoves": [70, 16, 91],
+    "CinematicMoves": [70, 16, 90],
     "CandyToEvolve": 0,
 }, {
     "Id": 95,
@@ -1162,7 +1162,7 @@ pokemon = [{}, {
     "Type1": "Fighting",
     "Type2": "None",
     "QuickMoves": [207, 241],
-    "CinematicMoves": [127, 56, 32],
+    "CinematicMoves": [56, 32, 123],
     "CandyToEvolve": 0,
 }, {
     "Id": 107,
@@ -1194,7 +1194,7 @@ pokemon = [{}, {
     "BaseDefense": 142,
     "Type1": "Poison",
     "Type2": "None",
-    "QuickMoves": [225, 221],
+    "QuickMoves": [221],
     "CinematicMoves": [18, 90, 16],
     "CandyToEvolve": 50,
 }, {
@@ -1205,7 +1205,7 @@ pokemon = [{}, {
     "BaseDefense": 198,
     "Type1": "Poison",
     "Type2": "None",
-    "QuickMoves": [225, 221],
+    "QuickMoves": [221],
     "CinematicMoves": [90, 70, 16],
     "CandyToEvolve": 0,
 }, {
@@ -1239,7 +1239,7 @@ pokemon = [{}, {
     "Type1": "Normal",
     "Type2": "None",
     "QuickMoves": [222, 234],
-    "CinematicMoves": [108, 30, 86],
+    "CinematicMoves": [108, 86, 14],
     "CandyToEvolve": 0,
 }, {
     "Id": 114,
@@ -1315,7 +1315,7 @@ pokemon = [{}, {
     "BaseDefense": 128,
     "Type1": "Water",
     "Type2": "None",
-    "QuickMoves": [219, 230],
+    "QuickMoves": [230, 221],
     "CinematicMoves": [125, 53, 65],
     "CandyToEvolve": 50,
 }, {
@@ -1326,7 +1326,7 @@ pokemon = [{}, {
     "BaseDefense": 192,
     "Type1": "Water",
     "Type2": "Psychic",
-    "QuickMoves": [219, 230],
+    "QuickMoves": [230, 221],
     "CinematicMoves": [107, 65, 30],
     "CandyToEvolve": 0,
 }, {
@@ -1425,7 +1425,7 @@ pokemon = [{}, {
     "BaseDefense": 196,
     "Type1": "Water",
     "Type2": "Flying",
-    "QuickMoves": [204, 202],
+    "QuickMoves": [202],
     "CinematicMoves": [107, 80, 82],
     "CandyToEvolve": 0,
 }, {
@@ -1502,7 +1502,7 @@ pokemon = [{}, {
     "BaseDefense": 158,
     "Type1": "Normal",
     "Type2": "None",
-    "QuickMoves": [219, 221],
+    "QuickMoves": [221, 234],
     "CinematicMoves": [30, 99, 35],
     "CandyToEvolve": 0,
 }, {
@@ -1657,7 +1657,7 @@ pokemon = [{}, {
     "Type1": "Psychic",
     "Type2": "None",
     "QuickMoves": [222],
-    "CinematicMoves": [122, 31, 108, 82, 78, 87, 103, 116, 14],
+    "CinematicMoves": [31, 108, 82, 78, 103, 116, 14, 40],
     "CandyToEvolve": 0,
 }, {
     "Id": 172,
