@@ -6,6 +6,7 @@ const pogobuf = require('pogobuf');
 const props = require('../config/properties.js');
 const expressUtils = require('../utils/expressUtils.js');
 const pokemonUtils = require('../utils/pokemonUtils.js');
+const pokemonData = require('../../data/pokemon.json');
 
 const Credential = require('../models/Credential.js');
 const Pokemon = require('../models/Pokemon.js');
@@ -57,7 +58,7 @@ module.exports = {
 
 								let species = {
 									'pokedex_number': pokemon.pokemon_id,
-									'species': props.pokemonNamesByDexNum[id],
+									'species': pokemonData[id].Name,
 									'count': 1,
 									'candy': 0,
 									'evolve_sort': 0,
@@ -76,7 +77,7 @@ module.exports = {
 								formattedPokemon.push(new Pokemon(
 									pokemon.pokemon_id,
 									pokemonUtils.getName(pokemon),
-									props.pokemonNamesByDexNum[pokemon.pokemon_id.toString()],
+									pokemonData[pokemon.pokemon_id].Name,
 									pokemon.individual_attack,
 									pokemon.individual_defense,
 									pokemon.individual_stamina,
@@ -85,7 +86,7 @@ module.exports = {
 									parseFloat(((pokemon.individual_attack + pokemon.individual_defense + pokemon.individual_stamina) / 45 * 100).toFixed(2)),
 									pokemon.cp,
 									pokemon.favorite === 1,
-									props.pokemonNamesByDexNum[props.pokemonFamilyIdByPokedexNum[pokemon.pokemon_id]],
+									pokemonData[props.pokemonFamilyIdByPokedexNum[pokemon.pokemon_id]].Name,
 									pokemon.id,
 									pokemon.move_1,
 									pokemon.move_2,
@@ -157,7 +158,7 @@ module.exports = {
 				expressUtils.sendResponse(res, next, 400, {error: props.errors.type}, req.body.username, endpoint);
 			} else if (!req.body.hasOwnProperty('id')) {
 				expressUtils.sendResponse(res, next, 400, {error: props.errors.pokemon_id}, req.body.username, endpoint);
-			} 
+			}
 			else {
 				let credential = new Credential(req.body.type, req.body.token, req.body.username, req.body.password);
 				pokemonUtils.getClient(credential).then(client => {
