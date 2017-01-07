@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core'
 import { Headers, Http } from '@angular/http'
 import 'rxjs/add/operator/toPromise'
 
+import { PokemonData } from '../models/pokemon-data.model'
 import { UserLogin } from '../models/user-login.model'
 import { Pokemon } from '../models/pokemon.model'
 import { Species } from '../models/species.model'
@@ -9,12 +10,12 @@ import { Move } from '../models/move.model'
 
 import { PropertiesService } from './properties.service'
 
-
 @Injectable()
 export class PokemonService {
 	private _pokemon : Pokemon[] = [];
 	private _species: Species[] = [];
 	private _userLogin: UserLogin = null;
+	private _pokemonDataUrl = './data/pokemon.json';
 
 	constructor(
 		private _http: Http,
@@ -38,26 +39,35 @@ export class PokemonService {
 	}
 
 	public retrievePokemon () {
-		let headers = new Headers({
-			'Content-Type': 'application/json'});
+		return this._http
+			.get(this._pokemonDataUrl)
+			.toPromise()
+			.then(res => {
+				return this.retrievePokemonHelper(res.json());
+			});
+	}
+
+	public retrievePokemonHelper (pokemonData: PokemonData[]) {
+		let headers = new Headers({'Content-Type': 'application/json'});
 		return this._http
 		.post(
-			this._properties.apiHost + this._properties.getPokemonRoute, 
-			JSON.stringify(this._userLogin), 
+			this._properties.apiHost + this._properties.getPokemonRoute,
+			JSON.stringify(this._userLogin),
 			{headers: headers}
 		)
 		.toPromise()
 		.then(res => {
 			let resBody = res.json();
+
 			this._pokemon = resBody.pokemon as Pokemon[];
 			this._pokemon = this._pokemon.map(function (pokemon) {
-				pokemon.type_1 = window['pokemon'][pokemon.pokedex_number].Type1.toLowerCase();
-				pokemon.type_2 = window['pokemon'][pokemon.pokedex_number].Type2.toLowerCase();
+				pokemon.type_1 = pokemonData[pokemon.pokedex_number].Type1.toLowerCase();
+				pokemon.type_2 = pokemonData[pokemon.pokedex_number].Type2.toLowerCase();
 
 				pokemon.moves = {
-					fast: window['pokemon'][pokemon.pokedex_number].QuickMoves.map(function (moveNumber: string) {
+					fast: pokemonData[pokemon.pokedex_number].QuickMoves.map(function (moveNumber: number) {
 						let move: any = window['moves'][moveNumber.toString()];
-						
+
 						let givesStab: boolean = false;
 						let dps: number = move.DPS;
 
@@ -74,7 +84,7 @@ export class PokemonService {
 							givesStab
 						);
 					}),
-					charged: window['pokemon'][pokemon.pokedex_number].CinematicMoves.map(function (moveNumber: string) {
+					charged: pokemonData[pokemon.pokedex_number].CinematicMoves.map(function (moveNumber: number) {
 						let move: any = window['moves'][moveNumber.toString()];
 
 						let givesStab: boolean = false;
