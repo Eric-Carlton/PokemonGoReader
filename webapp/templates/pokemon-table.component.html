@@ -68,7 +68,7 @@
 						</td>
 						<td><img src="http://serebii.net/pokedex-bw/type/{{ atk.type }}.gif"></td>
 						<td [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.name }}</td>
-						<td [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.DPS }} DPS</td>
+						<td [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.DPS | number : '1.2-2' }} DPS</td>
 					</tr>
 					<tr *ngFor="let atk of mon.moves.old_fast">
 						<td>
@@ -77,7 +77,7 @@
 						</td>
 						<td><img src="http://serebii.net/pokedex-bw/type/{{ atk.type }}.gif"></td>
 						<td [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.name }} (Old)</td>
-						<td [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.DPS }} DPS</td>
+						<td [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.DPS | number : '1.2-2' }} DPS</td>
 					</tr>
 					<tr class="separator"></tr>
 					<tr *ngFor="let atk of mon.moves.charged">
@@ -87,7 +87,7 @@
 						</td>
 						<td><img src="http://serebii.net/pokedex-bw/type/{{ atk.type }}.gif"></td>
 						<td [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.name }}</td>
-						<td [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.DPS }} DPS</td>
+						<td [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.DPS | number : '1.2-2' }} DPS</td>
 					</tr>
 					<tr *ngFor="let atk of mon.moves.old_charged">
 						<td>
@@ -96,7 +96,7 @@
 						</td>
 						<td><img src="http://serebii.net/pokedex-bw/type/{{ atk.type }}.gif"></td>
 						<td [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.name }} (Old)</td>
-						<td [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.DPS }} DPS</td>
+						<td [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.DPS | number : '1.2-2' }} DPS</td>
 					</tr>
 				</table>
 			</div>

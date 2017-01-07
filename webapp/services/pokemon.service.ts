@@ -78,10 +78,10 @@ export class PokemonService {
 
 				pokemon.moves = {
 					fast: pokemonData[pokemon.pokedex_number].QuickMoves.map(function (moveNumber: number) {
-						let move: any = moveData[moveNumber];
+						let move: MoveData = moveData[moveNumber];
 
 						let givesStab: boolean = false;
-						let dps: number = move.DPS;
+						let dps: number = move.Power / move.DurationMs * 1000;
 
 						if(move.Type.toLowerCase() === pokemon.type_1 || move.Type.toLowerCase() === pokemon.type_2){
 							givesStab = true;
@@ -97,10 +97,10 @@ export class PokemonService {
 						);
 					}),
 					charged: pokemonData[pokemon.pokedex_number].CinematicMoves.map(function (moveNumber: number) {
-						let move: any = moveData[moveNumber];
+						let move: MoveData = moveData[moveNumber];
 
 						let givesStab: boolean = false;
-						let dps: number = move.DPS;
+						let dps: number = move.Power / move.DurationMs * 1000;
 
 						if(move.Type.toLowerCase() === pokemon.type_1 || move.Type.toLowerCase() === pokemon.type_2){
 							givesStab = true;
@@ -116,10 +116,10 @@ export class PokemonService {
 						);
 					}),
 					old_fast: pokemonData[pokemon.pokedex_number].OldQuickMoves.map(function (moveNumber: number) {
-						let move: any = moveData[moveNumber];
+						let move: MoveData = moveData[moveNumber];
 
 						let givesStab: boolean = false;
-						let dps: number = move.DPS;
+						let dps: number = move.Power / move.DurationMs * 1000;
 
 						if(move.Type.toLowerCase() === pokemon.type_1 || move.Type.toLowerCase() === pokemon.type_2){
 							givesStab = true;
@@ -135,10 +135,10 @@ export class PokemonService {
 						);
 					}),
 					old_charged: pokemonData[pokemon.pokedex_number].OldCinematicMoves.map(function (moveNumber: number) {
-						let move: any = moveData[moveNumber];
+						let move: MoveData = moveData[moveNumber];
 
 						let givesStab: boolean = false;
-						let dps: number = move.DPS;
+						let dps: number = move.Power / move.DurationMs * 1000;
 
 						if(move.Type.toLowerCase() === pokemon.type_1 || move.Type.toLowerCase() === pokemon.type_2){
 							givesStab = true;
