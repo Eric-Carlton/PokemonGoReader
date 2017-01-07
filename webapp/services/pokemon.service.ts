@@ -114,6 +114,44 @@ export class PokemonService {
 							move.Name,
 							givesStab
 						);
+					}),
+					old_fast: pokemonData[pokemon.pokedex_number].OldQuickMoves.map(function (moveNumber: number) {
+						let move: any = moveData[moveNumber];
+
+						let givesStab: boolean = false;
+						let dps: number = move.DPS;
+
+						if(move.Type.toLowerCase() === pokemon.type_1 || move.Type.toLowerCase() === pokemon.type_2){
+							givesStab = true;
+							dps = Number((dps * 1.25).toFixed(2));
+						}
+
+						return new Move(
+							move.Type.toLowerCase(),
+							pokemon.move_1.toString() === moveNumber.toString(),
+							dps,
+							move.Name,
+							givesStab
+						);
+					}),
+					old_charged: pokemonData[pokemon.pokedex_number].OldCinematicMoves.map(function (moveNumber: number) {
+						let move: any = moveData[moveNumber];
+
+						let givesStab: boolean = false;
+						let dps: number = move.DPS;
+
+						if(move.Type.toLowerCase() === pokemon.type_1 || move.Type.toLowerCase() === pokemon.type_2){
+							givesStab = true;
+							dps = Number((dps * 1.25).toFixed(2));
+						}
+
+						return new Move(
+							move.Type.toLowerCase(),
+							pokemon.move_2.toString() === moveNumber.toString(),
+							dps,
+							move.Name,
+							givesStab
+						);
 					})
 				};
 
@@ -124,6 +162,18 @@ export class PokemonService {
 				});
 
 				pokemon.moves.charged = pokemon.moves.charged.sort((a,b) => {
+					if ( a.DPS < b.DPS ) return 1;
+					if ( a.DPS > b.DPS) return -1;
+					return 0;
+				});
+
+				pokemon.moves.old_fast = pokemon.moves.old_fast.sort((a,b) => {
+					if ( a.DPS < b.DPS ) return 1;
+					if ( a.DPS > b.DPS) return -1;
+					return 0;
+				});
+
+				pokemon.moves.old_charged = pokemon.moves.old_charged.sort((a,b) => {
 					if ( a.DPS < b.DPS ) return 1;
 					if ( a.DPS > b.DPS) return -1;
 					return 0;
