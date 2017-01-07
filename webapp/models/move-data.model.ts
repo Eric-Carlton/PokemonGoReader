@@ -1,6 +1,6 @@
 export class MoveData {
 	constructor(
-		public ID: number,
+		public Id: number,
     	public Name: string,
     	public Speed: string,
     	public Type: string,

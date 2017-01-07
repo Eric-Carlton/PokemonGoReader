@@ -86,7 +86,7 @@ module.exports = {
 									parseFloat(((pokemon.individual_attack + pokemon.individual_defense + pokemon.individual_stamina) / 45 * 100).toFixed(2)),
 									pokemon.cp,
 									pokemon.favorite === 1,
-									pokemonData[props.pokemonFamilyIdByPokedexNum[pokemon.pokemon_id]].Name,
+									pokemonData[pokemonData[pokemon.pokemon_id].FamilyId].Name,
 									pokemon.id,
 									pokemon.move_1,
 									pokemon.move_2,

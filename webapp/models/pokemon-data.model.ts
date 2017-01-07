@@ -1,6 +1,6 @@
 export class PokemonData {
 	constructor(
-		public ID : number,
+		public Id : number,
 		public Name: string,
 		public BaseStamina: number,
 		public BaseAttack : number,
@@ -9,6 +9,7 @@ export class PokemonData {
 		public Type2: string,
 		public QuickMoves: number[],
 		public CinematicMoves: number[],
-		public CandyToEvolve: number
+		public CandyToEvolve: number,
+		public FamilyId: number
 	){ }
 }
