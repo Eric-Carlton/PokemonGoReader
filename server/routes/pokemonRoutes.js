@@ -99,9 +99,61 @@ module.exports = {
 						let formattedSpecies = [];
 						Object.keys(speciesMap).forEach(function(speciesId) {
 							let species = speciesMap[speciesId];
+							let family = [];
+
+							if(pokemonData[speciesId].CandyToEvolve > 0) {
+								let familyId = pokemonData[speciesId].FamilyId
+
+								let firstForm = {id: 0, cost: 0};
+								let secondForm = {id: 0, cost: 0};
+								let finalForm = {id: 0, cost: 0};
+
+								pokemonData.forEach(function(pkmn){
+									if(pkmn.FamilyId === familyId) {
+										if(pkmn.CandyToEvolve === 0) {
+											finalForm.id = pkmn.Id;
+											finalForm.cost = pkmn.CandyToEvolve;
+										} else if(firstForm.id === 0) {
+											firstForm.id = pkmn.Id;
+											firstForm.cost = pkmn.CandyToEvolve;
+										} else if(pkmn.CandyToEvolve > firstForm.cost) {
+											secondForm.id = pkmn.Id;
+											secondForm.cost = pkmn.CandyToEvolve;
+										} else {
+											secondForm.id = firstForm.id;
+											secondForm.cost = firstForm.cost;
+											firstForm.id = pkmn.Id;
+											firstForm.cost = pkmn.CandyToEvolve;
+										}
+									}
+								});
+
+								if(firstForm.id == speciesId) {
+									if(secondForm.id === 0) {
+										family.push({
+											id: finalForm.id.toString(),
+											cost: firstForm.cost
+										});
+									} else {
+										family.push({
+											id: secondForm.id.toString(),
+											cost: firstForm.cost
+										});
+										family.push({
+											id: finalForm.id.toString(),
+											cost: secondForm.cost + firstForm.cost
+										});
+									}
+								} else {
+									family.push({
+										id: finalForm.id.toString(),
+										cost: secondForm.cost
+									});
+								}
+							}
 
 							let maxDesc = 0;
-							props.pokemonEvolutionByDexNum[speciesId].forEach(function(descendant){
+							family.forEach(function(descendant){
 								let canEvolve = Math.trunc((species.candy - 1) / (descendant.cost - 1));
 								if (canEvolve > 0){
 									species.evolve_sort = Math.max(species.evolve_sort, canEvolve);
