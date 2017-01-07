@@ -101,7 +101,7 @@ module.exports = {
 		for(let j = 0; j < candies.length; j++){
 			let candy = candies[j];
 
-			if(candy.hasOwnProperty('family_id') && candy.hasOwnProperty('family_id') && candy.family_id.toString() === pokemonData[pokemon.pokemon_id].FamilyId){
+			if(candy.hasOwnProperty('family_id') && candy.hasOwnProperty('family_id') && candy.family_id === pokemonData[pokemon.pokemon_id].FamilyId){
 				return candy.candy;
 			}
 		}
