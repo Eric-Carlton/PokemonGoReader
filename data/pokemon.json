@@ -8,6 +8,8 @@
     "Type2": "Poison",
     "QuickMoves": [214, 221],
     "CinematicMoves": [90, 59, 118],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 25,
     "FamilyId": 1
 }, {
@@ -20,6 +22,8 @@
     "Type2": "Poison",
     "QuickMoves": [215, 214],
     "CinematicMoves": [90, 116, 118],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 100,
     "FamilyId": 1
 }, {
@@ -32,6 +36,8 @@
     "Type2": "Poison",
     "QuickMoves": [215, 214],
     "CinematicMoves": [90, 47, 116],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 1
 }, {
@@ -44,6 +50,8 @@
     "Type2": "None",
     "QuickMoves": [209, 220],
     "CinematicMoves": [101, 102, 24],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 25,
     "FamilyId": 4
 }, {
@@ -56,6 +64,8 @@
     "Type2": "None",
     "QuickMoves": [209, 220],
     "CinematicMoves": [115, 102, 24],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 100,
     "FamilyId": 4
 }, {
@@ -68,6 +78,8 @@
     "Type2": "Flying",
     "QuickMoves": [209, 210],
     "CinematicMoves": [103, 83, 24],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 4
 }, {
@@ -80,6 +92,8 @@
     "Type2": "None",
     "QuickMoves": [237, 221],
     "CinematicMoves": [57, 58, 105],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 25,
     "FamilyId": 7
 }, {
@@ -92,6 +106,8 @@
     "Type2": "None",
     "QuickMoves": [230, 202],
     "CinematicMoves": [57, 39, 107],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 100,
     "FamilyId": 7
 }, {
@@ -104,6 +120,8 @@
     "Type2": "None",
     "QuickMoves": [230, 202],
     "CinematicMoves": [36, 39, 107],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 7
 }, {
@@ -116,6 +134,8 @@
     "Type2": "None",
     "QuickMoves": [201, 221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 12,
     "FamilyId": 10
 }, {
@@ -128,6 +148,8 @@
     "Type2": "None",
     "QuickMoves": [201, 221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 10
 }, {
@@ -140,6 +162,8 @@
     "Type2": "Flying",
     "QuickMoves": [201, 235],
     "CinematicMoves": [49, 108, 99],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 10
 }, {
@@ -152,6 +176,8 @@
     "Type2": "Poison",
     "QuickMoves": [201, 236],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 12,
     "FamilyId": 13
 }, {
@@ -164,6 +190,8 @@
     "Type2": "Poison",
     "QuickMoves": [201, 236],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 13
 }, {
@@ -176,6 +204,8 @@
     "Type2": "Poison",
     "QuickMoves": [201, 224],
     "CinematicMoves": [90, 45, 100],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 13
 }, {
@@ -188,6 +218,8 @@
     "Type2": "Flying",
     "QuickMoves": [219, 221],
     "CinematicMoves": [80, 45, 121],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 12,
     "FamilyId": 16
 }, {
@@ -200,6 +232,8 @@
     "Type2": "Flying",
     "QuickMoves": [210, 239],
     "CinematicMoves": [80, 45, 121],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 16
 }, {
@@ -212,6 +246,8 @@
     "Type2": "Flying",
     "QuickMoves": [210, 239],
     "CinematicMoves": [122, 45, 121],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 16
 }, {
@@ -224,6 +260,8 @@
     "Type2": "None",
     "QuickMoves": [221, 219],
     "CinematicMoves": [26, 129, 131],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 25,
     "FamilyId": 19
 }, {
@@ -236,6 +274,8 @@
     "Type2": "None",
     "QuickMoves": [202, 219],
     "CinematicMoves": [26, 129, 14],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 19
 }, {
@@ -248,6 +288,8 @@
     "Type2": "Flying",
     "QuickMoves": [211, 219],
     "CinematicMoves": [45, 38, 80],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 21
 }, {
@@ -260,6 +302,8 @@
     "Type2": "Flying",
     "QuickMoves": [211, 239],
     "CinematicMoves": [45, 46, 80],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 21
 }, {
@@ -272,6 +316,8 @@
     "Type2": "None",
     "QuickMoves": [236, 225],
     "CinematicMoves": [13, 90, 92],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 23
 }, {
@@ -284,6 +330,8 @@
     "Type2": "None",
     "QuickMoves": [202, 225],
     "CinematicMoves": [16, 91, 92],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 23
 }, {
@@ -296,6 +344,8 @@
     "Type2": "None",
     "QuickMoves": [205, 219],
     "CinematicMoves": [35, 79, 78],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 25
 }, {
@@ -308,6 +358,8 @@
     "Type2": "None",
     "QuickMoves": [205, 206],
     "CinematicMoves": [123, 77, 78],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 25
 }, {
@@ -320,6 +372,8 @@
     "Type2": "None",
     "QuickMoves": [220, 216],
     "CinematicMoves": [26, 64, 63],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 27
 }, {
@@ -332,6 +386,8 @@
     "Type2": "None",
     "QuickMoves": [228, 216],
     "CinematicMoves": [31, 63, 95],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 27
 }, {
@@ -344,6 +400,8 @@
     "Type2": "None",
     "QuickMoves": [202, 236],
     "CinematicMoves": [50, 131, 90],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 25,
     "FamilyId": 29
 }, {
@@ -356,6 +414,8 @@
     "Type2": "None",
     "QuickMoves": [202, 236],
     "CinematicMoves": [50, 26, 90],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 100,
     "FamilyId": 29
 }, {
@@ -368,6 +428,8 @@
     "Type2": "Ground",
     "QuickMoves": [224, 202],
     "CinematicMoves": [31, 91, 32],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 29
 }, {
@@ -380,6 +442,8 @@
     "Type2": "None",
     "QuickMoves": [211, 236],
     "CinematicMoves": [126, 131, 90],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 25,
     "FamilyId": 32
 }, {
@@ -392,6 +456,8 @@
     "Type2": "None",
     "QuickMoves": [224, 236],
     "CinematicMoves": [126, 26, 90],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 100,
     "FamilyId": 32
 }, {
@@ -404,6 +470,8 @@
     "Type2": "Ground",
     "QuickMoves": [224, 200],
     "CinematicMoves": [31, 91, 22],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 32
 }, {
@@ -416,6 +484,8 @@
     "Type2": "None",
     "QuickMoves": [222, 234],
     "CinematicMoves": [84, 131, 87],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 35
 }, {
@@ -428,6 +498,8 @@
     "Type2": "None",
     "QuickMoves": [222, 234],
     "CinematicMoves": [86, 108, 87],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 35
 }, {
@@ -440,6 +512,8 @@
     "Type2": "None",
     "QuickMoves": [219, 209],
     "CinematicMoves": [131, 24, 101],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 37
 }, {
@@ -452,6 +526,8 @@
     "Type2": "None",
     "QuickMoves": [238, 209],
     "CinematicMoves": [42, 24, 103],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 37
 }, {
@@ -464,6 +540,8 @@
     "Type2": "Fairy",
     "QuickMoves": [222, 238],
     "CinematicMoves": [84, 131, 86],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [88],
     "CandyToEvolve": 50,
     "FamilyId": 39
 }, {
@@ -476,6 +554,8 @@
     "Type2": "Fairy",
     "QuickMoves": [222, 238],
     "CinematicMoves": [86, 14, 88],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 39
 }, {
@@ -488,6 +568,8 @@
     "Type2": "Flying",
     "QuickMoves": [219, 202],
     "CinematicMoves": [50, 121, 90],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 41
 }, {
@@ -500,6 +582,8 @@
     "Type2": "Flying",
     "QuickMoves": [210, 202],
     "CinematicMoves": [50, 121, 69],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 41
 }, {
@@ -512,6 +596,8 @@
     "Type2": "Poison",
     "QuickMoves": [215, 225],
     "CinematicMoves": [59, 90, 87],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 25,
     "FamilyId": 43
 }, {
@@ -524,6 +610,8 @@
     "Type2": "Poison",
     "QuickMoves": [215, 225],
     "CinematicMoves": [47, 90, 87],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 100,
     "FamilyId": 43
 }, {
@@ -536,6 +624,8 @@
     "Type2": "Poison",
     "QuickMoves": [215, 225],
     "CinematicMoves": [47, 116, 87],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 43
 }, {
@@ -548,6 +638,8 @@
     "Type2": "Grass",
     "QuickMoves": [220, 201],
     "CinematicMoves": [89, 100, 59],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 46
 }, {
@@ -560,6 +652,8 @@
     "Type2": "Grass",
     "QuickMoves": [201, 200],
     "CinematicMoves": [89, 100, 116],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 46
 }, {
@@ -572,6 +666,8 @@
     "Type2": "Poison",
     "QuickMoves": [201, 235],
     "CinematicMoves": [50, 30, 99],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 48
 }, {
@@ -584,6 +680,8 @@
     "Type2": "Poison",
     "QuickMoves": [201, 235],
     "CinematicMoves": [50, 108, 49],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 48
 }, {
@@ -596,6 +694,8 @@
     "Type2": "None",
     "QuickMoves": [220, 233],
     "CinematicMoves": [26, 96, 63],
+    "OldQuickMoves": [216],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 50
 }, {
@@ -608,6 +708,8 @@
     "Type2": "None",
     "QuickMoves": [203, 233],
     "CinematicMoves": [31, 96, 32],
+    "OldQuickMoves": [216],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 50
 }, {
@@ -620,6 +722,8 @@
     "Type2": "None",
     "QuickMoves": [220, 202],
     "CinematicMoves": [51, 16, 131],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 52
 }, {
@@ -632,6 +736,8 @@
     "Type2": "None",
     "QuickMoves": [220, 238],
     "CinematicMoves": [51, 65, 88],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 52
 }, {
@@ -644,6 +750,8 @@
     "Type2": "None",
     "QuickMoves": [230, 234],
     "CinematicMoves": [30, 58, 28],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 54
 }, {
@@ -656,6 +764,8 @@
     "Type2": "None",
     "QuickMoves": [230, 235],
     "CinematicMoves": [108, 107, 39],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 54
 }, {
@@ -668,6 +778,8 @@
     "Type2": "None",
     "QuickMoves": [208, 220],
     "CinematicMoves": [28, 56, 123],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 56
 }, {
@@ -680,6 +792,8 @@
     "Type2": "None",
     "QuickMoves": [207, 208],
     "CinematicMoves": [28, 56, 51],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 56
 }, {
@@ -692,6 +806,8 @@
     "Type2": "None",
     "QuickMoves": [209, 202],
     "CinematicMoves": [21, 131, 24],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 58
 }, {
@@ -704,6 +820,8 @@
     "Type2": "None",
     "QuickMoves": [240, 202],
     "CinematicMoves": [103, 24, 95],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 58
 }, {
@@ -716,6 +834,8 @@
     "Type2": "None",
     "QuickMoves": [237, 216],
     "CinematicMoves": [53, 96, 131],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 25,
     "FamilyId": 60
 }, {
@@ -728,6 +848,8 @@
     "Type2": "None",
     "QuickMoves": [237, 216],
     "CinematicMoves": [106, 96, 53],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 100,
     "FamilyId": 60
 }, {
@@ -740,6 +862,8 @@
     "Type2": "Fighting",
     "QuickMoves": [237, 216],
     "CinematicMoves": [107, 54, 33],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 60
 }, {
@@ -752,6 +876,8 @@
     "Type2": "None",
     "QuickMoves": [234],
     "CinematicMoves": [60, 99, 70],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 25,
     "FamilyId": 63
 }, {
@@ -764,6 +890,8 @@
     "Type2": "None",
     "QuickMoves": [226, 235],
     "CinematicMoves": [30, 86, 70],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 100,
     "FamilyId": 63
 }, {
@@ -776,6 +904,8 @@
     "Type2": "None",
     "QuickMoves": [226, 235],
     "CinematicMoves": [108, 86, 70],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 63
 }, {
@@ -788,6 +918,8 @@
     "Type2": "None",
     "QuickMoves": [207, 208],
     "CinematicMoves": [56, 123, 28],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 25,
     "FamilyId": 66
 }, {
@@ -800,6 +932,8 @@
     "Type2": "None",
     "QuickMoves": [207, 208],
     "CinematicMoves": [54, 123, 28],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 100,
     "FamilyId": 66
 }, {
@@ -812,6 +946,8 @@
     "Type2": "None",
     "QuickMoves": [229, 208],
     "CinematicMoves": [32, 54, 28],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 66
 }, {
@@ -824,6 +960,8 @@
     "Type2": "Poison",
     "QuickMoves": [214, 225],
     "CinematicMoves": [118, 90, 13],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 25,
     "FamilyId": 69
 }, {
@@ -836,6 +974,8 @@
     "Type2": "Poison",
     "QuickMoves": [215, 225],
     "CinematicMoves": [118, 90, 59],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 100,
     "FamilyId": 69
 }, {
@@ -848,6 +988,8 @@
     "Type2": "Poison",
     "QuickMoves": [215, 225],
     "CinematicMoves": [117, 90, 116],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 69
 }, {
@@ -860,6 +1002,8 @@
     "Type2": "Poison",
     "QuickMoves": [237, 236],
     "CinematicMoves": [53, 105, 13],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 72
 }, {
@@ -872,6 +1016,8 @@
     "Type2": "Poison",
     "QuickMoves": [225, 224],
     "CinematicMoves": [107, 91, 40],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 72
 }, {
@@ -884,6 +1030,8 @@
     "Type2": "Ground",
     "QuickMoves": [227, 221],
     "CinematicMoves": [64, 63, 26],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 25,
     "FamilyId": 74
 }, {
@@ -896,6 +1044,8 @@
     "Type2": "Ground",
     "QuickMoves": [227, 233],
     "CinematicMoves": [26, 32, 64],
+    "OldQuickMoves": [216],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 100,
     "FamilyId": 74
 }, {
@@ -908,6 +1058,8 @@
     "Type2": "Ground",
     "QuickMoves": [227, 233],
     "CinematicMoves": [32, 62, 31],
+    "OldQuickMoves": [216],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 74
 }, {
@@ -920,6 +1072,8 @@
     "Type2": "None",
     "QuickMoves": [221, 209],
     "CinematicMoves": [101, 21, 103],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 77
 }, {
@@ -932,6 +1086,8 @@
     "Type2": "None",
     "QuickMoves": [207, 209],
     "CinematicMoves": [103, 46, 42],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 77
 }, {
@@ -944,6 +1100,8 @@
     "Type2": "Psychic",
     "QuickMoves": [230, 235],
     "CinematicMoves": [105, 60, 108],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 79
 }, {
@@ -956,6 +1114,8 @@
     "Type2": "Psychic",
     "QuickMoves": [230, 235],
     "CinematicMoves": [105, 108, 39],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 79
 }, {
@@ -968,6 +1128,8 @@
     "Type2": "Steel",
     "QuickMoves": [206, 205],
     "CinematicMoves": [35, 72, 79],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 81
 }, {
@@ -980,6 +1142,8 @@
     "Type2": "Steel",
     "QuickMoves": [206, 205],
     "CinematicMoves": [35, 72, 36],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 81
 }, {
@@ -992,6 +1156,8 @@
     "Type2": "Flying",
     "QuickMoves": [223, 200],
     "CinematicMoves": [45, 121, 117],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 83
 }, {
@@ -1004,6 +1170,8 @@
     "Type2": "Flying",
     "QuickMoves": [211, 219],
     "CinematicMoves": [38, 45, 125],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 84
 }, {
@@ -1016,6 +1184,8 @@
     "Type2": "Flying",
     "QuickMoves": [238, 239],
     "CinematicMoves": [38, 45, 121],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 84
 }, {
@@ -1028,6 +1198,8 @@
     "Type2": "None",
     "QuickMoves": [217, 212],
     "CinematicMoves": [57, 111, 58],
+    "OldQuickMoves": [230],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 86
 }, {
@@ -1040,6 +1212,8 @@
     "Type2": "Ice",
     "QuickMoves": [218, 217],
     "CinematicMoves": [111, 57, 40],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 86
 }, {
@@ -1052,6 +1226,8 @@
     "Type2": "None",
     "QuickMoves": [233, 224],
     "CinematicMoves": [18, 96, 90],
+    "OldQuickMoves": [225],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 88
 }, {
@@ -1064,6 +1240,8 @@
     "Type2": "None",
     "QuickMoves": [224, 212],
     "CinematicMoves": [16, 92, 91],
+    "OldQuickMoves": [225],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 88
 }, {
@@ -1076,6 +1254,8 @@
     "Type2": "None",
     "QuickMoves": [217, 221],
     "CinematicMoves": [53, 105, 111],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 90
 }, {
@@ -1088,6 +1268,8 @@
     "Type2": "Ice",
     "QuickMoves": [218, 217],
     "CinematicMoves": [111, 107, 40],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 90
 }, {
@@ -1100,6 +1282,8 @@
     "Type2": "Poison",
     "QuickMoves": [212, 203],
     "CinematicMoves": [69, 16, 90],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 25,
     "FamilyId": 92
 }, {
@@ -1112,6 +1296,8 @@
     "Type2": "Poison",
     "QuickMoves": [213, 212],
     "CinematicMoves": [70, 16, 90],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 100,
     "FamilyId": 92
 }, {
@@ -1124,6 +1310,8 @@
     "Type2": "Poison",
     "QuickMoves": [203, 213],
     "CinematicMoves": [70, 16, 90],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [91],
     "CandyToEvolve": 0,
     "FamilyId": 92
 }, {
@@ -1136,6 +1324,8 @@
     "Type2": "Ground",
     "QuickMoves": [227, 221],
     "CinematicMoves": [64, 32, 74],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 95
 }, {
@@ -1148,6 +1338,8 @@
     "Type2": "None",
     "QuickMoves": [222, 235],
     "CinematicMoves": [30, 60, 108],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 96
 }, {
@@ -1160,6 +1352,8 @@
     "Type2": "None",
     "QuickMoves": [234, 235],
     "CinematicMoves": [60, 108, 70],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 96
 }, {
@@ -1172,6 +1366,8 @@
     "Type2": "None",
     "QuickMoves": [237, 216],
     "CinematicMoves": [20, 53, 105],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 98
 }, {
@@ -1184,6 +1380,8 @@
     "Type2": "None",
     "QuickMoves": [228, 216],
     "CinematicMoves": [20, 100, 105],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 98
 }, {
@@ -1196,6 +1394,8 @@
     "Type2": "None",
     "QuickMoves": [206, 221],
     "CinematicMoves": [35, 79, 99],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 100
 }, {
@@ -1208,6 +1408,8 @@
     "Type2": "None",
     "QuickMoves": [206, 221],
     "CinematicMoves": [35, 79, 14],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 100
 }, {
@@ -1220,6 +1422,8 @@
     "Type2": "Psychic",
     "QuickMoves": [235],
     "CinematicMoves": [59, 108, 62],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 102
 }, {
@@ -1232,6 +1436,8 @@
     "Type2": "Psychic",
     "QuickMoves": [235, 234],
     "CinematicMoves": [59, 108, 116],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 102
 }, {
@@ -1244,6 +1450,8 @@
     "Type2": "None",
     "QuickMoves": [233, 241],
     "CinematicMoves": [94, 26, 95],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 104
 }, {
@@ -1256,6 +1464,8 @@
     "Type2": "None",
     "QuickMoves": [233, 241],
     "CinematicMoves": [94, 26, 31],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 104
 }, {
@@ -1268,6 +1478,8 @@
     "Type2": "None",
     "QuickMoves": [207, 241],
     "CinematicMoves": [56, 32, 123],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [127],
     "CandyToEvolve": 0,
     "FamilyId": 106
 }, {
@@ -1280,6 +1492,8 @@
     "Type2": "None",
     "QuickMoves": [229, 241],
     "CinematicMoves": [115, 33, 77, 123],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 107
 }, {
@@ -1292,6 +1506,8 @@
     "Type2": "None",
     "QuickMoves": [212, 234],
     "CinematicMoves": [14, 127, 118],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 108
 }, {
@@ -1304,6 +1520,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [18, 90, 16],
+    "OldQuickMoves": [225],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 109
 }, {
@@ -1316,6 +1534,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [90, 70, 16],
+    "OldQuickMoves": [225],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 109
 }, {
@@ -1328,6 +1548,8 @@
     "Type2": "Rock",
     "QuickMoves": [233, 241],
     "CinematicMoves": [95, 126, 127],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 111
 }, {
@@ -1340,6 +1562,8 @@
     "Type2": "Rock",
     "QuickMoves": [233, 241],
     "CinematicMoves": [22, 31, 32],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 111
 }, {
@@ -1352,6 +1576,8 @@
     "Type2": "None",
     "QuickMoves": [222, 234],
     "CinematicMoves": [108, 86, 14],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [30],
     "CandyToEvolve": 0,
     "FamilyId": 113
 }, {
@@ -1364,6 +1590,8 @@
     "Type2": "None",
     "QuickMoves": [214],
     "CinematicMoves": [118, 90, 116],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 114
 }, {
@@ -1376,6 +1604,8 @@
     "Type2": "None",
     "QuickMoves": [233, 207],
     "CinematicMoves": [123, 31, 127],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 115
 }, {
@@ -1388,6 +1618,8 @@
     "Type2": "None",
     "QuickMoves": [230, 237],
     "CinematicMoves": [53, 82, 36],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 116
 }, {
@@ -1400,6 +1632,8 @@
     "Type2": "None",
     "QuickMoves": [230, 204],
     "CinematicMoves": [40, 82, 107],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 116
 }, {
@@ -1412,6 +1646,8 @@
     "Type2": "None",
     "QuickMoves": [211, 216],
     "CinematicMoves": [105, 126, 58],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 118
 }, {
@@ -1424,6 +1660,8 @@
     "Type2": "None",
     "QuickMoves": [211, 224],
     "CinematicMoves": [111, 46, 22],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 118
 }, {
@@ -1436,6 +1674,8 @@
     "Type2": "None",
     "QuickMoves": [230, 221],
     "CinematicMoves": [125, 53, 65],
+    "OldQuickMoves": [219],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 120
 }, {
@@ -1448,6 +1688,8 @@
     "Type2": "Psychic",
     "QuickMoves": [230, 221],
     "CinematicMoves": [107, 65, 30],
+    "OldQuickMoves": [219],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 120
 }, {
@@ -1460,6 +1702,8 @@
     "Type2": "Fairy",
     "QuickMoves": [235, 234],
     "CinematicMoves": [30, 108, 70],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 122
 }, {
@@ -1472,6 +1716,8 @@
     "Type2": "Flying",
     "QuickMoves": [200, 239],
     "CinematicMoves": [51, 100, 49],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 123
 }, {
@@ -1484,6 +1730,8 @@
     "Type2": "Psychic",
     "QuickMoves": [218, 222],
     "CinematicMoves": [85, 33, 60],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 124
 }, {
@@ -1496,6 +1744,8 @@
     "Type2": "None",
     "QuickMoves": [205, 207],
     "CinematicMoves": [77, 79, 78],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 125
 }, {
@@ -1508,6 +1758,8 @@
     "Type2": "None",
     "QuickMoves": [209, 208],
     "CinematicMoves": [103, 115, 24],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 126
 }, {
@@ -1520,6 +1772,8 @@
     "Type2": "None",
     "QuickMoves": [241, 200],
     "CinematicMoves": [20, 100, 54],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 127
 }, {
@@ -1532,6 +1786,8 @@
     "Type2": "None",
     "QuickMoves": [221, 234],
     "CinematicMoves": [126, 74, 31],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 128
 }, {
@@ -1544,6 +1800,8 @@
     "Type2": "None",
     "QuickMoves": [231],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 400,
     "FamilyId": 129
 }, {
@@ -1556,6 +1814,8 @@
     "Type2": "Flying",
     "QuickMoves": [202],
     "CinematicMoves": [107, 80, 82],
+    "OldQuickMoves": [204],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 129
 }, {
@@ -1568,6 +1828,8 @@
     "Type2": "Ice",
     "QuickMoves": [218, 217],
     "CinematicMoves": [82, 39, 40],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 131
 }, {
@@ -1580,6 +1842,8 @@
     "Type2": "None",
     "QuickMoves": [222],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 132
 }, {
@@ -1592,6 +1856,8 @@
     "Type2": "None",
     "QuickMoves": [219, 221],
     "CinematicMoves": [26, 125, 131],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 25,
     "FamilyId": 133
 }, {
@@ -1604,6 +1870,8 @@
     "Type2": "None",
     "QuickMoves": [230],
     "CinematicMoves": [105, 107, 58],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 133
 }, {
@@ -1616,6 +1884,8 @@
     "Type2": "None",
     "QuickMoves": [205],
     "CinematicMoves": [35, 79, 78],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 133
 }, {
@@ -1628,6 +1898,8 @@
     "Type2": "None",
     "QuickMoves": [209],
     "CinematicMoves": [103, 24, 42],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 133
 }, {
@@ -1640,6 +1912,8 @@
     "Type2": "None",
     "QuickMoves": [221, 234],
     "CinematicMoves": [30, 99, 35],
+    "OldQuickMoves": [219],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 137
 }, {
@@ -1652,6 +1926,8 @@
     "Type2": "Water",
     "QuickMoves": [230, 216],
     "CinematicMoves": [62, 104, 63],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 138
 }, {
@@ -1664,6 +1940,8 @@
     "Type2": "Water",
     "QuickMoves": [227, 230],
     "CinematicMoves": [62, 107, 64],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 138
 }, {
@@ -1676,6 +1954,8 @@
     "Type2": "Water",
     "QuickMoves": [220, 216],
     "CinematicMoves": [62, 57, 63],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 140
 }, {
@@ -1688,6 +1968,8 @@
     "Type2": "Water",
     "QuickMoves": [216, 200],
     "CinematicMoves": [62, 105, 32],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 140
 }, {
@@ -1700,6 +1982,8 @@
     "Type2": "Flying",
     "QuickMoves": [239, 202],
     "CinematicMoves": [62, 74, 14],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 142
 }, {
@@ -1712,6 +1996,8 @@
     "Type2": "None",
     "QuickMoves": [234, 212],
     "CinematicMoves": [131, 14, 31],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 143
 }, {
@@ -1724,6 +2010,8 @@
     "Type2": "Flying",
     "QuickMoves": [218],
     "CinematicMoves": [39, 111, 40],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 144
 }, {
@@ -1736,6 +2024,8 @@
     "Type2": "Flying",
     "QuickMoves": [205],
     "CinematicMoves": [35, 79, 78],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 145
 }, {
@@ -1748,6 +2038,8 @@
     "Type2": "Flying",
     "QuickMoves": [209],
     "CinematicMoves": [103, 42, 24],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 146
 }, {
@@ -1760,6 +2052,8 @@
     "Type2": "None",
     "QuickMoves": [204],
     "CinematicMoves": [13, 80, 58],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 25,
     "FamilyId": 147
 }, {
@@ -1772,6 +2066,8 @@
     "Type2": "None",
     "QuickMoves": [204],
     "CinematicMoves": [13, 58, 82],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 100,
     "FamilyId": 147
 }, {
@@ -1784,6 +2080,8 @@
     "Type2": "Flying",
     "QuickMoves": [204, 239],
     "CinematicMoves": [82, 14, 83],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 147
 }, {
@@ -1796,6 +2094,8 @@
     "Type2": "None",
     "QuickMoves": [226, 235],
     "CinematicMoves": [108, 70, 14],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 150
 }, {
@@ -1808,6 +2108,8 @@
     "Type2": "None",
     "QuickMoves": [222],
     "CinematicMoves": [31, 108, 82, 78, 103, 116, 14, 40],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [122, 87],
     "CandyToEvolve": 0,
     "FamilyId": 151
 }, {
@@ -1820,6 +2122,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 152
 }, {
@@ -1832,6 +2136,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 152
 }, {
@@ -1844,6 +2150,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 152
 }, {
@@ -1856,6 +2164,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 155
 }, {
@@ -1868,6 +2178,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 155
 }, {
@@ -1880,6 +2192,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 155
 }, {
@@ -1892,6 +2206,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 158
 }, {
@@ -1904,6 +2220,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 158
 }, {
@@ -1916,6 +2234,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 158
 }, {
@@ -1928,6 +2248,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 161
 }, {
@@ -1940,6 +2262,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 161
 }, {
@@ -1952,6 +2276,8 @@
     "Type2": "Flying",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 163
 }, {
@@ -1964,6 +2290,8 @@
     "Type2": "Flying",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 163
 }, {
@@ -1976,6 +2304,8 @@
     "Type2": "Flying",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 165
 }, {
@@ -1988,6 +2318,8 @@
     "Type2": "Flying",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 165
 }, {
@@ -2000,6 +2332,8 @@
     "Type2": "Poison",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 167
 }, {
@@ -2012,6 +2346,8 @@
     "Type2": "Poison",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 167
 }, {
@@ -2024,6 +2360,8 @@
     "Type2": "Flying",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 41
 }, {
@@ -2036,6 +2374,8 @@
     "Type2": "Electric",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 170
 }, {
@@ -2048,6 +2388,8 @@
     "Type2": "Electric",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 170
 }, {
@@ -2060,6 +2402,8 @@
     "Type2": "None",
     "QuickMoves": [205, 219],
     "CinematicMoves": [78, 84, 77],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 25,
     "FamilyId": 25
 }, {
@@ -2072,6 +2416,8 @@
     "Type2": "None",
     "QuickMoves": [222, 234],
     "CinematicMoves": [131, 108, 99],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 25,
     "FamilyId": 35
 }, {
@@ -2084,6 +2430,8 @@
     "Type2": "Fairy",
     "QuickMoves": [222, 238],
     "CinematicMoves": [131, 70, 108],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 25,
     "FamilyId": 39
 }, {
@@ -2096,6 +2444,8 @@
     "Type2": "None",
     "QuickMoves": [234, 211],
     "CinematicMoves": [62, 60, 86],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 50,
     "FamilyId": 175
 }, {
@@ -2108,6 +2458,8 @@
     "Type2": "Flying",
     "QuickMoves": [234, 239],
     "CinematicMoves": [62, 86, 45],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 175
 }, {
@@ -2120,6 +2472,8 @@
     "Type2": "Flying",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 177
 }, {
@@ -2132,6 +2486,8 @@
     "Type2": "Flying",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 177
 }, {
@@ -2144,6 +2500,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 179
 }, {
@@ -2156,6 +2514,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 179
 }, {
@@ -2168,6 +2528,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 179
 }, {
@@ -2180,6 +2542,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 43
 }, {
@@ -2192,6 +2556,8 @@
     "Type2": "Fairy",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 183
 }, {
@@ -2204,6 +2570,8 @@
     "Type2": "Fairy",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 183
 }, {
@@ -2216,6 +2584,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 185
 }, {
@@ -2228,6 +2598,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 60
 }, {
@@ -2240,6 +2612,8 @@
     "Type2": "Flying",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 187
 }, {
@@ -2252,6 +2626,8 @@
     "Type2": "Flying",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 187
 }, {
@@ -2264,6 +2640,8 @@
     "Type2": "Flying",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 187
 }, {
@@ -2276,6 +2654,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 190
 }, {
@@ -2288,6 +2668,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 191
 }, {
@@ -2300,6 +2682,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 191
 }, {
@@ -2312,6 +2696,8 @@
     "Type2": "Flying",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 193
 }, {
@@ -2324,6 +2710,8 @@
     "Type2": "Ground",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 194
 }, {
@@ -2336,6 +2724,8 @@
     "Type2": "Ground",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 194
 }, {
@@ -2348,6 +2738,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 133
 }, {
@@ -2360,6 +2752,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 133
 }, {
@@ -2372,6 +2766,8 @@
     "Type2": "Flying",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 198
 }, {
@@ -2384,6 +2780,8 @@
     "Type2": "Psychic",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 79
 }, {
@@ -2396,6 +2794,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 200
 }, {
@@ -2408,6 +2808,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 201
 }, {
@@ -2420,6 +2822,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 202
 }, {
@@ -2432,6 +2836,8 @@
     "Type2": "Psychic",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 203
 }, {
@@ -2444,6 +2850,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 204
 }, {
@@ -2456,6 +2864,8 @@
     "Type2": "Steel",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 204
 }, {
@@ -2468,6 +2878,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 206
 }, {
@@ -2480,6 +2892,8 @@
     "Type2": "Flying",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 207
 }, {
@@ -2492,6 +2906,8 @@
     "Type2": "Ground",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 95
 }, {
@@ -2504,6 +2920,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 209
 }, {
@@ -2516,6 +2934,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 209
 }, {
@@ -2528,6 +2948,8 @@
     "Type2": "Poison",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 211
 }, {
@@ -2540,6 +2962,8 @@
     "Type2": "Steel",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 123
 }, {
@@ -2552,6 +2976,8 @@
     "Type2": "Rock",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 213
 }, {
@@ -2564,6 +2990,8 @@
     "Type2": "Fighting",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 214
 }, {
@@ -2576,6 +3004,8 @@
     "Type2": "Ice",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 215
 }, {
@@ -2588,6 +3018,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 216
 }, {
@@ -2600,6 +3032,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 216
 }, {
@@ -2612,6 +3046,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 218
 }, {
@@ -2624,6 +3060,8 @@
     "Type2": "Rock",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 218
 }, {
@@ -2636,6 +3074,8 @@
     "Type2": "Ground",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 220
 }, {
@@ -2648,6 +3088,8 @@
     "Type2": "Ground",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 220
 }, {
@@ -2660,6 +3102,8 @@
     "Type2": "Rock",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 222
 }, {
@@ -2672,6 +3116,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 223
 }, {
@@ -2684,6 +3130,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 223
 }, {
@@ -2696,6 +3144,8 @@
     "Type2": "Flying",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 225
 }, {
@@ -2708,6 +3158,8 @@
     "Type2": "Flying",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 226
 }, {
@@ -2720,6 +3172,8 @@
     "Type2": "Flying",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 227
 }, {
@@ -2732,6 +3186,8 @@
     "Type2": "Fire",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 228
 }, {
@@ -2744,6 +3200,8 @@
     "Type2": "Fire",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 228
 }, {
@@ -2756,6 +3214,8 @@
     "Type2": "Dragon",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 116
 }, {
@@ -2768,6 +3228,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 231
 }, {
@@ -2780,6 +3242,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 231
 }, {
@@ -2792,6 +3256,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 137
 }, {
@@ -2804,6 +3270,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 234
 }, {
@@ -2816,6 +3284,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 235
 }, {
@@ -2828,6 +3298,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 236
 }, {
@@ -2840,6 +3312,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 236
 }, {
@@ -2852,6 +3326,8 @@
     "Type2": "Psychic",
     "QuickMoves": [218, 222],
     "CinematicMoves": [39, 33, 60],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 25,
     "FamilyId": 124
 }, {
@@ -2864,6 +3340,8 @@
     "Type2": "None",
     "QuickMoves": [205, 207],
     "CinematicMoves": [77, 78, 35],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 25,
     "FamilyId": 125
 }, {
@@ -2876,6 +3354,8 @@
     "Type2": "None",
     "QuickMoves": [208, 209],
     "CinematicMoves": [24, 115, 123],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 25,
     "FamilyId": 126
 }, {
@@ -2888,6 +3368,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 241
 }, {
@@ -2900,6 +3382,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 113
 }, {
@@ -2912,6 +3396,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 243
 }, {
@@ -2924,6 +3410,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 244
 }, {
@@ -2936,6 +3424,8 @@
     "Type2": "None",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 245
 }, {
@@ -2948,6 +3438,8 @@
     "Type2": "Ground",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 246
 }, {
@@ -2960,6 +3452,8 @@
     "Type2": "Ground",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 246
 }, {
@@ -2972,6 +3466,8 @@
     "Type2": "Dark",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 246
 }, {
@@ -2984,6 +3480,8 @@
     "Type2": "Flying",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 249
 }, {
@@ -2996,6 +3494,8 @@
     "Type2": "Flying",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 250
 }, {
@@ -3008,6 +3508,8 @@
     "Type2": "Grass",
     "QuickMoves": [221],
     "CinematicMoves": [133],
+    "OldQuickMoves": [],
+    "OldCinematicMoves": [],
     "CandyToEvolve": 0,
     "FamilyId": 251
 }]

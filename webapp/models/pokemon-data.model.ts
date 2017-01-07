@@ -9,6 +9,8 @@ export class PokemonData {
 		public Type2: string,
 		public QuickMoves: number[],
 		public CinematicMoves: number[],
+		public OldQuickMoves: number[],
+		public OldCinematicMoves: number[],
 		public CandyToEvolve: number,
 		public FamilyId: number
 	){ }
