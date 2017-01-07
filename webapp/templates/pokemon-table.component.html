@@ -51,7 +51,7 @@
 			<div>
 				Level {{ mon.level }}
 			</div>
-			<img class="image" src="https://silphroad-s3-xika4hn.netdna-ssl.com/img/pokemon/icons/96x96/{{mon.pokedex_number}}.png" title="{{mon.species}}"/>
+			<img class="image" src="http://www.serebii.net/pokemongo/pokemon/{{ mon.pokedex_number | prependZeros }}.png" title="{{mon.species}}" height="100"/>
 			<div class="name">
 				{{ mon.name }}
 			</div>
@@ -68,7 +68,16 @@
 						</td>
 						<td><img src="http://serebii.net/pokedex-bw/type/{{ atk.type }}.gif"></td>
 						<td [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.name }}</td>
-						<td [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.DPS }} DPS</td>
+						<td [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.DPS | number : '1.2-2' }} DPS</td>
+					</tr>
+					<tr *ngFor="let atk of mon.moves.old_fast">
+						<td>
+							<img *ngIf="atk.selected" src="webapp/img/checkbox-filled-icon.png" class="selected-icon">
+							<img *ngIf="!atk.selected" src="webapp/img/checkbox-empty-icon.png" class="selected-icon">
+						</td>
+						<td><img src="http://serebii.net/pokedex-bw/type/{{ atk.type }}.gif"></td>
+						<td [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.name }} (Old)</td>
+						<td [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.DPS | number : '1.2-2' }} DPS</td>
 					</tr>
 					<tr class="separator"></tr>
 					<tr *ngFor="let atk of mon.moves.charged">
@@ -78,7 +87,16 @@
 						</td>
 						<td><img src="http://serebii.net/pokedex-bw/type/{{ atk.type }}.gif"></td>
 						<td [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.name }}</td>
-						<td [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.DPS }} DPS</td>
+						<td [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.DPS | number : '1.2-2' }} DPS</td>
+					</tr>
+					<tr *ngFor="let atk of mon.moves.old_charged">
+						<td>
+							<img *ngIf="atk.selected" src="webapp/img/checkbox-filled-icon.png" class="selected-icon">
+							<img *ngIf="!atk.selected" src="webapp/img/checkbox-empty-icon.png" class="selected-icon">
+						</td>
+						<td><img src="http://serebii.net/pokedex-bw/type/{{ atk.type }}.gif"></td>
+						<td [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.name }} (Old)</td>
+						<td [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.DPS | number : '1.2-2' }} DPS</td>
 					</tr>
 				</table>
 			</div>

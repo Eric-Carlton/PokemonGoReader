@@ -4,6 +4,7 @@ const bunyan = require('bunyan');
 const pogobuf = require('pogobuf');
 
 const props = require('../config/properties.js');
+const pokemonData = require('../../data/pokemon.json');
 
 const log = bunyan.createLogger({
 	name: props.log.names.pokemonUtils,
@@ -93,14 +94,14 @@ module.exports = {
 			return pokemon.nickname;
 		}
 
-		return props.pokemonNamesByDexNum[pokemon.pokemon_id.toString()];
+		return pokemonData[pokemon.pokemon_id].Name;
 	},
 
 	getCandy: (pokemon, candies) => {
 		for(let j = 0; j < candies.length; j++){
 			let candy = candies[j];
 
-			if(candy.hasOwnProperty('family_id') && candy.hasOwnProperty('family_id') && candy.family_id.toString() === props.pokemonFamilyIdByPokedexNum[pokemon.pokemon_id.toString()]){
+			if(candy.hasOwnProperty('family_id') && candy.hasOwnProperty('family_id') && candy.family_id === pokemonData[pokemon.pokemon_id].FamilyId){
 				return candy.candy;
 			}
 		}

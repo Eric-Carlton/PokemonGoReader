@@ -6,6 +6,7 @@ const pogobuf = require('pogobuf');
 const props = require('../config/properties.js');
 const expressUtils = require('../utils/expressUtils.js');
 const pokemonUtils = require('../utils/pokemonUtils.js');
+const pokemonData = require('../../data/pokemon.json');
 
 const Credential = require('../models/Credential.js');
 const Pokemon = require('../models/Pokemon.js');
@@ -57,7 +58,7 @@ module.exports = {
 
 								let species = {
 									'pokedex_number': pokemon.pokemon_id,
-									'species': props.pokemonNamesByDexNum[id],
+									'species': pokemonData[id].Name,
 									'count': 1,
 									'candy': 0,
 									'evolve_sort': 0,
@@ -76,7 +77,7 @@ module.exports = {
 								formattedPokemon.push(new Pokemon(
 									pokemon.pokemon_id,
 									pokemonUtils.getName(pokemon),
-									props.pokemonNamesByDexNum[pokemon.pokemon_id.toString()],
+									pokemonData[pokemon.pokemon_id].Name,
 									pokemon.individual_attack,
 									pokemon.individual_defense,
 									pokemon.individual_stamina,
@@ -85,7 +86,7 @@ module.exports = {
 									parseFloat(((pokemon.individual_attack + pokemon.individual_defense + pokemon.individual_stamina) / 45 * 100).toFixed(2)),
 									pokemon.cp,
 									pokemon.favorite === 1,
-									props.pokemonNamesByDexNum[props.pokemonFamilyIdByPokedexNum[pokemon.pokemon_id]],
+									pokemonData[pokemonData[pokemon.pokemon_id].FamilyId].Name,
 									pokemon.id,
 									pokemon.move_1,
 									pokemon.move_2,
@@ -98,9 +99,61 @@ module.exports = {
 						let formattedSpecies = [];
 						Object.keys(speciesMap).forEach(function(speciesId) {
 							let species = speciesMap[speciesId];
+							let family = [];
+
+							if(pokemonData[speciesId].CandyToEvolve > 0) {
+								let familyId = pokemonData[speciesId].FamilyId
+
+								let firstForm = {id: 0, cost: 0};
+								let secondForm = {id: 0, cost: 0};
+								let finalForm = {id: 0, cost: 0};
+
+								pokemonData.forEach(function(pkmn){
+									if(pkmn.FamilyId === familyId) {
+										if(pkmn.CandyToEvolve === 0) {
+											finalForm.id = pkmn.Id;
+											finalForm.cost = pkmn.CandyToEvolve;
+										} else if(firstForm.id === 0) {
+											firstForm.id = pkmn.Id;
+											firstForm.cost = pkmn.CandyToEvolve;
+										} else if(pkmn.CandyToEvolve > firstForm.cost) {
+											secondForm.id = pkmn.Id;
+											secondForm.cost = pkmn.CandyToEvolve;
+										} else {
+											secondForm.id = firstForm.id;
+											secondForm.cost = firstForm.cost;
+											firstForm.id = pkmn.Id;
+											firstForm.cost = pkmn.CandyToEvolve;
+										}
+									}
+								});
+
+								if(firstForm.id == speciesId) {
+									if(secondForm.id === 0) {
+										family.push({
+											id: finalForm.id.toString(),
+											cost: firstForm.cost
+										});
+									} else {
+										family.push({
+											id: secondForm.id.toString(),
+											cost: firstForm.cost
+										});
+										family.push({
+											id: finalForm.id.toString(),
+											cost: secondForm.cost + firstForm.cost
+										});
+									}
+								} else {
+									family.push({
+										id: finalForm.id.toString(),
+										cost: secondForm.cost
+									});
+								}
+							}
 
 							let maxDesc = 0;
-							props.pokemonEvolutionByDexNum[speciesId].forEach(function(descendant){
+							family.forEach(function(descendant){
 								let canEvolve = Math.trunc((species.candy - 1) / (descendant.cost - 1));
 								if (canEvolve > 0){
 									species.evolve_sort = Math.max(species.evolve_sort, canEvolve);
@@ -157,7 +210,7 @@ module.exports = {
 				expressUtils.sendResponse(res, next, 400, {error: props.errors.type}, req.body.username, endpoint);
 			} else if (!req.body.hasOwnProperty('id')) {
 				expressUtils.sendResponse(res, next, 400, {error: props.errors.pokemon_id}, req.body.username, endpoint);
-			} 
+			}
 			else {
 				let credential = new Credential(req.body.type, req.body.token, req.body.username, req.body.password);
 				pokemonUtils.getClient(credential).then(client => {

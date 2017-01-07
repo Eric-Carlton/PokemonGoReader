@@ -2,19 +2,23 @@ import { Injectable } from '@angular/core'
 import { Headers, Http } from '@angular/http'
 import 'rxjs/add/operator/toPromise'
 
+import { PokemonData } from '../models/pokemon-data.model'
 import { UserLogin } from '../models/user-login.model'
+import { MoveData } from '../models/move-data.model'
 import { Pokemon } from '../models/pokemon.model'
 import { Species } from '../models/species.model'
 import { Move } from '../models/move.model'
 
 import { PropertiesService } from './properties.service'
 
-
 @Injectable()
 export class PokemonService {
 	private _pokemon : Pokemon[] = [];
 	private _species: Species[] = [];
 	private _userLogin: UserLogin = null;
+
+	private _pokemonDataUrl = './data/pokemon.json';
+	private _moveDataUrl = './data/moves.json';
 
 	constructor(
 		private _http: Http,
@@ -38,28 +42,46 @@ export class PokemonService {
 	}
 
 	public retrievePokemon () {
-		let headers = new Headers({
-			'Content-Type': 'application/json'});
+		return this._http
+			.get(this._pokemonDataUrl)
+			.toPromise()
+			.then(res => {
+				let pokemonData = res.json();
+
+				return this._http
+					.get(this._moveDataUrl)
+					.toPromise()
+					.then(res => {
+						let moveData = res.json();
+
+						return this.retrievePokemonHelper(pokemonData, moveData);
+					});
+			});
+	}
+
+	public retrievePokemonHelper (pokemonData: PokemonData[], moveData: MoveData[]) {
+		let headers = new Headers({'Content-Type': 'application/json'});
 		return this._http
 		.post(
-			this._properties.apiHost + this._properties.getPokemonRoute, 
-			JSON.stringify(this._userLogin), 
+			this._properties.apiHost + this._properties.getPokemonRoute,
+			JSON.stringify(this._userLogin),
 			{headers: headers}
 		)
 		.toPromise()
 		.then(res => {
 			let resBody = res.json();
+
 			this._pokemon = resBody.pokemon as Pokemon[];
 			this._pokemon = this._pokemon.map(function (pokemon) {
-				pokemon.type_1 = window['pokemon'][pokemon.pokedex_number].Type1.toLowerCase();
-				pokemon.type_2 = window['pokemon'][pokemon.pokedex_number].Type2.toLowerCase();
+				pokemon.type_1 = pokemonData[pokemon.pokedex_number].Type1.toLowerCase();
+				pokemon.type_2 = pokemonData[pokemon.pokedex_number].Type2.toLowerCase();
 
 				pokemon.moves = {
-					fast: window['pokemon'][pokemon.pokedex_number].QuickMoves.map(function (moveNumber: string) {
-						let move: any = window['moves'][moveNumber.toString()];
-						
+					fast: pokemonData[pokemon.pokedex_number].QuickMoves.map(function (moveNumber: number) {
+						let move: MoveData = moveData[moveNumber];
+
 						let givesStab: boolean = false;
-						let dps: number = move.DPS;
+						let dps: number = move.Power / move.DurationMs * 1000;
 
 						if(move.Type.toLowerCase() === pokemon.type_1 || move.Type.toLowerCase() === pokemon.type_2){
 							givesStab = true;
@@ -74,11 +96,49 @@ export class PokemonService {
 							givesStab
 						);
 					}),
-					charged: window['pokemon'][pokemon.pokedex_number].CinematicMoves.map(function (moveNumber: string) {
-						let move: any = window['moves'][moveNumber.toString()];
+					charged: pokemonData[pokemon.pokedex_number].CinematicMoves.map(function (moveNumber: number) {
+						let move: MoveData = moveData[moveNumber];
 
 						let givesStab: boolean = false;
-						let dps: number = move.DPS;
+						let dps: number = move.Power / move.DurationMs * 1000;
+
+						if(move.Type.toLowerCase() === pokemon.type_1 || move.Type.toLowerCase() === pokemon.type_2){
+							givesStab = true;
+							dps = Number((dps * 1.25).toFixed(2));
+						}
+
+						return new Move(
+							move.Type.toLowerCase(),
+							pokemon.move_2.toString() === moveNumber.toString(),
+							dps,
+							move.Name,
+							givesStab
+						);
+					}),
+					old_fast: pokemonData[pokemon.pokedex_number].OldQuickMoves.map(function (moveNumber: number) {
+						let move: MoveData = moveData[moveNumber];
+
+						let givesStab: boolean = false;
+						let dps: number = move.Power / move.DurationMs * 1000;
+
+						if(move.Type.toLowerCase() === pokemon.type_1 || move.Type.toLowerCase() === pokemon.type_2){
+							givesStab = true;
+							dps = Number((dps * 1.25).toFixed(2));
+						}
+
+						return new Move(
+							move.Type.toLowerCase(),
+							pokemon.move_1.toString() === moveNumber.toString(),
+							dps,
+							move.Name,
+							givesStab
+						);
+					}),
+					old_charged: pokemonData[pokemon.pokedex_number].OldCinematicMoves.map(function (moveNumber: number) {
+						let move: MoveData = moveData[moveNumber];
+
+						let givesStab: boolean = false;
+						let dps: number = move.Power / move.DurationMs * 1000;
 
 						if(move.Type.toLowerCase() === pokemon.type_1 || move.Type.toLowerCase() === pokemon.type_2){
 							givesStab = true;
@@ -102,6 +162,18 @@ export class PokemonService {
 				});
 
 				pokemon.moves.charged = pokemon.moves.charged.sort((a,b) => {
+					if ( a.DPS < b.DPS ) return 1;
+					if ( a.DPS > b.DPS) return -1;
+					return 0;
+				});
+
+				pokemon.moves.old_fast = pokemon.moves.old_fast.sort((a,b) => {
+					if ( a.DPS < b.DPS ) return 1;
+					if ( a.DPS > b.DPS) return -1;
+					return 0;
+				});
+
+				pokemon.moves.old_charged = pokemon.moves.old_charged.sort((a,b) => {
 					if ( a.DPS < b.DPS ) return 1;
 					if ( a.DPS > b.DPS) return -1;
 					return 0;
