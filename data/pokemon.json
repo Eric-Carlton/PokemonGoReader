@@ -11,7 +11,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 25,
-    "FamilyId": 1
+    "FamilyId": 1,
+    "EvolutionIds": [2]
 }, {
     "Id": 2,
     "Name": "Ivysaur",
@@ -25,7 +26,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 100,
-    "FamilyId": 1
+    "FamilyId": 1,
+    "EvolutionIds": [3]
 }, {
     "Id": 3,
     "Name": "Venusaur",
@@ -39,7 +41,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 1
+    "FamilyId": 1,
+    "EvolutionIds": []
 }, {
     "Id": 4,
     "Name": "Charmander",
@@ -53,7 +56,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 25,
-    "FamilyId": 4
+    "FamilyId": 4,
+    "EvolutionIds": [5]
 }, {
     "Id": 5,
     "Name": "Charmeleon",
@@ -67,7 +71,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 100,
-    "FamilyId": 4
+    "FamilyId": 4,
+    "EvolutionIds": [6]
 }, {
     "Id": 6,
     "Name": "Charizard",
@@ -81,7 +86,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 4
+    "FamilyId": 4,
+    "EvolutionIds": []
 }, {
     "Id": 7,
     "Name": "Squirtle",
@@ -95,7 +101,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 25,
-    "FamilyId": 7
+    "FamilyId": 7,
+    "EvolutionIds": [8]
 }, {
     "Id": 8,
     "Name": "Wartortle",
@@ -109,7 +116,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 100,
-    "FamilyId": 7
+    "FamilyId": 7,
+    "EvolutionIds": [9]
 }, {
     "Id": 9,
     "Name": "Blastoise",
@@ -123,7 +131,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 7
+    "FamilyId": 7,
+    "EvolutionIds": []
 }, {
     "Id": 10,
     "Name": "Caterpie",
@@ -137,7 +146,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 12,
-    "FamilyId": 10
+    "FamilyId": 10,
+    "EvolutionIds": [11]
 }, {
     "Id": 11,
     "Name": "Metapod",
@@ -151,7 +161,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 10
+    "FamilyId": 10,
+    "EvolutionIds": [12]
 }, {
     "Id": 12,
     "Name": "Butterfree",
@@ -165,7 +176,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 10
+    "FamilyId": 10,
+    "EvolutionIds": []
 }, {
     "Id": 13,
     "Name": "Weedle",
@@ -179,7 +191,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 12,
-    "FamilyId": 13
+    "FamilyId": 13,
+    "EvolutionIds": [14]
 }, {
     "Id": 14,
     "Name": "Kakuna",
@@ -193,7 +206,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 13
+    "FamilyId": 13,
+    "EvolutionIds": [15]
 }, {
     "Id": 15,
     "Name": "Beedrill",
@@ -207,7 +221,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 13
+    "FamilyId": 13,
+    "EvolutionIds": []
 }, {
     "Id": 16,
     "Name": "Pidgey",
@@ -221,7 +236,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 12,
-    "FamilyId": 16
+    "FamilyId": 16,
+    "EvolutionIds": [17]
 }, {
     "Id": 17,
     "Name": "Pidgeotto",
@@ -235,7 +251,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 16
+    "FamilyId": 16,
+    "EvolutionIds": [18]
 }, {
     "Id": 18,
     "Name": "Pidgeot",
@@ -249,7 +266,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 16
+    "FamilyId": 16,
+    "EvolutionIds": []
 }, {
     "Id": 19,
     "Name": "Rattata",
@@ -263,7 +281,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 25,
-    "FamilyId": 19
+    "FamilyId": 19,
+    "EvolutionIds": [20]
 }, {
     "Id": 20,
     "Name": "Raticate",
@@ -277,7 +296,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 19
+    "FamilyId": 19,
+    "EvolutionIds": []
 }, {
     "Id": 21,
     "Name": "Spearow",
@@ -291,7 +311,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 21
+    "FamilyId": 21,
+    "EvolutionIds": [22]
 }, {
     "Id": 22,
     "Name": "Fearow",
@@ -305,7 +326,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 21
+    "FamilyId": 21,
+    "EvolutionIds": []
 }, {
     "Id": 23,
     "Name": "Ekans",
@@ -319,7 +341,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 23
+    "FamilyId": 23,
+    "EvolutionIds": [24]
 }, {
     "Id": 24,
     "Name": "Arbok",
@@ -333,7 +356,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 23
+    "FamilyId": 23,
+    "EvolutionIds": []
 }, {
     "Id": 25,
     "Name": "Pikachu",
@@ -347,7 +371,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 25
+    "FamilyId": 25,
+    "EvolutionIds": [26]
 }, {
     "Id": 26,
     "Name": "Raichu",
@@ -361,7 +386,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 25
+    "FamilyId": 25,
+    "EvolutionIds": []
 }, {
     "Id": 27,
     "Name": "Sandshrew",
@@ -375,7 +401,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 27
+    "FamilyId": 27,
+    "EvolutionIds": [28]
 }, {
     "Id": 28,
     "Name": "Sandslash",
@@ -389,7 +416,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 27
+    "FamilyId": 27,
+    "EvolutionIds": []
 }, {
     "Id": 29,
     "Name": "Nidoran♀",
@@ -403,7 +431,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 25,
-    "FamilyId": 29
+    "FamilyId": 29,
+    "EvolutionIds": [30]
 }, {
     "Id": 30,
     "Name": "Nidorina",
@@ -417,7 +446,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 100,
-    "FamilyId": 29
+    "FamilyId": 29,
+    "EvolutionIds": [31]
 }, {
     "Id": 31,
     "Name": "Nidoqueen",
@@ -431,7 +461,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 29
+    "FamilyId": 29,
+    "EvolutionIds": []
 }, {
     "Id": 32,
     "Name": "Nidoran♂",
@@ -445,7 +476,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 25,
-    "FamilyId": 32
+    "FamilyId": 32,
+    "EvolutionIds": [33]
 }, {
     "Id": 33,
     "Name": "Nidorino",
@@ -459,7 +491,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 100,
-    "FamilyId": 32
+    "FamilyId": 32,
+    "EvolutionIds": [34]
 }, {
     "Id": 34,
     "Name": "Nidoking",
@@ -473,7 +506,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 32
+    "FamilyId": 32,
+    "EvolutionIds": []
 }, {
     "Id": 35,
     "Name": "Clefairy",
@@ -487,7 +521,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 35
+    "FamilyId": 35,
+    "EvolutionIds": [36]
 }, {
     "Id": 36,
     "Name": "Clefable",
@@ -501,7 +536,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 35
+    "FamilyId": 35,
+    "EvolutionIds": []
 }, {
     "Id": 37,
     "Name": "Vulpix",
@@ -515,7 +551,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 37
+    "FamilyId": 37,
+    "EvolutionIds": [38]
 }, {
     "Id": 38,
     "Name": "Ninetales",
@@ -529,7 +566,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 37
+    "FamilyId": 37,
+    "EvolutionIds": []
 }, {
     "Id": 39,
     "Name": "Jigglypuff",
@@ -543,7 +581,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [88],
     "CandyToEvolve": 50,
-    "FamilyId": 39
+    "FamilyId": 39,
+    "EvolutionIds": [40]
 }, {
     "Id": 40,
     "Name": "Wigglytuff",
@@ -557,7 +596,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 39
+    "FamilyId": 39,
+    "EvolutionIds": []
 }, {
     "Id": 41,
     "Name": "Zubat",
@@ -571,7 +611,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 41
+    "FamilyId": 41,
+    "EvolutionIds": [42]
 }, {
     "Id": 42,
     "Name": "Golbat",
@@ -585,7 +626,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 41
+    "FamilyId": 41,
+    "EvolutionIds": []
 }, {
     "Id": 43,
     "Name": "Oddish",
@@ -599,7 +641,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 25,
-    "FamilyId": 43
+    "FamilyId": 43,
+    "EvolutionIds": [44]
 }, {
     "Id": 44,
     "Name": "Gloom",
@@ -613,7 +656,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 100,
-    "FamilyId": 43
+    "FamilyId": 43,
+    "EvolutionIds": [45]
 }, {
     "Id": 45,
     "Name": "Vileplume",
@@ -627,7 +671,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 43
+    "FamilyId": 43,
+    "EvolutionIds": []
 }, {
     "Id": 46,
     "Name": "Paras",
@@ -641,7 +686,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 46
+    "FamilyId": 46,
+    "EvolutionIds": [47]
 }, {
     "Id": 47,
     "Name": "Parasect",
@@ -655,7 +701,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 46
+    "FamilyId": 46,
+    "EvolutionIds": []
 }, {
     "Id": 48,
     "Name": "Venonat",
@@ -669,7 +716,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 48
+    "FamilyId": 48,
+    "EvolutionIds": [49]
 }, {
     "Id": 49,
     "Name": "Venomoth",
@@ -683,7 +731,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 48
+    "FamilyId": 48,
+    "EvolutionIds": []
 }, {
     "Id": 50,
     "Name": "Diglett",
@@ -697,7 +746,8 @@
     "OldQuickMoves": [216],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 50
+    "FamilyId": 50,
+    "EvolutionIds": [51]
 }, {
     "Id": 51,
     "Name": "Dugtrio",
@@ -711,7 +761,8 @@
     "OldQuickMoves": [216],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 50
+    "FamilyId": 50,
+    "EvolutionIds": []
 }, {
     "Id": 52,
     "Name": "Meowth",
@@ -725,7 +776,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 52
+    "FamilyId": 52,
+    "EvolutionIds": [53]
 }, {
     "Id": 53,
     "Name": "Persian",
@@ -739,7 +791,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 52
+    "FamilyId": 52,
+    "EvolutionIds": []
 }, {
     "Id": 54,
     "Name": "Psyduck",
@@ -753,7 +806,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 54
+    "FamilyId": 54,
+    "EvolutionIds": [55]
 }, {
     "Id": 55,
     "Name": "Golduck",
@@ -767,7 +821,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 54
+    "FamilyId": 54,
+    "EvolutionIds": []
 }, {
     "Id": 56,
     "Name": "Mankey",
@@ -781,7 +836,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 56
+    "FamilyId": 56,
+    "EvolutionIds": [57]
 }, {
     "Id": 57,
     "Name": "Primeape",
@@ -795,7 +851,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 56
+    "FamilyId": 56,
+    "EvolutionIds": []
 }, {
     "Id": 58,
     "Name": "Growlithe",
@@ -809,7 +866,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 58
+    "FamilyId": 58,
+    "EvolutionIds": [59]
 }, {
     "Id": 59,
     "Name": "Arcanine",
@@ -823,7 +881,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 58
+    "FamilyId": 58,
+    "EvolutionIds": []
 }, {
     "Id": 60,
     "Name": "Poliwag",
@@ -837,7 +896,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 25,
-    "FamilyId": 60
+    "FamilyId": 60,
+    "EvolutionIds": [61]
 }, {
     "Id": 61,
     "Name": "Poliwhirl",
@@ -851,7 +911,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 100,
-    "FamilyId": 60
+    "FamilyId": 60,
+    "EvolutionIds": [62]
 }, {
     "Id": 62,
     "Name": "Poliwrath",
@@ -865,7 +926,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 60
+    "FamilyId": 60,
+    "EvolutionIds": []
 }, {
     "Id": 63,
     "Name": "Abra",
@@ -879,7 +941,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 25,
-    "FamilyId": 63
+    "FamilyId": 63,
+    "EvolutionIds": [64]
 }, {
     "Id": 64,
     "Name": "Kadabra",
@@ -893,7 +956,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 100,
-    "FamilyId": 63
+    "FamilyId": 63,
+    "EvolutionIds": [65]
 }, {
     "Id": 65,
     "Name": "Alakazam",
@@ -907,7 +971,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 63
+    "FamilyId": 63,
+    "EvolutionIds": []
 }, {
     "Id": 66,
     "Name": "Machop",
@@ -921,7 +986,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 25,
-    "FamilyId": 66
+    "FamilyId": 66,
+    "EvolutionIds": [67]
 }, {
     "Id": 67,
     "Name": "Machoke",
@@ -935,7 +1001,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 100,
-    "FamilyId": 66
+    "FamilyId": 66,
+    "EvolutionIds": [68]
 }, {
     "Id": 68,
     "Name": "Machamp",
@@ -949,7 +1016,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 66
+    "FamilyId": 66,
+    "EvolutionIds": []
 }, {
     "Id": 69,
     "Name": "Bellsprout",
@@ -963,7 +1031,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 25,
-    "FamilyId": 69
+    "FamilyId": 69,
+    "EvolutionIds": [70]
 }, {
     "Id": 70,
     "Name": "Weepinbell",
@@ -977,7 +1046,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 100,
-    "FamilyId": 69
+    "FamilyId": 69,
+    "EvolutionIds": [71]
 }, {
     "Id": 71,
     "Name": "Victreebel",
@@ -991,7 +1061,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 69
+    "FamilyId": 69,
+    "EvolutionIds": []
 }, {
     "Id": 72,
     "Name": "Tentacool",
@@ -1005,7 +1076,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 72
+    "FamilyId": 72,
+    "EvolutionIds": [73]
 }, {
     "Id": 73,
     "Name": "Tentacruel",
@@ -1019,7 +1091,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 72
+    "FamilyId": 72,
+    "EvolutionIds": []
 }, {
     "Id": 74,
     "Name": "Geodude",
@@ -1033,7 +1106,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 25,
-    "FamilyId": 74
+    "FamilyId": 74,
+    "EvolutionIds": [75]
 }, {
     "Id": 75,
     "Name": "Graveler",
@@ -1047,7 +1121,8 @@
     "OldQuickMoves": [216],
     "OldCinematicMoves": [],
     "CandyToEvolve": 100,
-    "FamilyId": 74
+    "FamilyId": 74,
+    "EvolutionIds": [76]
 }, {
     "Id": 76,
     "Name": "Golem",
@@ -1061,7 +1136,8 @@
     "OldQuickMoves": [216],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 74
+    "FamilyId": 74,
+    "EvolutionIds": []
 }, {
     "Id": 77,
     "Name": "Ponyta",
@@ -1075,7 +1151,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 77
+    "FamilyId": 77,
+    "EvolutionIds": [78]
 }, {
     "Id": 78,
     "Name": "Rapidash",
@@ -1089,7 +1166,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 77
+    "FamilyId": 77,
+    "EvolutionIds": []
 }, {
     "Id": 79,
     "Name": "Slowpoke",
@@ -1103,7 +1181,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 79
+    "FamilyId": 79,
+    "EvolutionIds": [80]
 }, {
     "Id": 80,
     "Name": "Slowbro",
@@ -1117,7 +1196,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 79
+    "FamilyId": 79,
+    "EvolutionIds": []
 }, {
     "Id": 81,
     "Name": "Magnemite",
@@ -1131,7 +1211,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 81
+    "FamilyId": 81,
+    "EvolutionIds": [82]
 }, {
     "Id": 82,
     "Name": "Magneton",
@@ -1145,7 +1226,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 81
+    "FamilyId": 81,
+    "EvolutionIds": []
 }, {
     "Id": 83,
     "Name": "Farfetchd",
@@ -1159,7 +1241,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 83
+    "FamilyId": 83,
+    "EvolutionIds": []
 }, {
     "Id": 84,
     "Name": "Doduo",
@@ -1173,7 +1256,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 84
+    "FamilyId": 84,
+    "EvolutionIds": [85]
 }, {
     "Id": 85,
     "Name": "Dodrio",
@@ -1187,7 +1271,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 84
+    "FamilyId": 84,
+    "EvolutionIds": []
 }, {
     "Id": 86,
     "Name": "Seel",
@@ -1201,7 +1286,8 @@
     "OldQuickMoves": [230],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 86
+    "FamilyId": 86,
+    "EvolutionIds": [87]
 }, {
     "Id": 87,
     "Name": "Dewgong",
@@ -1215,7 +1301,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 86
+    "FamilyId": 86,
+    "EvolutionIds": []
 }, {
     "Id": 88,
     "Name": "Grimer",
@@ -1229,7 +1316,8 @@
     "OldQuickMoves": [225],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 88
+    "FamilyId": 88,
+    "EvolutionIds": [89]
 }, {
     "Id": 89,
     "Name": "Muk",
@@ -1243,7 +1331,8 @@
     "OldQuickMoves": [225],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 88
+    "FamilyId": 88,
+    "EvolutionIds": []
 }, {
     "Id": 90,
     "Name": "Shellder",
@@ -1257,7 +1346,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 90
+    "FamilyId": 90,
+    "EvolutionIds": [91]
 }, {
     "Id": 91,
     "Name": "Cloyster",
@@ -1271,7 +1361,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 90
+    "FamilyId": 90,
+    "EvolutionIds": []
 }, {
     "Id": 92,
     "Name": "Gastly",
@@ -1285,7 +1376,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 25,
-    "FamilyId": 92
+    "FamilyId": 92,
+    "EvolutionIds": [93]
 }, {
     "Id": 93,
     "Name": "Haunter",
@@ -1299,7 +1391,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 100,
-    "FamilyId": 92
+    "FamilyId": 92,
+    "EvolutionIds": [94]
 }, {
     "Id": 94,
     "Name": "Gengar",
@@ -1313,7 +1406,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [91],
     "CandyToEvolve": 0,
-    "FamilyId": 92
+    "FamilyId": 92,
+    "EvolutionIds": []
 }, {
     "Id": 95,
     "Name": "Onix",
@@ -1327,7 +1421,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 95
+    "FamilyId": 95,
+    "EvolutionIds": []
 }, {
     "Id": 96,
     "Name": "Drowzee",
@@ -1341,7 +1436,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 96
+    "FamilyId": 96,
+    "EvolutionIds": [7]
 }, {
     "Id": 97,
     "Name": "Hypno",
@@ -1355,7 +1451,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 96
+    "FamilyId": 96,
+    "EvolutionIds": []
 }, {
     "Id": 98,
     "Name": "Krabby",
@@ -1369,7 +1466,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 98
+    "FamilyId": 98,
+    "EvolutionIds": [99]
 }, {
     "Id": 99,
     "Name": "Kingler",
@@ -1383,7 +1481,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 98
+    "FamilyId": 98,
+    "EvolutionIds": []
 }, {
     "Id": 100,
     "Name": "Voltorb",
@@ -1397,7 +1496,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 100
+    "FamilyId": 100,
+    "EvolutionIds": [101]
 }, {
     "Id": 101,
     "Name": "Electrode",
@@ -1411,7 +1511,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 100
+    "FamilyId": 100,
+    "EvolutionIds": []
 }, {
     "Id": 102,
     "Name": "Exeggcute",
@@ -1425,7 +1526,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 102
+    "FamilyId": 102,
+    "EvolutionIds": [103]
 }, {
     "Id": 103,
     "Name": "Exeggutor",
@@ -1439,7 +1541,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 102
+    "FamilyId": 102,
+    "EvolutionIds": []
 }, {
     "Id": 104,
     "Name": "Cubone",
@@ -1453,7 +1556,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 104
+    "FamilyId": 104,
+    "EvolutionIds": [105]
 }, {
     "Id": 105,
     "Name": "Marowak",
@@ -1467,7 +1571,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 104
+    "FamilyId": 104,
+    "EvolutionIds": []
 }, {
     "Id": 106,
     "Name": "Hitmonlee",
@@ -1481,7 +1586,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [127],
     "CandyToEvolve": 0,
-    "FamilyId": 106
+    "FamilyId": 106,
+    "EvolutionIds": []
 }, {
     "Id": 107,
     "Name": "Hitmonchan",
@@ -1495,7 +1601,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 107
+    "FamilyId": 107,
+    "EvolutionIds": []
 }, {
     "Id": 108,
     "Name": "Lickitung",
@@ -1509,7 +1616,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 108
+    "FamilyId": 108,
+    "EvolutionIds": []
 }, {
     "Id": 109,
     "Name": "Koffing",
@@ -1523,7 +1631,8 @@
     "OldQuickMoves": [225],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 109
+    "FamilyId": 109,
+    "EvolutionIds": [110]
 }, {
     "Id": 110,
     "Name": "Weezing",
@@ -1537,7 +1646,8 @@
     "OldQuickMoves": [225],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 109
+    "FamilyId": 109,
+    "EvolutionIds": []
 }, {
     "Id": 111,
     "Name": "Rhyhorn",
@@ -1551,7 +1661,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 111
+    "FamilyId": 111,
+    "EvolutionIds": [112]
 }, {
     "Id": 112,
     "Name": "Rhydon",
@@ -1565,7 +1676,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 111
+    "FamilyId": 111,
+    "EvolutionIds": []
 }, {
     "Id": 113,
     "Name": "Chansey",
@@ -1579,7 +1691,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [30],
     "CandyToEvolve": 0,
-    "FamilyId": 113
+    "FamilyId": 113,
+    "EvolutionIds": []
 }, {
     "Id": 114,
     "Name": "Tangela",
@@ -1593,7 +1706,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 114
+    "FamilyId": 114,
+    "EvolutionIds": []
 }, {
     "Id": 115,
     "Name": "Kangaskhan",
@@ -1607,7 +1721,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 115
+    "FamilyId": 115,
+    "EvolutionIds": []
 }, {
     "Id": 116,
     "Name": "Horsea",
@@ -1621,7 +1736,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 116
+    "FamilyId": 116,
+    "EvolutionIds": [117]
 }, {
     "Id": 117,
     "Name": "Seadra",
@@ -1635,7 +1751,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 116
+    "FamilyId": 116,
+    "EvolutionIds": []
 }, {
     "Id": 118,
     "Name": "Goldeen",
@@ -1649,7 +1766,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 118
+    "FamilyId": 118,
+    "EvolutionIds": [119]
 }, {
     "Id": 119,
     "Name": "Seaking",
@@ -1663,7 +1781,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 118
+    "FamilyId": 118,
+    "EvolutionIds": []
 }, {
     "Id": 120,
     "Name": "Staryu",
@@ -1677,7 +1796,8 @@
     "OldQuickMoves": [219],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 120
+    "FamilyId": 120,
+    "EvolutionIds": [121]
 }, {
     "Id": 121,
     "Name": "Starmie",
@@ -1691,7 +1811,8 @@
     "OldQuickMoves": [219],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 120
+    "FamilyId": 120,
+    "EvolutionIds": []
 }, {
     "Id": 122,
     "Name": "Mr. Mime",
@@ -1705,7 +1826,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 122
+    "FamilyId": 122,
+    "EvolutionIds": []
 }, {
     "Id": 123,
     "Name": "Scyther",
@@ -1719,7 +1841,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 123
+    "FamilyId": 123,
+    "EvolutionIds": []
 }, {
     "Id": 124,
     "Name": "Jynx",
@@ -1733,7 +1856,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 124
+    "FamilyId": 124,
+    "EvolutionIds": []
 }, {
     "Id": 125,
     "Name": "Electabuzz",
@@ -1747,7 +1871,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 125
+    "FamilyId": 125,
+    "EvolutionIds": []
 }, {
     "Id": 126,
     "Name": "Magmar",
@@ -1761,7 +1886,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 126
+    "FamilyId": 126,
+    "EvolutionIds": []
 }, {
     "Id": 127,
     "Name": "Pinsir",
@@ -1775,7 +1901,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 127
+    "FamilyId": 127,
+    "EvolutionIds": []
 }, {
     "Id": 128,
     "Name": "Tauros",
@@ -1789,7 +1916,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 128
+    "FamilyId": 128,
+    "EvolutionIds": []
 }, {
     "Id": 129,
     "Name": "Magikarp",
@@ -1803,7 +1931,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 400,
-    "FamilyId": 129
+    "FamilyId": 129,
+    "EvolutionIds": [130]
 }, {
     "Id": 130,
     "Name": "Gyarados",
@@ -1817,7 +1946,8 @@
     "OldQuickMoves": [204],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 129
+    "FamilyId": 129,
+    "EvolutionIds": []
 }, {
     "Id": 131,
     "Name": "Lapras",
@@ -1831,7 +1961,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 131
+    "FamilyId": 131,
+    "EvolutionIds": []
 }, {
     "Id": 132,
     "Name": "Ditto",
@@ -1845,7 +1976,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 132
+    "FamilyId": 132,
+    "EvolutionIds": []
 }, {
     "Id": 133,
     "Name": "Eevee",
@@ -1859,7 +1991,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 25,
-    "FamilyId": 133
+    "FamilyId": 133,
+    "EvolutionIds": [134, 135, 136]
 }, {
     "Id": 134,
     "Name": "Vaporeon",
@@ -1873,7 +2006,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 133
+    "FamilyId": 133,
+    "EvolutionIds": []
 }, {
     "Id": 135,
     "Name": "Jolteon",
@@ -1887,7 +2021,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 133
+    "FamilyId": 133,
+    "EvolutionIds": []
 }, {
     "Id": 136,
     "Name": "Flareon",
@@ -1901,7 +2036,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 133
+    "FamilyId": 133,
+    "EvolutionIds": []
 }, {
     "Id": 137,
     "Name": "Porygon",
@@ -1915,7 +2051,8 @@
     "OldQuickMoves": [219],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 137
+    "FamilyId": 137,
+    "EvolutionIds": []
 }, {
     "Id": 138,
     "Name": "Omanyte",
@@ -1929,7 +2066,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 138
+    "FamilyId": 138,
+    "EvolutionIds": [139]
 }, {
     "Id": 139,
     "Name": "Omastar",
@@ -1943,7 +2081,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 138
+    "FamilyId": 138,
+    "EvolutionIds": []
 }, {
     "Id": 140,
     "Name": "Kabuto",
@@ -1957,7 +2096,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 140
+    "FamilyId": 140,
+    "EvolutionIds": [141]
 }, {
     "Id": 141,
     "Name": "Kabutops",
@@ -1971,7 +2111,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 140
+    "FamilyId": 140,
+    "EvolutionIds": []
 }, {
     "Id": 142,
     "Name": "Aerodactyl",
@@ -1985,7 +2126,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 142
+    "FamilyId": 142,
+    "EvolutionIds": []
 }, {
     "Id": 143,
     "Name": "Snorlax",
@@ -1999,7 +2141,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 143
+    "FamilyId": 143,
+    "EvolutionIds": []
 }, {
     "Id": 144,
     "Name": "Articuno",
@@ -2013,7 +2156,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 144
+    "FamilyId": 144,
+    "EvolutionIds": []
 }, {
     "Id": 145,
     "Name": "Zapdos",
@@ -2027,7 +2171,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 145
+    "FamilyId": 145,
+    "EvolutionIds": []
 }, {
     "Id": 146,
     "Name": "Moltres",
@@ -2041,7 +2186,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 146
+    "FamilyId": 146,
+    "EvolutionIds": []
 }, {
     "Id": 147,
     "Name": "Dratini",
@@ -2055,7 +2201,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 25,
-    "FamilyId": 147
+    "FamilyId": 147,
+    "EvolutionIds": [148]
 }, {
     "Id": 148,
     "Name": "Dragonair",
@@ -2069,7 +2216,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 100,
-    "FamilyId": 147
+    "FamilyId": 147,
+    "EvolutionIds": [149]
 }, {
     "Id": 149,
     "Name": "Dragonite",
@@ -2083,7 +2231,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 147
+    "FamilyId": 147,
+    "EvolutionIds": []
 }, {
     "Id": 150,
     "Name": "Mewtwo",
@@ -2097,7 +2246,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 150
+    "FamilyId": 150,
+    "EvolutionIds": []
 }, {
     "Id": 151,
     "Name": "Mew",
@@ -2111,7 +2261,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [122, 87],
     "CandyToEvolve": 0,
-    "FamilyId": 151
+    "FamilyId": 151,
+    "EvolutionIds": []
 }, {
     "Id": 152,
     "Name": "Chikorita",
@@ -2125,7 +2276,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 152
+    "FamilyId": 152,
+    "EvolutionIds": []
 }, {
     "Id": 153,
     "Name": "Bayleef",
@@ -2139,7 +2291,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 152
+    "FamilyId": 152,
+    "EvolutionIds": []
 }, {
     "Id": 154,
     "Name": "Meganium",
@@ -2153,7 +2306,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 152
+    "FamilyId": 152,
+    "EvolutionIds": []
 }, {
     "Id": 155,
     "Name": "Cyndaquil",
@@ -2167,7 +2321,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 155
+    "FamilyId": 155,
+    "EvolutionIds": []
 }, {
     "Id": 156,
     "Name": "Quilava",
@@ -2181,7 +2336,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 155
+    "FamilyId": 155,
+    "EvolutionIds": []
 }, {
     "Id": 157,
     "Name": "Typhlosion",
@@ -2195,7 +2351,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 155
+    "FamilyId": 155,
+    "EvolutionIds": []
 }, {
     "Id": 158,
     "Name": "Totodile",
@@ -2209,7 +2366,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 158
+    "FamilyId": 158,
+    "EvolutionIds": []
 }, {
     "Id": 159,
     "Name": "Croconaw",
@@ -2223,7 +2381,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 158
+    "FamilyId": 158,
+    "EvolutionIds": []
 }, {
     "Id": 160,
     "Name": "Feraligatr",
@@ -2237,7 +2396,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 158
+    "FamilyId": 158,
+    "EvolutionIds": []
 }, {
     "Id": 161,
     "Name": "Sentret",
@@ -2251,7 +2411,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 161
+    "FamilyId": 161,
+    "EvolutionIds": []
 }, {
     "Id": 162,
     "Name": "Furret",
@@ -2265,7 +2426,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 161
+    "FamilyId": 161,
+    "EvolutionIds": []
 }, {
     "Id": 163,
     "Name": "Hoothoot",
@@ -2279,7 +2441,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 163
+    "FamilyId": 163,
+    "EvolutionIds": []
 }, {
     "Id": 164,
     "Name": "Noctowl",
@@ -2293,7 +2456,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 163
+    "FamilyId": 163,
+    "EvolutionIds": []
 }, {
     "Id": 165,
     "Name": "Ledyba",
@@ -2307,7 +2471,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 165
+    "FamilyId": 165,
+    "EvolutionIds": []
 }, {
     "Id": 166,
     "Name": "Ledian",
@@ -2321,7 +2486,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 165
+    "FamilyId": 165,
+    "EvolutionIds": []
 }, {
     "Id": 167,
     "Name": "Spinarak",
@@ -2335,7 +2501,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 167
+    "FamilyId": 167,
+    "EvolutionIds": []
 }, {
     "Id": 168,
     "Name": "Ariados",
@@ -2349,7 +2516,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 167
+    "FamilyId": 167,
+    "EvolutionIds": []
 }, {
     "Id": 169,
     "Name": "Crobat",
@@ -2363,7 +2531,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 41
+    "FamilyId": 41,
+    "EvolutionIds": []
 }, {
     "Id": 170,
     "Name": "Chinchou",
@@ -2377,7 +2546,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 170
+    "FamilyId": 170,
+    "EvolutionIds": []
 }, {
     "Id": 171,
     "Name": "Lanturn",
@@ -2391,7 +2561,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 170
+    "FamilyId": 170,
+    "EvolutionIds": []
 }, {
     "Id": 172,
     "Name": "Pichu",
@@ -2405,7 +2576,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 25,
-    "FamilyId": 25
+    "FamilyId": 25,
+    "EvolutionIds": [25]
 }, {
     "Id": 173,
     "Name": "Cleffa",
@@ -2419,7 +2591,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 25,
-    "FamilyId": 35
+    "FamilyId": 35,
+    "EvolutionIds": [35]
 }, {
     "Id": 174,
     "Name": "Igglybuff",
@@ -2433,7 +2606,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 25,
-    "FamilyId": 39
+    "FamilyId": 39,
+    "EvolutionIds": [39]
 }, {
     "Id": 175,
     "Name": "Togepi",
@@ -2447,7 +2621,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 50,
-    "FamilyId": 175
+    "FamilyId": 175,
+    "EvolutionIds": [176]
 }, {
     "Id": 176,
     "Name": "Togetic",
@@ -2461,7 +2636,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 175
+    "FamilyId": 175,
+    "EvolutionIds": []
 }, {
 	"Id": 177,
     "Name": "Natu",
@@ -2475,7 +2651,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 177
+    "FamilyId": 177,
+    "EvolutionIds": []
 }, {
     "Id": 178,
     "Name": "Xatu",
@@ -2489,7 +2666,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 177
+    "FamilyId": 177,
+    "EvolutionIds": []
 }, {
     "Id": 179,
     "Name": "Mareep",
@@ -2503,7 +2681,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 179
+    "FamilyId": 179,
+    "EvolutionIds": []
 }, {
     "Id": 180,
     "Name": "Flaaffy",
@@ -2517,7 +2696,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 179
+    "FamilyId": 179,
+    "EvolutionIds": []
 }, {
     "Id": 181,
     "Name": "Ampharos",
@@ -2531,7 +2711,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 179
+    "FamilyId": 179,
+    "EvolutionIds": []
 }, {
     "Id": 182,
     "Name": "Bellossom",
@@ -2545,7 +2726,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 43
+    "FamilyId": 43,
+    "EvolutionIds": []
 }, {
     "Id": 183,
     "Name": "Marill",
@@ -2559,7 +2741,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 183
+    "FamilyId": 183,
+    "EvolutionIds": []
 }, {
     "Id": 184,
     "Name": "Azumarill",
@@ -2573,7 +2756,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 183
+    "FamilyId": 183,
+    "EvolutionIds": []
 }, {
     "Id": 185,
     "Name": "Sudowoodo",
@@ -2587,7 +2771,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 185
+    "FamilyId": 185,
+    "EvolutionIds": []
 }, {
     "Id": 186,
     "Name": "Politoed",
@@ -2601,7 +2786,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 60
+    "FamilyId": 60,
+    "EvolutionIds": []
 }, {
     "Id": 187,
     "Name": "Hoppip",
@@ -2615,7 +2801,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 187
+    "FamilyId": 187,
+    "EvolutionIds": []
 }, {
     "Id": 188,
     "Name": "Skiploom",
@@ -2629,7 +2816,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 187
+    "FamilyId": 187,
+    "EvolutionIds": []
 }, {
     "Id": 189,
     "Name": "Jumpluff",
@@ -2643,7 +2831,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 187
+    "FamilyId": 187,
+    "EvolutionIds": []
 }, {
     "Id": 190,
     "Name": "Aipom",
@@ -2657,7 +2846,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 190
+    "FamilyId": 190,
+    "EvolutionIds": []
 }, {
     "Id": 191,
     "Name": "Sunkern",
@@ -2671,7 +2861,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 191
+    "FamilyId": 191,
+    "EvolutionIds": []
 }, {
     "Id": 192,
     "Name": "Sunflora",
@@ -2685,7 +2876,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 191
+    "FamilyId": 191,
+    "EvolutionIds": []
 }, {
     "Id": 193,
     "Name": "Yanma",
@@ -2699,7 +2891,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 193
+    "FamilyId": 193,
+    "EvolutionIds": []
 }, {
     "Id": 194,
     "Name": "Wooper",
@@ -2713,7 +2906,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 194
+    "FamilyId": 194,
+    "EvolutionIds": []
 }, {
     "Id": 195,
     "Name": "Quagsire",
@@ -2727,7 +2921,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 194
+    "FamilyId": 194,
+    "EvolutionIds": []
 }, {
     "Id": 196,
     "Name": "Espeon",
@@ -2741,7 +2936,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 133
+    "FamilyId": 133,
+    "EvolutionIds": []
 }, {
     "Id": 197,
     "Name": "Umbreon",
@@ -2755,7 +2951,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 133
+    "FamilyId": 133,
+    "EvolutionIds": []
 }, {
     "Id": 198,
     "Name": "Murkrow",
@@ -2769,7 +2966,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 198
+    "FamilyId": 198,
+    "EvolutionIds": []
 }, {
     "Id": 199,
     "Name": "Slowking",
@@ -2783,7 +2981,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 79
+    "FamilyId": 79,
+    "EvolutionIds": []
 }, {
     "Id": 200,
     "Name": "Misdreavus",
@@ -2797,7 +2996,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 200
+    "FamilyId": 200,
+    "EvolutionIds": []
 }, {
     "Id": 201,
     "Name": "Unown",
@@ -2811,7 +3011,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 201
+    "FamilyId": 201,
+    "EvolutionIds": []
 }, {
     "Id": 202,
     "Name": "Wobbuffet",
@@ -2825,7 +3026,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 202
+    "FamilyId": 202,
+    "EvolutionIds": []
 }, {
     "Id": 203,
     "Name": "Girafarig",
@@ -2839,7 +3041,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 203
+    "FamilyId": 203,
+    "EvolutionIds": []
 }, {
     "Id": 204,
     "Name": "Pineco",
@@ -2853,7 +3056,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 204
+    "FamilyId": 204,
+    "EvolutionIds": []
 }, {
     "Id": 205,
     "Name": "Fortress",
@@ -2867,7 +3071,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 204
+    "FamilyId": 204,
+    "EvolutionIds": []
 }, {
     "Id": 206,
     "Name": "Dunsparce",
@@ -2881,7 +3086,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 206
+    "FamilyId": 206,
+    "EvolutionIds": []
 }, {
     "Id": 207,
     "Name": "Gligar",
@@ -2895,7 +3101,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 207
+    "FamilyId": 207,
+    "EvolutionIds": []
 }, {
     "Id": 208,
     "Name": "Steelix",
@@ -2909,7 +3116,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 95
+    "FamilyId": 95,
+    "EvolutionIds": []
 }, {
     "Id": 209,
     "Name": "Snubbull",
@@ -2923,7 +3131,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 209
+    "FamilyId": 209,
+    "EvolutionIds": []
 }, {
     "Id": 210,
     "Name": "Granbull",
@@ -2937,7 +3146,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 209
+    "FamilyId": 209,
+    "EvolutionIds": []
 }, {
     "Id": 211,
     "Name": "Qwilfish",
@@ -2951,7 +3161,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 211
+    "FamilyId": 211,
+    "EvolutionIds": []
 }, {
     "Id": 212,
     "Name": "Scizor",
@@ -2965,7 +3176,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 123
+    "FamilyId": 123,
+    "EvolutionIds": []
 }, {
     "Id": 213,
     "Name": "Shuckle",
@@ -2979,7 +3191,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 213
+    "FamilyId": 213,
+    "EvolutionIds": []
 }, {
     "Id": 214,
     "Name": "Heracross",
@@ -2993,7 +3206,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 214
+    "FamilyId": 214,
+    "EvolutionIds": []
 }, {
     "Id": 215,
     "Name": "Sneasel",
@@ -3007,7 +3221,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 215
+    "FamilyId": 215,
+    "EvolutionIds": []
 }, {
     "Id": 216,
     "Name": "Teddiursa",
@@ -3021,7 +3236,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 216
+    "FamilyId": 216,
+    "EvolutionIds": []
 }, {
     "Id": 217,
     "Name": "Ursaring",
@@ -3035,7 +3251,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 216
+    "FamilyId": 216,
+    "EvolutionIds": []
 }, {
     "Id": 218,
     "Name": "Slugma",
@@ -3049,7 +3266,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 218
+    "FamilyId": 218,
+    "EvolutionIds": []
 }, {
     "Id": 219,
     "Name": "Magcargo",
@@ -3063,7 +3281,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 218
+    "FamilyId": 218,
+    "EvolutionIds": []
 }, {
     "Id": 220,
     "Name": "Swinub",
@@ -3077,7 +3296,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 220
+    "FamilyId": 220,
+    "EvolutionIds": []
 }, {
     "Id": 221,
     "Name": "Piloswine",
@@ -3091,7 +3311,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 220
+    "FamilyId": 220,
+    "EvolutionIds": []
 }, {
     "Id": 222,
     "Name": "Corsola",
@@ -3105,7 +3326,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 222
+    "FamilyId": 222,
+    "EvolutionIds": []
 }, {
     "Id": 223,
     "Name": "Remoraid",
@@ -3119,7 +3341,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 223
+    "FamilyId": 223,
+    "EvolutionIds": []
 }, {
     "Id": 224,
     "Name": "Octillery",
@@ -3133,7 +3356,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 223
+    "FamilyId": 223,
+    "EvolutionIds": []
 }, {
     "Id": 225,
     "Name": "Delibird",
@@ -3147,7 +3371,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 225
+    "FamilyId": 225,
+    "EvolutionIds": []
 }, {
     "Id": 226,
     "Name": "Mantine",
@@ -3161,7 +3386,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 226
+    "FamilyId": 226,
+    "EvolutionIds": []
 }, {
     "Id": 227,
     "Name": "Skarmory",
@@ -3175,7 +3401,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 227
+    "FamilyId": 227,
+    "EvolutionIds": []
 }, {
     "Id": 228,
     "Name": "Houndour",
@@ -3189,7 +3416,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 228
+    "FamilyId": 228,
+    "EvolutionIds": []
 }, {
     "Id": 229,
     "Name": "Houndoom",
@@ -3203,7 +3431,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 228
+    "FamilyId": 228,
+    "EvolutionIds": []
 }, {
     "Id": 230,
     "Name": "Kingdra",
@@ -3217,7 +3446,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 116
+    "FamilyId": 116,
+    "EvolutionIds": []
 }, {
     "Id": 231,
     "Name": "Phanpy",
@@ -3231,7 +3461,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 231
+    "FamilyId": 231,
+    "EvolutionIds": []
 }, {
     "Id": 232,
     "Name": "Donphan",
@@ -3245,7 +3476,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 231
+    "FamilyId": 231,
+    "EvolutionIds": []
 }, {
     "Id": 233,
     "Name": "Porygon2",
@@ -3259,7 +3491,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 137
+    "FamilyId": 137,
+    "EvolutionIds": []
 }, {
     "Id": 234,
     "Name": "Stantler",
@@ -3273,7 +3506,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 234
+    "FamilyId": 234,
+    "EvolutionIds": []
 }, {
     "Id": 235,
     "Name": "Smeargle",
@@ -3287,7 +3521,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 235
+    "FamilyId": 235,
+    "EvolutionIds": []
 }, {
     "Id": 236,
     "Name": "Tyrogue",
@@ -3301,7 +3536,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 236
+    "FamilyId": 236,
+    "EvolutionIds": []
 }, {
     "Id": 237,
     "Name": "Hitmontop",
@@ -3315,7 +3551,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 236
+    "FamilyId": 236,
+    "EvolutionIds": []
 }, {
     "Id": 238,
     "Name": "Smoochum",
@@ -3329,7 +3566,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 25,
-    "FamilyId": 124
+    "FamilyId": 124,
+    "EvolutionIds": [124]
 }, {
     "Id": 239,
     "Name": "Elekid",
@@ -3343,7 +3581,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 25,
-    "FamilyId": 125
+    "FamilyId": 125,
+    "EvolutionIds": [125]
 }, {
     "Id": 240,
     "Name": "Magby",
@@ -3357,7 +3596,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 25,
-    "FamilyId": 126
+    "FamilyId": 126,
+    "EvolutionIds": [126]
 }, {
 	"Id": 241,
     "Name": "Miltank",
@@ -3371,7 +3611,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 241
+    "FamilyId": 241,
+    "EvolutionIds": []
 }, {
     "Id": 242,
     "Name": "Blissey",
@@ -3385,7 +3626,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 113
+    "FamilyId": 113,
+    "EvolutionIds": []
 }, {
     "Id": 243,
     "Name": "Raikou",
@@ -3399,7 +3641,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 243
+    "FamilyId": 243,
+    "EvolutionIds": []
 }, {
     "Id": 244,
     "Name": "Entei",
@@ -3413,7 +3656,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 244
+    "FamilyId": 244,
+    "EvolutionIds": []
 }, {
     "Id": 245,
     "Name": "Suicune",
@@ -3427,7 +3671,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 245
+    "FamilyId": 245,
+    "EvolutionIds": []
 }, {
     "Id": 246,
     "Name": "Larvitar",
@@ -3441,7 +3686,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 246
+    "FamilyId": 246,
+    "EvolutionIds": []
 }, {
     "Id": 247,
     "Name": "Pupitar",
@@ -3455,7 +3701,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 246
+    "FamilyId": 246,
+    "EvolutionIds": []
 }, {
     "Id": 248,
     "Name": "Tyranitar",
@@ -3469,7 +3716,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 246
+    "FamilyId": 246,
+    "EvolutionIds": []
 }, {
     "Id": 249,
     "Name": "Lugia",
@@ -3483,7 +3731,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 249
+    "FamilyId": 249,
+    "EvolutionIds": []
 }, {
     "Id": 250,
     "Name": "Ho-Oh",
@@ -3497,7 +3746,8 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 250
+    "FamilyId": 250,
+    "EvolutionIds": []
 }, {
     "Id": 251,
     "Name": "Celebi",
@@ -3511,5 +3761,6 @@
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
     "CandyToEvolve": 0,
-    "FamilyId": 251
+    "FamilyId": 251,
+    "EvolutionIds": []
 }]
