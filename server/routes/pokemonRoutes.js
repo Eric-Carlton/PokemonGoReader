@@ -102,54 +102,21 @@ module.exports = {
 							let family = [];
 
 							if(pokemonData[speciesId].CandyToEvolve > 0) {
-								let familyId = pokemonData[speciesId].FamilyId
-
-								let firstForm = {id: 0, cost: 0};
-								let secondForm = {id: 0, cost: 0};
-								let finalForm = {id: 0, cost: 0};
-
-								pokemonData.forEach(function(pkmn){
-									if(pkmn.FamilyId === familyId) {
-										if(pkmn.CandyToEvolve === 0) {
-											finalForm.id = pkmn.Id;
-											finalForm.cost = pkmn.CandyToEvolve;
-										} else if(firstForm.id === 0) {
-											firstForm.id = pkmn.Id;
-											firstForm.cost = pkmn.CandyToEvolve;
-										} else if(pkmn.CandyToEvolve > firstForm.cost) {
-											secondForm.id = pkmn.Id;
-											secondForm.cost = pkmn.CandyToEvolve;
-										} else {
-											secondForm.id = firstForm.id;
-											secondForm.cost = firstForm.cost;
-											firstForm.id = pkmn.Id;
-											firstForm.cost = pkmn.CandyToEvolve;
-										}
-									}
-								});
-
-								if(firstForm.id == speciesId) {
-									if(secondForm.id === 0) {
-										family.push({
-											id: finalForm.id.toString(),
-											cost: firstForm.cost
-										});
-									} else {
-										family.push({
-											id: secondForm.id.toString(),
-											cost: firstForm.cost
-										});
-										family.push({
-											id: finalForm.id.toString(),
-											cost: secondForm.cost + firstForm.cost
-										});
-									}
-								} else {
+								let requiredCandy1 = pokemonData[speciesId].CandyToEvolve;
+								pokemonData[speciesId].EvolutionIds.forEach(function(evolution1Id){
 									family.push({
-										id: finalForm.id.toString(),
-										cost: secondForm.cost
+										id: evolution1Id.toString(),
+										cost: requiredCandy1
 									});
-								}
+
+									let requiredCandy2 = requiredCandy1 + pokemonData[evolution1Id].CandyToEvolve;
+									pokemonData[evolution1Id].EvolutionIds.forEach(function(evolution2Id){
+										family.push({
+											id: evolution2Id.toString(),
+											cost: requiredCandy2
+										});
+									});
+								});
 							}
 
 							let maxDesc = 0;
