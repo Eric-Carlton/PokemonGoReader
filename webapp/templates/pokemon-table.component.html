@@ -71,13 +71,10 @@
 						<td [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.DPS | number : '1.2-2' }} DPS</td>
 					</tr>
 					<tr *ngFor="let atk of mon.moves.old_fast">
-						<td>
-							<img *ngIf="atk.selected" src="webapp/img/checkbox-filled-icon.png" class="selected-icon">
-							<img *ngIf="!atk.selected" src="webapp/img/checkbox-empty-icon.png" class="selected-icon">
-						</td>
-						<td><img src="http://serebii.net/pokedex-bw/type/{{ atk.type }}.gif"></td>
-						<td [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.name }} (Old)</td>
-						<td [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.DPS | number : '1.2-2' }} DPS</td>
+						<td *ngIf="atk.selected"><img src="webapp/img/checkbox-filled-icon.png" class="selected-icon"></td>
+						<td *ngIf="atk.selected"><img src="http://serebii.net/pokedex-bw/type/{{ atk.type }}.gif"></td>
+						<td *ngIf="atk.selected" [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.name }} (Old)</td>
+						<td *ngIf="atk.selected" [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.DPS | number : '1.2-2' }} DPS</td>
 					</tr>
 					<tr class="separator"></tr>
 					<tr *ngFor="let atk of mon.moves.charged">
@@ -90,13 +87,10 @@
 						<td [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.DPS | number : '1.2-2' }} DPS</td>
 					</tr>
 					<tr *ngFor="let atk of mon.moves.old_charged">
-						<td>
-							<img *ngIf="atk.selected" src="webapp/img/checkbox-filled-icon.png" class="selected-icon">
-							<img *ngIf="!atk.selected" src="webapp/img/checkbox-empty-icon.png" class="selected-icon">
-						</td>
-						<td><img src="http://serebii.net/pokedex-bw/type/{{ atk.type }}.gif"></td>
-						<td [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.name }} (Old)</td>
-						<td [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.DPS | number : '1.2-2' }} DPS</td>
+						<td *ngIf="atk.selected"><img src="webapp/img/checkbox-filled-icon.png" class="selected-icon"></td>
+						<td *ngIf="atk.selected"><img src="http://serebii.net/pokedex-bw/type/{{ atk.type }}.gif"></td>
+						<td *ngIf="atk.selected" [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.name }} (Old)</td>
+						<td *ngIf="atk.selected" [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.DPS | number : '1.2-2' }} DPS</td>
 					</tr>
 				</table>
 			</div>
