@@ -2511,7 +2511,7 @@
     "BaseDefense": 128,
     "Type1": "Bug",
     "Type2": "Poison",
-    "QuickMoves": [236, 360],
+    "QuickMoves": [236, 260],
     "CinematicMoves": [66, 22, 89],
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
