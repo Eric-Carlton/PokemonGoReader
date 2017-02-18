@@ -54,6 +54,8 @@ Acknowlegements
 
 * Using [justinleewells](https://github.com/justinleewells) [level-to-cp](https://github.com/justinleewells/pogo-optimizer/blob/master/data/game/level-to-cpm.json) map to calculate Pokemon level.
 
+* This project wouldn't currently be working without the help of [Devin Falgoust](https://github.com/DevinFalgoust). Thanks for the various bugfixes and keeping Pokemon and move data up to date!
+
 Warning
 -------
 
