@@ -221,7 +221,6 @@ module.exports = {
 							expressUtils.sendResponse(res, next, 500, {error: props.errors.transfer}, req.body.username, endpoint);
 						});
 					}, err => {
-					  log.debug('NO!');
 					  log.error({err: err.message}, 'pokemonUtils.getClient() failed');
 					  expressUtils.sendResponse(res, next, 500, {error: props.errors.login}, req.body.username, endpoint);
 				});
