@@ -149,7 +149,7 @@ module.exports = {
 							));
 						});
 
-						expressUtils.sendResponse(res, next, 200, {pokemon: formattedPokemon, species: formattedSpecies, token: client.authToken}, req.body.username, endpoint);
+						expressUtils.sendResponse(res, next, 200, {pokemon: formattedPokemon, species: formattedSpecies, token: client.options.authToken}, req.body.username, endpoint);
 					}, err => {
 						log.error({err: err.message});
 						expressUtils.sendResponse(res, next, 500, {error: props.errors.inventory}, req.body.username, endpoint)
@@ -221,6 +221,7 @@ module.exports = {
 							expressUtils.sendResponse(res, next, 500, {error: props.errors.transfer}, req.body.username, endpoint);
 						});
 					}, err => {
+					  log.debug('NO!');
 					  log.error({err: err.message}, 'pokemonUtils.getClient() failed');
 					  expressUtils.sendResponse(res, next, 500, {error: props.errors.login}, req.body.username, endpoint);
 				});
