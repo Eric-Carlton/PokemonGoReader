@@ -32,7 +32,6 @@
     "rimraf": "^2.5.4",
     "rxjs": "5.0.0-beta.6",
     "systemjs": "0.19.27",
-    "tether": "^1.4.0",
     "uglify-js": "^2.7.3",
     "zone.js": "^0.6.12"
   },
