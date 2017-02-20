@@ -69,6 +69,22 @@ table#stats-as-table th {
 	position: relative;
 }
 
+.pokemon-overview > div > span {
+	padding: 0;
+}
+
+.pokemon-ivs > div {
+	height: 30px;
+}
+
+.pokemon-ivs > div > span {
+	padding: 0 5px 0 0;
+}
+
+.pokemon-ivs > div > img {
+	padding: 0;
+}
+
 .pokemon-moves {
 	margin: 5px 0;
 }

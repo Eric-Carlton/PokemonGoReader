@@ -49,24 +49,34 @@
 				<section class="container-fluid">
 					<div class="row">
 						<!--  Overview Section -->
-						<section class="text-left text-xs col-xs-4">
-							<div>IV {{ mon.iv_percentage | number:'.0-0' }}%</div>
-							<div>HP {{mon.current_hp}} / {{mon.max_hp}}</div>
+						<section class="pokemon-overview text-left text-sm col-xs-4">
+							<div><span class="col-xs-4">IV</span><span class="col-xs-8"> {{ mon.iv_percentage | number:'.0-0' }}%</span></div>
+							<div><span class="col-xs-4">HP</span><span class="col-xs-8"> {{mon.current_hp}} / {{mon.max_hp}}</span></div>
 						</section>
 						<!-- Info Section (CP, Favorite, Level, Img, Name, Type(s)) -->
 						<section class="pokemon-info col-xs-4">
 							<div><span class="bold">CP {{ mon.cp }}</span><img *ngIf="mon.favorite" class="favorite" src="webapp/img/star-icon.png"></div>
 							<div>Level {{ mon.level }}</div>
-							<img src="http://www.serebii.net/pokemongo/pokemon/{{ mon.pokedex_number | prependZeros }}.png" title="{{mon.species}}" height="100"/>
+							<img src="http://www.serebii.net/pokemongo/pokemon/{{ mon.pokedex_number | prependZeros }}.png" title="{{mon.species}}" height="100"
+							/>
 							<div>{{ mon.name }}</div>
 							<img src="http://serebii.net/pokedex-bw/type/{{ mon.type_1 }}.gif">
 							<img *ngIf="mon.type_2 !== 'None'" src="http://serebii.net/pokedex-bw/type/{{ mon.type_2 }}.gif">
 						</section>
 						<!-- IV Section -->
-						<section class="text-right text-xs col-xs-4">
-							<div><img src="webapp/img/sword-icon.png">{{ mon.attack_iv }}</div>
-							<div><img src="webapp/img/shield-icon.png">{{ mon.defense_iv }}</div>
-							<div><img src="webapp/img/heart-icon.png">{{ mon.stamina_iv }}</div>
+						<section class="pokemon-ivs text-right text-sm col-xs-4">
+							<div class="row">
+								<img class="col-xs-offset-8 col-xs-2" src="webapp/img/sword-icon.png">
+								<span class="col-xs-2">{{ mon.attack_iv }}</span>
+							</div>
+							<div class="row">
+								<img class="col-xs-offset-8 col-xs-2" src="webapp/img/shield-icon.png">
+								<span class="col-xs-2">{{ mon.defense_iv }}</span>
+							</div>
+							<div class="row">
+								<img class="col-xs-offset-8 col-xs-2" src="webapp/img/heart-icon.png">
+								<span class="col-xs-2">{{ mon.stamina_iv }}</span>
+							</div>
 						</section>
 					</div>
 				</section>
@@ -114,10 +124,10 @@
 				<section class="pokemon-actions">
 					<button class="btn btn-primary btn-sm" [hidden]="!settings.showTransferButton" type="button" [disabled]="mon.favorite || _operatingOnPokemonAtIndex !== null"
 						(click)="_transferPokemon(mon, i)">{{_getTransferButtonText(i)}}</button>
-					<button class="btn btn-primary btn-sm" [hidden]="!settings.showRenameButton" type="button" [disabled]="_operatingOnPokemonAtIndex !== null"
-						(click)="_renamePokemon(mon, i)">{{_getRenameButtonText(i)}}</button>
-					<button class="btn btn-primary btn-sm" [hidden]="!settings.showFavoriteButton" type="button" [disabled]="_operatingOnPokemonAtIndex !== null"
-						(click)="_toggleFavoritePokemon(mon, i)">{{_getFavoriteButtonText(i, mon.favorite)}}</button>
+						<button class="btn btn-primary btn-sm" [hidden]="!settings.showRenameButton" type="button" [disabled]="_operatingOnPokemonAtIndex !== null"
+							(click)="_renamePokemon(mon, i)">{{_getRenameButtonText(i)}}</button>
+							<button class="btn btn-primary btn-sm" [hidden]="!settings.showFavoriteButton" type="button" [disabled]="_operatingOnPokemonAtIndex !== null"
+								(click)="_toggleFavoritePokemon(mon, i)">{{_getFavoriteButtonText(i, mon.favorite)}}</button>
 				</section>
 			</div>
 		</section>
