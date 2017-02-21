@@ -6,3 +6,6 @@ webapp/js/*
 
 ##ignore typings
 typings
+
+##ignore vscode files
+.vscode

@@ -22,7 +22,7 @@
 		</div>
 	</div>
 
-	<button type="submit" [disabled]="!loginForm.form.valid">Submit</button>
+	<button class="btn btn-primary" type="submit" [disabled]="!loginForm.form.valid">Submit</button>
 	<div class="loading" [hidden]="!_loading">Loading...</div>
 	<div class="error" *ngIf="_loginErrorMessage !== null">{{_loginErrorMessage}}</div>
 </form>

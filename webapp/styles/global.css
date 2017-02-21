@@ -34,3 +34,27 @@ p {
 .dropdown-menu li:hover {
 	background-color:#dedede;
 }
+
+.bold {
+	font-weight: bold;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-xs {
+	font-size: .75em;
+}
+
+.text-sm {
+	font-size: .85em;
+}

@@ -53,61 +53,56 @@ table#stats-as-table th {
 	margin-left: -108px;
 }
 
-.pokemon-list-wrapper {
+.pokemon-list {
+	padding: 0;
 	clear: both;
-	text-align: center;
 }
 
 .pokemon-list-item {
+	height: 360px;
+	padding: 0 5px;
+}
+
+.pokemon-list-item-content {
+	height: 350px;
+	background-color: white;
 	position: relative;
-	border: 1px solid #f0f0f0;
-	background: white;
-	box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
-	margin: 3px;
-	display: inline-block;
-	width: 300px;
-	height: 380px;
-	padding: .5em;
-	overflow: hidden;
 }
-.pokemon-list-item .title {
-	font-weight: bold;
+
+.pokemon-overview > div > span {
+	padding: 0;
 }
-.pokemon-list-item .favorite {
-	vertical-align: -6px;
+
+.pokemon-ivs > div {
+	height: 30px;
 }
-.pokemon-list-item .iv {
-	position: absolute;
-	top: .5em;
-	left: .5em;
-	font-size: .9em;
+
+.pokemon-ivs > div > span {
+	padding: 0 5px 0 0;
 }
-.pokemon-list-item .iv img {
-	height: 18px;
-	width: 18px;
+
+.pokemon-ivs > div > img {
+	padding: 0;
 }
-.pokemon-list-item .candies {
-	position: absolute;
-	top: .5em;
-	right: .5em;
-	font-size: .9em;
+
+.pokemon-moves {
+	margin: 5px 0;
 }
-.pokemon-list-item .candies img {
-	display: block;
+
+.pokemon-moves > .row > span {
+	padding: 0;
 }
-.pokemon-list-item .moves table .separator {
+
+.selected-icon {
 	height: 10px;
-}
-.pokemon-list-item .moves table {
-	width: 100%;
-	text-align: center;
-}
-.pokemon-list-item .moves table .selected-icon {
 	width: 10px;
-	height: 10px;
 }
-.pokemon-list-item .actions {
-	padding: .5em;
+
+.pokemon-actions {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	margin: 10px auto;
 }
 
 #sort-orders{
