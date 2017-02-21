@@ -1,21 +1,50 @@
-<section id="settings" class="dropdown">
-	<button class="btn btn-default dropdown-toggle" type="button" id="settings-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-		Settings
-		<span class="caret"></span>
-	</button>
-	<ul class="dropdown-menu" aria-labelledby="settings-dropdown">
-		<li><label><input type="checkbox" [(ngModel)]="useTabularFormat" />Table format</label></li>
-		<li><label><input type="checkbox" [(ngModel)]="showTransferButton" />Transfer Button</label></li>
-		<li><label><input type="checkbox" [(ngModel)]="showRenameButton" />Rename Button</label></li>
-		<li><label><input type="checkbox" [(ngModel)]="showFavoriteButton" />Favorite Button</label></li>
-	</ul>
-</section>
-<section id="table-settings" class="dropdown" *ngIf="useTabularFormat">
-	<button class="btn btn-default dropdown-toggle" type="button" id="table-stats-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-		Table Stats
-		<span class="caret"></span>
-	</button>
-	<ul class="dropdown-menu" aria-labelledby="table-stats-dropdown">
-		<li *ngFor="let stat of _properties.pokemonTableStats"><label><input type="checkbox" [checked]="_isStatSelected(stat.heading)" (change)="_statChanged(stat.heading)">{{stat.heading}}</label></li>
-	</ul>
+<section class="settings-container container-fluid">
+	<div class="row">
+		<section id="display-by" class="col-xs-4 col-sm-2 col-lg-1 dropdown">
+			<button class="btn btn-default dropdown-toggle" type="button" id="display-by-dropdown" data-toggle="dropdown" aria-haspopup="true"
+				aria-expanded="true">
+				Display By
+				<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu" aria-labelledby="display-by-dropdown">
+					<li (click)="_settingsService.displayByMonster = true">Monster</li>
+					<li (click)="_settingsService.displayByMonster = false">Species</li>
+				</ul>
+		</section>
+		<section id="settings" class="text-center col-xs-4 col-sm-offset-3 col-sm-2 col-lg-offset-4 col-lg-2 dropdown">
+			<button class="btn btn-default dropdown-toggle" type="button" id="settings-dropdown" data-toggle="dropdown" aria-haspopup="true"
+				aria-expanded="true">
+				Settings
+				<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu" aria-labelledby="settings-dropdown">
+					<li><label><input type="checkbox" [(ngModel)]="_settingsService.useTabularFormat" />Table format</label></li>
+					<li><label><input type="checkbox" [(ngModel)]="_settingsService.showTransferButton" />Transfer Button</label></li>
+					<li><label><input type="checkbox" [(ngModel)]="_settingsService.showRenameButton" />Rename Button</label></li>
+					<li><label><input type="checkbox" [(ngModel)]="_settingsService.showFavoriteButton" />Favorite Button</label></li>
+				</ul>
+		</section>
+		<section id="table-settings" class="text-right col-xs-4 col-sm-offset-3 col-sm-2 col-lg-offset-4 col-lg-1 dropdown" *ngIf="_settingsService.useTabularFormat">
+			<button class="btn btn-default dropdown-toggle" type="button" id="table-stats-dropdown" data-toggle="dropdown" aria-haspopup="true"
+				aria-expanded="true">
+				Table Stats
+				<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu" aria-labelledby="table-stats-dropdown">
+					<li *ngFor="let stat of _properties.pokemonTableStats"><label><input type="checkbox" [checked]="_settingsService.isStatSelected(stat.heading)" (change)="_settingsService.statChanged(stat.heading)">{{stat.heading}}</label></li>
+				</ul>
+		</section>
+		<section id="sort-orders" class="text-right col-xs-4 col-sm-offset-3 col-sm-2 col-lg-offset-4 col-lg-1 dropdown" *ngIf="!_settingsService.useTabularFormat">
+			<button class="btn btn-default dropdown-toggle" type="button" id="table-stats-dropdown" data-toggle="dropdown" aria-haspopup="true"
+				aria-expanded="true">
+				Sort Orders
+				<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu" aria-labelledby="table-stats-dropdown">
+					<li *ngFor="let key of _sortService.pokemonSortOrders" (click)="_sortService.sortPokemon(key, true)">
+						{{_properties.pokemonTableSortOrders[key].name}}
+					</li>
+				</ul>
+		</section>
+	</div>
 </section>

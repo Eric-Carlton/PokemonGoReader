@@ -1,9 +1,10 @@
-import { ViewChild, Component } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { PropertiesService } from '../services/properties.service'
 import { PokemonService } from '../services/pokemon.service'
 import { SortService } from '../services/sort.service'
 import { ExportService } from '../services/export.service'
+import { SettingsService } from '../services/settings.service'
 
 import { PokemonTableComponent } from './pokemon-table.component'
 import { PokemonSpeciesComponent } from './pokemon-species.component'
@@ -16,8 +17,6 @@ import { PokemonSpeciesComponent } from './pokemon-species.component'
 })
 
 export class PokemonStatsComponent {
-	@ViewChild(PokemonTableComponent) pokemonTable: PokemonTableComponent;
-	
 	private _title: string = this._properties.pokemonStatsComponentTitle;
 	private _content: string = this._properties.pokemonStatsComponentContent;
 	private _refreshingPokemon: boolean = false;
@@ -27,7 +26,8 @@ export class PokemonStatsComponent {
 		private _properties: PropertiesService, 
 		private _pokemonService: PokemonService,
 		private _exportService: ExportService,
-		private _sortService: SortService
+		private _sortService: SortService,
+		private _settingsService: SettingsService
 	){}
 
 	private _export() {
@@ -35,7 +35,7 @@ export class PokemonStatsComponent {
 		let now = new Date();
 		link.setAttribute('download', 'pokemon.' + now.getTime() + '.csv');
 		link.href = 'data:text/plain;charset=utf-8,' + this._exportService.exportPokemon(
-			this.pokemonTable.settings.pokemonTableStats
+			this._settingsService.pokemonTableStats
 		);
 	}
 
@@ -62,9 +62,5 @@ export class PokemonStatsComponent {
 				alert('An error occurred while refreshing Pokemon');
 			});
 		}
-	}
-
-	private _setDisplayByMonster(displayByMonster: boolean){
-		this._displayByMonster = displayByMonster;
 	}
 }
