@@ -20,7 +20,6 @@ export class PokemonStatsComponent {
 	private _title: string = this._properties.pokemonStatsComponentTitle;
 	private _content: string = this._properties.pokemonStatsComponentContent;
 	private _refreshingPokemon: boolean = false;
-	private _displayByMonster: boolean = true;
 
 	constructor(
 		private _properties: PropertiesService, 
