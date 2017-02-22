@@ -85,6 +85,7 @@ module.exports = {
 									pokemon.stamina_max,
 									parseFloat(((pokemon.individual_attack + pokemon.individual_defense + pokemon.individual_stamina) / 45 * 100).toFixed(2)),
 									pokemon.cp,
+									pokemonUtils.getCandy(pokemon, splitInventory.candies),
 									pokemon.favorite === 1,
 									pokemonData[pokemonData[pokemon.pokemon_id].FamilyId].Name,
 									pokemon.id,

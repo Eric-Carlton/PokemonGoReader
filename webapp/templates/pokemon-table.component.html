@@ -39,6 +39,7 @@
 					<section class="pokemon-overview text-left text-sm col-xs-4">
 						<div><span class="col-xs-4">IV</span><span class="col-xs-8"> {{ mon.iv_percentage | number:'.0-0' }}%</span></div>
 						<div><span class="col-xs-4">HP</span><span class="col-xs-8"> {{mon.current_hp}} / {{mon.max_hp}}</span></div>
+						<div class="col-xs-4"><img src="webapp/img/candy-icon.png" /></div><span class="col-xs-8">{{ mon.candy }}</span>
 					</section>
 					<!-- Info Section (CP, Favorite, Level, Img, Name, Type(s)) -->
 					<section class="pokemon-info col-xs-4">

@@ -12,6 +12,7 @@ class Pokemon {
 		max_hp,
 		iv_percentage,
 		cp,
+		candy,
 		favorite,
 		family_name,
 		id,
@@ -31,6 +32,7 @@ class Pokemon {
 		this.max_hp = max_hp;
 		this.iv_percentage = iv_percentage;
 		this.cp = cp;
+		this.candy = candy;
 		this.favorite = favorite;
 		this.family_name = family_name;
 		this.id = id;
