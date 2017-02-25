@@ -5,6 +5,7 @@ const pogobuf = require('pogobuf');
 
 const props = require('../config/properties.js');
 const pokemonData = require('../../data/pokemon.json');
+const privateProps = require('../config/private.json');
 
 const log = bunyan.createLogger({
 	name: props.log.names.pokemonUtils,
@@ -36,7 +37,11 @@ let getToken = (credential) => {
 module.exports = {
 	getClient: (credential) => {
 		return new Promise((resolve, reject) => {
-			const client = new pogobuf.Client();
+			const client = new pogobuf.Client({
+				version: 5702,
+				useHashingServer: true,
+				hashingKey: privateProps.hashingKey
+			});
 
 			if (credential.token){
 				client.setAuthInfo(credential.login_type, credential.token);
