@@ -5,7 +5,13 @@ const pogobuf = require('pogobuf');
 
 const props = require('../config/properties.js');
 const pokemonData = require('../../data/pokemon.json');
-const privateProps = require('../config/private.json');
+let privateProps = false;
+try{
+	privateProps = require('../config/private.json');
+} catch(e) {
+	// do nothing, we just won't use hashing
+}
+
 
 const log = bunyan.createLogger({
 	name: props.log.names.pokemonUtils,
@@ -19,7 +25,7 @@ let getToken = (credential) => {
 	return new Promise((resolve, reject) => {
 		let login = null;
 
-		if(credential.login_type === 'google'){
+		if (credential.login_type === 'google') {
 			login = new pogobuf.GoogleLogin();
 		} else {
 			login = new pogobuf.PTCLogin();
@@ -37,13 +43,20 @@ let getToken = (credential) => {
 module.exports = {
 	getClient: (credential) => {
 		return new Promise((resolve, reject) => {
-			const client = new pogobuf.Client({
-				version: 5702,
-				useHashingServer: true,
-				hashingKey: privateProps.hashingKey
-			});
+			let client = null;
 
-			if (credential.token){
+			if (privateProps && privateProps.hashingKey) {
+				client = new pogobuf.Client({
+					useHashingServer: true,
+					version: 5702,
+					hashingKey: privateProps.hashingKey
+				});
+			} else {
+				client = new pogobuf.Client();
+			}
+
+
+			if (credential.token) {
 				client.setAuthInfo(credential.login_type, credential.token);
 				client.init().then(() => {
 					resolve(client);
@@ -74,19 +87,19 @@ module.exports = {
 					log.trace('getToken() failed, rejecting from getClient');
 					reject(err);
 				});
-		  }
+			}
 		});
 	},
 
 	getLevel: (pokemon) => {
 		let cp = pokemon.cp_multiplier;
-		if(pokemon.hasOwnProperty('additional_cp_multiplier')){
+		if (pokemon.hasOwnProperty('additional_cp_multiplier')) {
 			cp += pokemon.additional_cp_multiplier
 		}
 
-		for(let level in props.pokemonCpMulipliersByLevel){
-			if(props.pokemonCpMulipliersByLevel.hasOwnProperty(level) &&
-				Math.abs(cp - props.pokemonCpMulipliersByLevel[level]) < 0.0001){
+		for (let level in props.pokemonCpMulipliersByLevel) {
+			if (props.pokemonCpMulipliersByLevel.hasOwnProperty(level) &&
+				Math.abs(cp - props.pokemonCpMulipliersByLevel[level]) < 0.0001) {
 				return parseFloat(level);
 			}
 		}
@@ -95,7 +108,7 @@ module.exports = {
 	},
 
 	getName: (pokemon) => {
-		if(pokemon.hasOwnProperty('nickname') && pokemon.nickname.length > 0){
+		if (pokemon.hasOwnProperty('nickname') && pokemon.nickname.length > 0) {
 			return pokemon.nickname;
 		}
 
@@ -103,10 +116,10 @@ module.exports = {
 	},
 
 	getCandy: (pokemon, candies) => {
-		for(let j = 0; j < candies.length; j++){
+		for (let j = 0; j < candies.length; j++) {
 			let candy = candies[j];
 
-			if(candy.hasOwnProperty('family_id') && candy.hasOwnProperty('family_id') && candy.family_id === pokemonData[pokemon.pokemon_id].FamilyId){
+			if (candy.hasOwnProperty('family_id') && candy.hasOwnProperty('family_id') && candy.family_id === pokemonData[pokemon.pokemon_id].FamilyId) {
 				return candy.candy;
 			}
 		}

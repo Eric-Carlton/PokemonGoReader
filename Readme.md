@@ -21,9 +21,9 @@ Dependencies
 
   to install dependencies
 
-Setup
------
-Niantic is now requiring that all API requests be hashed. Unfortunately, the work required to reverse engineer the correct hashing algorithm is tremendous and the community is no longer open sourcing solutions to this problem. In order to use this tool, you're going to have to [purchase a hashing key](https://talk.pogodev.org/d/51-api-hashing-service-by-pokefarmer). The cheapest option (150 RPM) should be more than sufficient. Once you've got your key, simply create a file in server/config called `private.json`. Contents of the file should be formatted as follows: 
+Hashing
+-------
+If you wish to use a newer API version than 0.45.0, you're going to have to [purchase a hashing key](https://talk.pogodev.org/d/51-api-hashing-service-by-pokefarmer). The cheapest option (150 RPM) should be more than sufficient. Once you've got your key, simply create a file in server/config called `private.json`. Contents of the file should be formatted as follows: 
 
 ```
 {
