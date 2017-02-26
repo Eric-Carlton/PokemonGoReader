@@ -28,6 +28,7 @@ export class PropertiesService {
 	public showTransferButton: boolean = true;
 	public showRenameButton: boolean = true;
 	public showFavoriteButton: boolean = true;
+	public displayByMonster: boolean = true;
 
 	public pokemonTableStats: PokemonTableStat[] = [
 		new PokemonTableStat('level', 'Level'),

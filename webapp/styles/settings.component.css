@@ -1,25 +1,23 @@
-#settings .dropdown-menu {
-	width: 150px;
-    left: 50%;
-    margin-left: -50px;
+.settings-container {
+	margin-bottom: 20px;
 }
 
-#table-settings .dropdown-menu{
-	width: 150px;
-	left: 50%;
-	margin-left: -108px;
+.row > section {
+	padding: 0;
 }
 
-#settings, #table-settings{
-	margin-bottom: 1.5em;
+#sort-orders .dropdown-menu, #table-settings .dropdown-menu {
+	right: 0;
 }
 
-#settings{
-	width: 7em;
-	float:left;
+@media (min-width: 768px) {
+	#settings .dropdown-menu {
+		left: 12%;
+	}
 }
 
-#table-settings{
-	width:8em;
-	float:right;
+@media (min-width: 1200px) {
+	#settings .dropdown-menu {
+		left: 23%;
+	}
 }

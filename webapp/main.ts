@@ -9,6 +9,7 @@ import { PropertiesService } from './services/properties.service'
 import { UtilsService } from './services/utils.service'
 import { ExportService } from './services/export.service'
 import { SortService } from './services/sort.service'
+import { SettingsService } from './services/settings.service'
 
 bootstrap(AppComponent, [
   disableDeprecatedForms(),
@@ -18,6 +19,7 @@ bootstrap(AppComponent, [
   PropertiesService,
   UtilsService,
   ExportService,
-  SortService
+  SortService,
+  SettingsService
  ])
  .catch((err: any) => console.error(err));

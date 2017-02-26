@@ -1,27 +1,27 @@
 <settings></settings>
 
-<div class="table-responsive" [hidden]="!settings.useTabularFormat">
+<div class="table-responsive" [hidden]="!_settingsService.useTabularFormat">
 	<table id="stats-as-table" class="table table-striped table-hover table-bordered">
 		<thead>
 			<tr>
-				<th *ngFor="let stat of settings.pokemonTableStats" (click)="_sortService.sortPokemon(stat.property, true)">{{stat.heading}}</th>
-				<th [hidden]="!settings.showTransferButton">Transfer</th>
-				<th [hidden]="!settings.showRenameButton">Rename</th>
-				<th [hidden]="!settings.showFavoriteButton">Favorite</th>
+				<th *ngFor="let stat of _settingsService.pokemonTableStats" (click)="_sortService.sortPokemon(stat.property, true)">{{stat.heading}}</th>
+				<th [hidden]="!_settingsService.showTransferButton">Transfer</th>
+				<th [hidden]="!_settingsService.showRenameButton">Rename</th>
+				<th [hidden]="!_settingsService.showFavoriteButton">Favorite</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr *ngFor="let mon of _pokemonService.pokemon; let i = index">
-				<td *ngFor="let stat of settings.pokemonTableStats">
+				<td *ngFor="let stat of _settingsService.pokemonTableStats">
 					<pre>{{_getTableOutput(mon, stat.property)}}</pre>
 				</td>
-				<td [hidden]="!settings.showTransferButton">
+				<td [hidden]="!_settingsService.showTransferButton">
 					<button type="button" [disabled]="mon.favorite || _operatingOnPokemonAtIndex !== null" (click)="_transferPokemon(mon, i)">{{_getTransferButtonText(i)}}</button>
 				</td>
-				<td [hidden]="!settings.showRenameButton">
+				<td [hidden]="!_settingsService.showRenameButton">
 					<button type="button" [disabled]="_operatingOnPokemonAtIndex !== null" (click)="_renamePokemon(mon, i)">{{_getRenameButtonText(i)}}</button>
 				</td>
-				<td [hidden]="!settings.showFavoriteButton">
+				<td [hidden]="!_settingsService.showFavoriteButton">
 					<button type="button" [disabled]="_operatingOnPokemonAtIndex !== null" (click)="_toggleFavoritePokemon(mon, i)">{{_getFavoriteButtonText(i, mon.favorite)}}</button>
 				</td>
 			</tr>
@@ -29,107 +29,94 @@
 	</table>
 </div>
 
-<section [hidden]="settings.useTabularFormat">
-	<section id="sort-orders" class="dropdown">
-		<button class="btn btn-default dropdown-toggle" type="button" id="table-stats-dropdown" data-toggle="dropdown" aria-haspopup="true"
-			aria-expanded="true">
-			Sort Orders
-			<span class="caret"></span>
-			</button>
-			<ul class="dropdown-menu" aria-labelledby="table-stats-dropdown">
-				<li *ngFor="let key of _sortService.pokemonSortOrders" (click)="_sortService.sortPokemon(key, true)">
-					{{_properties.pokemonTableSortOrders[key].name}}
-				</li>
-			</ul>
-	</section>
-	<section class="pokemon-list container-fluid">
-		<section class="pokemon-list-item col-lg-3 col-md-4 col-sm-6 col-xs-12" *ngFor="let mon of _pokemonService.pokemon; let i = index">
-			<div class="pokemon-list-item-content text-center">
-				<!-- Pokemon Section -->
-				<section class="container-fluid">
-					<div class="row">
-						<!--  Overview Section -->
-						<section class="pokemon-overview text-left text-sm col-xs-4">
-							<div><span class="col-xs-4">IV</span><span class="col-xs-8"> {{ mon.iv_percentage | number:'.0-0' }}%</span></div>
-							<div><span class="col-xs-4">HP</span><span class="col-xs-8"> {{mon.current_hp}} / {{mon.max_hp}}</span></div>
-						</section>
-						<!-- Info Section (CP, Favorite, Level, Img, Name, Type(s)) -->
-						<section class="pokemon-info col-xs-4">
-							<div><span class="bold">CP {{ mon.cp }}</span><img *ngIf="mon.favorite" class="favorite" src="webapp/img/star-icon.png"></div>
-							<div>Level {{ mon.level }}</div>
-							<img src="http://www.serebii.net/pokemongo/pokemon/{{ mon.pokedex_number | prependZeros }}.png" title="{{mon.species}}" height="100"
-							/>
-							<div>{{ mon.name }}</div>
-							<img src="http://serebii.net/pokedex-bw/type/{{ mon.type_1 }}.gif">
-							<img *ngIf="mon.type_2 !== 'None'" src="http://serebii.net/pokedex-bw/type/{{ mon.type_2 }}.gif">
-						</section>
-						<!-- IV Section -->
-						<section class="pokemon-ivs text-right text-sm col-xs-4">
-							<div class="row">
-								<img class="col-xs-offset-8 col-xs-2" src="webapp/img/sword-icon.png">
-								<span class="col-xs-2">{{ mon.attack_iv }}</span>
-							</div>
-							<div class="row">
-								<img class="col-xs-offset-8 col-xs-2" src="webapp/img/shield-icon.png">
-								<span class="col-xs-2">{{ mon.defense_iv }}</span>
-							</div>
-							<div class="row">
-								<img class="col-xs-offset-8 col-xs-2" src="webapp/img/heart-icon.png">
-								<span class="col-xs-2">{{ mon.stamina_iv }}</span>
-							</div>
-						</section>
-					</div>
-				</section>
-				<!-- Quick Moves Section -->
-				<section class="pokemon-moves text-sm container-fluid">
-					<div class="row" *ngFor="let atk of mon.moves.fast">
-						<span class="col-xs-2">
-							<img *ngIf="atk.selected" src="webapp/img/checkbox-filled-icon.png" class="selected-icon">
-							<img  *ngIf="!atk.selected" src="webapp/img/checkbox-empty-icon.png" class="selected-icon">
-							<img src="http://serebii.net/pokedex-bw/type/{{ atk.type }}.gif">
-						</span>
-						<span class="col-xs-6" [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.name }}</span>
-						<span class="col-xs-4" [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.DPS | number : '1.2-2' }} DPS</span>
-					</div>
-					<div class="row" *ngFor="let atk of mon.moves.old_fast">
-						<span class="col-xs-2">
-							<img *ngIf="atk.selected" src="webapp/img/checkbox-filled-icon.png" class="selected-icon">
-							<img *ngIf="atk.selected" src="http://serebii.net/pokedex-bw/type/{{ atk.type }}.gif">
-						</span>
-						<span class="col-xs-6" *ngIf="atk.selected" [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.name }} (Old)</span>
-						<span class="col-xs-4" *ngIf="atk.selected" [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.DPS | number : '1.2-2' }} DPS</span>
-					</div>
-				</section>
-				<!-- Charged Moves Section -->
-				<section class="pokemon-moves text-sm container-fluid">
-					<div class="row" *ngFor="let atk of mon.moves.charged">
-						<span class="col-xs-2">
-							<img *ngIf="atk.selected" src="webapp/img/checkbox-filled-icon.png" class="selected-icon">
-							<img  *ngIf="!atk.selected" src="webapp/img/checkbox-empty-icon.png" class="selected-icon">
-							<img src="http://serebii.net/pokedex-bw/type/{{ atk.type }}.gif">
-						</span>
-						<span class="col-xs-6" [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.name }}</span>
-						<span class="col-xs-4" [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.DPS | number : '1.2-2' }} DPS</span>
-					</div>
-					<div class="row" *ngFor="let atk of mon.moves.old_charged">
-						<span class="col-xs-2">
-							<img *ngIf="atk.selected" src="webapp/img/checkbox-filled-icon.png" class="selected-icon">
-							<img *ngIf="atk.selected" src="http://serebii.net/pokedex-bw/type/{{ atk.type }}.gif">
-						</span>
-						<span class="col-xs-6" *ngIf="atk.selected" [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.name }} (Old)</span>
-						<span class="col-xs-4" *ngIf="atk.selected" [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.DPS | number : '1.2-2' }} DPS</span>
-					</div>
-				</section>
-				<!-- Actions section -->
-				<section class="pokemon-actions">
-					<button class="btn btn-primary btn-sm" [hidden]="!settings.showTransferButton" type="button" [disabled]="mon.favorite || _operatingOnPokemonAtIndex !== null"
-						(click)="_transferPokemon(mon, i)">{{_getTransferButtonText(i)}}</button>
-						<button class="btn btn-primary btn-sm" [hidden]="!settings.showRenameButton" type="button" [disabled]="_operatingOnPokemonAtIndex !== null"
-							(click)="_renamePokemon(mon, i)">{{_getRenameButtonText(i)}}</button>
-							<button class="btn btn-primary btn-sm" [hidden]="!settings.showFavoriteButton" type="button" [disabled]="_operatingOnPokemonAtIndex !== null"
-								(click)="_toggleFavoritePokemon(mon, i)">{{_getFavoriteButtonText(i, mon.favorite)}}</button>
-				</section>
-			</div>
-		</section>
+<section [hidden]="_settingsService.useTabularFormat" class="pokemon-list container-fluid">
+	<section class="pokemon-list-item col-lg-3 col-md-4 col-sm-6 col-xs-12" *ngFor="let mon of _pokemonService.pokemon; let i = index">
+		<div class="pokemon-list-item-content text-center">
+			<!-- Pokemon Section -->
+			<section class="container-fluid">
+				<div class="row">
+					<!--  Overview Section -->
+					<section class="pokemon-overview text-left text-sm col-xs-4">
+						<div><span class="col-xs-4">IV</span><span class="col-xs-8"> {{ mon.iv_percentage | number:'.0-0' }}%</span></div>
+						<div><span class="col-xs-4">HP</span><span class="col-xs-8"> {{mon.current_hp}} / {{mon.max_hp}}</span></div>
+						<div class="col-xs-4"><img src="webapp/img/candy-icon.png" /></div><span class="col-xs-8">{{ mon.candy }}</span>
+					</section>
+					<!-- Info Section (CP, Favorite, Level, Img, Name, Type(s)) -->
+					<section class="pokemon-info col-xs-4">
+						<div><span class="bold">CP {{ mon.cp }}</span><img *ngIf="mon.favorite" class="favorite" src="webapp/img/star-icon.png"></div>
+						<div>Level {{ mon.level }}</div>
+						<img src="http://www.serebii.net/pokemongo/pokemon/{{ mon.pokedex_number | prependZeros }}.png" title="{{mon.species}}" height="100"
+						/>
+						<div>{{ mon.name }}</div>
+						<img src="http://serebii.net/pokedex-bw/type/{{ mon.type_1 }}.gif">
+						<img *ngIf="mon.type_2 !== 'None'" src="http://serebii.net/pokedex-bw/type/{{ mon.type_2 }}.gif">
+					</section>
+					<!-- IV Section -->
+					<section class="pokemon-ivs text-right text-sm col-xs-4">
+						<div class="row">
+							<img class="col-xs-offset-8 col-xs-2" src="webapp/img/sword-icon.png">
+							<span class="col-xs-2">{{ mon.attack_iv }}</span>
+						</div>
+						<div class="row">
+							<img class="col-xs-offset-8 col-xs-2" src="webapp/img/shield-icon.png">
+							<span class="col-xs-2">{{ mon.defense_iv }}</span>
+						</div>
+						<div class="row">
+							<img class="col-xs-offset-8 col-xs-2" src="webapp/img/heart-icon.png">
+							<span class="col-xs-2">{{ mon.stamina_iv }}</span>
+						</div>
+					</section>
+				</div>
+			</section>
+			<!-- Quick Moves Section -->
+			<section class="pokemon-moves text-sm container-fluid">
+				<div class="row" *ngFor="let atk of mon.moves.fast">
+					<span class="col-xs-2">
+						<img *ngIf="atk.selected" src="webapp/img/checkbox-filled-icon.png" class="selected-icon">
+						<img  *ngIf="!atk.selected" src="webapp/img/checkbox-empty-icon.png" class="selected-icon">
+						<img src="http://serebii.net/pokedex-bw/type/{{ atk.type }}.gif">
+					</span>
+					<span class="col-xs-6" [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.name }}</span>
+					<span class="col-xs-4" [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.DPS | number : '1.2-2' }} DPS</span>
+				</div>
+				<div class="row" *ngFor="let atk of mon.moves.old_fast">
+					<span class="col-xs-2">
+						<img *ngIf="atk.selected" src="webapp/img/checkbox-filled-icon.png" class="selected-icon">
+						<img *ngIf="atk.selected" src="http://serebii.net/pokedex-bw/type/{{ atk.type }}.gif">
+					</span>
+					<span class="col-xs-6" *ngIf="atk.selected" [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.name }} (Old)</span>
+					<span class="col-xs-4" *ngIf="atk.selected" [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.DPS | number : '1.2-2' }} DPS</span>
+				</div>
+			</section>
+			<!-- Charged Moves Section -->
+			<section class="pokemon-moves text-sm container-fluid">
+				<div class="row" *ngFor="let atk of mon.moves.charged">
+					<span class="col-xs-2">
+						<img *ngIf="atk.selected" src="webapp/img/checkbox-filled-icon.png" class="selected-icon">
+						<img  *ngIf="!atk.selected" src="webapp/img/checkbox-empty-icon.png" class="selected-icon">
+						<img src="http://serebii.net/pokedex-bw/type/{{ atk.type }}.gif">
+					</span>
+					<span class="col-xs-6" [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.name }}</span>
+					<span class="col-xs-4" [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.DPS | number : '1.2-2' }} DPS</span>
+				</div>
+				<div class="row" *ngFor="let atk of mon.moves.old_charged">
+					<span class="col-xs-2">
+						<img *ngIf="atk.selected" src="webapp/img/checkbox-filled-icon.png" class="selected-icon">
+						<img *ngIf="atk.selected" src="http://serebii.net/pokedex-bw/type/{{ atk.type }}.gif">
+					</span>
+					<span class="col-xs-6" *ngIf="atk.selected" [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.name }} (Old)</span>
+					<span class="col-xs-4" *ngIf="atk.selected" [ngStyle]="{'font-weight': atk.givesStab === true ? 'bold' : 'normal'}">{{ atk.DPS | number : '1.2-2' }} DPS</span>
+				</div>
+			</section>
+			<!-- Actions section -->
+			<section class="pokemon-actions">
+				<button class="btn btn-primary btn-sm" [hidden]="!_settingsService.showTransferButton" type="button" [disabled]="mon.favorite || _operatingOnPokemonAtIndex !== null"
+					(click)="_transferPokemon(mon, i)">{{_getTransferButtonText(i)}}</button>
+				<button class="btn btn-primary btn-sm" [hidden]="!_settingsService.showRenameButton" type="button" [disabled]="_operatingOnPokemonAtIndex !== null"
+					(click)="_renamePokemon(mon, i)">{{_getRenameButtonText(i)}}</button>
+				<button class="btn btn-primary btn-sm" [hidden]="!_settingsService.showFavoriteButton" type="button" [disabled]="_operatingOnPokemonAtIndex !== null"
+					(click)="_toggleFavoritePokemon(mon, i)">{{_getFavoriteButtonText(i, mon.favorite)}}</button>
+			</section>
+		</div>
 	</section>
 </section>

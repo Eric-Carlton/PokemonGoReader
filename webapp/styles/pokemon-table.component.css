@@ -1,10 +1,3 @@
-settings {
-	width: 100%;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
 table#stats-as-table thead tr{
 	position: relative;
 	display: block;
@@ -55,7 +48,6 @@ table#stats-as-table th {
 
 .pokemon-list {
 	padding: 0;
-	clear: both;
 }
 
 .pokemon-list-item {
@@ -69,8 +61,17 @@ table#stats-as-table th {
 	position: relative;
 }
 
-.pokemon-overview > div > span {
+.pokemon-overview > span, .pokemon-overview > div , .pokemon-overview > div > span{
 	padding: 0;
+}
+
+.pokemon-overview > div > span {
+	margin-bottom: 14px;
+}
+
+.pokemon-overview > div > img {
+	height: 15px;
+	width: 15px;
 }
 
 .pokemon-ivs > div {
@@ -103,10 +104,4 @@ table#stats-as-table th {
 	bottom: 0;
 	width: 100%;
 	margin: 10px auto;
-}
-
-#sort-orders{
-	margin-bottom: 1.5em;
-	width:8em;
-	float:right;
 }

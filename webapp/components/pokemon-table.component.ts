@@ -1,9 +1,10 @@
-import { ViewChild, Component } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { PokemonService } from '../services/pokemon.service'
 import { PropertiesService } from '../services/properties.service'
 import { UtilsService } from '../services/utils.service'
 import { SortService } from '../services/sort.service'
+import { SettingsService } from '../services/settings.service' 
 
 import { Pokemon } from '../models/pokemon.model'
 import { Species } from '../models/species.model'
@@ -22,7 +23,6 @@ import { PrependZerosPipe } from '../pipes/prepend-zeros.pipe'
 })
 
 export class PokemonTableComponent {
-	@ViewChild(SettingsComponent) settings: SettingsComponent;
 	private _operatingOnPokemonAtIndex: number = null;
 	private _operationName: string = null;
 	private _retrieving = false;
@@ -31,7 +31,8 @@ export class PokemonTableComponent {
 		private _properties: PropertiesService,
 		private _pokemonService: PokemonService,
 		private _utils: UtilsService,
-		private _sortService: SortService
+		private _sortService: SortService,
+		private _settingsService: SettingsService
 	) {}
 
 	private _getTableOutput(pokemon: Pokemon, property: string): string{

@@ -25,6 +25,7 @@ p {
 
 .dropdown-menu {
 	text-align: center;
+	min-width: 120px;
 }
 
 .dropdown-menu li {
@@ -57,4 +58,8 @@ p {
 
 .text-sm {
 	font-size: .85em;
+}
+
+[hidden] {
+	display: none!important;
 }

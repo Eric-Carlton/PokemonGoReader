@@ -1,15 +1,4 @@
-<div id="sort-orders" class="dropdown">
-	<button class="btn btn-default dropdown-toggle" type="button" id="sort-orders-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-		Sort Orders
-		<span class="caret"></span>
-	</button>
-	<ul class="dropdown-menu" aria-labelledby="sort-orders-dropdown">
-		<li *ngFor="let key of _sortService.speciesSortOrders" (click)="_sortService.sortSpecies(key, true)">
-			{{_properties.speciesSortOrders[key].name}}
-		</li>
-	</ul>
-</div>
-
+<settings></settings>
 <div class="pokemon-list-wrapper">
   <div class="pokemon-list-item" *ngFor="let species of _pokemonService.species; let i = index">
     <img class="icon" src="http://www.serebii.net/pokemongo/pokemon/{{species.pokedex_number | prependZeros }}.png" title="{{species.species}}" height="100"/>

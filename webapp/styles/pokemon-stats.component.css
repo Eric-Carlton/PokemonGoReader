@@ -1,13 +1,3 @@
-.dropdown{
-	text-align:center;
-}
-
-.dropdown-menu{
-	width:150px; 
-	left:50%; 
-	margin-left:-75px;
-}
-
 .glyphicon-refresh {
 	cursor: pointer
 }
@@ -24,10 +14,6 @@
 #title-heading{
 	display: inline-block;
 	margin: auto 1em;
-}
-
-#display-by{
-	margin-bottom: 1.5em;
 }
 
 #csvDownloadLink { 
