@@ -2,24 +2,22 @@
 
 const bunyan = require('bunyan');
 const pogobuf = require('pogobuf');
-
 const props = require('../config/properties.js');
-const pokemonData = require('../../data/pokemon.json');
-let privateProps = false;
-try{
-	privateProps = require('../config/private.json');
-} catch(e) {
-	// do nothing, we just won't use hashing
-}
-
-
 const log = bunyan.createLogger({
 	name: props.log.names.pokemonUtils,
 	streams: [{
 		level: props.log.levels.console,
 		stream: process.stdout
 	}]
-})
+});
+const pokemonData = require('../../data/pokemon.json');
+let privateProps = null;
+try{
+	privateProps = require('../config/private.json');
+} catch(err) {
+	log.error({err: err.message});
+	throw new Error('A file named private.json must be created in server/config that contains a hashing key');
+}
 
 let getToken = (credential) => {
 	return new Promise((resolve, reject) => {
@@ -45,14 +43,14 @@ module.exports = {
 		return new Promise((resolve, reject) => {
 			let client = null;
 
-			if (privateProps && privateProps.hashingKey) {
+			if (privateProps.hashingKey) {
 				client = new pogobuf.Client({
 					useHashingServer: true,
 					version: 5702,
 					hashingKey: privateProps.hashingKey
 				});
 			} else {
-				client = new pogobuf.Client();
+				throw new Error('server/private.json must contain a JSON object with a single property named "hashingKey" whose value is a valid hashing key');
 			}
 
 
