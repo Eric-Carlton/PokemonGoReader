@@ -23,7 +23,7 @@ Dependencies
 
 Hashing
 -------
-In order to use this application, users [purchase a hashing key](https://talk.pogodev.org/d/51-api-hashing-service-by-pokefarmer). The cheapest option (150 RPM) should be more than sufficient. Once you've got your key, simply create a file in server/config called `private.json`. Contents of the file should be formatted as follows: 
+In order to use this application, users **must** [purchase a hashing key](https://talk.pogodev.org/d/51-api-hashing-service-by-pokefarmer). The cheapest option (150 RPM) should be more than sufficient. Once you've got your key, simply create a file in server/config called `private.json`. Contents of the file should be formatted as follows: 
 
 ```
 {
