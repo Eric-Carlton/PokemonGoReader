@@ -3306,7 +3306,7 @@
     "BaseDefense": 147,
     "Type1": "Ice",
     "Type2": "Ground",
-    "QuickMoves": [217, 144],
+    "QuickMoves": [217, 244],
     "CinematicMoves": [254, 95, 32],
     "OldQuickMoves": [],
     "OldCinematicMoves": [],
