@@ -81,7 +81,7 @@ export class PokemonService {
 						let move: MoveData = moveData[moveNumber];
 
 						let givesStab: boolean = false;
-						let dps: number = Number((move.Power / move.DurationMs * 1000).toFixed(2));
+						let dps: number = move.Power / move.DurationMs * 1000;
 
 						if(move.Type.toLowerCase() === pokemon.type_1 || move.Type.toLowerCase() === pokemon.type_2){
 							givesStab = true;
@@ -100,7 +100,7 @@ export class PokemonService {
 						let move: MoveData = moveData[moveNumber];
 
 						let givesStab: boolean = false;
-						let dps: number = Number((move.Power / move.DurationMs * 1000).toFixed(2));
+						let dps: number = move.Power / move.DurationMs * 1000;
 
 						if(move.Type.toLowerCase() === pokemon.type_1 || move.Type.toLowerCase() === pokemon.type_2){
 							givesStab = true;
@@ -119,7 +119,7 @@ export class PokemonService {
 						let move: MoveData = moveData[moveNumber];
 
 						let givesStab: boolean = false;
-						let dps: number = Number((move.Power / move.DurationMs * 1000).toFixed(2));
+						let dps: number = move.Power / move.DurationMs * 1000;
 
 						if(move.Type.toLowerCase() === pokemon.type_1 || move.Type.toLowerCase() === pokemon.type_2){
 							givesStab = true;
@@ -138,7 +138,7 @@ export class PokemonService {
 						let move: MoveData = moveData[moveNumber];
 
 						let givesStab: boolean = false;
-						let dps: number = Number((move.Power / move.DurationMs * 1000).toFixed(2));
+						let dps: number = move.Power / move.DurationMs * 1000;
 
 						if(move.Type.toLowerCase() === pokemon.type_1 || move.Type.toLowerCase() === pokemon.type_2){
 							givesStab = true;

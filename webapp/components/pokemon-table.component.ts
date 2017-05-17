@@ -53,26 +53,8 @@ export class PokemonTableComponent {
 			if(moveType.toLowerCase() === 'total'){
 				let dps = 0;
 
-				for(let i: number = 0; i < pokemon.moves.old_fast.length; i++){
-					let move: Move = pokemon.moves.old_fast[i];
-
-					if(move.selected){
-						dps += move.DPS;
-						break;
-					}
-				}
-
 				for(let i: number = 0; i < pokemon.moves.fast.length; i++){
 					let move: Move = pokemon.moves.fast[i];
-
-					if(move.selected){
-						dps += move.DPS;
-						break;
-					}
-				}
-
-				for(let i: number = 0; i < pokemon.moves.old_charged.length; i++){
-					let move: Move = pokemon.moves.old_charged[i];
 
 					if(move.selected){
 						dps += move.DPS;
@@ -91,7 +73,7 @@ export class PokemonTableComponent {
 
 				return dps.toFixed(2);
 			} else {
-				let moves: Move[] = pokemon.moves[moveType].concat(pokemon.moves['old_' + moveType]);
+				let moves: Move[] = pokemon.moves[moveType];
 
 				for(let i: number = 0; i < moves.length; i++){
 					let move: Move = moves[i];

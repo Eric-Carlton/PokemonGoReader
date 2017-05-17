@@ -72,21 +72,7 @@ export class ExportService {
           if(moveType === 'total'){
             let dps = 0;
 
-            mon.moves.old_fast.forEach((move) => {
-              if(move.selected){
-                dps += move.DPS;
-                return;
-              }
-            });
-
             mon.moves.fast.forEach((move) => {
-              if(move.selected){
-                dps += move.DPS;
-                return;
-              }
-            });
-
-            mon.moves.old_charged.forEach((move) => {
               if(move.selected){
                 dps += move.DPS;
                 return;
@@ -102,7 +88,7 @@ export class ExportService {
 
             output += dps.toFixed(2);
           } else {
-            output += this._processMoves(mon.moves[moveType].concat(mon.moves['old_' + moveType]));
+            output += this._processMoves(mon.moves[moveType]);
           }
         } else if(prop.includes('species_')){
           let splitProp = prop.split('_');
