@@ -46,7 +46,7 @@ module.exports = {
 			if (privateProps.hashingKey) {
 				client = new pogobuf.Client({
 					useHashingServer: true,
-					version: 5702,
+					version: 6100,
 					hashingKey: privateProps.hashingKey
 				});
 			} else {
