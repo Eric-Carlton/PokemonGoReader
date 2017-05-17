@@ -9,3 +9,6 @@ typings
 
 ##ignore vscode files
 .vscode
+
+##ignore private properties
+server/config/private.json
