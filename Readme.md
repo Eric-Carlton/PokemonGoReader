@@ -1,3 +1,7 @@
+This repository is no longer maintained
+=======================================
+It's been fun, but dealing with potential shadow bans and constant api updates just aren't what I want to be doing with my free time any more. Thanks to everyone who used / cloned / forked / helped update this app. If anyone has a fork that they're still maintaining, let me know and I'll add you direct visitors to you. 
+
 Pokemon Go Reader
 =================
 Requests information about Pokemon currently in inventory from Niantic and displays stats for each Pokemon in a card or table format.
